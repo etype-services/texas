@@ -1,0 +1,1103 @@
+<?php
+
+/**
+ * @file
+ * Integrates Chase Paymentech E-Xact Hosted Checkout payment services with Ubercart!
+ *
+ * @author
+ * Jesse Payne
+ * Drupal Id: acrazyanimal
+ * Email: jesse@openconcept.ca
+ *
+ * This module was largely based from of the paypal module that comes with Ubercart.
+ * Also some functionality was pulled out of the Authorize.net module. Cheers and thanks!
+ *
+ *
+ * TODO: Add comments here
+ *
+ * If you have not applied for your Chase Paymetech merchant account, then please
+ * do so before turning on this module. You also need to configure a hosted checkout
+ * page for your merchant account.
+ *
+ * TODOs: 1. Add relay response support.
+ *        2. Add specific support for debit transactions.
+ *        3. Add support for multiple hosted checkout pages.
+ *        4. Possibly add a gateway to this module to organize multiple hosted checkout pages.
+ */
+
+  define('UC_CHASEPAYMENTECH_TEST_URL', 'https://rpm-demo.e-xact.com/payment');
+  define('UC_CHASEPAYMENTECH_LIVE_URL', 'https://checkout.e-xact.com/payment');
+
+/*******************************************************************************
+ * Hook Functions (Drupal)
+ ******************************************************************************/
+
+/**
+ * Implements hook_menu().
+ */
+function uc_chase_paymentech_menu() {
+  // Callback functions for Website Payments Standard.
+  $items['uc_chasepaymentech/ehc/complete'] = array(
+    'title' => 'Chase Paymentech transaction complete',
+    'page callback' => 'uc_chase_paymentech_complete',
+    'access callback' => 'uc_chase_paymentech_ehc_access',
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+// Make sure Chase always has access to send responses.
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
+function uc_chase_paymentech_ehc_access() {
+  return TRUE;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function uc_chase_paymentech_permission() {
+  return array(
+    'administer Chase Paymentech' => array(
+      'title' => t('administer Chase Paymentech'),
+      'description' => t('TODO Add a description for \'administer Chase Paymentech\''),
+    ),
+  );
+}
+
+/**
+ * Implements hook_init().
+ */
+function uc_chase_paymentech_init() {
+  global $conf;
+  $conf['i18n_variables'][] = 'chasepaymentech_ehc_checkout_button';
+}
+
+/**
+ * Implements hook_form_alter().
+ * Notice how we alter the checkout review form to post the order to Chase.
+ */
+function uc_chase_paymentech_form_alter(&$form, &$form_state, $form_id) {
+  global $order_id;
+
+  if ($form_id == 'uc_cart_checkout_review_form' && ($order_id = intval($_SESSION['cart_order'])) > 0) {
+    $order = uc_order_load($order_id);
+
+    if ($order->payment_method == 'chase_paymentech_ehc') {
+
+      // Remove default cart submit button
+      unset($form['actions']['submit']);
+
+      $order_form_array = drupal_get_form('uc_chase_paymentech_ehc_form', $order);
+      $order_form_completed = drupal_render($order_form_array);
+
+      $form['#suffix'] = $order_form_completed;
+    }
+  }
+}
+
+/*******************************************************************************
+ * Hook Functions (Ubercart)
+ ******************************************************************************/
+
+
+/**
+ * Implements hook_uc_payment_method().
+ * Note: D6 version uses uc_chase_paymentech_payment_method
+ * 
+ * Defines the chase_paymentech_ehc payment method for integration with Chase
+ * Paymentech's hosted checkout service.
+ */
+function uc_chase_paymentech_uc_payment_method() {
+  $path = drupal_get_path('module', 'uc_chase_paymentech');
+  $title = variable_get('chasepaymentech_method_title', t('Credit transaction through Chase Paymentech and e-Xact'));
+  $attributes = array('class' => 'chase-type-image');
+
+  // Build title for display on the payment method selection pane.
+  foreach (variable_get('chasepaymentech_ehc_card_types', array()) as $ctype => $cname) {
+    if ($cname) {
+      $image = array('path' => $path . '/images/' . $ctype . '.gif', 'alt' => $cname, 'title' => $cname, 'attributes' => $attributes);
+      $title .= '&nbsp;&nbsp;' . theme_image($image);
+    }
+  }
+
+  $methods[] = array(
+    'id' => 'chase_paymentech_ehc',
+    'name' => t('Chase Paymentech E-Xact Hosted'), // Needs to be limited to 32 Chars for uc_payment
+    'title' => $title,
+    'desc' => t('Redirect users to submit payments through Chase Paymentech.'),
+    'callback' => 'uc_payment_method_chasepaymentech_ehc',
+    'weight' => 1,
+    'checkout' => FALSE,
+    'no_gateway' => TRUE,
+  );
+
+  return $methods;
+}
+
+
+/*******************************************************************************
+ * Callback Functions, Forms, and Tables
+ ******************************************************************************/
+
+
+/**
+ * Callback for Chase Paymentech payment method settings forms.
+ */
+function uc_payment_method_chasepaymentech_ehc($op, &$order, $form = array(), &$form_state = array()) {
+  switch ($op) {
+
+    case 'cart-process':
+      $_SESSION['pay_method'] = 'CC';
+      return;
+    case 'settings':
+
+      // Add Vertical Tabs
+      $form['uc_chase_paymentech'] = array(
+        '#type' => 'vertical_tabs',
+        '#attached' => array(
+          'js' => array(
+            'vertical-tabs' => drupal_get_path('module', 'uc_chase_paymentech') . '/uc_chase_paymentech.admin.js',
+          ),
+        ),
+      );
+
+      //Required fields
+      $form['ehc_required_settings'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Required settings'),
+        '#description' => t('These fields must all be filled before this module will function.'),
+        '#collapsible' => TRUE,
+        '#group' => 'uc_chase_paymentech',
+      );
+      $form['ehc_required_settings']['chasepaymentech_ehc_secured'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Use SSL to secure the transaction receipt URL. Recommended, but requires that you add an SSL certificate to your website.'),
+        '#default_value' => variable_get('chasepaymentech_ehc_secured', FALSE),
+      );
+      $form['ehc_required_settings']['chasepaymentech_ehc_transaction_type'] = array(
+        '#type' => 'select',
+        '#title' => t('Transaction type'),
+        '#description' => t('Choosing <em>Capture</em> will authorize and capture funds at the same time.'),
+        '#options' => array(
+          'capture' => t('Capture'),
+          'authorization' => t('Authorization'),
+        ),
+        '#default_value' => variable_get('chasepaymentech_ehc_transaction_type', 'capture'),
+      );
+      $form['ehc_required_settings']['chasepaymentech_ehc_transaction_mode'] = array(
+        '#type' => 'select',
+        '#title' => t('Transaction mode'),
+        '#description' => t('Transaction mode used for processing orders.'),
+        '#options' => array(
+          'FALSE' => t('Production'),
+          'TRUE' => t('Test'),
+        ),
+        '#default_value' => variable_get('chasepaymentech_ehc_transaction_mode', 'TRUE'),
+      );
+      $form['ehc_required_settings']['chasepaymentech_ehc_response_mode'] = array(
+        '#type' => 'select',
+        '#title' => t('Response Mode'),
+        '#description' => t('How should Chase Respond? Link displays a link on Chase checkout, Form Post displays a button on Chase checkout page, and Automatic Redirect will automatically redirect back to cart completion.'),
+        '#options' => array(
+          'LINK' => t('Link'),
+          'POST' => t('Form Post'),
+          'REDI' => t('Automatic Redirect'),
+        ),
+        '#default_value' => variable_get('chasepaymentech_ehc_response_mode', 'POST'),
+      );
+      $form['ehc_required_settings']['chasepaymentech_ehc_customer_notification'] = array(
+        '#type' => 'select',
+        '#title' => t('Customer notifications'),
+        '#description' => t('Should your payment service e-mail a receipt to the customer?'),
+        '#options' => array(
+          'TRUE' => t('Enabled'),
+          'FALSE' => t('Disabled'),
+        ),
+        '#default_value' => variable_get('chasepaymentech_ehc_customer_notification', 'TRUE'),
+      );
+      $form['ehc_required_settings']['chasepaymentech_ehc_debug'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Show debug info in the logs for payment processing.'),
+        '#default_value' => variable_get('chasepaymentech_ehc_debug', FALSE),
+      );
+      // Card types aren't really required, but they give a visual display to user's
+      // when choosing their method of payment.
+      $form['ehc_required_settings']['chasepaymentech_ehc_card_types'] = array(
+        '#type' => 'checkboxes',
+        '#title' => t('Configured Card Types'),
+        '#description' => t('Select which card types your merchant account is configured to accept.'),
+        '#options' => _chasepaymentech_ehc_get_card_types(),
+        '#default_value' => variable_get('chasepaymentech_ehc_card_types', array()),
+      );
+      
+      //Hosted checkout pages
+      $form['ehc_checkout_pages'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Hosted pages'),
+        '#description' => t('You must at least configure the default checkout page settings. If you have multiple languages enabled on your site, additional options will be made available below to configure the settings for language specific hosted checkout pages. You will first need to create separate hosting pages for those languages through your Chase Paymentech hosted checkout account. Then you can enable the specific language settings below for each of those pages. When a customer checks out they will be directed to the appropriate hosted page for that language.'),
+        '#collapsible' => TRUE,
+        '#group' => 'uc_chase_paymentech',
+      );
+      // Default language and hosted page
+      $form['ehc_checkout_pages']['chasepaymentech_ehc_login_id'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Default Login ID'),
+        '#default_value' => variable_get('chasepaymentech_ehc_login_id', ''),
+        '#description' => t('The login username used for the Chase Paymentech service.'),
+      );
+      $form['ehc_checkout_pages']['chasepaymentech_ehc_transaction_key'] = array(
+        '#type' => 'textfield',
+        '#title' => t(' Default Transaction key'),
+        '#default_value' => variable_get('chasepaymentech_ehc_transaction_key', ''),
+        '#description' => t('Your API transaction key configured in your merchant account.'),
+      );
+      $form['ehc_checkout_pages']['chasepaymentech_ehc_response_key'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Default Response key'),
+        '#default_value' => variable_get('chasepaymentech_ehc_response_key', ''),
+        '#description' => t('Your API response key configured in your merchant account.'),
+      );
+
+      // Specific language settings
+      $languages = language_list();
+      if (1 < count($languages)) {
+        // Get the currently enabled languages from the form state first since this may be an ajax call. If its not
+        // available then just pull it from the stored vatiable.
+        $enabled_languages = (isset($form_state['values']['chasepaymentech_ehc_langs_enabled'])) ? $form_state['values']['chasepaymentech_ehc_langs_enabled'] : variable_get('chasepaymentech_ehc_langs_enabled', array());
+        // Wrapper for our language specific settings. Also acts as a reference point to our ajax enabled language checkboxes.
+        $form['ehc_checkout_pages']['ehc_langs'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Language specific hosted checkout pages'),
+          '#description' => t('Once enabled the language specific forms show up here. Enter the information for each hosted checkout page you have created through your Chase Paymentech account.'),
+          '#collapsible' => FALSE,
+          '#collapsed' => TRUE,
+          '#prefix' => '<div id="checkboxes-div">',
+          '#suffix' => '</div>',
+          '#weight' => 1,
+        );
+        // Get the current language.
+        $default_language = language_default('language');
+        // Remove the default language from the language list since we don't want to add settings for it. The
+        // default settings are used for it instead.
+        unset($languages[$default_language]);
+        $lang_options = array();
+        // Loop over each language and if its been enabled through the checkboxes then add settings for it.
+        foreach ($languages as $key => $lang) {
+          if (!empty($enabled_languages[$key])) {
+            $form['ehc_checkout_pages']['ehc_langs'][$key] = array(
+              '#type' => 'fieldset',
+              '#title' => $lang->name . ' ' . t('language page settings'),
+              '#collapsible' => TRUE,
+              '#weight' => 1,
+            );
+            $form['ehc_checkout_pages']['ehc_langs'][$key]['chasepaymentech_ehc_login_id_' . $key] = array(
+              '#type' => 'textfield',
+              '#title' => t('Login ID'),
+              '#default_value' => variable_get('chasepaymentech_ehc_login_id_' . $key, ''),
+              '#description' => t('The login username used for the Chase Paymentech service.'),
+            );
+            $form['ehc_checkout_pages']['ehc_langs'][$key]['chasepaymentech_ehc_transaction_key_' . $key] = array(
+              '#type' => 'textfield',
+              '#title' => t('Transaction key'),
+              '#default_value' => variable_get('chasepaymentech_ehc_transaction_key_' . $key, ''),
+              '#description' => t('Your API transaction key configured in your merchant account.'),
+            );
+            $form['ehc_checkout_pages']['ehc_langs'][$key]['chasepaymentech_ehc_response_key_' . $key] = array(
+              '#type' => 'textfield',
+              '#title' => t('Response key'),
+              '#default_value' => variable_get('chasepaymentech_ehc_response_key_' . $key, ''),
+              '#description' => t('Your API response key configured in your merchant account.'),
+            );
+          }
+          $lang_options[$key] = $lang->name;
+        }
+        // Checkboxes to enable specific language hosted page settings. It is ajaxified
+        // so checking a language on the form will add the respective settings to the form.
+        $form['ehc_checkout_pages']['chasepaymentech_ehc_langs_enabled'] = array(
+          '#type' => 'checkboxes',
+          '#options' => $lang_options,
+          '#title' => t('Which language specific pages should be enabled?'),
+          '#description' => t('Click a language to enable its hosted checkout page.'),
+          '#ajax' => array(
+            'callback' => 'uc_chase_paymentech_ajax_langcheckboxes',
+            'wrapper' => 'checkboxes-div',
+              //'method' defaults to replaceWith, but valid values also include
+              // append, prepend, before and after.
+              // 'method' => 'replaceWith',
+              // 'effect' defaults to none. Other valid values are 'fade' and 'slide'.
+              // See ajax_example_autotextfields for an example of 'fade'.
+            'effect' => 'slide',
+              // 'speed' defaults to 'slow'. You can also use 'fast'
+              // or a number of milliseconds for the animation to last.
+              // 'speed' => 'slow',
+              // Don't show any throbber...
+            //'progress' => array('type' => 'none'),
+          ),
+          '#default_value' => $enabled_languages,
+        );
+      }
+      // No other languages other then the default are enabled so go ahead and remove
+      // the variable so we don't accidentally use and left over language settings.
+      elseif (variable_get('chasepaymentech_ehc_langs_enabled', array())) {
+        variable_del('chasepaymentech_ehc_langs_enabled');
+      }
+
+      //Optional settings
+      $form['ehc_optional_settings'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Optional settings'),
+        '#description' => t('These fields are optional. The settings controlling the look of Chase Paymentech\'s pages all default to the values set in your merchant account.'),
+        '#collapsible' => TRUE,
+        '#collapsed' => TRUE,
+        '#group' => 'uc_chase_paymentech',
+      );
+
+      $form['ehc_optional_settings']['chasepaymentech_ehc_show_orderid'] = array(
+        '#type' => 'select',
+        '#title' => t('Show Order Id'),
+        '#description' => t('Do you want to display the Ubercart Order Id on Chase Pages and Notifications to the customer?'),
+        '#options' => array(
+          'true' => t('YES'),
+          '' => t('NO'),
+        ),
+        '#default_value' => variable_get('chasepaymentech_ehc_show_orderid', ''),
+      );
+      $form['ehc_optional_settings']['chasepaymentech_ehc_ip'] = array(
+        '#type' => 'select',
+        '#title' => t('Send Customer\'s IP'),
+        '#description' => t('Set to Enabled if you would like to submit the customer\'s ip address to the payment service.'),
+        '#options' => array(
+          'true' => t('Enabled'),
+          'false' => t('Disabled'),
+        ),
+        '#default_value' => variable_get('chasepaymentech_ehc_ip', 'false'),
+      );
+      $form['ehc_optional_settings']['chasepaymentech_method_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Payment Method Title'),
+        '#default_value' => variable_get('chasepaymentech_method_title', t('Credit transaction through Chase Paymentech and e-Xact')),
+        '#description' => t('Set the title for this payment method to appear on the checkout form.'),
+      );
+      $form['ehc_optional_settings']['chasepaymentech_ehc_checkout_button'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Order review submit button text'),
+        '#description' => t('Provide specific text for the submit button on the order review page.'),
+        '#default_value' => variable_get('chasepaymentech_ehc_checkout_button', t('Submit order')),
+      );
+      $form['ehc_optional_settings']['chasepaymentech_ehc_link_text'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Text for Link'),
+        '#description' => t('Customize the link back text on Chase\'s receipt page'),
+        '#default_value' => variable_get('chasepaymentech_ehc_link_text', 'CLICK HERE to CONTINUE'),
+      );
+      $form['ehc_optional_settings']['chasepaymentech_ehc_logo_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Logo URL'),
+        '#description' => t('Customize your payment service\'s payment page with your logo. Use the full logo url.'),
+        '#default_value' => variable_get('chasepaymentech_ehc_logo_url', ''),
+      );
+      $form['ehc_optional_settings']['chasepaymentech_ehc_background_color'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Background Colour'),
+        '#description' => t('Customize your payment service\'s payment page with a background colour.'),
+        '#default_value' => variable_get('chasepaymentech_ehc_background_color', ''),
+      );
+      $form['ehc_optional_settings']['chasepaymentech_ehc_currency'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Currency Code'),
+        '#description' => t('Currency code for the transaction.'),
+        '#default_value' => variable_get('chasepaymentech_ehc_currency', 'CAD'),
+      );
+      //Date to capture along with payment
+      $form['ehc_capture_settings'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Response field capture settings'),
+        '#description' => t('These pertain to which payment response data to save.'),
+        '#collapsible' => TRUE,
+        '#collapsed' => TRUE,
+        '#group' => 'uc_chase_paymentech',
+      );
+      $form['ehc_capture_settings']['chasepaymentech_ehc_resp_fields'] = array(
+        '#type' => 'checkboxes',
+        '#title' => t('Response Fields to track'),
+        '#description' => t('Select which response fields should be serialized and saved along with the payment in Ubercart.'),
+        '#options' => _chasepaymentech_ehc_get_resp_fields(),
+        '#default_value' => variable_get('chasepaymentech_ehc_resp_fields', array()),
+      );
+
+    return $form;
+  }
+}
+
+/**
+ * Callback to enable the hosted page settings for a specific language.
+ *
+ * @return
+ *   renderable array (the language specific hosted page settings fieldset)
+ */
+function uc_chase_paymentech_ajax_langcheckboxes($form, $form_state) {
+  return $form['ehc_checkout_pages']['ehc_langs'];
+}
+
+
+/*******************************************************************************
+ * Module and Helper Functions
+ ******************************************************************************/
+
+
+/**
+ * Form to build the submission to Chase Paymentech.
+ * 
+ * @return
+ *   A form array with all the items that need to be submitted to Chase's hosted checkout service.
+ *   The action on the form is set to the appropriate url.
+ */
+function uc_chase_paymentech_ehc_form($form_id, &$form_state) {
+  global $user;
+
+  $order = $form_state['build_info']['args'][0];
+
+  $dodebug = variable_get('chasepaymentech_ehc_debug', FALSE);
+  if ($dodebug) {
+    watchdog('chase_paymentech_ehc', 'Creating chase paymentech form for submitting order (id:!orderid).', array('!orderid' => $order->order_id), WATCHDOG_DEBUG);
+  }
+
+  $country = uc_get_country_data(array('country_id' => $order->billing_country));
+  if ($country === FALSE) {
+    $country = uc_get_country_data(array('country_iso_code_3' => 'CAN'));
+  }
+
+  // Seed random number for security and better randomness.
+  srand(REQUEST_TIME * (($user->uid) ? $user->uid : 1));
+  $sequence = rand(1000, 1000000) + 543219; // Bit sill random sequence
+
+  global $language;
+  $enabled_languages = variable_get('chasepaymentech_ehc_langs_enabled', array());
+  // Check the current language against the configured Chase language specific pages
+  // and use that page if its available.
+  if ($language && !empty($enabled_languages[$language->language]) && ($login = variable_get('chasepaymentech_ehc_login_id_' . $language->language, ''))) {
+    $transaction_key = variable_get('chasepaymentech_ehc_transaction_key_' . $language->language, '');
+    $language_specific = TRUE;
+  }
+  // Otherwise use the default hosted checkout page settings.
+  if (empty($login) || empty($transaction_key)) {
+    $login = variable_get('chasepaymentech_ehc_login_id', '');
+    $transaction_key = variable_get('chasepaymentech_ehc_transaction_key', '');
+    $language_specific = FALSE;
+  }
+  
+  $ccode = variable_get('chasepaymentech_ehc_currency', 'CAD');
+  $amount = uc_currency_format($order->order_total, FALSE, FALSE, '.');
+
+ /**
+  * create the MD5 hash fingerprint
+  **/
+  // The values that contribute to x_fp_hash 
+  $hmac_data = $login . "^" . $sequence . "^" . REQUEST_TIME . "^" . $amount . "^" . $ccode;
+  $x_fp_hash = hash_hmac('MD5', $hmac_data, $transaction_key);
+
+  $transaction_mode = variable_get('chasepaymentech_ehc_transaction_mode', 'TRUE');
+
+  $receipt_url = url('uc_chasepaymentech/ehc/complete', array('absolute' => TRUE));
+  // If we are using ssl then make sure the receipt url uses https.
+  if (variable_get('chasepaymentech_ehc_secured', FALSE)) {
+    $receipt_url = str_replace('http://', 'https://', $receipt_url);
+  }
+
+  $billing_country = uc_get_country_data(array('country_id' => $order->billing_country));
+  $delivery_country = uc_get_country_data(array('country_id' => $order->delivery_country));
+
+  // Build the POST data for the transaction.
+  $submit_data = array(
+    // Merchant information.
+    'x_login' => $login,
+    'x_fp_sequence' => $sequence,
+    'x_fp_timestamp' => REQUEST_TIME,
+    'x_amount' => $amount,
+    'x_fp_hash' => $x_fp_hash,
+    'x_show_form' => 'PAYMENT_FORM',
+    'x_test_request' => $transaction_mode,
+    'x_type' => variable_get('chasepaymentech_ehc_transaction_type', 'capture') == 'capture' ? 'AUTH_CAPTURE' : 'AUTH_ONLY',
+    'x_relay_response' => '',
+    // return/redirect back values
+    'x_receipt_link_method' => variable_get('chasepaymentech_ehc_response_mode', 'POST'),
+    'x_receipt_link_text' => variable_get('chasepaymentech_ehc_link_text', 'CLICK HERE to COMPLETE CHECKOUT'),
+    'x_receipt_link_url' => $receipt_url,
+    // customer ip if using FDS
+    'x_customer_ip' => variable_get('chasepaymentech_ehc_ip', 'true') == 'true' ? substr(ip_address(), 0, 15) : '',
+
+    // Transaction information.
+    'x_version' => '3.1',
+    // aesthetics
+    'x_logo_url' => variable_get('chasepaymentech_ehc_logo_url', ''),
+    'x_color_background' => variable_get('chasepaymentech_ehc_background_color', ''),
+    // non-required but good to have
+    'x_currency_code' => variable_get('chasepaymentech_ehc_currency', 'CAD'),
+    'x_email_customer' => variable_get('chasepaymentech_ehc_customer_notification', 'TRUE'),
+    'x_cust_id' => substr($order->uid, 0, 20),
+    'x_invoice_num' => (variable_get('chasepaymentech_ehc_hide_orderid', '')) ? $order->order_id : '',
+    'x_po_num' => $order->order_id,
+
+    // Order information.
+    'x_invoice_num' => $order->order_id,
+    // 'x_description' => $x_description,
+    'x_description' => "Order Created: $order->created, Order Modified: $order->modified",
+
+    // Customer information.
+    'x_first_name' => substr($order->billing_first_name, 0, 50),
+    'x_last_name' => substr($order->billing_last_name, 0, 50),
+    'x_company' => substr($order->billing_company, 0, 50),
+    'x_address' => substr($order->billing_street1, 0, 60),
+    'x_city' => substr($order->billing_city, 0, 40),
+    'x_state' => substr(uc_get_zone_code($order->billing_zone), 0, 40),
+    'x_zip' => substr($order->billing_postal_code, 0, 20),
+    'x_country' => !$billing_country ? '' : $billing_country[0]['country_iso_code_2'],
+    'x_phone' => substr($order->billing_phone, 0, 25),
+    // 'x_fax' => substr('', 0, 25),
+    'x_email' => substr($order->primary_email, 0, 255),
+
+    // Shipping information.
+    'x_ship_to_first_name' => substr($order->delivery_first_name, 0, 50),
+    'x_ship_to_last_name' => substr($order->delivery_last_name, 0, 50),
+    'x_ship_to_company' => substr($order->delivery_company, 0, 50),
+    'x_ship_to_address' => substr($order->delivery_street1, 0, 60),
+    'x_ship_to_city' => substr($order->delivery_city, 0, 40),
+    'x_ship_to_state' => substr(uc_get_zone_code($order->delivery_zone), 0, 40),
+    'x_ship_to_zip' => substr($order->delivery_postal_code, 0, 20),
+    'x_ship_to_country' => !$delivery_country ? '' : $delivery_country[0]['country_iso_code_2'],
+  );
+  
+  // Track which language page we are using if not the default. Passing it in here will
+  // allow us to pull it out of the response later on and user the proper login_id and
+  // response_key to verify the response.
+  if ($language_specific) {
+    $submit_data['x_reference_3'] = $language->language;
+  }
+
+  //Calculate shipping costs
+  $shipping = 0;
+  if (is_array($order->line_items)) {
+    foreach ($order->line_items as $item) {
+      if ($item['type'] == 'shipping') {
+        $shipping += $item['amount'];
+      }
+    }
+  }
+  if ($shipping) {
+    $submit_data['x_freight'] = $shipping;
+  }
+
+  //Calculate taxes
+  $tax = 0;
+  if (module_exists('uc_taxes')) {
+    foreach (uc_taxes_calculate($order) as $tax_item) {
+      $tax += $tax_item->amount;
+    }
+  }
+  if ($tax) {
+    $submit_data['x_tax'] = $tax;
+  }
+
+  // Determine the correct URL based on the transaction mode.
+  if (variable_get('uc_chase_paymentech_aim_txn_mode', 'live_test') == 'developer_test') {
+    $post_url = variable_get('uc_chase_paymentech_test_gateway_url', UC_CHASEPAYMENTECH_TEST_URL);
+  }
+  else {
+    $post_url = variable_get('uc_chase_paymentech_live_gateway_url', UC_CHASEPAYMENTECH_LIVE_URL);
+  }
+
+  // Iterate over each peice of information we want to send to chase and add it as
+  // a hidden value on the form.
+  foreach ($submit_data as $name => $value) {
+    $form[$name] = array(
+      '#type' => 'hidden',
+      '#value' => $value,
+    );
+  }
+
+  /* Add a line item per product ordered
+   * requires a theme function so that multiple
+   * x_line_item fields can be added to the form.
+   *
+   * The format for a line_items is:
+   *   Item ID<|>Item Name<|>Item Description<|>Item Quantity<|>Item Price<|>Item Taxable(YES/NO)<|>
+   */
+  $options = array(
+    'sign' => FALSE,
+    'thou' => FALSE,
+    'dec' => '.',
+  );
+  $context = array(
+    'revision' => 'formatted-original',
+    'type'     => 'amount',
+    'subject'  => array('order' => $order),
+    'type'     => 'order_product',
+  );
+  if (is_array($order->products)) {
+    $i = 0;
+    foreach ($order->products as $product) {
+      $i++;
+      $context['subject']['product'] = $product;
+      $context['subject']['node'] = node_load($product->nid);
+
+      // See http://api.lullabot.com/uc_payment_by_order_form/7 - uc_price() no longer supported
+      // E-xact.com https://hostedcheckout.zendesk.com/entries/207209-hosted-checkout-integration-manual#11.4
+      //   <input name="x_line_item" value="10<|>1999 Cabernet Sauvignon, 0.7 l<|>1999 Cabernet Sauvignon, 0.7 l <|>10<|>19.95<|>YES" type="hidden">  
+      $line_item = "$product->model<|>$product->title<|>$product->title<|>$product->qty<|>" . $product->price . "<|>YES"; //uc_currency_format()
+      $form['x_line_item_' . $i] = array(
+        '#type'  => 'hidden',
+        '#value' => $line_item,
+        '#name'  => 'x_line_item',
+      );
+    }
+  }
+
+  $form['#action'] = $post_url;
+
+   // Submit buttons to E-xact
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => variable_get('chasepaymentech_ehc_checkout_button', t('Submit order')),
+  );
+
+  // TODO: Figure out why we are doing this? and if it is really needed?
+  foreach (module_implements('uc_order') as $module) {
+    $result = module_invoke($module, 'uc_order', 'submit', $order, NULL);
+
+    $msg_type = 'status';
+    if ($result[0]['pass'] === FALSE) {
+      $error = TRUE;
+      $msg_type = 'error';
+    }
+    if (!empty($result[0]['message'])) {
+      drupal_set_message($result[0]['message'], $msg_type);
+    }
+    if (isset($error) && !empty($error)) {
+      $_SESSION['do_review'] = TRUE;
+      drupal_goto('cart/checkout/review');
+    }
+  }
+  return $form;
+}
+
+
+/**
+ * Callback function for the response being sent back from Chase's hosted chechout service. Processes the response
+ * to determine if the payment was successful or not. Depending, the appropriate action is taken.
+ * 
+ * @see
+ *   uc_chase_paymentech_menu().
+ */
+function uc_chase_paymentech_complete() {
+  $dodebug = variable_get('chasepaymentech_ehc_debug', FALSE);
+
+  //figure out what kind of request we are dealing with here.
+  switch ($_SERVER['REQUEST_METHOD']) {
+    case 'POST':
+      $GET_POST = $_POST;
+      break;
+    case 'GET'  :
+      $GET_POST = $_GET;
+      break;
+  }
+
+  if (!isset($GET_POST['x_po_num'])) {
+    watchdog('chase_paymentech_ehc', 'No order id returned from path uc_chasepaymentech/ehc/complete', NULL, WATCHDOG_DEBUG);
+    drupal_goto('cart/checkout');
+  }
+
+  //retrieve the Order Id
+  $order_id = check_plain($GET_POST['x_po_num']);
+
+  // set the order_id for the session
+  if (intval($_SESSION['cart_order']) != $order_id) {
+    $_SESSION['cart_order'] = $order_id;
+  }
+
+  // enter a log entry about the payment
+  if ($dodebug) {
+    watchdog('chase_paymentech_ehc', 'Receiving new payment notification for order !order_id.', array('!order_id' => $order_id), WATCHDOG_DEBUG);
+  }
+
+  // verify that it is a valid order.
+  if (!($order = uc_order_load($order_id))) {
+    watchdog('chase_paymentech_ehc', 'Could not load order !order_id. Rejecting payment notification.', array('!order_id' => $order_id), WATCHDOG_WARNING);
+    $error_message_order = t('Error completing Payment, please contact !helpemail to verify payment. Unknow Order Id(!orderid) returned. The payment transaction id returned was !transid.', array('!helpemail' => variable_get('site_mail', 'site administrator'), '!orderid' => $order_id, '!transid' => $trans_id));
+    drupal_set_message($error_message_order, 'error');
+    $_SESSION['uc_checkout'][$_SESSION['cart_order']]['do_review'] = TRUE;
+    drupal_goto('cart/checkout/review');
+  }
+
+  // Clean up required responses from Chase Paymentech and put into an array
+  $data = array(
+    'x_response_code'        => $response_code = check_plain($GET_POST['x_response_code']),
+    'x_response_subcode'     => $response_subcode = check_plain($GET_POST['x_response_subcode']),
+    'x_response_reason_code' => $response_reason_code = check_plain($GET_POST['x_response_reason_code']),
+    'x_response_reason_text' => $response_reason_text = check_plain($GET_POST['x_response_reason_text']),
+    'x_auth_code'            => $auth_code = check_plain($GET_POST['x_auth_code']),
+    'x_trans_id'             => $trans_id = check_plain($GET_POST['x_trans_id']),
+  );
+
+  // Grab Hash & $$
+  $x_MD5_Hash = check_plain($GET_POST['x_MD5_Hash']);
+  $amount = check_plain($GET_POST['x_amount']);
+
+  // Determine which hosting page we are using.
+  $lang = (!empty($GET_POST['x_reference_3'])) ? check_plain($GET_POST['x_reference_3']) : '';
+  if ($lang && ($login_id = variable_get('chasepaymentech_ehc_login_id_' . $lang, ''))) {
+    $response_key = variable_get('chasepaymentech_ehc_response_key_' . $lang, '');
+  }
+  
+  // Get default response settings if a language was not explicitly set.
+  if (empty($login_id) || empty($response_key)) {
+    $response_key = variable_get('chasepaymentech_ehc_response_key', '');
+    $login_id = variable_get('chasepaymentech_ehc_login_id', '');
+  }
+
+  //Make sure we actually received a valid numerical payment amount.
+  if (!is_numeric($amount)) {
+    watchdog('chase_paymentech_ehc', 'Non numeric value received for x_amount(!x_amount) for order !order_id. Rejecting response from Chase Paymentech with x_trans_id !x_trans_id.', array('!order_id' => $order_id, '!x_amount' => $amount, '!x_trans_id' => $trans_id), WATCHDOG_WARNING);
+    $error_message_amount = t('Error completing Payment, please contact !helpemail to verify payment. Your Order Id is !orderid and the payment transaction id returned was !transid.', array('!helpemail' => variable_get('site_mail', 'site administrator'), '!orderid' => $order_id, '!transid' => $trans_id));
+    drupal_set_message($error_message_amount, 'error');
+    $_SESSION['uc_checkout'][$_SESSION['cart_order']]['do_review'] = TRUE;
+    drupal_goto('cart/checkout/review');
+  }
+
+  /* Calculate the x_MD5_Hash value from the following:
+   * Payment Page Configuration Relay Response Key
+   * "x_login"
+   * Transaction ID (field "x_trans_id")
+   * Amount, two digits after the period ($100 is used as "100.00")
+   */
+  $md5_amount = number_format($amount, 2, '.', '');
+  $fingerprint = md5( $response_key . $login_id . $trans_id . $md5_amount );
+
+  // Check that the Hash is the same.
+  if ($fingerprint != $x_MD5_Hash) {
+    watchdog('chase_paymentech_ehc', 'Unexpected x_MD5_Hash(!x_MD5_Hash) value received for order !order_id. Rejecting response from Chase Paymentech with x_trans_id !x_trans_id.', array('!order_id' => $order_id, '!x_MD5_Hash' => $x_MD5_Hash, '!x_trans_id' => $trans_id), WATCHDOG_WARNING);
+    $error_message_fingerprint = t('Error completing Payment, please contact !helpemail to verify payment. Your Order Id is !orderid and the payment transaction id returned was !transid.', array('!helpemail' => variable_get('site_mail', 'site administrator'), '!orderid' => $order_id, '!transid' => $trans_id));
+    drupal_set_message($error_message_fingerprint, 'error');
+    $_SESSION['uc_checkout'][$_SESSION['cart_order']]['do_review'] = TRUE;
+    drupal_goto('cart/checkout/review');
+  }
+
+  // payment transaction APPROVED
+  if ($response_code == '1') {
+    //capture the data we want to save
+    watchdog('chase_paymentech_ehc', 'Payment approved for order !order_id.', array('!order_id' => $order_id), WATCHDOG_DEBUG);
+
+    foreach (variable_get('chasepaymentech_ehc_resp_fields', array()) as $field) {
+      if (($field) && (isset($GET_POST[$field])) && ('' != $GET_POST[$field])) {
+        $data[$field] = check_plain($GET_POST[$field]);
+      }
+    }
+
+    // if payment was successful, zero out the balance, this should trigger order status change.
+    global $user;
+    $comment = t('Payment APPROVED by Chase Paymentech(TransId: !trans_id) !amount.', array('!amount' => uc_currency_format($amount), '!trans_id' => $trans_id));
+
+    // For some reason this comparison was not behaving the way I expected so had to wrap in floatval().
+    if (floatval($amount) != floatval($order->order_total)) {
+      $less_or_more = ($amount < $order->order_total) ? t('less') : t('more');
+      $comment .= ' ' . t('Payment received was !lessormore then the expected order amount of !ordertotal.', array('!ordertotal' => uc_currency_format($order->order_total), '!lessormore' => $less_or_more));
+    }
+    uc_order_comment_save($order->order_id, 0, $comment);
+    $paymentcomment = t('Chase Paymentech Transaction Id: !trans_id', array('!trans_id' => $trans_id));
+    uc_payment_enter($order->order_id, 'chase_paymentech_ehc', $amount, $user->uid, $data, $paymentcomment);
+    drupal_set_message($comment);
+  }
+
+  // payment transaction DECLINED (2) or ERROR (3)
+  else {
+    $errormsg = t('Chase Paymentech transaction problem : !reason.', array('!reason' => _uc_chase_paymentech_reason_codes($response_code)));
+
+    //check bank response
+    if (isset($GET_POST['Bank_Resp_Code']) && ('000' != $bank_resp_code = check_plain($GET_POST['Bank_Resp_Code']))) {
+      $errormsg .= ' ' . t('Bank responsed : !reason.', array('!reason' => _uc_chase_paymentech_bank_resp_codes($bank_resp_code, check_plain($GET_POST['Bank_Message']))));
+    }
+
+    //check AVS response
+    if (isset($GET_POST['x_avs_code']) && ($avs_code = check_plain($GET_POST['x_avs_code']))) {
+      $errormsg .= ' ' . t('AVS problem : !reason.', array('!reason' => _uc_chase_paymentech_avscode_message($avs_code)));
+    }
+
+    //check CVV2 response
+    if (isset($GET_POST['x_cvv2_resp_code']) && ($cvv2_code = check_plain($GET_POST['x_cvv2_resp_code']))) {
+      $errormsg .= ' ' . t('CVV2 problem : !reason.', array('!reason' => _uc_chase_paymentech_cvvmatch_message($cvv2_code)));
+    }
+
+    drupal_set_message(check_plain($errormsg), 'error');
+
+    //Add a comment on the order indicating roughly what the problem was.
+    if ($dodebug) {
+      if(function_exists('dsm')) { 
+        dsm($errormsg);
+      }
+      watchdog('chase_paymentech_ehc', $errormsg, array(), WATCHDOG_DEBUG);
+    }
+    uc_order_comment_save( $order->order_id, 0, $errormsg );
+
+    $_SESSION['uc_checkout'][$_SESSION['cart_order']]['do_review'] = TRUE;
+    drupal_goto('cart/checkout/review');
+  }
+
+  // send user to order completion page.
+  $_SESSION['uc_checkout'][$_SESSION['cart_order']]['do_complete'] = TRUE;
+  drupal_goto('cart/checkout/complete');
+}
+
+/*
+ * Utility function that returns a human readable message for the Chase transaction response.
+ */
+function _uc_chase_paymentech_reason_codes($code) {
+  switch ($code) {
+    case '1':
+      return t('Transaction has been approved');
+    case '2':
+      return t('Transaction has been declined');
+    case '3':
+      return t('An error occurred while processing the transaction');
+    default:
+      return t('Unknown reason code : !code', array('!code' => $code));
+  }
+}
+
+/*
+ * Utility function that returns a human readable message for the AVS code.
+ */
+function _uc_chase_paymentech_bank_resp_codes($code, $message) {
+
+ /* For errors see: 
+  * https://hostedcheckout.zendesk.com/entries/240747-transaction-processing-api-error-numbers-and-descriptions
+  * https://hostedcheckout.zendesk.com/entries/199357-e-xact-response-codes-etg-codes
+  */
+
+  if ($message) {
+    return $message;
+  }
+
+  switch ($code) {
+    case '000':
+      return t('Approved');
+    case '200':
+      return t('Authorization Declined');
+    case '218':
+      return t('Request Denied');
+    case '292':
+      return t('Banking Network Down Please Retry');
+    case '294':
+      return t('Busy Please Retry');
+    case '297':
+      return t('Error - Retry');
+    case '299':
+      return t('Error - Retry');
+    default:
+      return t('Unknown bank response code : !code', array('!code' => $code));
+  }
+}
+
+
+/*
+ * Utility function that returns a human readable message for the AVS code.
+ */
+function _uc_chase_paymentech_avscode_message($code) {
+  switch ($code) {
+    case 'A':
+      $text .= t('Address (Street) matches, ZIP/Postal code does not');
+      break;
+    case 'B':
+      $text .= t('Address information not provided for AVS check');
+      break;
+    case 'E':
+      $text .= t('AVS error');
+      break;
+    case 'G':
+      $text .= t('Card issuer does not support AVS');
+      break;
+    case 'N':
+      $text .= t('No match on address and ZIP/Postal Code');
+      break;
+    case 'P':
+      $text .= t('AVS not applicable for this transaction');
+      break;
+    case 'R':
+      $text .= t('Retry – System unavailable or timed out');
+      break;
+    case 'S':
+      $text .= t('Service not supported by issuer');
+      break;
+    case 'U':
+      $text .= t('Address information is unavailable');
+      break;
+    case 'W':
+      $text .= t('Nine digit ZIP/Postal Code matches, Address (Street) does not');
+      break;
+    case 'X':
+      $text .= t('Address (Street) and nine digit ZIP/Postal Code match');
+      break;
+    case 'Y':
+      $text .= t('Address (Street) and five digit ZIP/Postal Code match');
+      break;
+    case 'Z':
+      $text .= t('Five digit ZIP/Postal Code matches, Address (Street) does not');
+      break;
+    default:
+      $text .= t('Unknown AVS message code : !code', array('!code' => $code));
+  }
+
+  return $text;
+}
+
+/**
+ * Utility function that returns the message text for a CVV match.
+ */
+function _uc_chase_paymentech_cvvmatch_message($code) {
+  $text = $code . ' - ';
+
+  if (is_numeric($code)) {
+    switch ($code) {
+      case '0':
+        $text .= t('Not supported by processing terminal or card type');
+        break;
+      case '1':
+        $text .= t('Value provided by cardholder');
+        break;
+      case '2':
+        $text .= t('Cardholder states that value on card is illegible');
+        break;
+      case '9':
+        $text .= t('Cardholder states that data is not available');
+        break;
+      default:
+        $text .= t('Unkown CVV message code : !code', array('!code' => $code));
+    }
+    return $text;
+  }
+
+  switch ($code) {
+    case 'M':
+      $text .= t('Match');
+      break;
+    case 'N':
+      $text .= t('No Match');
+      break;
+    case 'P':
+      $text .= t('Not Processed');
+      break;
+    case 'S':
+      $text .= t('Should have been present');
+      break;
+    case 'U':
+      $text .= t('Issuer unable to process request');
+      break;
+    case 'X':
+      $text .= t('No response');
+      break;
+    default:
+      $text .= t('Not checked');
+  }
+
+  return $text;
+}
+
+/*
+ * Utility function that returns response code array
+ */
+function _chasepaymentech_ehc_get_resp_fields() {
+  static $fields;
+  $fields = array(
+    'AVS' => 'AVS',
+    'Authorization_Num' => 'Authorization_Num',
+    'Bank_Message' => 'Bank_Message',
+    'Bank_Resp_Code' => 'Bank_Resp_Code',
+    'Bank_Resp_Code_2' => 'Bank_Resp_Code_2',
+    'CAVV_Algorithm' => 'CAVV_Algorithm',
+    'CAVV_Response' => 'CAVV_Response',
+    'CVD_Presence_Ind' => 'CVD_Presence_Ind',
+    'CVV2' => 'CVV2',
+    'CardHoldersName' => 'CardHoldersName',
+    'Card_Number' => 'Card_Number',
+    'Client_Email' => 'Client_Email',
+    'Client_IP' => 'Client_IP',
+    'Customer_Ref' => 'Customer_Ref',
+    'DollarAmount' => 'DollarAmount',
+    'EXact_Message' => 'EXact_Message',
+    'EXact_Resp_Code' => 'EXact_Resp_Code',
+    'Ecommerce_Flag' => 'Ecommerce_Flag',
+    'Expiry_Date' => 'Expiry_Date',
+    'Language' => 'Language',
+    'Reference_3' => 'Reference_3',
+    'Reference_No' => 'Reference_No',
+    'Retrieval_Ref_No' => 'Retrieval_Ref_No',
+    'Secure_AuthRequired' => 'Secure_AuthRequired',
+    'Secure_AuthResult' => 'Secure_AuthResult',
+    'SequenceNo' => 'SequenceNo',
+    'SurchargeAmount' => 'SurchargeAmount',
+    'Tax1Amount' => 'Tax1Amount',
+    'Tax1Number' => 'Tax1Number',
+    'Tax2Amount' => 'Tax2Amount',
+    'Tax2Number' => 'Tax2Number',
+    'TransactionCardType' => 'TransactionCardType',
+    'Transaction_Approved' => 'Transaction_Approved',
+    'Transaction_Error' => 'Transaction_Error',
+    'Transaction_Tag' => 'Transaction_Tag',
+    'Transaction_Type' => 'Transaction_Type',
+    'XID' => 'XID',
+    'ZipCode' => 'ZipCode',
+    'exact_issconf' => 'exact_issconf',
+    'exact_issname' => 'exact_issname',
+    'exact_wsp_version' => 'exact_wsp_version',
+    'x_address' => 'x_address',
+    'x_avs_code' => 'x_avs_code',
+    'x_cavv_response' => 'x_cavv_response',
+    'x_city' => 'x_city',
+    'x_company' => 'x_company',
+    'x_country' => 'x_country',
+    'x_cust_id' => 'x_cust_id',
+    'x_cvv2_resp_code' => 'x_cvv2_resp_code',
+    'x_description' => 'x_description',
+    'x_duty' => 'x_duty',
+    'x_email' => 'x_email',
+    'x_fax' => 'x_fax',
+    'x_first_name' => 'x_first_name',
+    'x_freight' => 'x_freight',
+    'x_invoice_num' => 'x_invoice_num',
+    'x_last_name' => 'x_last_name',
+    'x_method' => 'x_method',
+    'x_phone' => 'x_phone',
+    'x_po_num' => 'x_po_num',
+    'x_reference_3' => 'x_reference_3',
+    'x_ship_to_address' => 'x_ship_to_address',
+    'x_ship_to_city' => 'x_ship_to_city',
+    'x_ship_to_company' => 'x_ship_to_company',
+    'x_ship_to_country' => 'x_ship_to_country',
+    'x_ship_to_first_name' => 'x_ship_to_first_name',
+    'x_ship_to_last_name' => 'x_ship_to_last_name',
+    'x_ship_to_state' => 'x_ship_to_state',
+    'x_ship_to_zip' => 'x_ship_to_zip',
+    'x_state' => 'x_state',
+    'x_tax' => 'x_tax',
+    'x_tax_exempt' => 'x_tax_exempt',
+    'x_type' => 'x_type',
+    'x_zip' => 'x_zip',
+    'x_MD5_Hash' => 'x_MD5_Hash',
+  );
+  return $fields;
+}
+
+/*
+ * Utility function that returns credit card types.
+ */
+function _chasepaymentech_ehc_get_card_types() {
+  static $types;
+  $types = array(
+    'amex' => 'American Express',
+    'mastercard' => 'Mastercard',
+    'visa' => 'Visa',
+    'interac' => 'Interac Online',
+  );
+  return $types;
+}

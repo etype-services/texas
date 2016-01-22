@@ -1,0 +1,400 @@
+#mm0 {
+  margin-bottom: 10px;	
+}
+
+/** 
+
+Note: Design for a width of 768px
+
+**/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+.page-node .field-name-field-image img {
+  width: 490px;
+  height: auto;	
+}
+
+.page-node .field-name-field-video iframe {
+  width: 490px;
+  height: 300px;	
+}
+
+.node .content img {
+  max-width: 450px;
+  max-height: auto;	
+}
+	
+/* SLIDESHOW 
+--------------------------------------------------------------------------*/
+
+.view-slideshow .views_slideshow_main {	
+  height: 240px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
+  width: 492px;
+  height: auto;
+}
+
+.view-slideshow .views_slideshow_main .views-field-title {
+  width: 450px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-body {
+  width: 450px; 
+  top:130px;
+  font-size: 11px;
+}
+
+
+/* Slideshow controls */
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
+  width: 54px;
+  height: 35px;
+}
+
+/* Video Featured */
+
+.view-featured-view iframe {
+  width: 195px;	
+  height: 120px;
+}
+	
+}
+
+/** 
+Note: Design for a width of 300px
+**/
+
+@media only screen and (max-width: 767px) {	
+
+.main-content-wrapper {
+    margin-top: 0px;
+}
+
+.node-teaser .field-name-field-image img {
+  float: none;
+  margin: 0 0 20px 0;
+}
+
+.node-teaser .node-content-wrapper {
+  margin-left: 0px;
+}
+
+.node-teaser .field-name-field-video iframe {
+  float: none;
+  width: 240px;
+  height: 160px;
+  margin: 0 0 20px 0;
+}
+
+.page-node .field-name-field-image img {
+  width: 300px;
+  height: auto;	
+}
+
+.page-node .field-name-field-video iframe {
+  width: 300px;
+  height: 200px;	
+}
+
+.node .content img {
+  max-width: 240px;
+  max-height: auto;	
+}
+
+/* SLIDESHOW 
+--------------------------------------------------------------------------*/
+
+.social-links li a {
+  padding-left: 0px;
+  padding-right: 1px;
+}
+
+.view-slideshow .views_slideshow_main {	
+  height: 145px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
+  width: 300px;
+  height: auto;
+}
+
+.view-slideshow .views_slideshow_main .views-field-title {
+  width: 260px;
+}
+
+.view-slideshow .views_slideshow_main .views-field-body {
+  display: none;
+}
+
+
+/* Slideshow controls */
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
+  width: 22px;
+  height: 15px;
+}
+
+/* Video Featured */
+
+.view-featured-view iframe {
+  width: 260px;	
+  height: 180px;
+}
+
+	
+}
+
+/** 
+Note: Design for a width of 420px
+**/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+.node .content img {
+  max-width: 380px;
+  max-height: auto;	
+}
+	
+.node-teaser .field-name-field-image img {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.node-teaser .node-content-wrapper {
+  margin-left: 180px;
+}	
+
+.video .node-teaser .node-content-wrapper {
+  margin-left: 0px;
+}	
+
+.node-teaser .field-name-field-video iframe {
+  float: none;
+  width: 360px;
+  height: 220px;
+  margin: 0 0 20px 0;
+}
+
+.page-node .field-name-field-image img {
+  width: 418px;
+  height: auto;	
+}
+
+.page-node .field-name-field-video iframe {
+  width: 418px;
+  height: 300px;	
+}
+
+/* SLIDESHOW 
+--------------------------------------------------------------------------*/
+
+.view-slideshow .views_slideshow_main {	
+  height: 200px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
+  width: 420px;
+  height: auto;
+}
+
+.view-slideshow .views_slideshow_main .views-field-title {
+  width: 380px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-body {
+}
+
+
+/* Slideshow controls */
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
+  width: 42px;
+  height: 25px;
+}
+
+/* Video Featured */
+
+.view-featured-view iframe {
+  width: 380px;	
+  height: 220px;
+}
+	
+}
+
+#block-block-1 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-1 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px;
+}
+
+#block-block-1 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-1 .block-inner {
+  padding: 0px 0 0 0;
+ margin: 0px 0px 20px 0px;
+}
+
+#block-block-10 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-10 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px 0px 20px 0px;
+}
+
+#block-block-9 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-9 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px 0px 20px 0px;
+}
+
+#block-block-8 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-8 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px 0px 20px 0px;
+}
+
+#block-block-13 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-13 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px 0px 20px 0px;
+}
+#block-block-11 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-11 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px 0px 20px 0px;
+}
+#block-block-14 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-14 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px 0px 20px 0px;
+}
+#block-block-16 .content {
+  padding: 0px 0 0 0;
+  color: #999999;	
+}
+#block-block-16 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px 0px 20px 0px;
+}
+#block-block-17 .content {
+  padding: 0px;
+  color: #000;	
+}
+#block-block-17 .block-inner {
+  padding: 5px;
+  margin: 0px;
+}
+
+#block-simpleads-ad-groups-51 .content {
+  padding: 0px;
+  color: #000;	
+}
+#block-simpleads-ad-groups-51 .block-inner {
+  padding: 0px;
+  margin: 0px;
+}
+
+#block-simpleads-ad-groups-63 .content {
+  padding: 0px;
+  color: #000;	
+}
+#block-simpleads-ad-groups-63 .block-inner {
+  padding: 0px;
+  margin: 0px;
+}
+
+#block-block-11 {box-shadow: none;}
+
+#block-block-7 {float: right; margin-top:-90px;}	
+
+
+
+#block-block-12 .block-inner {text-align:center; padding-left: 100px;}
+
+
+
+
+
+
+#block-simpleads-ad-groups-64 .block-inner {
+  padding: 0px 0 0 0;
+  margin: 0px 0px 20px 0px;
+}
+.page-taxonomy #capption {display:none;}
+#block-simpleads-ad-groups-52 {margin-left: 470px; float: left; margin-top: -100px;}
+.field-name-field-subhead {font-weight: bold; font-size: 22px; margin-bottom: 20px; margin-top: 10px;}
+.field-name-field-kicker {border-top: 1px solid #ccc; font-style:italic;}
+.field-name-field-dateline {display:inline; font-weight:bold; text-transform:uppercase; float: left; margin-right: 8px;}
+
+.field-name-field-pulled-quote {background-image: url("/sites/all/themes/bones/images/icons_48/openquote.png"); width: 300px; min-height: 100px; font-size: 18px; float: right;background-repeat: no-repeat; padding-left: 50px;}
+
+
+blockquote  {background-image: none; margin: 0px; padding: 0px;}
+
+
+#block-menu-block-2 ul.menu li,#block-menu-block-2 #main-menu ul.menu li,#block-menu-block-2 #user-menu ul.menu li,#block-menu-block-2 #nav-menu ul.menu li
+{
+  float: none;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  list-style-type: circle;
+  list-style-image: none;
+  list-style-position: inside;
+}
+#block-menu-block-3 ul.menu li,#block-menu-block-3 #main-menu ul.menu li,#block-menu-block-3 #user-menu ul.menu li,#block-menu-block-3 #nav-menu ul.menu li
+{
+  float: none;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  list-style-type: circle;
+  list-style-image: none;
+  list-style-position: inside;
+}
+
+#views-slideshow-galleria-1 .views-slideshow-galleria-images-1 {max-width: 230px; height: auto;}
+
+.views-slideshow-controls-bottom img {float: left; margin-right: 10px;}
+#leader {margin-top: 30px; margin-bottom: -90px; padding: 0px; text-align:center; margin-left: 100px;}

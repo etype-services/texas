@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the uc_chase_paymentech module.
+ */
+
+
+/**
+ * Implements hook_install().
+ */
+function uc_chase_paymentech_install() {
+  // placeholder for the time being.
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function uc_chase_paymentech_requirements($phase) {
+  // placeholder for the time being.
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function uc_chase_paymentech_uninstall() {
+  watchdog('chase_paymentech_ehc', 'uninstalling chase');
+  // Delete related variables all at once.
+  db_delete('variable')
+    ->condition('name', 'chasepaymentech_ehc_%', 'LIKE')
+    ->execute();
+}
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function uc_chase_paymentech_last_removed() {
+  return 1;
+}

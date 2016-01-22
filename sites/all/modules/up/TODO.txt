@@ -1,0 +1,7 @@
+== TODO ==
+
+What's left to be done before any sort of release can go out the door?
+
+* Refresh auth token.
+* Select whether or not to fetch details for each summary.
+* Use queue for fetching and processing.

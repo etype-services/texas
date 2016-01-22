@@ -1,0 +1,14 @@
+name = Chase Paymentech E-Xact Hosted Checkout 
+description = Integrates the Chase Paymentech's gateway through the E-Xact's Hosted Checkout interface.
+dependencies[] = uc_payment
+// dependencies[] = uc_credit
+package = Ubercart - payment
+core = 7.x
+
+
+; Information added by drupal.org packaging script on 2013-03-06
+version = "7.x-1.0-alpha2"
+core = "7.x"
+project = "uc_chase_paymentech"
+datestamp = "1362583824"
+

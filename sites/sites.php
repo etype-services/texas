@@ -1,6 +1,6 @@
 <?php
 
-$sites['yourforneymessenger.etypegoogle4.com'] = 'yourforneymessenger.com';
+$sites['yourforneymessenger.etypegoogle5.com'] = 'yourforneymessenger.com';
 $sites['yourforneymessenger.com'] = 'yourforneymessenger.com';
 $sites['www.yourforneymessenger.com'] = 'yourforneymessenger.com';
 $sites['prod.yourforneymessenger.com'] = 'yourforneymessenger.com';

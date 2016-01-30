@@ -414,6 +414,11 @@ h3.site-slogan {
   background: 0;
 }
 
+/* overwrite space style */
+.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
+    background: #e10e2e;
+}
+
 
 /* MAIN MENU 
 --------------------------------------------------------------------------*/
@@ -434,7 +439,7 @@ h3.site-slogan {
   margin: 0;
   border: 1px solid #dddddd;
   border-bottom: 3px solid #000;
-  background: #333333 url(../images/style1/main-menu-bg.png) top left repeat-x;
+  /*background: #333333 url(../images/style1/main-menu-bg.png) top left repeat-x;*/
 }
 
 #main-menu ul.menu li {
@@ -445,10 +450,9 @@ h3.site-slogan {
   display: block;
   height: 40px;
   line-height: 40px;
-  color: #555555;
+  color: #ffffff;
   padding: 0 20px;	
   text-transform: uppercase;
-  text-shadow: 1px 1px #ffffff;
   border-right: 1px solid #dddddd;
   border-left: 1px solid #f9f9f9;
 }
@@ -471,11 +475,15 @@ h3.site-slogan {
 }
 
 #main-menu ul.menu li a.active {
-  color: #333333;
+  color: #ffffff;
   height: 38px;
   line-height: 38px;
   border-top: 2px solid #000;
   text-decoration: none;
+}
+
+#main-menu ul.menu li a.active:hover {
+  color: #333333;
 }
 
 /* Main Menu Drop Down */
@@ -1393,6 +1401,6 @@ blockquote  {background-image: none; margin: 0px; padding: 0px;}
 #block-simpleads-ad-groups-218 img {max-width: 100%;}
 
 #block-simpleads-ad-groups-216  { margin-right: auto; margin-left: auto; text-align: center;}
-#block-simpleads-ad-groups-217  { margin-right: auto; margin-left: auto; text-align: center;}
+#block-simpleads-ad-groups-217  { margin-right: auto; margin-left: auto; text-align: center; margin-top: 1em;}
 #block-simpleads-ad-groups-216 img {max-width: 100%; margin-right: auto; margin-left: auto; text-align: center;}
 #block-simpleads-ad-groups-217 img {max-width: 100%; margin-right: auto; margin-left: auto; text-align: center;}

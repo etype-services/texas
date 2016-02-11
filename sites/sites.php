@@ -1,4 +1,12 @@
 <?php
+
+$sites['uvaldeleadernews.etypegoogle5.com'] = 'uvaldeleadernews.com';
+$sites['uvaldeleadernews.com'] = 'uvaldeleadernews.com';
+$sites['www.uvaldeleadernews.com'] = 'uvaldeleadernews.com';
+$sites['prod.uvaldeleadernews.com'] = 'uvaldeleadernews.com';
+$sites['dev.uvaldeleadernews.com'] = 'uvaldeleadernews.com';
+
+
 $sites['devilsrivernews.etypegoogle5.com'] = 'devilsrivernews.com';
 $sites['devilsrivernews.com'] = 'devilsrivernews.com';
 $sites['www.devilsrivernews.com'] = 'devilsrivernews.com';

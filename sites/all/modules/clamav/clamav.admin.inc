@@ -137,29 +137,5 @@ function clamav_admin_settings($form, &$form_state) {
     '#description' => t("Full path to the 'clamscan' utility."),
   );
 
-
-
-
-
-  $form['integration'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Integration'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-  $form['integration']['clamav_enable_element_file_widget'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Scan file field uploads'),
-    '#default_value' => module_exists('file') && variable_get('clamav_enable_element_file_widget', TRUE),
-    '#disabled' => !module_exists('file'),
-  );
-  $form['integration']['clamav_enable_element_image_widget'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Scan image field uploads'),
-    '#default_value' => module_exists('image') && variable_get('clamav_enable_element_image_widget', TRUE),
-    '#disabled' => !module_exists('image'),
-  );
-
-
   return system_settings_form($form);
 }

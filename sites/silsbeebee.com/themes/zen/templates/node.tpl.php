@@ -83,20 +83,10 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-   <?php if (!$page && $title): ?>
-    <div class="teaser-date" >
-	  <div class="side">
-		<div class="dayD"><?php print date("D",$created); ?></div>
-		<div class="day"><?php print date("d",$created); ?></div>
-		<div class="month"><?php print date("M",$created); ?></div>
-	  </div> 
-	  <div class="node-side">
-  <?php endif; ?>
-
   <?php print $user_picture; ?>
-  
+
   <?php print render($title_prefix); ?>
-  <?php if (!$page && $title): ?>   
+  <?php if (!$page && $title): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
@@ -120,19 +110,8 @@
     ?>
   </div>
 
-  <?php if ($page): ?> 
-  
-    <?php print render($content['links']); ?>
+  <?php print render($content['links']); ?>
 
-	<?php print render($content['comments']); ?>
-  
-  <?php endif; ?>
-  
- 
-  
-  <?php if (!$page && $title): ?>   
-	  </div>   
-	</div>    
-  <?php endif; ?>
+  <?php print render($content['comments']); ?>
 
 </div><!-- /.node -->

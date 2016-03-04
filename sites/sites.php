@@ -61,3 +61,9 @@ $sites['silsbeebee.com'] = 'silsbeebee.com';
 $sites['www.silsbeebee.com'] = 'silsbeebee.com';
 $sites['prod.silsbeebee.com'] = 'silsbeebee.com';
 $sites['dev.silsbeebee.com'] = 'silsbeebee.com';
+
+$sites['coveleaderpress.etypegoogle5.com'] = 'coveleaderpress.com';
+$sites['coveleaderpress.com'] = 'coveleaderpress.com';
+$sites['www.coveleaderpress.com'] = 'coveleaderpress.com';
+$sites['prod.coveleaderpress.com'] = 'coveleaderpress.com';
+$sites['dev.coveleaderpress.com'] = 'coveleaderpress.com';

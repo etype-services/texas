@@ -67,3 +67,15 @@ $sites['coveleaderpress.com'] = 'coveleaderpress.com';
 $sites['www.coveleaderpress.com'] = 'coveleaderpress.com';
 $sites['prod.coveleaderpress.com'] = 'coveleaderpress.com';
 $sites['dev.coveleaderpress.com'] = 'coveleaderpress.com';
+
+$sites['perrytonherald.etypegoogle5.com'] = 'perrytonherald.com';
+$sites['perrytonherald.com'] = 'perrytonherald.com';
+$sites['www.perrytonherald.com'] = 'perrytonherald.com';
+$sites['prod.perrytonherald.com'] = 'perrytonherald.com';
+$sites['dev.perrytonherald.com'] = 'perrytonherald.com';
+
+$sites['mybiglake.etypegoogle5.com'] = 'mybiglake.com';
+$sites['mybiglake.com'] = 'mybiglake.com';
+$sites['www.mybiglake.com'] = 'mybiglake.com';
+$sites['prod.mybiglake.com'] = 'mybiglake.com';
+$sites['dev.mybiglake.com'] = 'mybiglake.com';

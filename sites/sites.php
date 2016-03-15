@@ -79,3 +79,9 @@ $sites['mybiglake.com'] = 'mybiglake.com';
 $sites['www.mybiglake.com'] = 'mybiglake.com';
 $sites['prod.mybiglake.com'] = 'mybiglake.com';
 $sites['dev.mybiglake.com'] = 'mybiglake.com';
+
+$sites['cantonguide.etypegoogle5.com'] = 'cantonguide.com';
+$sites['cantonguide.com'] = 'cantonguide.com';
+$sites['www.cantonguide.com'] = 'cantonguide.com';
+$sites['prod.cantonguide.com'] = 'cantonguide.com';
+$sites['dev.cantonguide.com'] = 'cantonguide.com';

@@ -1,3 +1,4 @@
+
 /**
  * A simple sample carousel skin.
  *
@@ -12,7 +13,7 @@
 }
 
 .jcarousel-skin-default .jcarousel-container-horizontal {
-  width: auto;
+  width: 440px;
   height: 102px;
   padding: 20px 40px;
   margin: auto;
@@ -26,7 +27,7 @@
 }
 
 .jcarousel-skin-default .jcarousel-clip-horizontal {
-  width: auto;
+  width: 440px;
   overflow: hidden;
 }
 

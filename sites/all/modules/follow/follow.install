@@ -20,7 +20,7 @@ function follow_install() {
     ))
     ->execute();
   // Save the initial CSS.
-  follow_save_css();
+  // follow_save_css();
 }
 
 /**
@@ -121,7 +121,7 @@ function follow_update_7004() {
   }
 
   // Save the initial CSS.
-  follow_save_css();
+  // follow_save_css();
 
   return t("Renamed Follow module's alignment and icon style variables.");
 }

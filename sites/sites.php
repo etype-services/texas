@@ -85,3 +85,15 @@ $sites['cantonguide.com'] = 'cantonguide.com';
 $sites['www.cantonguide.com'] = 'cantonguide.com';
 $sites['prod.cantonguide.com'] = 'cantonguide.com';
 $sites['dev.cantonguide.com'] = 'cantonguide.com';
+
+$sites['gonzalescannon.etypegoogle5.com'] = 'gonzalescannon.com';
+$sites['gonzalescannon.com'] = 'gonzalescannon.com';
+$sites['www.gonzalescannon.com'] = 'gonzalescannon.com';
+$sites['prod.gonzalescannon.com'] = 'gonzalescannon.com';
+$sites['dev.gonzalescannon.com'] = 'gonzalescannon.com';
+
+$sites['theedenecho.etypegoogle5.com'] = 'theedenecho.com';
+$sites['theedenecho.com'] = 'theedenecho.com';
+$sites['www.theedenecho.com'] = 'theedenecho.com';
+$sites['prod.theedenecho.com'] = 'theedenecho.com';
+$sites['dev.theedenecho.com'] = 'theedenecho.com';

@@ -300,6 +300,9 @@ h2.node-title{}
 
 #block-menu-menu-secondary-menu{float:right;display:block;clear:both;text-align:right}
 
+#block-simpleads-ad-groups-12, #block-simpleads-ad-groups-15{background:transparent;margin-left:-10px;}
+
+#block-simpleads-ad-groups-12 img, #block-simpleads-ad-groups-15 img{width:290px;height:auto;margin-bottom:10px;}
 
 .calendar-calendar{margin-top:-20px;}
 
@@ -332,44 +335,13 @@ h2.node-title{}
 
 .image-ad a img{max-width:100%;}
 
-/* style for top leaderboard ads */
-#block-simpleads-ad-groups-31 img{width:728px;height:90px;float:left;margin-right:10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-32 img{width:728px;height:90px;float:left;margin-right:10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-33 img{width:728px;height:90px;float:left;margin-right:10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-34 img{width:728px;height:90px;float:left;margin-right:10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-43 img{width:728px;height:90px;float:left;margin-right:10px;margin-bottom:20px;}
+#block-simpleads-ad-groups-31 img{width: 300px;}
+#block-simpleads-ad-groups-31{background:transparent;margin-left:-10px;}
+
+#block-simpleads-ad-groups-32 img{float:left;margin-right:5px;margin-bottom:20px;margin-top:15px;}
+#block-simpleads-ad-groups-33 img{float:right;margin-left:5px;margin-bottom:20px;margin-top:15px;}
+
+#block-simpleads-ad-groups-34 img{width: 135px; height: 160px; float: left; display: block; clear:none; margin-left: 10px;margin-right: 5px; margin-top:10px;}
+#block-simpleads-ad-groups-34 {margin-left:-20px; margin-top:-5px; width: 300px; overflow: visible;}
 
 #block-block-14{margin-left:-10px;margin-top:-17px;}
-#block-block-8{margin-left:-10px;}
-
-#block-views-videos-block {margin-left:-10px;}
-
-/* style for bottom leaderboard ads */
-#block-simpleads-ad-groups-52 {width:728px;height:90px;}
-#block-simpleads-ad-groups-52 img{width:728px;height:90px;float:left;margin-left:-10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-53 {width:728px;height:90px;}
-#block-simpleads-ad-groups-53 img{width:728px;height:90px;float:left;margin-left:-10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-54 {width:728px;height:90px;}
-#block-simpleads-ad-groups-54 img{width:728px;height:90px;float:left;margin-left:-10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-55 {width:728px;height:90px;}
-#block-simpleads-ad-groups-55 img{width:728px;height:90px;float:left;margin-left:-10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-56 {width:728px;height:90px;}
-#block-simpleads-ad-groups-56 img{width:728px;height:90px;float:left;margin-left:-10px;margin-bottom:20px;}
-#block-simpleads-ad-groups-57 {width:728px;height:90px;}
-#block-simpleads-ad-groups-57 img{width:728px;height:90px;float:left;margin-left:-10px;margin-bottom:20px;}
-
-/* style for sidebar ads, small sidebar ads, and large sidebar ads */
-#block-simpleads-ad-groups-12, #block-simpleads-ad-groups-15, #block-simpleads-ad-groups-35, #block-simpleads-ad-groups-36, #block-simpleads-ad-groups-37, #block-simpleads-ad-groups-38, #block-simpleads-ad-groups-39, #block-simpleads-ad-groups-40, #block-simpleads-ad-groups-41, #block-simpleads-ad-groups-42, #block-simpleads-ad-groups-44, #block-simpleads-ad-groups-45,#block-simpleads-ad-groups-46, #block-simpleads-ad-groups-47, #block-simpleads-ad-groups-48, #block-simpleads-ad-groups-49, #block-simpleads-ad-groups-50, #block-simpleads-ad-groups-51 {width:300px;background:transparent;margin-left:-10px;}
-#block-simpleads-ad-groups-12 img, #block-simpleads-ad-groups-15 img, #block-simpleads-ad-groups-35 img, #block-simpleads-ad-groups-36 img, #block-simpleads-ad-groups-37 img, #block-simpleads-ad-groups-38 img, #block-simpleads-ad-groups-39 img, #block-simpleads-ad-groups-40 img, #block-simpleads-ad-groups-41 img, #block-simpleads-ad-groups-42 img, #block-simpleads-ad-groups-44 img, #block-simpleads-ad-groups-45 img, #block-simpleads-ad-groups-46 img, #block-simpleads-ad-groups-47 img, #block-simpleads-ad-groups-48 img, #block-simpleads-ad-groups-49 img, #block-simpleads-ad-groups-50 img, #block-simpleads-ad-groups-51 img{width:300px;height:auto;margin-bottom:10px;}
-
-
-#block-block-16{width:300px;margin-left:-10px;margin-bottom:10px;}
-#block-block-16 img{width:300px;margin-left:-10px}
-
-#block-dfp-tpa-northsidebar iframe {width: 300px; height:250px; margin-left:-7px;}
-#block-dfp-tpa-northleaderboard iframe {width: 728px; height:90px; margin-bottom:5px; margin-left:-9px;}
-
-#block-views-education-block .views-row-last{border-bottom:none !important;} 
-#block-views-education-block .views-row{border-bottom:1px dashed #CCCCCC;clear:both;margin-bottom:10px;min-height:62px;padding-bottom:10px;padding-left:71px;}
-#block-views-education-block img{margin-left:-71px;}
-#block-views-education-block {margin-left:10px;}

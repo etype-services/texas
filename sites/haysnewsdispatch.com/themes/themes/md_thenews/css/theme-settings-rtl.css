@@ -1,0 +1,82 @@
+.md-tabs-head .tab-item {
+	float: right !important
+}
+.md-subtabs .subtab-item {
+	float: right !important;
+	border-left: none;
+	border-right: 1px solid #E3E3E3;
+}
+.md-subtabs .subtab-item.first {
+	border-right: 0;
+	padding-left: 20px !important;
+	padding-right: 0 !important
+}
+.md-listleft {
+	float: right;
+	margin: 0 0 0 40px;
+}
+.md-listcontent {
+	float: right
+}
+.md-listleft li.ui-state-active a,
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+	background:url(../images/theme-settings/list-active-rtl.png) no-repeat 0 0;
+}
+.dk_container, .cf_container {
+	float: right
+}
+.md-wrap .form-font label, .md-wrap .form-font-family label, .md-wrap .form-text-style label, .labelleft, .md-wrap #edit-design-background .form-font-color label, .md-wrap .form-item-choose-bg label, .md-wrap .form-font-color label {
+	float: right
+}
+.colorSelect, .colorSelect2 {
+	float: right;
+	margin: 0 0 0 6px;
+}
+.md-wrap .button, .filewrapper, .colorpicker .button {
+	margin-right: 4px;
+	margin-left: 0;
+}
+#edit-design-background .description {
+	clear: right;
+}
+#edit-design-background .description,
+#design-bg-custom {
+	padding-left: 0;
+	padding-right: 155px;
+}
+.ptwrap div {
+	float: right;
+	margin: 10px 0 0 9px;
+}
+.md-wrap .form-font-weight,
+.md-wrap .form-font-size {
+	float: right
+}
+.withpreviewbtn .form-item {
+	float: right
+}
+.previewbtn {
+	float: right;
+	margin-left: 0 ;
+	margin-right: 20px;
+}
+
+
+
+.bbwrap div, .fbwrap div, .sbpwrap div, .nbdwrap div, .npdwrap div, .share-twitter-wrap div, .share-gplus-wrap div, .share-stumble-wrap div,
+.md-wrap .form-highlight,
+.md-wrap .form-strikethrough,
+.md-wrap .form-link-color,
+.form-text-style .form-item .form-item {
+	float: right;
+}
+.form-text-style .form-item .form-item label {float: none;}
+.labelleft {float: right !important}
+.withpreviewbtn .form-item {
+	float: right;
+}
+.textpreview a {
+	right: auto;
+	left: 20px;
+	text-indent: 500em;
+}

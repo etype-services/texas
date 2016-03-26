@@ -1,0 +1,163 @@
+a:hover,
+a:active,
+a:focus { color: #FF0097;}
+.highlight {
+    background-color: #FF0097;
+}
+/* 4.	Form style
+--------------------------------------------------------------------------*/
+/* Buttons */
+input.form-submit,
+a.button,
+.link-wrapper a {
+    background-image:-moz-linear-gradient(100% 0% -90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    background-image:-webkit-gradient(linear,100% 0%,100% 115%,color-stop(0, rgb(255,32,166)),color-stop(0.99, rgb(255,0,151)));
+    background-image:-webkit-linear-gradient(-90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    background-image:-o-linear-gradient(-90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    background-image:-ms-linear-gradient(-90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    background-image:linear-gradient(-90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    -moz-box-shadow:0px 1px 0px rgb(215,0,129) ,0px 2px 2px rgba(0,0,0,0.21);
+    -webkit-box-shadow:0px 1px 0px rgb(215,0,129) ,0px 2px 2px rgba(0,0,0,0.21);
+    box-shadow:0px 1px 0px rgb(215,0,129) ,0px 2px 2px rgba(0,0,0,0.21);
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff20a6,endColorstr=#ffff0097,GradientType=0)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ffd70081,Positive=true)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#36000000,Positive=true)";
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff20a6,endColorstr=#ffff0097,GradientType=0)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ffd70081,Positive=true)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#36000000,Positive=true);
+}
+input.form-submit:hover,
+a.button:hover,
+.link-wrapper a:hover {
+    background-image:-moz-linear-gradient(100% 0% -90deg,rgb(255,0,151) 0%,rgb(232,0,139) 99%);
+    background-image:-webkit-gradient(linear,100% 0%,100% 115%,color-stop(0, rgb(255,0,151)),color-stop(0.99, rgb(232,0,139)));
+    background-image:-webkit-linear-gradient(-90deg,rgb(255,0,151) 0%,rgb(232,0,139) 99%);
+    background-image:-o-linear-gradient(-90deg,rgb(255,0,151) 0%,rgb(232,0,139) 99%);
+    background-image:-ms-linear-gradient(-90deg,rgb(255,0,151) 0%,rgb(232,0,139) 99%);
+    background-image:linear-gradient(-90deg,rgb(255,0,151) 0%,rgb(232,0,139) 99%);
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff0097,endColorstr=#ffe8008b,GradientType=0)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ffd70081,Positive=true)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#36000000,Positive=true)";
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff0097,endColorstr=#ffe8008b,GradientType=0)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ffd70081,Positive=true)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=2,Color=#36000000,Positive=true);
+}
+input.form-submit:active,
+a.button:active,
+.link-wrapper a:active {
+    background-image:-moz-linear-gradient(100% 0% -90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    background-image:-webkit-gradient(linear,100% 0%,100% 115%,color-stop(0, rgb(255,32,166)),color-stop(0.99, rgb(255,0,151)));
+    background-image:-webkit-linear-gradient(-90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    background-image:-o-linear-gradient(-90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    background-image:-ms-linear-gradient(-90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    background-image:linear-gradient(-90deg,rgb(255,32,166) 0%,rgb(255,0,151) 99%);
+    -moz-box-shadow:0px 1px 0px rgb(215,0,129);
+    -webkit-box-shadow:0px 1px 0px rgb(215,0,129);
+    box-shadow:0px 1px 0px rgb(215,0,129);
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff20a6,endColorstr=#ffff0097,GradientType=0)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ffd70081,Positive=true)";
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff20a6,endColorstr=#ffff0097,GradientType=0)
+    progid:DXImageTransform.Microsoft.dropshadow(OffX=0,OffY=1,Color=#ffd70081,Positive=true);
+}
+fieldset legend a {
+  color: #FF0097;
+}
+fieldset legend a:hover,
+fieldset legend a:focus,
+fieldset legend a:active {
+  color: #333;
+}
+input.form-text:focus,
+textarea.form-textarea:focus {
+    border-color: #FF15A2;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 0, 151, 0.6);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 0, 151, 0.6);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 0, 151, 0.6);
+}
+#footer a {
+	color: #BABABA
+}
+#footer a:hover {
+	color: #FFF;
+}
+
+/* Main menu */
+ul#main-menu-links li:hover a,
+ul#main-menu-links li.active a {
+	background: #FF0097;
+}
+#nav ul.sf-menu li > a:hover,
+#nav ul.sf-menu li.sfHover > a,
+#nav ul.sf-menu li a.active {
+	background: #fff;
+	color: #FF0097;
+}
+#nav ul.sf-menu li li a:hover,
+#nav ul.sf-menu li li.active-trail > a {
+	color: #FF0097;
+}
+ul.menu li a.active {
+	color: #FF0097
+}
+
+#slider .views-field-view-node a {
+	color: #FF0097;
+}
+#slider .views-field-view-node a:hover {
+	color: #111;
+}
+#headlines .views-field-title a:hover,
+#editorspick .views-field-title a:hover,
+.view-latest-articles .views-field-title a:hover {
+	color: #FF0097;
+}
+#editorspick .views-field-field-category a {
+	color: #FF0097;
+}
+#editorspick .views-field-field-category a:hover {
+	color: #111;
+}
+a.cycle-prev,
+a.cycle-next {
+    background-image: url("../../images/colors/magenta/editorspick-btn.png");
+}
+.blockhover h3.block-title {
+    color: #FF0097;
+}
+.view-hot-videos .views-field-title a:hover {
+    color: #FF0097;
+}
+.ui-accordion .ui-accordion-header.ui-state-active {
+	background: #FF0097;
+}
+.item-list ul.quicktabs-tabs li a:hover,
+.item-list ul.quicktabs-tabs li.active a {
+    color: #FF0097;
+}
+.cycle-pager span.cycle-pager-active,
+.cycle-pager span:hover,
+#headlines .holder a:hover,
+#headlines .holder a.jp-current { background: #FF0097;}
+
+.node-content a { color: #53A8D0;}
+.node-content a:hover,
+.node-content a:active,
+.node-content a:focus { color: #333;}
+
+.comment .username {
+    color:  #FF0097;
+}
+.comment .username:hover {
+    color: #111111;
+}
+.comment .date-time a:hover {
+    color:  #FF0097;
+}
+.comment .new {
+	color: #FF0097;
+}
+
+.pager li.pager-current {
+  background-color: #FF0097;
+	border: 1px solid #FF0097;
+}

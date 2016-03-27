@@ -98,14 +98,8 @@ $sites['www.theedenecho.com'] = 'theedenecho.com';
 $sites['prod.theedenecho.com'] = 'theedenecho.com';
 $sites['dev.theedenecho.com'] = 'theedenecho.com';
 
-/* haysnewsdispatch.etypegoogle5.com */
-$sites['haysnewsdispatch.etypegoogle5.com'] = 'haysnewsdispatch.com';
-$sites['haysnewsdispatch.com'] = 'haysnewsdispatch.com';
-$sites['www.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
-$sites['prod.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
-$sites['dev.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
-
-$sites['newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
-$sites['www.newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
-$sites['prod.newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
-$sites['dev.newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
+$sites['eastlandcountytoday.etypegoogle5.com'] = 'eastlandcountytoday.com';
+$sites['eastlandcountytoday.com'] = 'eastlandcountytoday.com';
+$sites['www.eastlandcountytoday.com'] = 'eastlandcountytoday.com';
+$sites['prod.eastlandcountytoday.com'] = 'eastlandcountytoday.com';
+$sites['dev.eastlandcountytoday.com'] = 'eastlandcountytoday.com';

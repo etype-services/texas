@@ -82,9 +82,6 @@ header {
 .site-logo img {max-width: 100%;
 }
 
-hgroup {
-}
-
 h1.site-name, h2.site-name {
   line-height: 48px;
   font-size: 48px;
@@ -620,12 +617,7 @@ h3.site-slogan {
 
 .node .taxonomy .field-type-taxonomy-term-reference {
   margin: 5px 0;
-  field-type-taxonomy-term-reference
   background: #f9f9f9;	
-}
-
-.node .taxonomy-inner {
-≈
 }
 
 .node .taxonomy a {
@@ -720,7 +712,7 @@ h3.site-slogan {
 
 #comments .indented .comment {
   padding: 10px;
-  margin-left: 0px;
+  margin-left: 0;
   margin-bottom: 0;
   background: #f9f9f9;
   border-bottom: 0;
@@ -737,7 +729,7 @@ h3.site-slogan {
 }
 
 #search-block-form {
-  margin-top: 0x;
+  margin-top: 0;
   background: 0;
   line-height: 25px;
   border-left: 1px solid #dddddd;

@@ -5,8 +5,6 @@ engine = phptemplate
 screenshot = screenshot.png
 base theme = bones
 
-stylesheets[all][]   = css/superfish.css
-
 scripts[] = js/scripts.js
 scripts[] = js/jquery.color.js
 scripts[] = js/jquery-glowing.js

@@ -432,7 +432,7 @@ h3.site-slogan {
     height: 30px;
     line-height: 30px;
     color: #ffffff;
-    padding: 0 20px;
+    padding: 0 14px;
     text-transform: uppercase;
     border: none;
 }
@@ -446,7 +446,7 @@ h3.site-slogan {
 }
 
 #main-menu ul.menu li a.active {
-    color: #333333;
+    color: #3300c4;
     height: 30px;
     line-height: 30px;
     text-decoration: none;

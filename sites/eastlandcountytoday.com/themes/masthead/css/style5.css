@@ -446,11 +446,11 @@ h3.site-slogan {
 }
 
 #main-menu ul.menu li a.active {
-    color: #3300c4;
+    color: #000000;
     height: 30px;
     line-height: 30px;
     text-decoration: none;
-    background-color: #fcefa1;
+    background-color: #eeeeee;
 }
 
 /* Main Menu Drop Down */

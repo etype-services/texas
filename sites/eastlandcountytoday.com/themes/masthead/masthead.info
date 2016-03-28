@@ -5,8 +5,7 @@ engine = phptemplate
 screenshot = screenshot.png
 base theme = bones
 
-stylesheets[all][]   = style.css
-stylesheets[all][]   = superfish.css
+stylesheets[all][]   = css/superfish.css
 
 scripts[] = js/scripts.js
 scripts[] = js/jquery.color.js

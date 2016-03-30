@@ -298,11 +298,23 @@ h2.node-title{}
 
 #block-menu-menu-secondary-menu li{display:inline;height:20px;padding:0px;margin-bottom:10px;}
 
+#block-menu-menu-secondary-menu li a {
+    border-right: 1px solid #242424;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 10px 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#block-menu-menu-secondary-menu li a:hover {background: #12aeff none repeat scroll 0 0;}
+
 #block-menu-menu-secondary-menu{float:right;display:block;clear:both;text-align:right}
 
-#block-simpleads-ad-groups-12, #block-simpleads-ad-groups-15{background:transparent;margin-left:-10px;}
+#block-simpleads-ad-groups-12, #block-simpleads-ad-groups-15{background:transparent;}
 
-#block-simpleads-ad-groups-12 img, #block-simpleads-ad-groups-15 img{width:290px;height:auto;margin-bottom:10px;}
+#block-simpleads-ad-groups-12 img, #block-simpleads-ad-groups-15 img{width:300px;height:auto;margin-bottom:10px;}
 
 .calendar-calendar{margin-top:-20px;}
 
@@ -345,3 +357,5 @@ h2.node-title{}
 #block-simpleads-ad-groups-34 {margin-left:-20px; margin-top:-5px; width: 300px; overflow: visible;}
 
 #block-block-14{margin-left:-10px;margin-top:-17px;}
+
+#block-simpleads-ad-groups-52 {margin-left: auto; margin-right: auto; text-align:center;}

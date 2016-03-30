@@ -103,3 +103,9 @@ $sites['eastlandcountytoday.com'] = 'eastlandcountytoday.com';
 $sites['www.eastlandcountytoday.com'] = 'eastlandcountytoday.com';
 $sites['prod.eastlandcountytoday.com'] = 'eastlandcountytoday.com';
 $sites['dev.eastlandcountytoday.com'] = 'eastlandcountytoday.com';
+
+$sites['eldoradosuccess.etypegoogle5.com'] = 'eldoradosuccess.com';
+$sites['eldoradosuccess.com'] = 'eldoradosuccess.com';
+$sites['www.eldoradosuccess.com'] = 'eldoradosuccess.com';
+$sites['prod.eldoradosuccess.com'] = 'eldoradosuccess.com';
+$sites['dev.eldoradosuccess.com'] = 'eldoradosuccess.com';

@@ -1010,9 +1010,8 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 .sf-menu a {
-    border: 1px outset #000000;
     color: #fff;
-    padding: 0.75em .65em;
+    padding: 0.75em .75em;
 
 }
 
@@ -1055,7 +1054,11 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 .sf-menu a:active {
     background: #339;
     color: #fff;
+}
 
+.sf-menu li.active a, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+    background: #339;
+    color: #fff;
 }
 
 .sf-menu.sf-navbar li li {
@@ -1063,7 +1066,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     color: #000;
     font-size: 12px;
     text-transform: capitalize;
-
 }
 
 .sf-menu.sf-navbar li ul {

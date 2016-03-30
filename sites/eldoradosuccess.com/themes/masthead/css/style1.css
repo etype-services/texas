@@ -1056,7 +1056,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     color: #fff;
 }
 
-.sf-menu li.active a, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+.sf-menu li.sfHover, .sf-menu li.active a, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
     background: #339;
     color: #fff;
 }

@@ -109,3 +109,13 @@ $sites['eldoradosuccess.com'] = 'eldoradosuccess.com';
 $sites['www.eldoradosuccess.com'] = 'eldoradosuccess.com';
 $sites['prod.eldoradosuccess.com'] = 'eldoradosuccess.com';
 $sites['dev.eldoradosuccess.com'] = 'eldoradosuccess.com';
+
+$sites['myeldorado.net'] = 'eldoradosuccess.com';
+$sites['www.myeldorado.net'] = 'eldoradosuccess.com';
+
+/* fayettecountyrecord.etypegoogle5.com */
+$sites['fayettecountyrecord.etypegoogle5.com'] = 'fayettecountyrecord.com';
+$sites['fayettecountyrecord.com'] = 'fayettecountyrecord.com';
+$sites['www.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
+$sites['prod.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
+$sites['dev.fayettecountyrecord.com'] = 'fayettecountyrecord.com';

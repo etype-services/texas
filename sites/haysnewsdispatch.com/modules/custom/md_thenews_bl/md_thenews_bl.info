@@ -1,0 +1,4 @@
+name = MD TheNews
+description = Module for MD TheNews Theme configuration
+core = 7.x
+package = MD Theme

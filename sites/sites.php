@@ -119,3 +119,9 @@ $sites['fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['www.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['prod.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['dev.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
+
+$sites['haysnewsdispatch.etypegoogle5.com'] = 'haysnewsdispatch.com';
+$sites['haysnewsdispatch.com'] = 'haysnewsdispatch.com';
+$sites['www.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
+$sites['prod.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
+$sites['dev.haysnewsdispatch.com'] = 'haysnewsdispatch.com';

@@ -125,3 +125,9 @@ $sites['haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 $sites['www.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 $sites['prod.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 $sites['dev.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
+
+$sites['fishercountychronicle.etypegoogle5.com'] = 'fishercountychronicle.com';
+$sites['fishercountychronicle.com'] = 'fishercountychronicle.com';
+$sites['www.fishercountychronicle.com'] = 'fishercountychronicle.com';
+$sites['prod.fishercountychronicle.com'] = 'fishercountychronicle.com';
+$sites['dev.fishercountychronicle.com'] = 'fishercountychronicle.com';

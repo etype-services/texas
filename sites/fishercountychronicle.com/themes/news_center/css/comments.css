@@ -1,0 +1,45 @@
+#comments{margin:1.5em 0;}
+
+#comments h2.title{}
+
+#comments h2.comment-form{}
+
+.comment{}
+
+.comment-preview{background-color:#ffffea;}
+
+.comment.new{}
+
+.comment.first{}
+
+.comment.last{}
+
+.comment.odd{}
+
+.comment.even{}
+
+.comment-unpublished{}
+
+.comment-unpublished div.unpublished{}
+
+.comment-by-anonymous{}
+
+.comment-by-node-author{}
+
+.comment-by-viewer{}
+
+h3.comment-title{}
+
+.new{color:#c00;}
+
+.comment .user-picture{}
+
+.comment .submitted{}
+
+.comment .content{}
+
+.comment .user-signature{}
+
+.comment ul.links{}
+
+.indented{}

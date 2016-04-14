@@ -92,12 +92,17 @@ $sites['www.gonzalescannon.com'] = 'gonzalescannon.com';
 $sites['prod.gonzalescannon.com'] = 'gonzalescannon.com';
 $sites['dev.gonzalescannon.com'] = 'gonzalescannon.com';
 
+/* theedenecho.etypegoogle5.com */
 $sites['theedenecho.etypegoogle5.com'] = 'theedenecho.com';
 $sites['theedenecho.com'] = 'theedenecho.com';
 $sites['www.theedenecho.com'] = 'theedenecho.com';
 $sites['prod.theedenecho.com'] = 'theedenecho.com';
 $sites['dev.theedenecho.com'] = 'theedenecho.com';
 
+$sites['edenecho.net'] = 'theedenecho.com';
+$sites['www.edenecho.net'] = 'theedenecho.com';
+
+/* eastlandcountytoday.etypegoogle5.com */
 $sites['eastlandcountytoday.etypegoogle5.com'] = 'eastlandcountytoday.com';
 $sites['eastlandcountytoday.com'] = 'eastlandcountytoday.com';
 $sites['www.eastlandcountytoday.com'] = 'eastlandcountytoday.com';
@@ -131,3 +136,9 @@ $sites['fishercountychronicle.com'] = 'fishercountychronicle.com';
 $sites['www.fishercountychronicle.com'] = 'fishercountychronicle.com';
 $sites['prod.fishercountychronicle.com'] = 'fishercountychronicle.com';
 $sites['dev.fishercountychronicle.com'] = 'fishercountychronicle.com';
+
+$sites['normangeestar.etypegoogle5.com'] = 'normangeestar.com';
+$sites['normangeestar.com'] = 'normangeestar.com';
+$sites['www.normangeestar.com'] = 'normangeestar.com';
+$sites['prod.normangeestar.com'] = 'normangeestar.com';
+$sites['dev.normangeestar.com'] = 'normangeestar.com';

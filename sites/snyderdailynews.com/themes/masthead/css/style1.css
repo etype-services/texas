@@ -209,7 +209,7 @@ h3.site-slogan {
     border: 1px solid #ddd;
     border-bottom: 3px solid #040404;
     background: #ffffff;
-    box-shadow: 0px 1px 5px #bbbbbb;
+    box-shadow: 0 1px 5px #bbbbbb;
 }
 
 /* SIDEBARS 
@@ -251,7 +251,7 @@ h3.site-slogan {
 }
 
 .postscript-wrapper .block-inner {
-    padding: 0px;
+    padding: 0;
 }
 
 .postscript-wrapper .content {
@@ -283,7 +283,7 @@ h3.site-slogan {
 }
 
 #postscript .item-list ul li.last {
-    border-bottom: 0px dotted #555555;
+    border-bottom: 0 dotted #555555;
 }
 
 /* FOOTER
@@ -323,7 +323,7 @@ h3.site-slogan {
 }
 
 .item-list ul li.last {
-    border-bottom: 0px dotted #999999;
+    border-bottom: 0 dotted #999999;
 }
 
 .item-list ul li a {
@@ -381,7 +381,7 @@ h3.site-slogan {
 }
 
 #user-menu ul.menu li li.last {
-    border-bottom: 0px solid #dddddd;
+    border-bottom: 0 solid #dddddd;
 }
 
 #user-menu ul.menu li li a, #user-menu ul.menu li li a.active {
@@ -448,7 +448,7 @@ h3.site-slogan {
 }
 
 #main-menu ul.menu li.first a {
-    border-left: 0px solid #f9f9f9;
+    border-left: 0 solid #f9f9f9;
 }
 
 #main-menu ul.menu li.last a {
@@ -525,7 +525,7 @@ h3.site-slogan {
 }
 
 #main-menu-second-level ul.menu li li.last {
-    border-bottom: 0px solid #dddddd;
+    border-bottom: 0 solid #dddddd;
 }
 
 #main-menu-second-level ul.menu li li a, #main-menu-second-level ul.menu li li a.active {
@@ -570,7 +570,7 @@ h3.site-slogan {
 .node .field-name-field-image img {
     display: block;
     margin-top: -20px;
-    margin-left: 0px;
+    margin-left: 0;
     margin-bottom: 10px;
 }
 
@@ -595,7 +595,7 @@ h3.site-slogan {
 .node ul.inline li {
     display: inline;
     list-style-type: none;
-    padding: 0 5px 0 0px;
+    padding: 0 5px 0 0;
 }
 
 .node ul.links li a {
@@ -661,7 +661,7 @@ h3.site-slogan {
 
 #comments .comment {
     padding: 10px 0;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     border-bottom: 1px solid #dddddd;
 }
 
@@ -702,7 +702,7 @@ h3.site-slogan {
 
 #comments .indented .comment {
     padding: 10px;
-    margin-left: 0px;
+    margin-left: 0;
     margin-bottom: 0;
     background: #f9f9f9;
     border-bottom: 0;
@@ -719,7 +719,7 @@ h3.site-slogan {
 }
 
 #search-block-form {
-    margin-top: 0x;
+    margin-top: 0;
     background: 0;
     line-height: 25px;
     border-left: 1px solid #dddddd;
@@ -765,7 +765,7 @@ h3.site-slogan {
 }
 
 #search-block-form input:focus {
-    box-shadow: 0 0 0px 0 #22d7cc;
+    box-shadow: 0 0 0 0 #22d7cc;
 }
 
 /* SOCIAL
@@ -856,24 +856,24 @@ ul.primary li a {
 
 .profile {
     clear: both;
-    margin: 0em 0;
+    margin: 0 0;
 }
 
 .profile .user-picture {
     float: none;
-    margin: 0 0em 1em 0;
+    margin: 0 0 1em 0;
 }
 
 /* QUICKTABS
 --------------------------------------------------------------------------*/
 
 body #main-content .quicktabs-wrapper .block-inner {
-    padding: 0px;
-    margin-bottom: 0px;
-    border: 0px solid #dddddd;
-    border-bottom: 0px solid #000;
+    padding: 0;
+    margin-bottom: 0;
+    border: 0 solid #dddddd;
+    border-bottom: 0 solid #000;
     background: 0;
-    box-shadow: 0px 0px 0px #bbbbbb;
+    box-shadow: 0 0 0 #bbbbbb;
 }
 
 .quicktabs_main.quicktabs-style-nostyle {
@@ -908,7 +908,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li {
     border: 1px solid #e5e5e5;
     border-bottom: none;
     padding: 2px 3px;
-    margin: 0 0px 0 0;
+    margin: 0 0 0 0;
     position: relative;
 }
 
@@ -972,12 +972,11 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 .preface-wrapper .attachment .views-row-last {
-    border-bottom: 0px dotted #999;
+    border-bottom: 0 dotted #999;
 }
 
 .preface-wrapper .attachment .views-row a {
     font-weight: normal;
-    font-size: 12px;
     display: inline;
     font-size: 0.8em;
     padding: 0 10px;
@@ -1021,7 +1020,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 .preface-wrapper .attachment .views-row-last {
-    border-bottom: 0px dotted #999;
+    border-bottom: 0 dotted #999;
 }
 
 .preface-wrapper .attachment .views-row a {
@@ -1051,123 +1050,123 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 #block-block-1 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-1 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px;
+    padding: 0 0 0 0;
+    margin: 0;
 }
 
 #block-block-28 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-28 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-10 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-10 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-9 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-9 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-8 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-8 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-13 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-13 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-11 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-11 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-14 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-14 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-16 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-16 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-17 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-block-17 .block-inner {
     padding: 5px;
-    margin: 0px;
+    margin: 0;
 }
 
 #block-simpleads-ad-groups-51 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-simpleads-ad-groups-51 .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-simpleads-ad-groups-63 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-simpleads-ad-groups-63 .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-11 {
@@ -1180,22 +1179,22 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 #block-block-25 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-25 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-block-24 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-24 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
@@ -1205,8 +1204,8 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 #block-simpleads-ad-groups-64 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 .page-taxonomy #capption {
@@ -1216,7 +1215,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 #block-simpleads-ad-groups-52 {
     margin-left: auto;
     float: none;
-    margin-top: 0px;
+    margin-top: 0;
     margin-right: auto;
     text-align: center
 }
@@ -1253,20 +1252,20 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 
 blockquote {
     background-image: none;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 #block-menu-block-2 ul.menu li, #block-menu-block-2 #main-menu ul.menu li, #block-menu-block-2 #user-menu ul.menu li, #block-menu-block-2 #nav-menu ul.menu li {
     float: none;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
     padding-left: 10px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
     list-style-type: circle;
     list-style-image: none;
     list-style-position: inside;
@@ -1274,14 +1273,14 @@ blockquote {
 
 #block-menu-block-3 ul.menu li, #block-menu-block-3 #main-menu ul.menu li, #block-menu-block-3 #user-menu ul.menu li, #block-menu-block-3 #nav-menu ul.menu li {
     float: none;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
     padding-left: 10px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
     list-style-type: circle;
     list-style-image: none;
     list-style-position: inside;
@@ -1300,19 +1299,19 @@ blockquote {
 #leader {
     margin-top: 30px;
     margin-bottom: -90px;
-    padding: 0px;
+    padding: 0;
     text-align: center;
     margin-left: 100px;
 }
 
 #block-block-19 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-19 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px;
+    padding: 0 0 0 0;
+    margin: 0;
 }
 
 #block-simpleads-ad-groups-65 img {
@@ -1334,13 +1333,13 @@ blockquote {
 }
 
 #block-block-1 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-block-1 .block-inner {
-    padding: 0px;
-    margin: 0px 0px 0px 0px;
+    padding: 0;
+    margin: 0 0 0 0;
 }
 
 #block-block-1 h3 {
@@ -1349,7 +1348,6 @@ blockquote {
     background-repeat: repeat-x;
     background-attachment: scroll;
     background-position: right center;
-    background-clip: none;
     background-origin: padding-box;
     background-size: auto auto;
 }
@@ -1362,63 +1360,63 @@ blockquote {
 }
 
 #block-simpleads-ad-groups-191 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-simpleads-ad-groups-191 .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-simpleads-ad-groups-192 .content {
-    padding: 0px;
-    color: #000;
+    padding: 0;
+    color: #000000;
 }
 
 #block-simpleads-ad-groups-192 .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-simpleads-ad-groups-193 .content {
-    padding: 0px;
-    color: #000;
+    padding: 0;
+    color: #000000;
 }
 
 #block-simpleads-ad-groups-193 .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-simpleads-ad-groups-194 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-simpleads-ad-groups-194 .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-31 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-31 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-29 .content {
-    padding: 0px 0 0 0;
+    padding: 0 0 0 0;
     color: #999999;
 }
 
 #block-block-29 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
 }
 
 .region-sidebar-second img {
@@ -1426,13 +1424,13 @@ blockquote {
 }
 
 #block-simpleads-ad-groups-213 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-simpleads-ad-groups-213 .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-simpleads-ad-groups-213 img {
@@ -1440,8 +1438,8 @@ blockquote {
 }
 
 #block-dfp-tpa-westsidebar .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-dfp-tpa-westsidebar iframe {

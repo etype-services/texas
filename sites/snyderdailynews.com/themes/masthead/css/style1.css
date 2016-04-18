@@ -426,11 +426,9 @@ h3.site-slogan {
 #main-menu ul.menu {
     display: block;
     height: 100%;
-    min-height: 40px;
-    max-height: 40px;
+    min-height: 30px;
+    max-height: 30px;
     margin: 0;
-    border: 1px solid #dddddd;
-    border-bottom: 3px solid #000;
     background: #000000;
 }
 
@@ -440,10 +438,10 @@ h3.site-slogan {
 
 #main-menu ul.menu li a {
     display: block;
-    height: 40px;
-    line-height: 40px;
+    height: 30px;
+    line-height: 30px;
     color: #ffffff;
-    padding: 0 16px;
+    padding: 0 17px;
     text-transform: uppercase;
 }
 
@@ -457,12 +455,12 @@ h3.site-slogan {
 
 #main-menu ul.menu li a:hover {
     color: #ffffff;
-    background: #eeeeee;
+    background: #575E6E;
 }
 
 #main-menu ul.menu li a.active {
     color: #ffffff;
-    background: #eeeeee;
+    background: #575E6E;
 }
 
 /* Main Menu Drop Down */

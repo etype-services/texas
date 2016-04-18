@@ -142,3 +142,15 @@ $sites['normangeestar.com'] = 'normangeestar.com';
 $sites['www.normangeestar.com'] = 'normangeestar.com';
 $sites['prod.normangeestar.com'] = 'normangeestar.com';
 $sites['dev.normangeestar.com'] = 'normangeestar.com';
+
+$sites['ourtowntimes.etypegoogle5.com'] = 'ourtowntimes.com';
+$sites['ourtowntimes.com'] = 'ourtowntimes.com';
+$sites['www.ourtowntimes.com'] = 'ourtowntimes.com';
+$sites['prod.ourtowntimes.com'] = 'ourtowntimes.com';
+$sites['dev.ourtowntimes.com'] = 'ourtowntimes.com';
+
+$sites['snyderdailynews.etypegoogle5.com'] = 'snyderdailynews.com';
+$sites['snyderdailynews.com'] = 'snyderdailynews.com';
+$sites['www.snyderdailynews.com'] = 'snyderdailynews.com';
+$sites['prod.snyderdailynews.com'] = 'snyderdailynews.com';
+$sites['dev.snyderdailynews.com'] = 'snyderdailynews.com';

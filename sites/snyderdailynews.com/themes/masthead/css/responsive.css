@@ -1,0 +1,232 @@
+#mm0 {
+  margin-bottom: 10px;	
+}
+
+/** 
+
+Note: Design for a width of 768px
+
+**/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+#block-block-1 {display:none}
+.page-node .field-name-field-image img {
+  width: 490px;
+  height: auto;	
+}
+
+.page-node .field-name-field-video iframe {
+  width: 490px;
+  height: 300px;	
+}
+
+.node .content img {
+  max-width: 450px;
+  max-height: auto;	
+}
+	
+/* SLIDESHOW 
+--------------------------------------------------------------------------*/
+
+.view-slideshow .views_slideshow_main {	
+  height: 240px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
+  width: 492px;
+  height: auto;
+}
+
+.view-slideshow .views_slideshow_main .views-field-title {
+  width: 450px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-body {
+  width: 450px; 
+  top:130px;
+  font-size: 11px;
+}
+
+
+/* Slideshow controls */
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
+  width: 54px;
+  height: 35px;
+}
+
+/* Video Featured */
+
+.view-featured-view iframe {
+  width: 195px;	
+  height: 120px;
+}
+	
+}
+
+/** 
+Note: Design for a width of 300px
+**/
+
+@media only screen and (max-width: 767px) {	
+#block-block-1 {display:none}
+.main-content-wrapper {
+    margin-top: 0px;
+}
+
+.node-teaser .field-name-field-image img {
+  float: none;
+  margin: 0 0 20px 0;
+}
+
+.node-teaser .node-content-wrapper {
+  margin-left: 0px;
+}
+
+.node-teaser .field-name-field-video iframe {
+  float: none;
+  width: 240px;
+  height: 160px;
+  margin: 0 0 20px 0;
+}
+
+.page-node .field-name-field-image img {
+  width: 300px;
+  height: auto;	
+}
+
+.page-node .field-name-field-video iframe {
+  width: 300px;
+  height: 200px;	
+}
+
+.node .content img {
+  max-width: 240px;
+  max-height: auto;	
+}
+
+/* SLIDESHOW 
+--------------------------------------------------------------------------*/
+
+.social-links li a {
+  padding-left: 0px;
+  padding-right: 1px;
+}
+
+.view-slideshow .views_slideshow_main {	
+  height: 145px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
+  width: 300px;
+  height: auto;
+}
+
+.view-slideshow .views_slideshow_main .views-field-title {
+  width: 260px;
+}
+
+.view-slideshow .views_slideshow_main .views-field-body {
+  display: none;
+}
+
+
+/* Slideshow controls */
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
+  width: 22px;
+  height: 15px;
+}
+
+/* Video Featured */
+
+.view-featured-view iframe {
+  width: 260px;	
+  height: 180px;
+}
+
+	
+}
+
+/** 
+Note: Design for a width of 420px
+**/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+#block-block-1 {display:none}
+.node .content img {
+  max-width: 380px;
+  max-height: auto;	
+}
+	
+.node-teaser .field-name-field-image img {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.node-teaser .node-content-wrapper {
+  margin-left: 180px;
+}	
+
+.video .node-teaser .node-content-wrapper {
+  margin-left: 0px;
+}	
+
+.node-teaser .field-name-field-video iframe {
+  float: none;
+  width: 360px;
+  height: 220px;
+  margin: 0 0 20px 0;
+}
+
+.page-node .field-name-field-image img {
+  width: 418px;
+  height: auto;	
+}
+
+.page-node .field-name-field-video iframe {
+  width: 418px;
+  height: 300px;	
+}
+
+/* SLIDESHOW 
+--------------------------------------------------------------------------*/
+
+.view-slideshow .views_slideshow_main {	
+  height: 200px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
+  width: 420px;
+  height: auto;
+}
+
+.view-slideshow .views_slideshow_main .views-field-title {
+  width: 380px;
+}
+
+
+.view-slideshow .views_slideshow_main .views-field-body {
+}
+
+
+/* Slideshow controls */
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
+  width: 42px;
+  height: 25px;
+}
+
+/* Video Featured */
+
+.view-featured-view iframe {
+  width: 380px;	
+  height: 220px;
+}
+	
+}
+

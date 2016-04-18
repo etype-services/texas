@@ -613,8 +613,9 @@ table ul.links li {
 	margin-bottom: 17px;
 }
 #logo{
-	float: left;
+/*	float: left; (removed to align leaderboard ad below and center logo)*/
 	margin: 23px 0 0 0;
+	text-align:center;
 }
 #logo a{
 	font-size: 2.5em;
@@ -624,8 +625,9 @@ table ul.links li {
 
 }
 .header-ads {
-    float:  right;
+/*    float:  right; (removed to center leaderboard ad) */
     margin:  12px 0 0;
+	text-align:center;
 }
 .header-ads .ads {
     margin:  0;

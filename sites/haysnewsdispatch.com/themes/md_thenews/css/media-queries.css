@@ -157,7 +157,18 @@
 	}
 }
 
+@media screen and (max-width: 1017px) {
+
+	ul#main-menu-links li a, #nav ul.sf-menu li a {
+		padding: 0 8px;
+	}
+}
+
 @media screen and (max-width: 600px) {
+
+	ul#main-menu-links li a, #nav ul.sf-menu li a {
+		padding: 0 6px;
+	}
 	
 	.js #main-menu-links,
 	.js #superfish-1 { 

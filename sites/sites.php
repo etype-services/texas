@@ -125,12 +125,20 @@ $sites['www.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['prod.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['dev.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 
+/* haysnewsdispatch.etypegoogle5.com */
 $sites['haysnewsdispatch.etypegoogle5.com'] = 'haysnewsdispatch.com';
 $sites['haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 $sites['www.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 $sites['prod.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 $sites['dev.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 
+$sites['newsdispatchnewspaper.etypegoogle5.com'] = 'haysnewsdispatch.com';
+$sites['newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
+$sites['www.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
+$sites['prod.newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
+$sites['dev.newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
+
+/* fishercountychronicle.etypegoogle5.com */
 $sites['fishercountychronicle.etypegoogle5.com'] = 'fishercountychronicle.com';
 $sites['fishercountychronicle.com'] = 'fishercountychronicle.com';
 $sites['www.fishercountychronicle.com'] = 'fishercountychronicle.com';

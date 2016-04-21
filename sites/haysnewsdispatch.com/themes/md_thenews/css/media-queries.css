@@ -172,6 +172,14 @@
 	}
 }
 
+@media screen and (max-width: 700px) {
+
+    ul#main-menu-links li a, #nav ul.sf-menu li a {
+        padding: 0 3px;
+        font-size: 0.9em;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
 	ul#main-menu-links li a, #nav ul.sf-menu li a {

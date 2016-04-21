@@ -157,10 +157,11 @@
 	}
 }
 
-@media screen and (max-width: 1017px) {
+@media screen and (max-width: 800px) {
 
 	ul#main-menu-links li a, #nav ul.sf-menu li a {
-		padding: 0 8px;
+		padding: 0 3px;
+		font-size: 1em;
 	}
 }
 

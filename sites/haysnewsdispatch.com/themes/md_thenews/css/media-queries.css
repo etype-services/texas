@@ -157,6 +157,13 @@
 	}
 }
 
+@media screen and (max-width: 950px) {
+
+    ul#main-menu-links li a, #nav ul.sf-menu li a {
+        padding: 0 6px;
+    }
+}
+
 @media screen and (max-width: 870px) {
 
 	ul#main-menu-links li a, #nav ul.sf-menu li a {

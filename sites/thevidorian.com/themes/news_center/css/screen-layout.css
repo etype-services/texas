@@ -2,7 +2,7 @@
 #header{padding-top:8px;background:none;overflow:visible;width:1040px;clear:right;}
 ul.menu{margin:0;padding:0;}
 ul.menu li{float:left;height:auto!important;list-style:none outside none;margin:0;padding:0;}
-.content .menu li a{color:#FFF;text-decoration:none;padding:8px 10px 5px;font-size:14px;font-weight:600;text-transform:uppercase;border-right:1px solid #242424;}
+.content .menu li a{color:#FFF;text-decoration:none;padding:8px 10px 5px;font-size:14px;font-weight:600;text-transform:uppercase;}
 .content .menu li a:hover{background:none repeat scroll 0 0 #12AEFF;}
 .region-top-advertisement #block-menu-menu-secondary-menu{margin-top:7px;}
 body.front h1{display:none;}

@@ -350,3 +350,13 @@ h2.node-title{}
 #block-views-videos-block {margin-left:-10px;}
 
 #block-block-15 img {width:300px; margin-left:-10px}
+
+.region-top-advertisement .menu li a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 8px 10px 5px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-right: 1px solid #242424;
+}

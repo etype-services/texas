@@ -162,3 +162,9 @@ $sites['snyderdailynews.com'] = 'snyderdailynews.com';
 $sites['www.snyderdailynews.com'] = 'snyderdailynews.com';
 $sites['prod.snyderdailynews.com'] = 'snyderdailynews.com';
 $sites['dev.snyderdailynews.com'] = 'snyderdailynews.com';
+
+$sites['thevidorian.etypegoogle5.com'] = 'thevidorian.com';
+$sites['thevidorian.com'] = 'thevidorian.com';
+$sites['www.thevidorian.com'] = 'thevidorian.com';
+$sites['prod.thevidorian.com'] = 'thevidorian.com';
+$sites['dev.thevidorian.com'] = 'thevidorian.com';

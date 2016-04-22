@@ -881,8 +881,10 @@ ul#main-menu-links li.active a {
 	background: none;
 	border: none;
 }
+/* added text-align:center below to align DFP ad */
 #footer .blcontent {
 	padding: 0;
+	text-align: center;
 }
 #bottom .block,
 #footer .block {
@@ -2491,7 +2493,8 @@ div.admin-panel .description {
 
 /* Custom Responsive Menu */
 
-ul li.leaf {
+ ul li.leaf {
   list-style: none;
   list-style-image: none;
-}
+}  
+

@@ -153,6 +153,13 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
 
   // Misc Settings (Facebook, Twitter, etc.)
 
+  $form['advanced_settings']['misc_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Misc Settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
   $form['advanced_settings']['misc_settings']['twitter'] = array(
     '#type' => 'textfield',
     '#title' => t('Twitter'),

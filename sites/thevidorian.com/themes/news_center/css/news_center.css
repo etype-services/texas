@@ -300,9 +300,9 @@ h2.node-title{}
 
 #block-menu-menu-secondary-menu{float:right;display:block;clear:both;text-align:right}
 
-#block-simpleads-ad-groups-12, #block-simpleads-ad-groups-15{background:transparent;margin-left:-10px;}
+#block-simpleads-ad-groups-12, #block-simpleads-ad-groups-15{background:transparent;}
 
-#block-simpleads-ad-groups-12 img, #block-simpleads-ad-groups-15 img{width:290px;height:auto;margin-bottom:10px;}
+#block-simpleads-ad-groups-12 img, #block-simpleads-ad-groups-15 img{width:300px;height:auto;margin-bottom:10px;}
 
 .calendar-calendar{margin-top:-20px;}
 
@@ -360,3 +360,6 @@ h2.node-title{}
     text-transform: uppercase;
     border-right: 1px solid #242424;
 }
+
+#block-dfp-tpa-southleaderboard iframe {margin-left: -11px;}
+#block-dfp-tpa-southsidebar1 {padding:0px;}

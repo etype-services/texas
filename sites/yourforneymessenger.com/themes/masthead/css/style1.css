@@ -1003,3 +1003,10 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
   font-weight: normal;
   font-size: 12px;
 }
+
+#block-dfp-tpa-northsidebar .block-inner {
+  padding: 0;
+}
+#block-dfp-tpa-northsidebar .content {
+  padding: 0;
+}

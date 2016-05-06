@@ -151,12 +151,35 @@ $sites['www.normangeestar.com'] = 'normangeestar.com';
 $sites['prod.normangeestar.com'] = 'normangeestar.com';
 $sites['dev.normangeestar.com'] = 'normangeestar.com';
 
+/* ourtowntimes.etypegoogle5.com */
 $sites['ourtowntimes.etypegoogle5.com'] = 'ourtowntimes.com';
 $sites['ourtowntimes.com'] = 'ourtowntimes.com';
 $sites['www.ourtowntimes.com'] = 'ourtowntimes.com';
 $sites['prod.ourtowntimes.com'] = 'ourtowntimes.com';
 $sites['dev.ourtowntimes.com'] = 'ourtowntimes.com';
 
+$sites['easttexaspress.com'] = 'ourtowntimes.com';
+$sites['www.easttexaspress.com'] = 'ourtowntimes.com';
+
+$sites['inbetweenprint.com'] = 'ourtowntimes.com';
+$sites['www.inbetweenprint.com'] = 'ourtowntimes.com';
+
+$sites['inbetweenprint.net'] = 'ourtowntimes.com';
+$sites['www.inbetweenprint.net'] = 'ourtowntimes.com';
+
+$sites['inbetweenprint.info'] = 'ourtowntimes.com';
+$sites['www.inbetweenprint.info'] = 'ourtowntimes.com';
+
+$sites['inbetweenprint.org'] = 'ourtowntimes.com';
+$sites['www.inbetweenprint.org'] = 'ourtowntimes.com';
+
+$sites['ottnews.co'] = 'ourtowntimes.com';
+$sites['www.ottnews.co'] = 'ourtowntimes.com';
+
+$sites['ott.news'] = 'ourtowntimes.com';
+$sites['www.ott.news'] = 'ourtowntimes.com';
+
+/* snyderdailynews.etypegoogle5.com */
 $sites['snyderdailynews.etypegoogle5.com'] = 'snyderdailynews.com';
 $sites['snyderdailynews.com'] = 'snyderdailynews.com';
 $sites['www.snyderdailynews.com'] = 'snyderdailynews.com';

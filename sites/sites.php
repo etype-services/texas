@@ -191,3 +191,9 @@ $sites['thevidorian.com'] = 'thevidorian.com';
 $sites['www.thevidorian.com'] = 'thevidorian.com';
 $sites['prod.thevidorian.com'] = 'thevidorian.com';
 $sites['dev.thevidorian.com'] = 'thevidorian.com';
+
+$sites['pleasantonexpress.etypegoogle5.com'] = 'pleasantonexpress.com';
+$sites['pleasantonexpress.com'] = 'pleasantonexpress.com';
+$sites['www.pleasantonexpress.com'] = 'pleasantonexpress.com';
+$sites['prod.pleasantonexpress.com'] = 'pleasantonexpress.com';
+$sites['dev.pleasantonexpress.com'] = 'pleasantonexpress.com';

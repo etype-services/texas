@@ -1077,7 +1077,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 /* Video block on Home Page */
-.block-views-featured-view-block .content {
+#block-views-featured-view-block .content {
     text-align: center;
 }
 

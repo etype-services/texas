@@ -67,6 +67,8 @@ function _etype_social_content() {
   $facebook = theme_get_setting('facebook','cni');
   $twitter = theme_get_setting('twitter','cni');
   $pinterest = theme_get_setting('pinterest','cni');
+  $instagram = theme_get_setting('instagram','cni');
+  
   if ( ! empty($facebook)) {
     $output .= '<li><a class="facebook" href="https://www.facebook.com/' . $facebook . '"></a></li>';
   }
@@ -92,6 +94,8 @@ function _etype_follow_content() {
   $facebook = theme_get_setting('facebook','cni');
   $twitter = theme_get_setting('twitter','cni');
   $pinterest = theme_get_setting('pinterest','cni');
+  $instagram = theme_get_setting('instagram','cni');
+
   if ( ! empty($facebook)) {
     $output .= '<div class="facebook"><a href="https://www.facebook.com/' . $facebook . '">Like us on Facebook</a></div>';
   }

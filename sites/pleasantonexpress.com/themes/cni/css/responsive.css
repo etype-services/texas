@@ -12,11 +12,11 @@
 
     #main-menu ul.menu li a, #main-menu ul.menu li li a {
         padding: 0 8px;
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     #block-superfish-1 .content {
-        width: 1011px;
+        width: 724px;
     }
 
     #block-superfish-1 ul #menu-1797-1 {
@@ -60,7 +60,7 @@
 
     /* main menu */
     #block-superfish-1 .content {
-        width: 896px;
+        width: 700px;
     }
 
     #block-superfish-1 ul #menu-1797-1 {
@@ -73,7 +73,7 @@
 
     #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active  {
         padding: 0 7px;
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     #main-menu ul.menu li ul {

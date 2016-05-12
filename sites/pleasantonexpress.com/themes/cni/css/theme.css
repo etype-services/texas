@@ -547,7 +547,7 @@ article .field-image {
     background-color: #cccccc;
 }
 
-/* Custom Menu styling */
+/* Main Menu custom styling */
 
 #block-superfish-1 {
     background-color: #094385;
@@ -560,7 +560,6 @@ article .field-image {
 
 #block-superfish-1 .content {
     margin: 0 auto;
-    width: 900px;
 }
 
 .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {

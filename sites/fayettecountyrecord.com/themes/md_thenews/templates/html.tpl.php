@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
 
 <head profile="<?php print $grddl_profile; ?>">
+<!-- Outbrain script tag, place in header -->
+<script type="text/javascript" async="async" src="http://widgets.outbrain.com/outbrain.js"></script>
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
 <?php 

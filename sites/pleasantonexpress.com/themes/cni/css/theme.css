@@ -1076,6 +1076,11 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     margin-left: 10px;
 }
 
+/* Video block on Home Page */
+.block-views-featured-view-block .content {
+    text-align: center;
+}
+
 #block-block-1 .content {
     padding: 0;
     color: #999;

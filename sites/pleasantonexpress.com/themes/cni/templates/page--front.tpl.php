@@ -14,8 +14,7 @@
 
                     <?php if ($logo): ?>
                         <div class="site-logo">
-                        <a href="<?php print check_url($front_page); ?>"><img src="<?php print $logo ?>"
-                                                                              alt="<?php print $site_name; ?>"/></a>
+                        <a href="<?php print check_url($front_page); ?>"><img src="<?php print $logo ?>" alt="<?php print $site_name; ?>"/></a>
                         </div><?php print render($page['header']) ?>
                     <?php endif; ?>
 

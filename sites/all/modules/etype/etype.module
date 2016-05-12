@@ -98,6 +98,9 @@ function _etype_follow_content() {
   if ( ! empty($pinterest)) {
     $output .= '<div class="pinterest"><a href="https://www.pinterest.com/' . $pinterest . '">Follow us on Pinterest</a></div>';
   }
+  if ( ! empty($instagram)) {
+    $output .= '<div class="pinterest"><a href="https://www.instagram.com/' . $instagram . '">Follow us on Instagram</a></div>';
+  }
   return $output;
 }
 

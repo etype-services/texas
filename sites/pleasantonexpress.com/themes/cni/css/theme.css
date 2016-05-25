@@ -308,7 +308,7 @@ article .field-image {
 
 .postscript-wrapper {
     padding: 20px 0;
-    margin: 0 -10px;
+    margin: 10px -10px 0;
     background: url(../images/postscript-bg.png);
     border-top: 20px solid #252525;
 }

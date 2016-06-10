@@ -84,4 +84,5 @@
       <?php if (!empty($page['superfish'])): ?><div class="subnav"></div><?php endif; ?>
     </div><!-- /#nav -->
   <?php endif; ?>
+   <?php if ($page['leaderboard']): print render($page['leaderboard']); endif; ?>
 </div><!-- /#header -->

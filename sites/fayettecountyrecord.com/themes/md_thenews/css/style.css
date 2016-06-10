@@ -47,6 +47,9 @@ ol, ul {
 }
 blockquote, q {
 	quotes: none;
+	font-size: .9em;
+	font-weight: bold;
+	margin-bottom: 5px;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -298,19 +301,12 @@ ul.quicktabs-tabs,
 	margin-right: 0;
 }
 blockquote:before {
-  color: #bbb;
   content: "\201C";
-  font-size: 3em;
-  line-height: 0.1em;
-  margin-right: 0.2em;
-  vertical-align: -.4em;
+  font-size: 0.9em;
 }
 blockquote:after {
-  color: #bbb;
   content: "\201D";
-  font-size: 3em;
-  line-height: 0.1em;
-  vertical-align: -.45em;
+  font-size: 0.9em;
 }
 blockquote :first-child {
   display: inline;

@@ -5,4 +5,4 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 sites/*/tmp
-ad_scroller/images
+.idea/

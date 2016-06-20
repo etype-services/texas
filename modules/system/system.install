@@ -28,9 +28,6 @@ function system_requirements($phase) {
     $profile = drupal_get_profile();
     if ($profile != 'standard') {
       $info = system_get_info('module', $profile);
-      /* next 2 lines are a hack for Hays News Dispatch */
-      if (empty($info['name'])) $info['name'] = 'custom';
-      if (empty($info['version'])) $info['version'] = '7.*';
       $requirements['install_profile'] = array(
         'title' => $t('Install profile'),
         'value' => $t('%profile_name (%profile-%version)', array(

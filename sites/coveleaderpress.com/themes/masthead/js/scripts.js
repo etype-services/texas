@@ -9,7 +9,7 @@
 		prependTo: ".header-wrapper-inner",
 		nested: false,
 		groupPageText: 'More',
-		topOptionText: 'Select a page'
+		topOptionText: 'Menu'
 		});
 	  }
 	

@@ -9,7 +9,7 @@
 				prependTo: "#main-menu",
 				nested: true,
 				groupPageText: 'More',
-				topOptionText: 'Select a page'
+				topOptionText: 'Menu'
 				});
 			}
 	

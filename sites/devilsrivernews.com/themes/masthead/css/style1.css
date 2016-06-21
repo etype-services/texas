@@ -1542,9 +1542,14 @@ div.submitted span {
     text-align: center;
 }
 
-block-dfp-tpa-westsidebar .block-inner {
+#block-dfp-tpa-westsidebar .block-inner {
     padding: 0px;
     margin: 0px 0px 20px 0px;
+}
+
+/* dfp ads */
+.dfp-tag-wrapper iframe {
+    max-width: 100%;
 }
 
 

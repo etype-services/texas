@@ -1,0 +1,403 @@
+<?php
+/**
+ * @file soundslides/soiundslides.module
+ */
+
+// Hooks and callbacks for integrating with File Entity module for display.
+include_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'soundslides') . '/includes/soundslides.formatters.inc';
+
+// Css and js files required for soundslides player.
+drupal_add_css(drupal_get_path('module', 'soundslides') . '/includes/themes/js/_files/soundslides.css');
+drupal_add_js(drupal_get_path('module', 'soundslides') . '/includes/themes/js/handle_autoplay.js');
+
+Global $user;
+if($user->uid == 0) {
+  drupal_add_js(drupal_get_path('module', 'soundslides') . '/includes/themes/js/_files/jquery_1.7.1.min.js');
+  drupal_add_js(drupal_get_path('module', 'soundslides') . '/includes/themes/js/_files/jquery_ui_1.8.18.min.js');
+  drupal_add_js(drupal_get_path('module', 'soundslides') . '/includes/themes/js/_files/jquery.jplayer.js');
+  drupal_add_js(drupal_get_path('module', 'soundslides') . '/includes/themes/js/_files/soundslides.js');
+  drupal_add_js(drupal_get_path('module', 'soundslides') . '/includes/themes/js/_files/swfobject.js');
+  drupal_add_js(drupal_get_path('module', 'soundslides') . '/includes/themes/js/soundslides_swf.js');
+}
+
+
+/**
+ * Provides an upload form for soundslides project.
+ */
+function soundslides_upload_add($form, &$form_state = array(
+  ), $params = array()) {
+  $types = media_type_get_types();
+  // Set up file upload validators.
+  $validators = array();
+  // Validate file extensions. If there are no file extensions in $params and
+  // there are no Media defaults, there is no file extension validation.
+  if (!empty($params['file_extensions'])) {
+    $validators['file_validate_extensions'] = array($params['file_extensions']);
+  }
+  elseif ($tmp = media_variable_get('file_extensions')) {
+    $validators['file_validate_extensions'] = array($tmp);
+  }
+
+  // Validate file size but do not allow anything higher than file_upload_max_size().
+  $max_filesize = file_upload_max_size();
+  if (!empty($params['max_filesize']) && $params['max_filesize'] < $max_filesize) {
+    $validators['file_validate_size'] = array(parse_size($params['max_filesize']));
+  }
+  elseif (($tmp = media_variable_get('max_filesize')) && $tmp < $max_filesize) {
+    $validators['file_validate_size'] = array(parse_size($tmp));
+  }
+  else {
+    $validators['file_validate_size'] = array($max_filesize);
+  }
+
+  $form['#validators'] = $validators;
+
+  $form['upload_soundslides'] = array(
+    '#type' => 'file',
+    '#title' => t('Choose a file'),
+    '#title_display' => 'invisible',
+    '#size' => 22,
+    '#theme_wrappers' => array(),
+    '#weight' => -10,
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('zip'),
+    ),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * Validate callback for soundslides upload.
+ */
+function soundslides_upload_add_validate($form, &$form_state) {
+  $validators = array('file_validate_extensions' => array('zip'));
+  $file = file_save_upload('upload_soundslides', $validators);
+  // Save the file as a temporary file.
+  if ($file === NULL) {
+    form_set_error('upload', t("No file appears to have been selected."));
+  }
+  elseif ($file === FALSE) {
+    form_set_error('upload', t('File upload error.'));
+  }
+  else {
+    $file->filemime = "soundslides";
+    $form_state['values']['upload_soundslides'] = $file;
+    $filepath = drupal_realpath($file->uri);
+    $zip = zip_open($filepath);
+    $count = 0;
+    $fname_thumbnail = '';
+    while(($zip_entry = zip_read($zip)) !== false) {
+      if((preg_match('/([a-zA-Z]|\w)*\/fullscreen\/([a-zA-Z]|\w|\D)+/', zip_entry_name($zip_entry))) && (!$fname_thumbnail)) {
+        $fname_thumbnail = zip_entry_name($zip_entry);
+      }
+
+      if(strstr(zip_entry_name($zip_entry), "soundslide.xml")) {
+        $xml = zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
+        $attributes = soundslides_parse_xml($xml);
+        $flag = TRUE;
+      }
+      else{
+        $flag = FALSE;
+      }
+    }
+    if(($attributes) && ($fname_thumbnail)) {
+      soundslides_save_attributes($file->fid, $attributes, $fname_thumbnail, $filepath);
+      return TRUE;
+    }
+    if(!($flag)) {
+      form_set_error('upload_soundslides', 'Not a valid soundslides project');
+      return FALSE;
+    }
+  }
+}
+
+/**
+ * Submit callback for soundslides upload.
+ */
+function soundslides_upload_add_submit($form, &$form_state) {
+  $file = $form_state['values']['upload_soundslides'];
+  $params = $form_state['build_info']['args'][0];  
+  // The media browser widget does not use the 'display' field.
+  $file->display = TRUE;
+  // Change the file status from temporary to permanent.
+  _media_save_file_permanently($file);
+
+  // Determine what URI scheme this file should use.
+  $scheme = !empty($params['uri_scheme']) && file_stream_wrapper_valid_scheme($params['uri_scheme']) ? $params['uri_scheme'] : file_default_scheme();
+  $scheme .= '://';
+
+  // Prepare the file's subdirectory path.
+  $directory = '';
+  if (!empty($params['file_directory'])) {
+    $directory = token_replace($params['file_directory']) . '/';
+    // If the directory isn't writable, or doesn't exist and can't be created,
+    // the upload will fail.
+    $prepare_directory = file_stream_wrapper_uri_normalize($scheme . $directory);
+    if (!file_prepare_directory($prepare_directory, FILE_CREATE_DIRECTORY)) {
+      drupal_set_message(t('The file directory @dir does not exist or is not writable. Please contact an administrator.', array('@dir' => $prepare_directory)), 'error');
+      return;
+    }
+  }
+
+  // Compose the file's permanent destination.
+  $destination = file_stream_wrapper_uri_normalize($scheme . $directory . $file->filename);
+
+  // Save the uploaded file to the permanent location.
+  $file = file_move($file, $destination, FILE_EXISTS_RENAME);
+  $file->filemime = 'soundslides';
+  $file->type = 'soundslides';
+
+  $filepath_extract = soundslides_extract($file);
+  if($filepath_extract) {
+    soundslides_update_attributes($file->fid, array('project_path' => $filepath_extract));
+  }
+  if ($file) {
+    drupal_set_message(t('The file @name was uploaded', array('@name' => $file->filename)));
+  }
+  else {
+    drupal_set_message(t('An error occurred and no file was uploaded.'), 'error');
+    return;
+  }
+
+  $form_state['redirect'] = array('media/browser', array('query' => array('render' => 'media-popup', 'fid' => $file->fid)));
+}
+
+/**
+ * Implements hook_media_browser_plugin_info().
+ */
+function soundslides_media_browser_plugin_info() {
+  $info = array();
+  $info['soundslides'] = array(
+    'title' => t('SoundSlides'),
+    'weight' => 10,
+    'class' => 'MediaSoundslidesUpload',
+  );
+
+  return $info;
+}
+
+/**
+ * Implements hook_media_browser_plugin_view().
+ */
+function soundslides_media_browser_plugin_view($plugin_name, $params) {
+  // $path = drupal_get_path('module', 'media');
+
+  $types = isset($params['types']) ? $params['types'] : array();
+  $multiselect = isset($params['multiselect']) ? $params['multiselect'] : FALSE;
+
+  $redirect = array('media/browser', array('query' => array('render' => 'media-popup')));
+  switch ($plugin_name) {
+    case 'soundslides':
+      // @todo: implement the multiselect argument here.
+      $from_web_form = drupal_get_form('soundslides_upload_add',  $types, $multiselect);
+      return array(
+        '#title' => t('Soundslides'),
+        'form' => array($from_web_form),
+        '#attached' => array(
+          //'js' => array($path . '/js/plugins/media.fromurl.js'),
+        ),
+      );
+      break;
+  }
+
+  return array();
+}
+
+/**
+ * Saves attribute values from soundslides.xml into media_soundslide table
+ */
+function soundslides_save_attributes($fid, $attributes, $fname_thumbnail, $filepath) {
+  $zip = new ZipArchive;
+  $res = $zip->open($filepath);
+  if ($res === TRUE) {
+      $public_path = variable_get('file_public_path', '');
+      $thumbnail_path = realpath('.') . '/' .  $public_path . '/' . time() . '/';
+      $drupal_thumbnail_path = $public_path . '/' . time();
+      file_prepare_directory($drupal_thumbnail_path, FILE_CREATE_DIRECTORY);
+      $zip->extractTo($thumbnail_path, array($fname_thumbnail));
+      $zip->close();
+  }
+  else {
+
+  }
+  $query = db_insert('media_soundslides');
+  $query->fields(array(
+    'fid' => $fid,
+    'index_height' => $attributes['height'],
+    'index_width' => $attributes['width'],
+    'project_path' => '',
+    'thumbnail' => $drupal_thumbnail_path . '/' . $fname_thumbnail,
+    )
+  );
+  $fid = $query->execute();
+  return $fid;
+}
+
+/**
+ * Updates attributes for a soundslides project
+ */
+function soundslides_update_attributes($fid, $attributes) {
+  $query = db_update('media_soundslides');
+  $query->fields(array(
+    'project_path' => $attributes['project_path'],
+  ))
+  ->condition('fid', $fid)
+  ->execute();
+}
+/**
+ * Parses soundslides.xml to give the required attributes
+ */
+function soundslides_parse_xml($str) {
+  $xml = simplexml_load_string($str);
+
+  foreach($xml->children() as $child) {
+    if($child->getName() == 'meta') {
+      $items = $child->item;
+      foreach($items as $item) {
+        if($item->parameter == 'index_width') {
+          $item_width = $item->value;
+        }
+        if($item->parameter == 'index_height') {
+          $item_height = $item->value;
+        }
+      }
+    }
+  }
+  return array('height' => $item_height, 'width' => $item_width);
+}
+
+/**
+ * Implements hook_file_presave
+ */
+function soundslides_file_presave($file){
+   if($file->filemime == 'application/zip') {
+    $file->type = 'soundslides';
+    $file->filemime = 'soundslides';
+   }
+}
+
+/**
+ * Helper function to get thumbnail image path for soundslides preview.
+ */
+function soundslides_get_thumbnail_path($file) {
+  $fid = $file->fid;
+  $query = db_select('media_soundslides', 'ms');
+  $query->fields('ms', array('thumbnail'));
+  $query->condition('fid', $fid);
+  $result = $query->execute();
+  $thumbnail_path = $result->fetchField();
+  return $thumbnail_path;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function soundslides_theme($existing, $type, $theme, $path) {
+  return array(
+    'soundslides_video' => array(
+      'variables' => array('uri' => NULL, 'options' => array(), 'width' => NULL, 'height' => NULL),
+      'file' => 'soundslides.theme.inc',
+      'path' => $path . '/includes/themes',
+      'template' => 'soundslides-video',
+    )
+  );
+}
+
+/**
+ * helper function to get project_path
+ */
+function soundslides_get_project_path($fid) {
+  $query = db_select('media_soundslides', 'ms');
+  $query->fields('ms', array('project_path'));
+  $query->condition('fid', $fid);
+  $result = $query->execute();
+  $project_path = $result->fetchField();
+  return $project_path;
+}
+
+
+/**
+ * helper function to extract the soundslides project in to public folder
+ */
+function soundslides_extract($file) {
+  $uri_file = $file->uri;
+  $drupal_path_file = drupal_realpath($file->uri);
+  $filename = $file->filename;
+  $public_path = variable_get('file_public_path', '');
+  $soundslide_dir = variable_get('file_soundslides_path', '');
+  $folder_name = substr($filename, 0, strrpos($filename, '.'));
+  $time = time();
+  $extract_filepath = realpath('.') . '/' .  $public_path . '/' . $soundslide_dir . '/' . $time . '/';
+  file_prepare_directory($extract_filepath, FILE_CREATE_DIRECTORY);
+  $zip = new ZipArchive;
+  if ($zip->open($drupal_path_file) === TRUE) {
+    $zip->extractTo($extract_filepath);
+    $zip->close();
+  }
+  return $public_path . '/' . $time . '/' . $folder_name;
+}
+
+/**
+ * helper function to get fid from file uri
+ */
+function soundslides_get_fid_from_uri($uri) {
+  $query = db_select('file_managed', 'fm');
+  $query->fields('fm', array('fid'));
+  $query->condition('uri', $uri, '=');
+  $result = $query->execute();
+  $fid = $result->fetchField();
+  return $fid;
+}
+
+/**
+ * helper function to get height for the video
+ */
+function soundslides_get_height($fid) {
+  $query = db_select('media_soundslides', 'ms');
+  $query->fields('ms', array('index_height'));
+  $query->condition('fid', $fid);
+  $result = $query->execute();
+  $index_height = $result->fetchField();
+
+  return $index_height;
+}
+
+/**
+ * helper function to get width for the video
+ */
+function soundslides_get_width($fid) {
+  $query = db_select('media_soundslides', 'ms');
+  $query->fields('ms', array('index_width'));
+  $query->condition('fid', $fid);
+  $result = $query->execute();
+  $index_width = $result->fetchField();
+
+  return $index_width;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function soundslides_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'system_file_system_settings') {
+    $form['file_public_path']['#weight'] = 0;
+    $form['file_private_path']['#weight'] = 1;
+    $form['file_temporary_path']['#weight'] = 2;
+    $form['file_default_scheme']['#weight'] = 4;
+
+    $form['file_soundslides_path'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Soundslides projects\' extration path',
+      '#field_prefix' => 'public://',
+      '#default_value' => 'soundslides_projects',
+      '#description' => 'A local file system path where public files will be stored. This directory must exist and be writable by Drupal.',
+      '#weight' => 3,
+    );
+  }
+}

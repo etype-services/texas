@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Soundslides module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function soundslides_install() {
+
+  $type = new StdClass();
+  $type->name = 'soundslides';
+  $type->label = 'SoundSlides';
+  $type->base = TRUE; // @todo what?
+  $type->type_callback_args = array(
+    'match_type' => 'all',
+    'mimetypes' => array('application/zip'),  // An array of regex patterns e.g. /^audio/
+    'extensions' => array('zip'), // An array of extensions
+    'streams' => array('public', 'private') // An array of streams
+  );
+  $type = media_type_save($type);
+}
+
+/**
+ * Implements hook_schema()
+ */
+
+function soundslides_schema() {
+  $schema['media_soundslides'] = array(
+    'description' => 'Saves attributes for soundslides project',
+    'fields' => array(
+      'fid' => array(
+        'description' => 'file id for the project file',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'index_height' => array(
+        'description' => 'Height of html file',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'index_width' => array(
+        'description' => 'Width of html file',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'thumbnail' => array(
+        'description' => 'Path to the thumbnail image',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+      ),
+      'project_path' => array(
+        'description' => 'Path to the project',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+      ),
+    ),
+  );
+
+  return $schema;
+}

@@ -1,0 +1,17 @@
+name = Soundslides
+description = Allows users to manage soundslides project using media module
+
+core = 7.x
+version = 7.x-1.x-dev
+
+dependencies[] = media
+
+files[] = includes/MediaSoundslidesUpload.inc
+
+
+; Information added by drupal.org packaging script on 2013-10-03
+version = "7.x-1.0-beta2"
+core = "7.x"
+project = "soundslides"
+datestamp = "1380797502"
+

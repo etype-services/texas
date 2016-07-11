@@ -122,8 +122,6 @@ $sites['www.myeldorado.net'] = 'eldoradosuccess.com';
 $sites['fayettecountyrecord.etypegoogle5.com'] = 'fayettecountyrecord.com';
 $sites['fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['www.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
-$sites['prod.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
-$sites['dev.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 
 /* haysnewsdispatch.etypegoogle5.com */
 $sites['haysnewsdispatch.etypegoogle5.com'] = 'haysnewsdispatch.com';
@@ -135,21 +133,15 @@ $sites['dev.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 $sites['newsdispatchnewspaper.etypegoogle5.com'] = 'haysnewsdispatch.com';
 $sites['newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
 $sites['www.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
-$sites['prod.newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
-$sites['dev.newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
 
 /* fishercountychronicle.etypegoogle5.com */
 $sites['fishercountychronicle.etypegoogle5.com'] = 'fishercountychronicle.com';
 $sites['fishercountychronicle.com'] = 'fishercountychronicle.com';
 $sites['www.fishercountychronicle.com'] = 'fishercountychronicle.com';
-$sites['prod.fishercountychronicle.com'] = 'fishercountychronicle.com';
-$sites['dev.fishercountychronicle.com'] = 'fishercountychronicle.com';
 
 $sites['normangeestar.etypegoogle5.com'] = 'normangeestar.com';
 $sites['normangeestar.com'] = 'normangeestar.com';
 $sites['www.normangeestar.com'] = 'normangeestar.com';
-$sites['prod.normangeestar.com'] = 'normangeestar.com';
-$sites['dev.normangeestar.com'] = 'normangeestar.com';
 
 /* ourtowntimes.etypegoogle5.com */
 $sites['ourtowntimes.etypegoogle5.com'] = 'ourtowntimes.com';

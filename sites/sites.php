@@ -161,6 +161,9 @@ $sites['dev.ourtowntimes.com'] = 'ourtowntimes.com';
 $sites['easttexaspress.com'] = 'ourtowntimes.com';
 $sites['www.easttexaspress.com'] = 'ourtowntimes.com';
 
+$sites['theeasttexaspress.com'] = 'ourtowntimes.com';
+$sites['www.theeasttexaspress.com'] = 'ourtowntimes.com';
+
 $sites['inbetweenprint.com'] = 'ourtowntimes.com';
 $sites['www.inbetweenprint.com'] = 'ourtowntimes.com';
 

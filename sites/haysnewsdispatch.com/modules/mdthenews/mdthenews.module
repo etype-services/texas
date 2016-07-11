@@ -16,4 +16,3 @@ function mdthenews_help($path, $arg) {
       break;
   }
 }
-

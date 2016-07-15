@@ -70,18 +70,3 @@
 		return tallest
 	}
 })(jQuery);
-
-/* coupon futz */
-(function ($) {
-
-    Drupal.behaviors.mdthenews = {
-
-        attach: function (context, settings) {
-
-            // All our js code here
-            alert('Hello jQuery');
-            // end our js code
-
-        }
-
-    };})(jQuery);

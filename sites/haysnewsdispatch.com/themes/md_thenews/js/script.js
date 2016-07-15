@@ -70,12 +70,3 @@
 		return tallest
 	}
 })(jQuery);
-
-(function ($) {
-    Drupal.behaviors.coupons = {
-        attach: function (context, settings) {
-            alert('Hello jQuery');
-        }
-
-    };
-})(jQuery);

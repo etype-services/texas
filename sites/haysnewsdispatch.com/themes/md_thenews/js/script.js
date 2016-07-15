@@ -76,5 +76,6 @@
         attach: function (context, settings) {
             alert('Hello jQuery');
         }
+
     };
 })(jQuery);

@@ -74,7 +74,10 @@
 /*(function ($) {
     Drupal.behaviors.coupons = {
         attach: function (context, settings) {
-            $("#block-block-15 .blcontent").html("<noscript><p>Coupons powered by <a href=\"http://www.coupons.com?pid=13903&nid=10&zid=xh20&bid=1417300001\">Coupons.com</a></p></noscript><script id=\"scriptId_718x940_148741\" type=\"text\/javascript\" src=\"//bcg.coupons.com/?scriptId=148741&bid=1417300001&format=718x940&bannerType=3\"></script>");
+            var w = $( window ).width();
+            if (w < 600) {
+                $("#block-block-15").html('');
+            }
         }
 
     };

@@ -74,7 +74,7 @@
 (function ($) {
     Drupal.behaviors.coupons = {
         attach: function (context, settings) {
-            alert('Hello jQuery');
+            // alert('Hello jQuery');
         }
 
     };

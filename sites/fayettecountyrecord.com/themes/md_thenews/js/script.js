@@ -74,7 +74,7 @@
 (function ($) {
     Drupal.behaviors.coupons = {
         attach: function (context, settings) {
-            $("#block-block-15 .blcontent").load("http://bcg.coupons.com/?scriptId=148741&bid=1417300001&format=718x940&bannerType=3");
+            $("#block-block-15 .blcontent").load("http://fayettecountyrecord.com/sites/fayettecountyrecord.com/themes/md_thenews/templates/coupons.php");
         }
 
     };

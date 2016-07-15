@@ -72,8 +72,16 @@
 })(jQuery);
 
 /* coupon futz */
-(function($) {
-    $(document).ready(function() {
-        alert("yes");
-    });
-})(jQuery);
+(function ($) {
+
+    Drupal.behaviors.mdthenews = {
+
+        attach: function (context, settings) {
+
+            // All our js code here
+            alert('Hello jQuery');
+            // end our js code
+
+        }
+
+    };})(jQuery);

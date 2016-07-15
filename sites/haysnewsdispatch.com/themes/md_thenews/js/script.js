@@ -70,3 +70,10 @@
 		return tallest
 	}
 })(jQuery);
+
+/* coupon futz */
+(function($) {
+    $(document).ready(function() {
+        alert("yes");
+    });
+})(jQuery);

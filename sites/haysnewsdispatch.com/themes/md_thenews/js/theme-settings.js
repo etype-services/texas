@@ -6,11 +6,19 @@
             $('.form-item-css3-textarea').before($('#edit-theme-settings'));
             $('#edit-skins, #edit-choose-pattern, #edit-contentop-blocks, #edit-sidebar-position, #edit-bottom-blocks, #edit-node-article-display, #edit-node-photo-display, #edit-node-video-display').removeClass('form-select');
 
-            alert('Hello jQuery');
 
         }
     };
 })(jQuery);
+
+(function ($) {
+    Drupal.behaviors.mdthenews = {
+        attach: function (context, settings) {
+            alert('Hello jQuery');
+        }
+    };
+})(jQuery);
+
 
 jQuery(function ($) {
     var colorpickerHTML = '<span class="colorSelect"><span></span></span>';

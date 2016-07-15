@@ -288,6 +288,12 @@
 	.camera_pag {
 		display: none;
 	}
+
+    /* Coupons */
+    #block-block-15 {
+        display: none;
+        visibility: hidden;
+    }
 	
 }
 

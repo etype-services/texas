@@ -11,15 +11,6 @@
     };
 })(jQuery);
 
-(function ($) {
-    Drupal.behaviors.mdthenews = {
-        attach: function (context, settings) {
-            alert('Hello jQuery');
-        }
-    };
-})(jQuery);
-
-
 jQuery(function ($) {
     var colorpickerHTML = '<span class="colorSelect"><span></span></span>';
 

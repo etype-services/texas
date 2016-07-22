@@ -353,7 +353,7 @@ h2, h3, h4, h5, h6 {
  * "Last Week Most Popular"
  */
 
-#block-views-most-popular-block{
+#block-views-most-popular-block, #block-views-photo-contest-block{
 	float: left;
     margin-right: 0;
     margin-top: 0px;
@@ -361,12 +361,12 @@ h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-#block-views-most-popular-block .view-most-popular {
+#block-views-most-popular-block .view-most-popular, #block-views-photo-contest-block .view-photo-contest {
     border-left: none;
     padding-left: 0;
 }
 
-#block-views-most-popular-block h2{
+#block-views-most-popular-block h2, #block-views-photo-contest-block h2 {
     margin-left: 0;
 }
 
@@ -830,7 +830,7 @@ li.statistics_counter{
     width: 37px;
 }
 
-#block-views-articles-categories-block-block .attachment .views-field-edit-node, #block-views-articles-block-2-block .attachment .views-field-edit-node, #block-views-articles-block-3-block .attachment .views-field-edit-node, #block-views-articles-block-4-block .attachment .views-field-edit-node, #block-views-articles-block-5-block .attachment .views-field-edit-node, #block-views-articles-block-6-block .attachment .views-field-edit-node, #block-views-most-popular-block .views-field-edit-node {
+#block-views-articles-categories-block-block .attachment .views-field-edit-node, #block-views-articles-block-2-block .attachment .views-field-edit-node, #block-views-articles-block-3-block .attachment .views-field-edit-node, #block-views-articles-block-4-block .attachment .views-field-edit-node, #block-views-articles-block-5-block .attachment .views-field-edit-node, #block-views-articles-block-6-block .attachment .views-field-edit-node, #block-views-most-popular-block .views-field-edit-node, #block-views-photo-contest-block .views-field-edit-node {
     margin-left: -71px;
 }
 

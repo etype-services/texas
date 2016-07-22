@@ -341,7 +341,7 @@ body.front h1{
  * "Last Week Most Popular"
  */
 
-#block-views-most-popular-block{
+#block-views-most-popular-block, #block-views-photo-contest-block {
 	float: left;
     margin-right: 0;
     margin-top: 0px;
@@ -349,12 +349,12 @@ body.front h1{
     width: 100%;
 }
 
-#block-views-most-popular-block .view-most-popular {
+#block-views-most-popular-block .view-most-popular, #block-views-photo-contest-block .view-photo-contest {
     border-left: none;
     padding-left: 0;
 }
 
-#block-views-most-popular-block h2{
+#block-views-most-popular-block h2, #block-views-photo-contest-block h2 {
     margin-left: 0;
 }
 

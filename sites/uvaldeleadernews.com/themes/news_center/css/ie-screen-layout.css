@@ -108,7 +108,7 @@ body.front h1{
 	font-weight: bold;
     height: 28px;
     margin-left: -4px !important;
-    margin-top: 0px;
+    margin-top: 0;
     padding: 0;
     text-transform: uppercase;
 	width: auto;
@@ -293,20 +293,20 @@ body.front h1{
  * "Last Week Most Popular"
  */
 
-#block-views-most-popular-block{
+#block-views-most-popular-block, #block-views-photo-contest-block {
 	float: left;
     margin-right: 0;
-    margin-top: 0px;
+    margin-top: 0;
     padding-bottom: 6px;
     width: 220px;
 }
 
-#block-views-most-popular-block .view-most-popular {
+#block-views-most-popular-block .view-most-popular, #block-views-photo-contest-block .view-photo-contest {
     border-left: 1px solid #EEEEEE;
     padding-left: 10px;
 }
 
-#block-views-most-popular-block h2{
+#block-views-most-popular-block h2, #block-views-photo-contest-block h2 {
     margin-left: 10px;
 }
 
@@ -419,7 +419,7 @@ a.back-to-top {
     width: 460px;
 }
 
-#block-views-most-popular-block {
+#block-views-most-popular-block, #block-views-photo-contest-block {
     float: left;
     margin-left: 10px;
     margin-right: 0;

@@ -132,22 +132,17 @@ body.front h1{
 
 #block-superfish-1 ul li a.active,  #block-menu-menu-news-categories ul li a:hover {
     background: none repeat scroll 0 0 #FFFFFF;
-   height:30px
+    height:30px;
     color: #333333;
     padding-top: 5px;
-	
 }
-
 
 
 #block-superfish-1 a.active-trail .active li {
     background: none repeat scroll 0 0 #000033;
-    
     color: #333333;
-    padding-top: 0px;
+    padding-top: 0;
 	padding-left: 15px;
-	
-	
 }
 
 
@@ -316,7 +311,7 @@ body.front h1{
  * "Last Week Most Popular"
  */
 
-#block-views-most-popular-block{
+#block-views-most-popular-block, #block-views-photo-contest-block {
 	float: left;
     margin-right: 0;
     margin-top: 0px;
@@ -324,12 +319,12 @@ body.front h1{
     width: 220px;
 }
 
-#block-views-most-popular-block .view-most-popular {
+#block-views-most-popular-block .view-most-popular, #block-views-photo-contest-block .view-photo-contest {
     border-left: 1px solid #EEEEEE;
     padding-left: 10px;
 }
 
-#block-views-most-popular-block h2{
+#block-views-most-popular-block h2, #block-views-photo-contest-block h2 {
     margin-left: 10px;
 }
 
@@ -450,7 +445,7 @@ a.back-to-top {
     width: 460px;
 }
 
-#block-views-most-popular-block {
+#block-views-most-popular-block, #block-views-photo-contest-block {
     float: left;
     margin-left: 10px;
     margin-right: 0;

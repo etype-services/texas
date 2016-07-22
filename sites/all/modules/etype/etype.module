@@ -132,19 +132,10 @@ function _etype_facebook_content() {
  */
 function _etype_twitter_content() {
   $output = '';
-  $twitter = theme_get_setting('twitter','cni');
-  $twitter_widget_id = theme_get_setting('twitter_widget_id','cni');
-
-  if ( ! empty($twitter)) {
+  $twitter = theme_get_setting('twitter');
+  if (!empty($twitter)) {
     $output .= '
-<a class="twitter-timeline" href="https://twitter.com/' . $twitter . '"';
-    if (! empty ($twitter_widget_id)) {
-      $output.= ' data-widget-id="' . $twitter_widget_id . '"';
-    }
-    $output .= '>Tweets by @' . $twitter . '</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    ';
+<a class="twitter-timeline" data-height="300" href="https://twitter.com/' . $twitter . '">Tweets by ' . $twitter . '</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>';
   }
-
   return $output;
 }

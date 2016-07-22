@@ -9,7 +9,7 @@ function etype_block_info() {
   $blocks['Social'] = array(
     'info' => t('Social'),
   );
-  
+
   $blocks['Follow'] = array(
     'info' => t('Follow'),
   );
@@ -22,6 +22,13 @@ function etype_block_info() {
     'info' => t('Twitter'),
   );
 
+  $blocks['Own Local'] = array(
+    'info' => t('Own Local'),
+  );
+
+  $blocks['e-Edition'] = array(
+    'info' => t('e-Edition'),
+  );
   return $blocks;
 }
 
@@ -36,12 +43,12 @@ function etype_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] = _etype_social_content();
       break;
-    
+
     case 'Follow':
       $block['subject'] = 'Follow Us';
       $block['content'] = _etype_follow_content();
       break;
-    
+
     case 'Facebook':
       $block['subject'] = 'Facebook';
       $block['content'] = _etype_facebook_content();
@@ -51,8 +58,17 @@ function etype_block_view($delta = '') {
       $block['subject'] = 'Twitter';
       $block['content'] = _etype_twitter_content();
       break;
-  }
 
+    case 'Own Local':
+      $block['subject'] = '';
+      $block['content'] = _etype_ownlocal_content();
+      break;
+
+    case 'e-Edition':
+      $block['subject'] = '';
+      $block['content'] = _etype_e_edition_content();
+      break;
+  }
   return $block;
 }
 
@@ -64,22 +80,21 @@ function _etype_social_content() {
   $output = '
 <div id="social">
     <ul class="social-links">';
-  $facebook = theme_get_setting('facebook','cni');
-  $twitter = theme_get_setting('twitter','cni');
-  $pinterest = theme_get_setting('pinterest','cni');
-  $instagram = theme_get_setting('instagram','cni');
-  
-  if ( ! empty($facebook)) {
+  $facebook = theme_get_setting('facebook');
+  $twitter = theme_get_setting('twitter');
+  $pinterest = theme_get_setting('pinterest');
+  $instagram = theme_get_setting('instagram');
+  if (!empty($facebook)) {
     $output .= '<li><a class="facebook" href="https://www.facebook.com/' . $facebook . '"></a></li>';
   }
-  if ( ! empty($twitter)) {
+  if (!empty($twitter)) {
     $output .= '<li><a class="twitter" href="https://twitter.com/' . $twitter . '"></a></li>';
   }
-  if ( ! empty($pinterest)) {
+  if (!empty($pinterest)) {
     $output .= '<li><a class="pinterest" href="https://www.pinterest.com/' . $pinterest . '"></a></li>';
   }
-  if ( ! empty($instagram)) {
-    $output .= '<li><a class="instagram" href="https://www.instagram.com/' . $instagram . '"></a></li>';
+  if (!empty($instagram)) {
+    $output .= '<li><a class="instagram" href="https://instagram.com/' . $instagram . '"></a></li>';
   }
   $output .= '</ul></div>';
   return $output;
@@ -91,22 +106,21 @@ function _etype_social_content() {
  */
 function _etype_follow_content() {
   $output = '';
-  $facebook = theme_get_setting('facebook','cni');
-  $twitter = theme_get_setting('twitter','cni');
-  $pinterest = theme_get_setting('pinterest','cni');
-  $instagram = theme_get_setting('instagram','cni');
-
-  if ( ! empty($facebook)) {
+  $facebook = theme_get_setting('facebook');
+  $twitter = theme_get_setting('twitter');
+  $pinterest = theme_get_setting('pinterest');
+  $instagram = theme_get_setting('instagram');
+  if (!empty($facebook)) {
     $output .= '<div class="facebook"><a href="https://www.facebook.com/' . $facebook . '">Like us on Facebook</a></div>';
   }
-  if ( ! empty($twitter)) {
+  if (!empty($twitter)) {
     $output .= '<div class="twitter"><a href="https://twitter.com/' . $twitter . '">Follow us on Twitter</a></div>';
   }
-  if ( ! empty($pinterest)) {
+  if (!empty($pinterest)) {
     $output .= '<div class="pinterest"><a href="https://www.pinterest.com/' . $pinterest . '">Follow us on Pinterest</a></div>';
   }
-  if ( ! empty($instagram)) {
-    $output .= '<div class="instagram"><a href="https://www.instagram.com/' . $instagram . '">Follow us on Instagram</a></div>';
+  if (!empty($instagram)) {
+    $output .= '<div class="instagram"><a href="https://instagram.com/' . $instagram . '">Follow us on Instagram</a></div>';
   }
   return $output;
 }
@@ -116,9 +130,9 @@ function _etype_follow_content() {
  */
 function _etype_facebook_content() {
   $output = '';
-  $facebook = theme_get_setting('facebook','cni');
+  $facebook = theme_get_setting('facebook');
 
-  if ( ! empty($facebook)) {
+  if (!empty($facebook)) {
     $output .= '
  <div class="fb-page" data-href="https://www.facebook.com/' . $facebook . '" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
     ';
@@ -136,6 +150,68 @@ function _etype_twitter_content() {
   if (!empty($twitter)) {
     $output .= '
 <a class="twitter-timeline" data-height="300" href="https://twitter.com/' . $twitter . '">Tweets by ' . $twitter . '</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>';
+
+  }
+
+  return $output;
+}
+
+/**
+ * @return string
+ */
+function _etype_ownlocal_content() {
+  $output = '';
+  $path = path_to_theme();
+  $file = '/data/web/public/drupal/' . $path . '/templates/ownlocal.html';
+  if (file_exists($file)) {
+    $output .= file_get_contents($file);
   }
   return $output;
 }
+
+function _etype_e_edition_content() {
+  $e_edition = theme_get_setting('e_edition');
+  $site_name = variable_get('site_name', 'Drupal');
+  $arr = preg_split("/ID[0-9]+/", $e_edition);
+  $fixed = $arr[0];
+
+  $output = '
+<p class="rtecenter" style="text-align: center;"><a href="http://etypeservices.com/' . $e_edition . '/"><img src="http://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg" width="193"></a></p><h4 class="rtecenter" style="text-align: center;"><a href="http://etypeservices.com/' . $e_edition . '/">Click here to read ' . $site_name . '</a></h4>
+';
+  return $output;
+}
+
+
+$own_local_file = drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js';
+if (file_exists($own_local_file)) {
+  drupal_add_js(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js', 'file');
+  drupal_add_css(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.css', array(
+    'group' => CSS_THEME,
+    'type' => 'file'
+  ));
+}
+
+
+function etype_menu() {
+
+  $items = array();
+
+  /* add e-Edition link to user menu */
+  $items['e-edition'] = array(
+    'title' => 'e-Edition',
+    'description' => 'Link to e-Edition.',
+    'page callback' => '_etype_e_edition',
+    'access arguments' => array('access content'),
+    'menu_name' => 'user-menu',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+function _etype_e_edition() {
+  /* redirect to e-Edition */
+  $e_edition = theme_get_setting('e_edition');
+  $path = 'http://etypeservices.com/' . $e_edition . '/';
+  drupal_goto($path);
+}
+

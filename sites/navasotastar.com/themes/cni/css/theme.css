@@ -1467,6 +1467,12 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     padding: 0;
 }
 
+/* theme mobile menu */
+#mm0 {
+    display: none;
+    visibility: hidden;
+}
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 

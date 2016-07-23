@@ -293,6 +293,12 @@
         margin-top: 1em;
     }
 
+    /* hide links and follow on smaller screens */
+    .region-postscript-2, .region-postscript-3 {
+        display: none;
+        visibility: hidden;
+    }
+
     /* weather block */
     #block-block-1 .block-inner {
         border: none;
@@ -424,6 +430,11 @@
         margin-top: 1em;
     }
 
+    /* hide links and follow on smaller screens */
+    .region-postscript-2, .region-postscript-3 {
+        display: none;
+        visibility: hidden;
+    }
 
     /* weather block */
     #block-block-35 .block-inner {

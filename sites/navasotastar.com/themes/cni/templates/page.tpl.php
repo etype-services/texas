@@ -97,23 +97,12 @@
 
     <?php print render($page['content_bottom']); ?>
 
-    <?php if ($page['postscript_1'] || $page['postscript_2'] || $page['postscript_3'] || $page['postscript_4']): ?>
-      <div class="postscript-wrapper clearfix">
-        <div class="postscript-wrapper-inner">
-          <div class="postscript-wrapper-inner-inner">
-            <section id="postscript">
-              <div
-                class="grid_3"><?php print render($page['postscript_1']); ?></div>
-              <div
-                class="grid_3"><?php print render($page['postscript_2']); ?></div>
-              <div
-                class="grid_3"><?php print render($page['postscript_3']); ?></div>
-              <div
-                class="grid_3"><?php print render($page['postscript_4']); ?></div>
-            </section>
-          </div>
-        </div>
-      </div>
-    <?php endif; ?>
+    <div class="postscript-wrapper"><div class="postscript-wrapper-inner <?php echo $grid_size ?>">
+        <section id="postscript" class="clearfix">
+          <div class="grid_4"><?php print render($page['postscript_1']); ?></div>
+          <div class="grid_4"><?php print render($page['postscript_2']); ?></div>
+          <div class="grid_4"><?php print render($page['postscript_3']); ?></div>
+        </section>
+      </div></div>
   </div>
 </div><!-- page -->

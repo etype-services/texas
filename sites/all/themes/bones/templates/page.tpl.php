@@ -88,9 +88,10 @@
   
   <div class="postscript-wrapper"><div class="postscript-wrapper-inner <?php echo $grid_size ?>">  
     <section id="postscript" class="clearfix">
-      <div class="grid_4"><?php print render($page['postscript_1']); ?></div>
-      <div class="grid_4"><?php print render($page['postscript_2']); ?></div>
-      <div class="grid_4"><?php print render($page['postscript_3']); ?></div>
+      <div class="<?php echo $postscript_1_grid_width ?>"><?php print render($page['postscript_1']); ?></div>
+      <div class="<?php echo $postscript_2_grid_width ?>"><?php print render($page['postscript_2']); ?></div>
+      <div class="<?php echo $postscript_3_grid_width ?>"><?php print render($page['postscript_3']); ?></div>
+      <div class="<?php echo $postscript_4_grid_width ?>"><?php print render($page['postscript_4']); ?></div>
     </section>
   </div></div>    
     

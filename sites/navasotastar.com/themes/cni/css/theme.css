@@ -324,7 +324,7 @@ article .field-image {
 
 .postscript-wrapper h3 {
     display: block;
-    margin-left: 20px;
+    margin-left: 0;
     margin-bottom: 10px;
 }
 
@@ -352,11 +352,6 @@ article .field-image {
     margin-left: 1.7em;
 }
 
-/* title in first column of footer */
-.region-postscript-1 h3.title {
-    margin-left: 0;
-}
-
 /* hide Show Menu link in footer */
 .region-postscript-2 #block-menu-block-2 .menu li.first {
     display: none;
@@ -371,15 +366,9 @@ article .field-image {
 /* menus in footer */
 #postscript .block-menu-block ul.menu li {
     float: none;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 10px;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    list-style-type: circle;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
     list-style-image: none;
     list-style-position: inside;
 }

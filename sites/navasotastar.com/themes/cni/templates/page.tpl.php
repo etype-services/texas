@@ -97,12 +97,17 @@
 
     <?php print render($page['content_bottom']); ?>
 
-    <div class="postscript-wrapper"><div class="postscript-wrapper-inner <?php echo $grid_size ?>">
+    <div class="postscript-wrapper">
+      <div class="postscript-wrapper-inner <?php echo $grid_size ?>">
         <section id="postscript" class="clearfix">
-          <div class="<?php echo $postscript_1_grid_width ?>"><?php print render($page['postscript_1']); ?></div>
-          <div class="<?php echo $postscript_2_grid_width ?>"><?php print render($page['postscript_2']); ?></div>
-          <div class="<?php echo $postscript_3_grid_width ?>"><?php print render($page['postscript_3']); ?></div>
+          <div
+            class="<?php echo $postscript_1_grid_width ?>"><?php print render($page['postscript_1']); ?></div>
+          <div
+            class="<?php echo $postscript_2_grid_width ?>"><?php print render($page['postscript_2']); ?></div>
+          <div
+            class="<?php echo $postscript_3_grid_width ?>"><?php print render($page['postscript_3']); ?></div>
         </section>
-      </div></div>
-  </div>
+      </div>
+    </div>
+  </div><!-- page-inner -->
 </div><!-- page -->

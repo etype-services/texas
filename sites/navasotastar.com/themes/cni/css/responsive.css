@@ -420,7 +420,7 @@
         background: none;
     }
 
-    .region-postscript-4 {
+    .region-postscript-3 {
         margin-top: 1em;
     }
 
@@ -553,8 +553,10 @@
         background: none;
     }
 
-    .region-postscript-4 {
-        margin-top: 1em;
+    /* hide links and follow on smaller screens */
+    .region-postscript-2, .region-postscript-3 {
+        display: none;
+        visibility: hidden;
     }
 
     /* weather block */

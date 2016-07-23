@@ -148,3 +148,12 @@
     text-align:center;
     margin-top: 5px;
 }
+
+@media only screen and (max-width: 479px) {
+
+ #block-dfp-tpa-northleaderboard {
+     display: none;
+     visibility: hidden;
+ }
+
+}

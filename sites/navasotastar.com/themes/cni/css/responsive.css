@@ -53,6 +53,11 @@
         margin-top: -13px;
     }
 
+    /* override grid css */
+    .container_12 #postscript .grid_3 {
+        width: 31%;
+    }
+
 }
 
 /* desktop browsers */

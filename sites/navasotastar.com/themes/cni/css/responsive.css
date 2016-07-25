@@ -171,7 +171,7 @@
 
     /* override grid css 4 and 3 because of unresolved cache weirdness */
     .container_12 #postscript .grid_3, .container_12 #postscript .grid_4 {
-        width: 31%;
+        width: 30%;
     }
 
 }

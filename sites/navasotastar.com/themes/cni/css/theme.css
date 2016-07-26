@@ -1479,14 +1479,3 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 .region-main-menu .contextual-links-region #block-simpleads-ad-groups-436 {
 	text-align:center;
 }
-
-/* advanced poll block */
-#block-advpoll-advpoll-recent h2.title {
-    font-size: 1em;
-    line-height: 1.3em;
-}
-
-#block-advpoll-advpoll-recent .submitted {
-    display: none;
-    visibility: hidden;
-}

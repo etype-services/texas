@@ -166,6 +166,13 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
         '#default_value' => theme_get_setting('instagram'),
     );
 
+  $form['advanced_settings']['misc_settings']['googleplus'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google Plus'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('googleplus'),
+  );
+
     $form['advanced_settings']['misc_settings']['e_edition'] = array(
         '#type' => 'textfield',
         '#title' => t('e-Edition'),

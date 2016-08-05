@@ -161,3 +161,8 @@ $sites['www.pleasantonexpress.com'] = 'pleasantonexpress.com';
 $sites['navasotastar.etypegoogle5.com'] = 'navasotastar.com';
 $sites['navasotastar.com'] = 'navasotastar.com';
 $sites['www.navasotastar.com'] = 'navasotastar.com';
+
+/* seniorific.etypegoogle5.com */
+$sites['seniorific.etypegoogle5.com'] = 'seniorific.com';
+$sites['seniorific.com'] = 'seniorific.com';
+$sites['www.seniorific.com'] = 'seniorific.com';

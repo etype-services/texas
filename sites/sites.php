@@ -176,3 +176,8 @@ $sites['hays-freepress.com'] =  'haysfreepress.com';
 $sites['www.hays-freepress.com'] =  'haysfreepress.com';
 $sites['bartonpublications.com'] =  'haysfreepress.com';
 $sites['www.bartonpublications.com'] =  'haysfreepress.com';
+
+/* ozonastockman.etypegoogle5.com */
+$sites['ozonastockman.etypegoogle5.com'] =  'ozonastockman.com';
+$sites['ozonastockman.com'] =  'ozonastockman.com';
+$sites['www.ozonastockman.com'] =  'ozonastockman.com';

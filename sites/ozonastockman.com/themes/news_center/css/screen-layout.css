@@ -125,14 +125,14 @@ body.front h1{
     font-weight: bold;
     height: 22px;
     margin-top: 0;
-    padding: 5px 15px 0;
+    padding: 5px 10px 0;
     text-decoration: none;
 	background: #000;
 }
 
 #block-superfish-1 ul li a.active,  #block-menu-menu-news-categories ul li a:hover {
     background: none repeat scroll 0 0 #FFFFFF;
-   height:30px
+    height:30px;
     color: #333333;
     padding-top: 5px;
 	
@@ -146,13 +146,7 @@ body.front h1{
     color: #333333;
     padding-top: 0px;
 	padding-left: 15px;
-	
-	
 }
-
-
-
-
 
 /* SlideShow Block Styles */
 

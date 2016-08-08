@@ -166,3 +166,13 @@ $sites['www.navasotastar.com'] = 'navasotastar.com';
 $sites['seniorific.etypegoogle5.com'] = 'seniorific.com';
 $sites['seniorific.com'] = 'seniorific.com';
 $sites['www.seniorific.com'] = 'seniorific.com';
+
+
+/* haysfreepress.etypegoogle5.com */
+$sites['haysfreepress.etypegoogle5.com'] =  'haysfreepress.com';
+$sites['haysfreepress.com'] =  'haysfreepress.com';
+$sites['www.haysfreepress.com'] =  'haysfreepress.com';
+$sites['hays-freepress.com'] =  'haysfreepress.com';
+$sites['www.hays-freepress.com'] =  'haysfreepress.com';
+$sites['bartonpublications.com'] =  'haysfreepress.com';
+$sites['www.bartonpublications.com'] =  'haysfreepress.com';

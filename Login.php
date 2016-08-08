@@ -1,3 +1,3 @@
 <?php
-require_once('sites/ourtowntimes.com/rssfeed/login.inc');
+require_once('sites/eastlandcountytoday.com/rssfeed/login.inc');
 ?>

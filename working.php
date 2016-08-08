@@ -1,6 +1,6 @@
 <?php 
 if ((isset($_POST['usr'])) && (isset($_POST['pwd']))) {
-require_once('sites/ourtowntimes.com/rssfeed/login.inc');
+require_once('sites/eastlandcountytoday.com/rssfeed/login.inc');
 } else {
 ?>
 <form action="" method="POST">

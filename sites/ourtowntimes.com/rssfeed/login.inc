@@ -91,7 +91,7 @@ function process() {
     $return = $this->buildOutput("KO", "User or password invalid. Please try again");
     }  else
      {
-	if($response12->GetPublicationIDResult== 2796 )
+	if($response12->GetPublicationIDResult== 2796)
     {
      
 		$param=array('UserName' =>"$username",'Password' =>"$Password");
@@ -103,7 +103,9 @@ function process() {
       }
 
 		// username/password did return records from the db
-		elseif ($response->ValidateSubscriberResult == -1) {
+		else
+		{
+		if ($response->ValidateSubscriberResult == -1) {
 
 			$expired = array(); // expired subscriptions
 			$canView = array(); // active subscriptions
@@ -113,42 +115,38 @@ function process() {
 			$outputEnder = "</array>";
 			 $pubview= $response12->GetPublicationIDResult;;
 			
-			$pre="OTT";
+			$pre="smr";
 			$canView[strtolower($pre)] = true;
 			
 			 $return = $this->buildOutput("KO", "Your subscription to Our Town Times expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);
 
 		}
 		else {
+		
 			$expired = array(); // expired subscriptions
 			$canView = array(); // active subscriptions
 			//$pubview =array();
 			$outputStarter = "<key>output</key><array>";
 			$outputBody = '';
 			$outputEnder = "</array>";
-			  $pubview= $response12->GetPublicationIDResult;
+			  $pubview= $response12->GetPublicationIDResult;;
 			$userdetail="".trim($username)."--".trim($Password)."";
 		
 		// $perms="".trim($code)."_".trim($publ)."";
 		//$encrypted_txt = $this->encrypt_decrypt('encrypt', $userdetail);
-
-		
-		  $param1=array('Username' =>"$username",'PublicationID' =>"$pubview");
+		$pub=2796;
+		  $param1=array('Username' =>"$username",'PublicationID' =>"$pub");
   
-  			$client1= new soapclient('http://etypeservices.com/GetSubscriberExpiryDate.asmx?wsdl');
+  $client1= new soapclient('http://etypeservices.com/GetSubscriberExpiryDate.asmx?wsdl');
            
-      			$response1=$client1->Get_SubscriberExpiryDate($param1);
+      $response1=$client1->Get_SubscriberExpiryDate($param1);
     		$dateexp=$response1->Get_SubscriberExpiryDateResult;
-		
-		// $perms="".trim($code)."_".trim($publ)."";
-		//$encrypted_txt = $this->encrypt_decrypt('encrypt', $userdetail);
-
-		
-
-		// setcookie("etypes[userdetail]",$encrypted_txt, time()+3600*24);
-			$pre="OTT";
+    		
+		 //setcookie("etypes[userdetail]",$encrypted_txt, time()+3600*24);
+			$pre="ott";
 			$canView[strtolower($pre)] = true;
 			$return = $this->buildOutput("OK", "Success", $canView,$pubview,$pre,$userdetail,$dateexp);
+		}
 		}
 	}
 	else{
@@ -163,6 +161,7 @@ function process() {
 		return $return;
 
 	}
+
 
 
 	function respondToSender($response) {
@@ -211,17 +210,21 @@ function process() {
 		// set a cookie for the RSS app
 		// setcookie("etype[perm]", trim($code), time()+3600);
 		// setcookie("etype[pubs]", trim($pre), time()+3600);
-		//$perms="".trim($code)."_".trim($publ)."";
 		$perms="".trim($code)."_".trim($publ)."##".trim($userdetail)."";
 		
 		// $perms="".trim($code)."_".trim($publ)."";
 		$encrypted_txt = $this->encrypt_decrypt('encrypt', $perms);
 
+		//$userdetail="".trim($username)."__".trim($Password)."";
+		
+		// $perms="".trim($code)."_".trim($publ)."";
+		//$encrypted_txt = $this->encrypt_decrypt('encrypt', $userdetail);
+
 		
 
-		 setcookie("etype[perms]",$encrypted_txt,strtotime($dateexp));
+		// setcookie("etypes[userdetail]",$encrypted_txt, time()+3600*24);
 
-		// setcookie("etype[perms]",$encrypted_txt, time()+3600*24);
+		 setcookie("etype[perms]",$encrypted_txt, strtotime($dateexp));
 	//	echo "BUILD OUTPUT: ", $out, "\n";
 		return $out;
 

@@ -1,3 +1,3 @@
 <?php
-require_once('sites/ourtowntimes.com/rssfeed/sports.inc');
+require_once('sites/eastlandcountytoday.com/rssfeed/sports.inc');
 ?>

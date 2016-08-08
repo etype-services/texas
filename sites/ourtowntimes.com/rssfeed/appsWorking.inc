@@ -99,10 +99,10 @@ function process() {
 			$outputEnder = "</array>";
 			 $pubview= "1213";
 			 
-			$pre="smr";
+			$pre="ott";
 			$canView[strtolower($pre)] = true;
 			
-			 $return = $this->buildOutput("KO", "Your subscription to San Marcos Record expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);
+			 $return = $this->buildOutput("KO", "Your subscription to Our Town Times expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);
 
 		}
 		else {

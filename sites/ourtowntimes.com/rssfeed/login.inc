@@ -146,7 +146,7 @@ function process() {
 		
 
 		// setcookie("etypes[userdetail]",$encrypted_txt, time()+3600*24);
-			$pre="our town times";
+			$pre="OTT";
 			$canView[strtolower($pre)] = true;
 			$return = $this->buildOutput("OK", "Success", $canView,$pubview,$pre,$userdetail,$dateexp);
 		}

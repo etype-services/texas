@@ -174,8 +174,12 @@ $sites['haysfreepress.com'] =  'haysfreepress.com';
 $sites['www.haysfreepress.com'] =  'haysfreepress.com';
 $sites['hays-freepress.com'] =  'haysfreepress.com';
 $sites['www.hays-freepress.com'] =  'haysfreepress.com';
+$sites['haysfreepress.net'] =  'haysfreepress.com';
+$sites['www.haysfreepress.net'] =  'haysfreepress.com';
 $sites['bartonpublications.com'] =  'haysfreepress.com';
 $sites['www.bartonpublications.com'] =  'haysfreepress.com';
+$sites['bartonpublicationsinc.com'] =  'haysfreepress.com';
+$sites['www.bartonpublicationsinc.com'] =  'haysfreepress.com';
 
 /* ozonastockman.etypegoogle5.com */
 $sites['ozonastockman.etypegoogle5.com'] =  'ozonastockman.com';

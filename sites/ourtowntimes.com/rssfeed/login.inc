@@ -113,7 +113,7 @@ function process() {
 			$outputEnder = "</array>";
 			 $pubview= $response12->GetPublicationIDResult;;
 			
-			$pre="our town times";
+			$pre="OTT";
 			$canView[strtolower($pre)] = true;
 			
 			 $return = $this->buildOutput("KO", "Your subscription to Our Town Times expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);

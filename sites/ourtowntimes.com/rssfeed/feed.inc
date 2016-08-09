@@ -41,6 +41,8 @@ class apps{
 			 $pos = strrpos($decrypted_txt , '_');
    			 $pub = substr($decrypted_txt , 0, 2);
   			  $pubid = substr($decrypted_txt , $pos + 1);
+  			 // echo $pubid;
+  			 // die();
 			//$pub = $pubs['0'];
 			//echo "pub: ", $pub, "<br />";
 			//echo "pub: ", $pubid, "<br />";

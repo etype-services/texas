@@ -1,10 +1,6 @@
 <?php 
 if ((isset($_POST['usr'])) && (isset($_POST['pwd']))) {
-// echo "hello";
-//echo $_GET['usr'];
-//echo $_GET['pwd'];
-//die();
-require_once('sites/ourtowntimes.com/rssfeed/login.inc');
+require_once('sites/eastlandcountytoday.com/rssfeed/login.inc');
 } else {
 ?>
 <form action="" method="POST">
@@ -29,4 +25,4 @@ require_once('sites/ourtowntimes.com/rssfeed/login.inc');
 </tr>
 </table>
 </form>
-<?php }  ?>
+<?php } ?>

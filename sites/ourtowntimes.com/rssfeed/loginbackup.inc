@@ -27,13 +27,13 @@ function process() {
 	//	$_COOKIE['pubs'] = "ten";
 	//	$_COOKIE['perm'] = "KO";
 		$rsspath = '';
-		if ((isset($_POST['usr'])) && (isset($_POST['pwd']))) {
+		if ((isset($querystring['usr'])) && (isset($querystring['pwd']))) {
 
 
-			(isset($_POST['device'])) ? $device = $_POST['device'] : $device = '';
+			(isset($querystring['device'])) ? $device = $querystring['device'] : $device = '';
 			$params['0'] = array(
-				  $_POST['usr']
-				, $_POST['pwd']
+				  $querystring['usr']
+				, $querystring['pwd']
 			//	, $device
 			);
 
@@ -102,7 +102,7 @@ function process() {
 			$pre="smr";
 			$canView[strtolower($pre)] = true;
 			
-			 $return = $this->buildOutput("KO", "Your subscription to our Town Times Expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);
+			 $return = $this->buildOutput("KO", "Your subscription to San Marcos Record expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);
 
 		}
 		else {
@@ -165,19 +165,7 @@ function process() {
 
 		$out .= "</dict>";
 		$out .= "</plist>";
-		$publ=$pubview;
 		
-		// set a cookie for the RSS app
-		// setcookie("etype[perm]", trim($code), time()+3600);
-		// setcookie("etype[pubs]", trim($pre), time()+3600);
-		$perms="".trim($code)."_".trim($publ)."";
-		
-		// $perms="".trim($code)."_".trim($publ)."";
-		$encrypted_txt = $this->encrypt_decrypt('encrypt', $perms);
-
-		
-
-		 setcookie("etype[perms]",$encrypted_txt, time()+3600*24);
 	//	echo "BUILD OUTPUT: ", $out, "\n";
 		return $out;
 

@@ -1,3 +1,3 @@
 <?php
-require_once('sites/ourtowntimes.com/rssfeed/obit.inc');
+require_once('sites/eastlandcountytoday.com/rssfeed/obit.inc');
 ?>

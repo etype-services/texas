@@ -44,7 +44,7 @@ class apps{
 			//$pub = $pubs['0'];
 			//echo "pub: ", $pub, "<br />";
 			//echo "pub: ", $pubid, "<br />";
-			$siteurl ="stmarynow.com";
+			$siteurl ="eastlandcountytoday.com";
 			
 			// $rsspath = rtrim($siteurl, "/") . "/" . $querystring['feed'];
 			$rsspath = rtrim($siteurl, "/") ;

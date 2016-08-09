@@ -91,7 +91,7 @@ function process() {
     $return = $this->buildOutput("KO", "User or password invalid. Please try again");
     }  else
      {
-	if($response12->GetPublicationIDResult== 255 || $response12->GetPublicationIDResult== 256 )
+	if($response12->GetPublicationIDResult== 450 )
     {
      
 		$param=array('UserName' =>"$username",'Password' =>"$Password");
@@ -113,10 +113,10 @@ function process() {
 			$outputEnder = "</array>";
 			 $pubview= $response12->GetPublicationIDResult;;
 			
-			$pre="Stmary Today";
+			$pre="ect";
 			$canView[strtolower($pre)] = true;
 			
-			 $return = $this->buildOutput("KO", "Your subscription to Stmary Today expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);
+			 $return = $this->buildOutput("KO", "Your subscription to Eastland County Today expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);
 
 		}
 		else {
@@ -146,7 +146,7 @@ function process() {
 		
 
 		// setcookie("etypes[userdetail]",$encrypted_txt, time()+3600*24);
-			$pre="Stmary Today";
+			$pre="ect";
 			$canView[strtolower($pre)] = true;
 			$return = $this->buildOutput("OK", "Success", $canView,$pubview,$pre,$userdetail,$dateexp);
 		}

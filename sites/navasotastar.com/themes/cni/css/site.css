@@ -1,4 +1,5 @@
-/* logo */
+/* LOGO
+--------------------------------------------------------------------------*/
 .site-logo {
     width: 100%;
     margin: 0 auto;
@@ -8,6 +9,13 @@
 .site-logo img {
     width: 100%;
     max-width: 2262px;
+}
+
+/* MAIN MENU
+--------------------------------------------------------------------------*/
+
+#superfish-1 #menu-2339-1 {
+    background-color: black;
 }
 
 /* SIMPLE ADS

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ts_news_features.features.taxonomy.inc
+ * etype_cni_features.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function ts_news_features_taxonomy_default_vocabularies() {
+function etype_cni_features_taxonomy_default_vocabularies() {
   return array(
     'section' => array(
       'name' => 'Section',

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ts_news_features.features.menu_links.inc
+ * etype_cni_features.features.menu_links.inc
  */
 
 /**
  * Implements hook_menu_default_menu_links().
  */
-function ts_news_features_menu_default_menu_links() {
+function etype_cni_features_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: main-menu:menu-position/1

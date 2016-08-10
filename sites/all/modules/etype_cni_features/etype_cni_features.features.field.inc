@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ts_news_features.features.field.inc
+ * etype_cni_features.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function ts_news_features_field_default_fields() {
+function etype_cni_features_field_default_fields() {
   $fields = array();
 
   // Exported field: 'node-article-body'.

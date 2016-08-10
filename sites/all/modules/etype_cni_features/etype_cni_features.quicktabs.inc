@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ts_news_features.quicktabs.inc
+ * etype_cni_features.quicktabs.inc
  */
 
 /**
  * Implements hook_quicktabs_default_quicktabs().
  */
-function ts_news_features_quicktabs_default_quicktabs() {
+function etype_cni_features_quicktabs_default_quicktabs() {
   $export = array();
 
   $quicktabs = new stdClass();

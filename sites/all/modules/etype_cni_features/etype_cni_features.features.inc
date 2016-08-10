@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ts_news_features.features.inc
+ * etype_cni_features.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function ts_news_features_ctools_plugin_api() {
+function etype_cni_features_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "quicktabs" && $api == "quicktabs") {
     return array("version" => "1");
@@ -21,14 +21,14 @@ function ts_news_features_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function ts_news_features_views_api() {
+function etype_cni_features_views_api() {
   return array("version" => "3.0");
 }
 
 /**
  * Implements hook_image_default_styles().
  */
-function ts_news_features_image_default_styles() {
+function etype_cni_features_image_default_styles() {
   $styles = array();
 
   // Exported image style: slideshow.
@@ -103,7 +103,7 @@ function ts_news_features_image_default_styles() {
 /**
  * Implements hook_node_info().
  */
-function ts_news_features_node_info() {
+function etype_cni_features_node_info() {
   $items = array(
     'article' => array(
       'name' => t('Article'),

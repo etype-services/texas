@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ts_news_features.features.user_permission.inc
+ * etype_cni_features.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function ts_news_features_user_default_permissions() {
+function etype_cni_features_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: search content.

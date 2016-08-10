@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ts_news_features.default_video_embed_styles.inc
+ * etype_cni_features.default_video_embed_styles.inc
  */
 
 /**
  * Implements hook_default_video_embed_styles().
  */
-function ts_news_features_default_video_embed_styles() {
+function etype_cni_features_default_video_embed_styles() {
   $export = array();
 
   $video_embed_style = new stdClass();

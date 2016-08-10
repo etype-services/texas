@@ -185,3 +185,6 @@ $sites['www.bartonpublicationsinc.com'] =  'haysfreepress.com';
 $sites['ozonastockman.etypegoogle5.com'] =  'ozonastockman.com';
 $sites['ozonastockman.com'] =  'ozonastockman.com';
 $sites['www.ozonastockman.com'] =  'ozonastockman.com';
+
+/* cni-theme.etypegoogle5.com */
+$sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';

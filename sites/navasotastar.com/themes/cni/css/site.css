@@ -34,6 +34,12 @@
     background-color: blue;
 }
 
+/* FRONT PAGE BLOCKS
+--------------------------------------------------------------------------*/
+
+#block-views-top-news-stories-block a, #block-views-top-news-stories-block .content {
+    color: red;
+}
 
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/

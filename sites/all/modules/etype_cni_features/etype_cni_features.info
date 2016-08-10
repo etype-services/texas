@@ -1,7 +1,7 @@
-name = TS News Features
-description = Modules and Views for ThemeShark's News Theme
+name = eType CNI Features
+description = Modules and Views for eType's CNI Theme
 core = 7.x
-package = EType Services Custom Modules
+package = eType Services Custom Modules
 version = 7.x-1.0
 project = etype_cni_features
 dependencies[] = addthis

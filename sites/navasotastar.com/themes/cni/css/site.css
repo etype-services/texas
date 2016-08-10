@@ -41,6 +41,17 @@
     color: red;
 }
 
+#block-views-business-top-stories-block a, #block-views-business-top-stories-block .content {
+    color: green;
+}
+
+#block-views-lifestyle-top-stories-block a, #block-views-lifestyle-top-stories-block .content {
+    color: orange;
+}
+
+#block-views-sports-top-stories-block a, #block-views-sports-top-stories-block .content {
+    color: blue;
+}
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 

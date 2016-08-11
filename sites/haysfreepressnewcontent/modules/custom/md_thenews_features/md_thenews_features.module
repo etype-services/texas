@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MD Thenews features feature.
+ */
+
+include_once 'md_thenews_features.features.inc';

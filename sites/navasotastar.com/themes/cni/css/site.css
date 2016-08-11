@@ -37,19 +37,19 @@
 /* FRONT PAGE BLOCKS
 --------------------------------------------------------------------------*/
 
-#block-views-top-news-stories-block a, #block-views-top-news-stories-block .content {
+#block-views-top-news-stories-block .title a {
     color: red;
 }
 
-#block-views-business-top-stories-block a, #block-views-business-top-stories-block .content {
+#block-views-business-top-stories-block .title a {
     color: green;
 }
 
-#block-views-lifestyle-top-stories-block a, #block-views-lifestyle-top-stories-block .content {
+#block-views-lifestyle-top-stories-block .title a {
     color: orange;
 }
 
-#block-views-sports-top-stories-block a, #block-views-sports-top-stories-block .content {
+#block-views-sports-top-stories-block .title a {
     color: blue;
 }
 /* SIMPLE ADS

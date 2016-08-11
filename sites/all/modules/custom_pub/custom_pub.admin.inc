@@ -1,84 +1,97 @@
 <?php
 /**
  * @file
- *   Admin functions
+ * Admin functions.
  */
 
 /**
- * Callback function for Custom Publishing Options menu item
+ * Callback function for Custom Publishing Options menu item.
  */
 function custom_pub_admin() {
+  $output = '<h3>Custom Publishing Options</h3>';
+
+  $output .= '<p>Creating/editing/deleting options requires clearing the Drupal cache before you can use them. It is advised to make as many edits here that you need, and then clear the cache to propogate the updates to the node system.</p>';
+
   $table = '';
+
   //add the js for the admin page
-  drupal_add_js(drupal_get_path('module','custom_pub').'/custom_pub.admin.js');
+  drupal_add_js(drupal_get_path('module', 'custom_pub') . '/custom_pub.admin.js');
+
   $types = variable_get('custom_pub_types', array());//get the current custom publishing types
+
   foreach ($types as $type) {
     // Build table rows for the
     $form_row = array();
+
     $types_of_nodes = '';
+
     if (isset($type['node_types']) && is_array($type['node_types'])) {
       $types_of_nodes = implode(', ', $type['node_types']);
     }
-    $row = array($type['name'], $type['type'], $types_of_nodes, array('data' => '','class' => array('custom_pub-option-edit-cell')));
+
+    $row = array($type['name'], $type['type'], $types_of_nodes, array('data' => '', 'class' => array('custom_pub-option-edit-cell')));
+
     $form_row[] = array(
-      'data'=> drupal_get_form('custom_pub_edit_'.$type['type'], $type),
-      'colspan'=> 4,
+      'data' => drupal_get_form('custom_pub_edit_' . $type['type'], $type),
+      'colspan' => 4,
       'class' => array('custom_pub-form-edit'),
     );
+
     $rows[] = array('data' => $row, 'class' => array('custom_pub-option-row'));
     $rows[] = array('data' => $form_row, 'class' => array('custom_pub-form-edit'));
   }
+
   if (!empty($rows)) {
     $vars = array(
-       'header' => array(
-         t('Label'),
-         t('Machine Name'),
-         t('Node Types'),
-         array('data'=>'','class' => array('custom_pub-head-edit')),
-       ),
-       'rows' => $rows
-     );
+      'header' => array(
+        t('Label'),
+        t('Machine Name'),
+        t('Node Types'),
+        array('data' => '', 'class' => array('custom_pub-head-edit')),
+      ),
+      'rows' => $rows
+    );
+
     $table = theme('table', $vars);
   }
 
-  $output = '';
-  $form = drupal_get_form('custom_pub_add');
-  $output = render($form);
-
-  return $table . $output;
+  return $output . $table;
 }
 
 /**
- * Form callback function for add form
+ * Form callback to add a publishing option.
+ * @param $form
+ * @param $form_state
+ * @return mixed
  */
 function custom_pub_add($form, &$form_state) {
-  $node_types = _node_types_build();
-  foreach($node_types->types as $node_type => $info) {
-    $types[$node_type] = $info->name;
-  }
   $form['state_fs'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Add A Publishing Option'),
+    '#title' => t('Add a Publishing Option'),
   );
+
   $form['state_fs']['state'] = array(
     '#title' => t('Publishing label'),
     '#type' => 'textfield',
-    '#description' => t('The label for your custom publishing option.This is the text that will be displayed on the node add/edit form'),
+    '#description' => t('The label for your custom publishing option. This is the text that will be displayed on the node add/edit form.'),
     '#maxlength' => 255,
-      '#required' => TRUE,
+    '#required' => TRUE,
   );
+
   $form['state_fs']['state_machine'] = array(
     '#type' => 'textfield',
     '#title' => t('Option name'),
-    '#description' => t('The machine-readable name of this publishing option. This text will be used for constructing the database table column name. This name must contain only lowercase letters,numbers, and underscores. This name must be unique.'),
-      '#required' => TRUE,
+    '#description' => t('The machine-readable name of this publishing option. This text will be used for constructing the database table column name. This name must contain only lowercase letters, numbers, and underscores. This name must be unique.'),
+    '#required' => TRUE,
   );
+
   $form['state_fs']['node_types'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Available on'),
     '#description' => t('The Node Types this option is available on.'),
-    '#options' => $types,
+    '#options' => node_type_get_names(),
   );
+
   $form['state_fs']['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Add'),
@@ -88,13 +101,17 @@ function custom_pub_add($form, &$form_state) {
 }
 
 /**
- * Form validation function for add form
+ * Validate handler
+ * @param $form
+ * @param $form_state
  */
 function custom_pub_add_validate($form, &$form_state) {
   $types = variable_get('custom_pub_types', array());
+
   $type = array();
   $type['type'] = trim($form_state['values']['state_machine']);
   $type['name'] = trim($form_state['values']['state']);
+
   $node = drupal_get_schema('node');
 
   if (isset($types[$type['type']])) {
@@ -116,14 +133,18 @@ function custom_pub_add_validate($form, &$form_state) {
 }
 
 /**
- * Form submit function for add form
+ * Submit handler
+ * @param $form
+ * @param $form_state
  */
 function custom_pub_add_submit($form, &$form_state) {
   $types = variable_get('custom_pub_types', array());
   $node_types = _node_types_build();
+
   $type = array();
   $type[trim($form_state['values']['state_machine'])]['type'] = trim($form_state['values']['state_machine']);
   $type[trim($form_state['values']['state_machine'])]['name'] = trim($form_state['values']['state']);
+
   foreach ($form_state['values']['node_types'] as $node_type => $value) {
     if (!empty($value)) {
       $type[trim($form_state['values']['state_machine'])]['node_types'][$node_type] = $node_types->types[$node_type]->name;
@@ -131,7 +152,7 @@ function custom_pub_add_submit($form, &$form_state) {
   }
 
   $spec = array(
-    'description' => 'Custom publishing option '.t(trim($form_state['values']['state'])),
+    'description' => 'Custom publishing option ' . t(trim($form_state['values']['state'])),
     'type' => 'int',
     'not null' => TRUE,
     'default' => 0
@@ -140,27 +161,25 @@ function custom_pub_add_submit($form, &$form_state) {
     db_add_field('node', trim($form_state['values']['state_machine']), $spec);
     $success = TRUE;
   }
-  catch (Exception $e){
+  catch (Exception $e) {
     $success = FALSE;
+    watchdog_exception('custom_pub', $e, NULL, WATCHDOG_ERROR);
   }
-  if ($success){
+  if ($success) {
     cache_clear_all('*', 'cache', TRUE);
-    variable_set('custom_pub_types', array_merge($types,$type));
-    drupal_set_message(t('Publishing option created.'));
+    variable_set('custom_pub_types', array_merge($types, $type));
+    drupal_set_message(t('Publishing option %option created.', array('%option' => $form_state['values']['state'])));
+    $form_state['redirect'] = 'admin/structure/custom_pub';
   }
   else {
-    drupal_set_message(t('There was an error creating your Publishing option.'),'error');
+    drupal_set_message(t('There was an error creating your Publishing option.'), 'error');
   }
 }
 
 /**
- * Form callback function for edit form
+ * Form callback function for the edit form.
  */
 function custom_pub_edit($form, &$form_state, $type) {
-  $node_types = _node_types_build();
-  foreach ($node_types->types as $node_type => $info) {
-    $types[$node_type] = $info->name;
-  }
   $form['type'] = array(
     '#type' => 'value',
     '#value' => $type,
@@ -176,7 +195,7 @@ function custom_pub_edit($form, &$form_state, $type) {
     '#type' => 'checkboxes',
     '#title' => t('Available on'),
     '#description' => t('The Node Types this option is available on.'),
-    '#options' => $types,
+    '#options' => node_type_get_names(),
     '#default_value' => isset($type['node_types']) ? array_keys($type['node_types']) : array(),
   );
   $form['stateh'] = array(
@@ -191,31 +210,35 @@ function custom_pub_edit($form, &$form_state, $type) {
     $form['delete'] = array(
       '#type' => 'submit',
       '#value' => t('Delete'),
-      '#attributes' => array('id'=>'edit-delete'),
+      '#attributes' => array('id' => 'edit-delete'),
     );
   }
   $form['#theme'][] = 'custom_pub_edit_form';
   $form['#validate'][] = 'custom_pub_edit_validate';
   $form['#submit'][] = 'custom_pub_edit_submit';
+
   return $form;
 }
 
 /**
- * Form validate function for edit form
+ * Validate handler
+ * @param $form
+ * @param $form_state
  */
 function custom_pub_edit_validate($form, &$form_state) {
   $types = variable_get('custom_pub_types', array());
   $type = $form_state['values']['type'];
   $name = trim($form_state['values']['state']);
+
   foreach ($types as $check) {
     if ($type['name'] == $check['name'] && $type['type'] != $check['type']) {
-      form_set_error('state', t("Invalid Label. That Publishing Label is already taken. Please enter a label other than %invalid.", array('%invalid' => $type['name'])));
+      form_set_error('state', t("Invalid Label. The publishing label is already taken. Please enter a label other than %invalid.", array('%invalid' => $type['name'])));
     }
   }
 }
 
 /**
- * Form submit function for edit form
+ * Form submit function for the edit form.
  */
 function custom_pub_edit_submit($form, &$form_state) {
   $node_types = _node_types_build();
@@ -223,16 +246,19 @@ function custom_pub_edit_submit($form, &$form_state) {
   $types = variable_get('custom_pub_types', array());
 
   if ($form_state['values']['op'] == t('Delete')) {
+    $op = t('Deleted');
     unset($types[$type['type']]);
     try {
       db_drop_field('node', $type['type']);
       $success = TRUE;
     }
-    catch (Exception $e){
+    catch (Exception $e) {
       $success = FALSE;
+      watchdog_exception('custom_pub', $e, NULL, WATCHDOG_ERROR);
     }
   }
-  else{
+  else {
+    $op = t('Edited');
     unset($types[$type['type']]['node_types']);
     foreach ($form_state['values']['node_types'] as $node_type => $value) {
       if (!empty($value)) {
@@ -246,15 +272,16 @@ function custom_pub_edit_submit($form, &$form_state) {
   if ($success) {
     cache_clear_all('*', 'cache', TRUE);
     variable_set('custom_pub_types', $types);
-    drupal_set_message(t('!op publishing option successful.',array('!op' => $form_state['values']['op'])));
+    drupal_set_message(t('!op the publishing option %name.', array('!op' => $op, '%name' => trim($form_state['values']['state']))));
   }
   else {
-    drupal_set_message(t('There was an error trying to !op the publishing option. Please Try Again',array('!op' => $form_state['values']['op'])),'error');
+    drupal_set_message(t('There was an error trying to !op the publishing option. Please Try Again', array('!op' => $form_state['values']['op'])), 'error');
   }
 }
 
 /**
  * Menu callback: content administration form.
+ *
  * @param $form
  * @param $form_state
  * @return array
@@ -267,34 +294,10 @@ function custom_pub_node_admin_content($form, $form_state) {
     array_unshift($del_form['#submit'], 'custom_pub_node_admin_inc_add');
     return $del_form;
   }
-  $custom_publish_types = custom_pub_types_list();
+
   $form['filter'] = custom_pub_node_filter_form();
   $form['#submit'][] = 'custom_pub_node_filter_form_submit';
   $form['admin'] = node_admin_nodes();
-
-  /*
-  $changed = $form['admin']['nodes']['#header']['changed'];
-  $operations = $form['admin']['nodes']['#header']['operations'];
-
-  unset($form['admin']['nodes']['#header']['changed']);
-  unset($form['admin']['nodes']['#header']['operations']);
-
-  $form['admin']['nodes']['#header']['custom_publish_options'] = array('data' => 'Custom Status');
-  $form['admin']['nodes']['#header']['changed'] = $changed;
-  $form['admin']['nodes']['#header']['operations'] = $operations;
-
-  foreach ($form['admin']['nodes']['#options'] as $nid => $option) {
-    $form['admin']['nodes']['#options'][$nid]['custom_publish_options'] = array();
-
-    $node = node_load($nid);
-    foreach ($custom_publish_types as $custom_publish_machine_name => $label) {
-      if (isset($node->{$custom_publish_machine_name}) && $node->{$custom_publish_machine_name} == 1) {
-        $form['admin']['nodes']['#options'][$nid]['custom_publish_options'][] = $label;
-      }
-    }
-
-    $form['admin']['nodes']['#options'][$nid]['custom_publish_options'] = count($form['admin']['nodes']['#options'][$nid]['custom_publish_options']) ? implode(', ', $form['admin']['nodes']['#options'][$nid]['custom_publish_options']) : t('none');
-  }*/
 
   //same as above
   array_unshift($form['admin']['options']['submit']['#validate'], 'custom_pub_node_admin_inc_add');
@@ -303,8 +306,10 @@ function custom_pub_node_admin_content($form, $form_state) {
 }
 
 /**
- * Return form for node administration filters.
- * The main difference between this function and the base function is the drupal_alter call after node_filters
+ * Return the form for node administration filters.
+ *
+ * The main difference between this function and the base function is the
+ * drupal_alter() call after node_filters().
  */
 function custom_pub_node_filter_form() {
   $session = isset($_SESSION['node_overview_filter']) ? $_SESSION['node_overview_filter'] : array();
@@ -378,7 +383,7 @@ function custom_pub_node_filter_form() {
 }
 
 /**
- * Form submit function for node_admin_content
+ * Form submit function for the content administration form.
  */
 function custom_pub_node_filter_form_submit($form, $form_state) {
   $types = variable_get('custom_pub_types', array());
@@ -394,7 +399,7 @@ function custom_pub_node_filter_form_submit($form, $form_state) {
           $flat_options = form_options_flatten($filters[$filter]['options']);
           // Only accept valid selections offered on the dropdown, block bad input.
           if ($filter == 'status') {
-            list($type, $val) = explode('-',$form_state['values'][$filter]);
+            list($type, $val) = explode('-', $form_state['values'][$filter]);
             $custom = isset($types[$type]);
           }
           if (isset($flat_options[$form_state['values'][$filter]]) || $custom) {
@@ -413,11 +418,11 @@ function custom_pub_node_filter_form_submit($form, $form_state) {
 }
 
 /**
- * Implements hook_node_filters_alter()
+ * Implements hook_node_filters_alter().
  */
 function custom_pub_node_filters_alter(&$filters) {
   $types = variable_get('custom_pub_types', array());
-  foreach($types as $type) {
+  foreach ($types as $type) {
     $filters['status']['options'][$type['type'] . '-1'] = t($type['name']);
     $filters['status']['options'][$type['type'] . '-0'] = t('not ' . $type['name']);
   }
@@ -425,8 +430,10 @@ function custom_pub_node_filters_alter(&$filters) {
 
 /**
  * Adds the node.admin.inc file when called.
- * This is generally called from form validate function or build function to ensure the files are always there.
+ *
+ * This is generally called from form validate function or build function to
+ * ensure the files are always there.
  */
 function custom_pub_node_admin_inc_add() {
-  module_load_include('inc','node', 'node.admin');
+  module_load_include('inc', 'node', 'node.admin');
 }

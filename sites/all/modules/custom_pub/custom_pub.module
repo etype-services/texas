@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Adds the ability to add Custom publishing options to the node Add/Edit forms.
+ */
 
 /**
  * Implements hook_help().
@@ -21,8 +25,8 @@ function custom_pub_help($path, $arg) {
  */
 function custom_pub_permission() {
   $permissions = array();
-
   $types = variable_get('custom_pub_types', array());
+
   foreach ($types as $type) {
     $key = 'edit_custom_pub_' . $type['type'];
     $permissions[$key] = array(
@@ -53,10 +57,28 @@ function custom_pub_menu() {
   $items['admin/structure/custom_pub'] = array(
     'title' => 'Custom Publishing Options',
     'page callback' => 'custom_pub_admin',
-    'access arguments' => array('administer nodes'),
+    'access arguments' => array('administer content types'),
     'description' => 'Add and remove custom publishing options from the Node form(s).',
     'file' => 'custom_pub.admin.inc',
   );
+
+  $items['admin/structure/custom_pub/list'] = array(
+    'title' => 'Overview',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  $items['admin/structure/custom_pub/add'] = array(
+    'title' => 'Add a publishing option',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('custom_pub_add'),
+    'access arguments' => array('administer content types'),
+    'description' => 'Add and remove custom publishing options from the Node form(s).',
+    'file' => 'custom_pub.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+  );
+
   return $items;
 }
 
@@ -80,6 +102,7 @@ function custom_pub_forms($form_id, $args) {
       return $forms;
     }
   }
+
   if ($form_id == 'node_admin_content') {
     module_load_include('inc', 'node', 'node.admin');
     $forms['node_admin_content'] = array(
@@ -91,17 +114,23 @@ function custom_pub_forms($form_id, $args) {
 
 /**
  * Implements hook_form_alter().
+ * @param $form
+ * @param $form_state
+ * @param $form_id
  */
 function custom_pub_form_alter(&$form, $form_state, $form_id) {
   if (isset($form['#node_edit_form']) && $form['#node_edit_form'] === TRUE) {
     $node = $form['#node'];
     $types = custom_pub_by_node_type($node);
+
     foreach ($types as $type) {
+      $default_value = (isset($node->{$type['type']})) ? $node->{$type['type']} : NULL;
+
       $form['options'][$type['type']] = array(
-       '#type' => 'checkbox',
-       '#title' => check_plain($type['name']),
-       '#default_value' => $node->{$type['type']},
-       '#access' => user_access('administer nodes') ? TRUE : user_access('edit_custom_pub_' . $type['type']),
+        '#type' => 'checkbox',
+        '#title' => check_plain(t($type['name'])),
+        '#default_value' => $default_value,
+        '#access' => user_access('administer content types') ? TRUE : user_access('edit_custom_pub_' . $type['type']),
       );
     }
 
@@ -126,8 +155,9 @@ function custom_pub_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'node_type_form') {
     $node_type = $form['#node_type'];
     $types = custom_pub_by_node_type($node_type);
+
     foreach ($types as $type) {
-      $form['workflow']['node_options']['#options'][$type['type']] = t($type['name']);
+      $form['workflow']['node_options']['#options'][$type['type']] = check_plain(t($type['name']));
     }
   }
 
@@ -154,20 +184,20 @@ function custom_pub_views_data_alter(&$data) {
 
     // published status
     $data['node'][$type['type']] = array(
-			'title' => t($type['name']),
-			'help' => t('Custom Publishing Option. Appears in: !types', array('!types' => implode(', ', $used_in))),
-			'field' => array(
-				'handler' => 'views_handler_field_boolean',
-				'click sortable' => TRUE,
-			),
-			'filter' => array(
-				'handler' => 'views_handler_filter_boolean_operator',
-				'label' => t($type['name']),
-				'type' => 'yes-no',
-			),
-			'sort' => array(
-				'handler' => 'views_handler_sort',
-			),
+      'title' => t($type['name']),
+      'help' => t('Custom Publishing Option. Appears in: !types', array('!types' => implode(', ', $used_in))),
+      'field' => array(
+        'handler' => 'views_handler_field_boolean',
+        'click sortable' => TRUE,
+      ),
+      'filter' => array(
+        'handler' => 'views_handler_filter_boolean_operator',
+        'label' => t($type['name']),
+        'type' => 'yes-no',
+      ),
+      'sort' => array(
+        'handler' => 'views_handler_sort',
+      ),
     );
   }
 }
@@ -218,14 +248,15 @@ function custom_pub_action_info() {
 }
 
 /**
- * Implements a configurable action
- * Toggles a custom publishing option on as an action
+ * Implements a configurable action.
+ *
+ * Toggles a custom publishing option on as an action.
  *
  * @param $node
- *   The node object of the current node
+ *   The node object of the current node.
  *
  * @param $context
- *   The available context of the current action
+ *   The available context of the current action.
  */
 function custom_pub_on_action(&$node, &$context) {
   //This is mainly for the Rules Module. I couldn't get a node to save unless I set this manually
@@ -241,8 +272,10 @@ function custom_pub_on_action(&$node, &$context) {
 }
 
 /**
- * Implements a configurable action form
+ * Implements a configurable action form.
+ *
  * Allows the user to pick custom publishing options to turn on.
+ *
  * @param $context
  * @return array
  */
@@ -261,6 +294,7 @@ function custom_pub_on_action_form($context) {
 
 /**
  * Submit callback for custom_pub_on_action_form().
+ *
  * @param $form
  * @param $form_state
  * @return array
@@ -270,14 +304,15 @@ function custom_pub_on_action_submit($form, &$form_state) {
 }
 
 /**
- * Implements a configurable action
- * Toggles a custom publishing option off as an action
+ * Implements a configurable action.
+ *
+ * Toggles a custom publishing option off as an action.
  *
  * @param $node
- *   The node object of the current node
+ *   The node object of the current node.
  *
  * @param $context
- *   The available context of the current action
+ *   The available context of the current action.
  *
  * @return array
  */
@@ -296,8 +331,10 @@ function custom_pub_off_action(&$node, &$context) {
 }
 
 /**
- * Implements a configurable action form
+ * Implements a configurable action form.
+ *
  * Allows the user to pick custom publishing options to turn off.
+ *
  * @param $context
  * @return array
  */
@@ -316,6 +353,7 @@ function custom_pub_off_action_form($context) {
 
 /**
  * Submit callback for custom_pub_off_action_form().
+ *
  * @param $form
  * @param $form_state
  * @return array
@@ -355,17 +393,62 @@ function custom_pub_node_prepare($node) {
 }
 
 /**
- * Returns only the custom types available for the given node type
+ * Implements hook_entity_property_info().
+ */
+function custom_pub_entity_property_info() {
+  $info = array();
+
+  $types = variable_get('custom_pub_types', array());
+  if (!empty($types)) {
+    $properties = &$info['node']['properties'];
+
+    foreach ($types as $type) {
+      if (isset($type['node_types']) && is_array($type['node_types'])) {
+        $description = t('Custom Publishing Option. Appears in: !types', array('!types' => implode(', ', $type['node_types'])));
+      }
+      else {
+        $description = t('Custom Publishing Option. Not currently used.');
+      }
+
+      $properties[$type['type']] = array(
+        'label' => t($type['name']),
+        'type' => 'boolean',
+        'setter callback' => 'entity_property_verbatim_set',
+        'description' => $description,
+      );
+    }
+  }
+
+  return $info;
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * hook_node_prepare() is not called when a node is created by entity_create()
+ * so use this hook to prepare nodes.
+ *
+ * @param $entity
+ * @param $type
+ */
+function custom_pub_entity_presave($entity, $type) {
+  if ($type == 'node') {
+    custom_pub_node_prepare($entity);
+  }
+}
+
+/**
+ * Returns only the custom types available for the given node type.
  *
  * @param $node_type
- *   Can be either a string of the node type or an object/array with a key of 'type'
+ *   Can be either a string of the node type or an object/array with a key of 'type'.
  *
  * @return array
  */
 function custom_pub_by_node_type($node_type) {
   $return_types = array();
   if (is_object($node_type) || is_array($node_type)) {
-    (object)$node_type;
+    (object) $node_type;
     $node_type = $node_type->type;
   }
   $types = variable_get('custom_pub_types', array());
@@ -379,7 +462,10 @@ function custom_pub_by_node_type($node_type) {
 
 /**
  * Return all custom publish options defined in the system.
- * This is different than custom_pub_types(), as we return an array of machine name keyed to the name of the option.
+ *
+ * This is different than custom_pub_types(), as we return an array of machine
+ * name keyed to the name of the option.
+ *
  * @return array
  */
 function custom_pub_types_list() {
@@ -395,6 +481,7 @@ function custom_pub_types_list() {
 
 /**
  * Implements hook_node_operations().
+ *
  * @return array
  */
 function custom_pub_node_operations() {
@@ -419,6 +506,7 @@ function custom_pub_node_operations() {
 
 /**
  * Implements hook_features_api().
+ *
  * @return array
  */
 function custom_pub_features_api() {
@@ -434,6 +522,7 @@ function custom_pub_features_api() {
 
 /**
  * Returns custom publish types defined in the system.
+ *
  * @param bool $rebuild
  * @return array
  */
@@ -469,8 +558,50 @@ function custom_pub_types($rebuild = FALSE) {
 }
 
 /**
- * Rebuilds list of custom publish options, typically used during Features enabling/reverting/disabling.
+ * Rebuilds list of custom publish options.
+ *
+ * Typically used during Features enabling/reverting/disabling.
  */
 function custom_pub_types_rebuild() {
   custom_pub_types(TRUE);
+}
+
+/**
+ * Implements hook_i18n_sync_options_alter().
+ * @param $fields
+ * @param $type
+ */
+function custom_pub_i18n_sync_options_alter(&$fields, $type) {
+  // We are handling only nodes.
+  if ($type != 'node') {
+    return;
+  }
+
+  $pub_types = custom_pub_types();
+
+  foreach ($pub_types as $machine_name => $pub_type) {
+    $fields[$machine_name] = array(
+      'title' => t($pub_type['name']),
+    );
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ * Add the custom publishing option state as a class if it is enabled, similar to core node publish states.
+ * @param $variables
+ */
+function custom_pub_preprocess_node(&$variables) {
+  $types = custom_pub_by_node_type($variables['type']);
+
+  if (count($types)) {
+    $ids = array_keys($types);
+    $node = $variables['node'];
+
+    foreach ($ids as $machine_name) {
+      if (isset($node->{$machine_name}) && $node->{$machine_name}) {
+        $variables['classes_array'][] = 'node-' . $machine_name;
+      }
+    }
+  }
 }

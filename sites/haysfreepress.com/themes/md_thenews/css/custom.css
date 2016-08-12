@@ -51,7 +51,7 @@ ul li.leaf {
 }
 
 .header-ads .blcontent {
-    background-color: #F3F3F3;
+    background-color: #ffffff;
     background-image: none;
     background-repeat: repeat;
     background-attachment: scroll;
@@ -106,7 +106,7 @@ ul li.leaf {
 
 .header-ads {
     float: none;
-    margin: 26px 0 0;
+    margin: 26px 0 0 12px;
 }
 
 #logo {

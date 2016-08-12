@@ -126,7 +126,7 @@ ul li.leaf {
 @media screen and (min-width: 601px) and (max-width: 699px) {
 
     #nav .sf-menu.sf-navbar {
-        width: 600px;
+        width: 601px;
     }
 
     ul#main-menu-links li a, #nav ul.sf-menu li a {

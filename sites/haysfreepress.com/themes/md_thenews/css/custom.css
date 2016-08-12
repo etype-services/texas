@@ -101,6 +101,15 @@ ul li.leaf {
     justify-content: center;
 }
 
+.header-ads {
+    float: none;
+    margin: 26px 0 0;
+}
+
+#logo {
+    float: none;
+}
+
 /* MEDIA QUERIES */
 
 

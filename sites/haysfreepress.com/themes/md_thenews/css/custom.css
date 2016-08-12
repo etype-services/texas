@@ -111,7 +111,7 @@ ul li.leaf {
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 700px) and (max-width: 999px) {
 
     #nav .sf-menu.sf-navbar {
         width: 700px;

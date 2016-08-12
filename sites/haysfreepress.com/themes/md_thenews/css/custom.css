@@ -96,6 +96,12 @@ ul li.leaf {
     background: #ffffff;
 }
 
+#nav .sf-menu.sf-navbar {
+    margin: 0 auto;
+    float: none;
+}
+
+
 /* MEDIA QUERIES */
 
 
@@ -103,7 +109,6 @@ ul li.leaf {
 
     #nav .sf-menu.sf-navbar {
         width: 964px;
-        margin: 0 auto;
     }
 }
 
@@ -111,7 +116,6 @@ ul li.leaf {
 
     #nav .sf-menu.sf-navbar {
         width: 700px;
-        margin: 0 auto;
     }
 
     ul#main-menu-links li a, #nav ul.sf-menu li a {
@@ -124,7 +128,6 @@ ul li.leaf {
 
     #nav .sf-menu.sf-navbar {
         width: 601px;
-        margin: 0 auto;
     }
 
     ul#main-menu-links li a, #nav ul.sf-menu li a {

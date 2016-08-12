@@ -113,10 +113,6 @@ ul li.leaf {
     float: none;
 }
 
-ul#main-menu-links li a, #nav ul.sf-menu li a {
-    padding: 0 11px;
-}
-
 /* MEDIA QUERIES */
 @media screen and (min-width: 1000px) {
 
@@ -126,6 +122,11 @@ ul#main-menu-links li a, #nav ul.sf-menu li a {
         float: none;
         margin: 0 auto;
     }
+
+    ul#main-menu-links li a, #nav ul.sf-menu li a {
+        padding: 0 11px;
+    }
+
 }
 
 @media screen and (min-width: 700px) and (max-width: 999px) {

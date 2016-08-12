@@ -96,26 +96,26 @@ ul li.leaf {
     background: #ffffff;
 }
 
-#nav .sf-menu.sf-navbar {
-    margin: 0 auto;
-    float: none;
-}
-
-
 /* MEDIA QUERIES */
 
 
 @media screen and (min-width: 1000px) {
 
+    /* MAIN MENU */
     #nav .sf-menu.sf-navbar {
         width: 964px;
+        float: none;
+        margin: 0 auto;
     }
 }
 
 @media screen and (min-width: 700px) and (max-width: 999px) {
 
+    /* MAIN MENU */
     #nav .sf-menu.sf-navbar {
         width: 700px;
+        float: none;
+        margin: 0 auto;
     }
 
     ul#main-menu-links li a, #nav ul.sf-menu li a {
@@ -126,8 +126,11 @@ ul li.leaf {
 
 @media screen and (min-width: 601px) and (max-width: 699px) {
 
+    /* MAIN MENU */
     #nav .sf-menu.sf-navbar {
         width: 601px;
+        float: none;
+        margin: 0 auto;
     }
 
     ul#main-menu-links li a, #nav ul.sf-menu li a {

@@ -5,7 +5,7 @@ engine = phptemplate
 project status url = http://megadrupal.com/fserver
 
 stylesheets[all][] = css/jquery.cbFlyout.css
-;stylesheets[all][] = css/owl.carousel.css
+stylesheets[all][] = css/owl.carousel.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/custom.css
 stylesheets[all][] = css/colors.css

@@ -95,3 +95,16 @@ ul li.leaf {
 #header {
     background: #ffffff;
 }
+
+/* MEDIA QUIERIES */
+@media screen and (max-width: 1000px) {
+    ul#main-menu-links li a, #nav ul.sf-menu li a {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    ul#main-menu-links li a, #nav ul.sf-menu li a {
+        padding: 0 5px;
+    }
+}

@@ -122,3 +122,15 @@ ul li.leaf {
         font-size: 0.9em;
     }
 }
+
+@media screen and (min-width: 601px) and (max-width: 699px) {
+
+    #nav .sf-menu.sf-navbar {
+        width: 600px;
+    }
+
+    ul#main-menu-links li a, #nav ul.sf-menu li a {
+        padding: 0 5px;
+        font-size: 0.8em;
+    }
+}

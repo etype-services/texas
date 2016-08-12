@@ -10,10 +10,32 @@ ul li.leaf {
 
 }
 
-#block-simpleads-ad_groups_71 img { margin-left: 115px; margin-right: 15px; margin-bottom: 15px; width: 728px; height: 90px; text-align:center}
+#block-simpleads-ad_groups_71 img {
+    margin-left: 115px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 728px;
+    height: 90px;
+    text-align: center
+}
 
-#block-simpleads-ad_groups_76 img {float: left; margin-left: 15px; margin-right: 15px; margin-bottom: 15px; width: 200px; height: 190px}
-#block-simpleads-ad_groups_77 img {float: left; margin-left: 35px; margin-right: 15px; margin-bottom: 15px; width: 400px; height: 200px}
+#block-simpleads-ad_groups_76 img {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 200px;
+    height: 190px
+}
+
+#block-simpleads-ad_groups_77 img {
+    float: left;
+    margin-left: 35px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 400px;
+    height: 200px
+}
 
 /* sic */
 .front #capption, .front #photowithcaption blockquote {
@@ -21,12 +43,15 @@ ul li.leaf {
     visibility: hidden;
 }
 
-#leaderboard {clear: both;}
+#leaderboard {
+    clear: both;
+}
 
-.region-leaderboard .blcontent {text-align:center;}
+.region-leaderboard .blcontent {
+    text-align: center;
+}
 
-.header-ads .blcontent
-{
+.header-ads .blcontent {
     background-color: #F3F3F3;
     background-image: none;
     background-repeat: repeat;
@@ -43,8 +68,34 @@ ul li.leaf {
     padding-bottom: 0px;
     padding-left: 0px;
 }
-#block-simpleads-ad_groups_1587 {float: left; margin-right: 0px;clear:none; width: 145px;  height: 115px; border-left: 2px solid #000; border-bottom: 2px solid #000; border-top: 2px solid #000; }
-#block-simpleads-ad_groups_1587 img {padding-top: 11px; padding-left: 5px;}
-#block-block-9 {width: 190px; float: left; clear: none;height: 115px; border-right: 2px solid #000; border-bottom: 2px solid #000; border-top: 2px solid #000;}
 
-#block-dfp-haysleaderboard iframe {margin-left:-55px;}
+#block-simpleads-ad_groups_1587 {
+    float: left;
+    margin-right: 0px;
+    clear: none;
+    width: 145px;
+    height: 115px;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+}
+
+#block-simpleads-ad_groups_1587 img {
+    padding-top: 11px;
+    padding-left: 5px;
+}
+
+#block-block-9 {
+    width: 190px;
+    float: left;
+    clear: none;
+    height: 115px;
+}
+
+#block-dfp-haysleaderboard iframe {
+    margin-left: -55px;
+}
+
+#header {
+    background: #ffffff;
+}

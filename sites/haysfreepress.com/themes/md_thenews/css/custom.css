@@ -96,4 +96,16 @@ ul li.leaf {
     background: #ffffff;
 }
 
+#nav .sf-menu.sf-navbar {
+    margin: 0 auto;
+}
+
+
 /* MEDIA QUERIES */
+
+
+@media screen and (min-width: 1000px) {
+    #nav .sf-menu.sf-navbar {
+        width: 815px;
+    }
+}

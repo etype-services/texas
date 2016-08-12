@@ -4,11 +4,14 @@ core = 7.x
 engine = phptemplate
 project status url = http://megadrupal.com/fserver
 
+stylesheets[all][] = css/jquery.cbFlyout.css
+stylesheets[all][] = css/owl.carousel.css
 stylesheets[all][] = css/style.css
 ;stylesheets[all][] = css/colors.css
 stylesheets[print][] = css/print.css
 
-regions[leaderboard] = Leaderboard
+
+regions[pushmenu] = Multi-level push
 regions[header_ads] = Header Ads
 regions[superfish] = Superfish menu
 regions[help] = Help
@@ -55,7 +58,7 @@ settings[css3_textarea] = 1
 settings[design_fluid] = 1
 
 
-version = "7.x-2.5"
+version = "7.x-2.6"
 core = "7.x"
 project = "md_thenews"
-datestamp = "1363260909"
+datestamp = "1397794124"

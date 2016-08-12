@@ -105,7 +105,20 @@ ul li.leaf {
 
 
 @media screen and (min-width: 1000px) {
+
     #nav .sf-menu.sf-navbar {
         width: 964px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+
+    #nav .sf-menu.sf-navbar {
+        width: 700px;
+    }
+
+    ul#main-menu-links li a, #nav ul.sf-menu li a {
+        padding: 0 5px;
+        font-size: 0.9em;
     }
 }

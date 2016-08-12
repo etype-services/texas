@@ -96,7 +96,7 @@ ul li.leaf {
     background: #ffffff;
 }
 
-#header .wrap {
+#header .flex {
     display:flex;
     justify-content: center;
 }

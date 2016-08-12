@@ -3,11 +3,7 @@
 /* Custom Responsive Menu */
 
 ul li.leaf {
-
     list-style: none;
-
-    list-style-image: none;
-
 }
 
 #block-simpleads-ad_groups_71 img {
@@ -16,7 +12,7 @@ ul li.leaf {
     margin-bottom: 15px;
     width: 728px;
     height: 90px;
-    text-align: center
+    text-align: center;
 }
 
 #block-simpleads-ad_groups_76 img {
@@ -56,22 +52,22 @@ ul li.leaf {
     background-image: none;
     background-repeat: repeat;
     background-attachment: scroll;
-    background-position: 0% 0%;
+    background-position: 0;
     background-clip: border-box;
     background-origin: padding-box;
     background-size: auto auto;
-    border-bottom-width: 0px;
+    border-bottom-width: 0;
     border-bottom-style: solid;
     border-bottom-color: #e6e6e6;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
 }
 
 #block-simpleads-ad_groups_1587 {
     float: left;
-    margin-right: 0px;
+    margin-right: 0;
     clear: none;
     width: 145px;
     height: 115px;

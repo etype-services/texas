@@ -126,6 +126,12 @@ ul li.leaf {
     float: none;
 }
 
+/* CLEAN UP NOT LOGGED IN APPEARANCE */
+.not-logged-in.page-type-article .node-article-teaser h2.article-title {
+    display: none;
+    visibility: hidden;
+}
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 1000px) {
 

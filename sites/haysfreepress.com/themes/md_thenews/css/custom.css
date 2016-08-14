@@ -96,9 +96,14 @@ ul li.leaf {
 }
 
 /* ADD THIS */
+.page-type-article .meta {
+    float: left;
+}
 
 .page-type-article .addthis_sharing_toolbox {
     float: right;
+    position: relative;
+    top; -8px;
 }
 
 /* HEADER ITEMS */
@@ -165,4 +170,19 @@ ul li.leaf {
         padding: 0 5px;
         font-size: 0.8em;
     }
+
+    .page-type-article .meta {
+        float: left;
+        max-width: 50%;
+    }
 }
+
+@media screen and (max-width: 600px) {
+
+    .page-type-article .meta {
+        max-width: 40%;
+    }
+}
+
+
+

@@ -97,7 +97,7 @@ ul li.leaf {
 
 /* ADD THIS */
 
-.page-node .node-article .addthis_sharing_toolbox {
+.page-type-article .addthis_sharing_toolbox {
     float: right;
 }
 

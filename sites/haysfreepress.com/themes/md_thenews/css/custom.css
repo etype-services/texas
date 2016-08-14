@@ -183,6 +183,10 @@ ul li.leaf {
     .page-type-article .meta {
         max-width: 40%;
     }
+
+    .page-type-article .addthis_sharing_toolbox {
+        top: 0;
+    }
 }
 
 

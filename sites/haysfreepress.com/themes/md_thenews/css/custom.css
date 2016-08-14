@@ -132,6 +132,11 @@ ul li.leaf {
     visibility: hidden;
 }
 
+.not-logged-in.page-type-article .node-article-teaser .article-info .node-readmore {
+    display: none;
+    visibility: hidden;
+}
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 1000px) {
 

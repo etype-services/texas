@@ -177,7 +177,7 @@ ul li.leaf {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 520px) {
 
     /* ADD THIS */
     .page-type-article .meta {

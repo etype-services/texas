@@ -137,6 +137,11 @@ ul li.leaf {
     visibility: hidden;
 }
 
+.not-logged-in.page-type-article .node-article-teaser .article-info .comment_forbidden span a {
+    position: relative;
+    top: 3px;
+}
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 1000px) {
 

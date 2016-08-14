@@ -103,7 +103,7 @@ ul li.leaf {
 .page-type-article .addthis_sharing_toolbox {
     float: right;
     position: relative;
-    top; -8px;
+    top: -8px;
 }
 
 /* HEADER ITEMS */

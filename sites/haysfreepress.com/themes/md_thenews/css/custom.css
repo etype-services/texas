@@ -95,6 +95,19 @@ ul li.leaf {
     margin-left: -55px;
 }
 
+/* ADD THIS */
+
+.page-node .node-article .addthis_sharing_toolbox {
+    float: right;
+}
+
+.node-teaser .addthis_sharing_toolbox {
+    display: none;
+    visibility: hidden;
+}
+
+/* HEADER ITEMS */
+
 #header {
     background: #ffffff;
 }

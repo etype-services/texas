@@ -34,6 +34,12 @@
     background-color: blue;
 }
 
+/* TAGS ON TAXONOMY PAGES */
+
+.node-teaser .taxonomy-inner .field-name-field-tags .field-items .field-item {
+    margin-right: 0.3em;
+}
+
 /* FRONT PAGE BLOCKS
 --------------------------------------------------------------------------*/
 
@@ -52,6 +58,7 @@
 #block-views-sports-top-stories-block .title a {
     color: blue;
 }
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 

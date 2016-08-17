@@ -154,6 +154,9 @@ function premium_form_alter(&$form, $form_state, $form_id) {
     if (user_access('administer node premium status')) {
       $node = $form['#node'];
       $premium_level = premium_node_level_data($node);
+      if ( ! isset ($premium_level['machine_name'])) {
+        $premium_level['machine_name'] = 'None';
+      }
       $form['options']['premium'] = array(
         '#type' => 'select',
         '#title' => t('Premium content level'),

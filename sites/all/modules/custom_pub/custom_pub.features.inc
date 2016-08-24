@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Adds support for the Features module.
+ */
 
 /**
  * Implements hook_features_export_options().
@@ -8,7 +12,7 @@ function custom_pub_features_export_options() {
 }
 
 /**
- * Implements hook_features_export.
+ * Implements hook_features_export().
  */
 function custom_pub_features_export($data, &$export, $module_name = '') {
   $pipe = array();
@@ -66,7 +70,7 @@ function custom_pub_features_export_render($module, $data, $export = NULL) {
  * Implements hook_features_revert().
  *
  * @param $module
- * name of module to revert content for
+ *   Name of module to revert content for.
  */
 function custom_pub_features_revert($module = NULL) {
   if ($default_options = features_get_default('custom_pub', $module)) {
@@ -113,7 +117,7 @@ function custom_pub_features_enable_feature($module) {
       'type' => 'int',
       'not null' => TRUE,
       'default' => 0
-     );
+    );
     // Add fields in database
     foreach ($default_options as $option_name => $option_info) {
       if (!db_field_exists('node', $option_name)) {

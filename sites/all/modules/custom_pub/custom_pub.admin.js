@@ -1,34 +1,34 @@
-(function($) {
+(function ($) {
+  "use strict";
   Drupal.behaviors.custom_pub_admin = {
-    attach : function() {
-      $("td.custom_pub-option-edit-cell").html('<a href="#">Edit</a>').css("text-align", "right");
+    attach: function () {
+      var toggleButtonLabels = {
+        edit: Drupal.t('Edit'),
+        close: Drupal.t('Close')
+      };
+      $("td.custom_pub-option-edit-cell").html('<a href="#">' + toggleButtonLabels.edit + '</a>').css("text-align", "right");
       $("tr.custom_pub-form-edit").hide();
-      $("td.custom_pub-option-edit-cell > a").bind('click', function() {
-        $this = $(this);
-        $opt = new Array();
-        $opt["Edit"] = "Close";
-        $opt["Close"] = "Edit";
+      $("td.custom_pub-option-edit-cell > a").bind('click', function () {
+        var $this = $(this);
+        var opt = [];
+        var txt = $this.text();
+        opt[toggleButtonLabels.edit] = toggleButtonLabels.close;
+        opt[toggleButtonLabels.close] = toggleButtonLabels.edit;
         $this.parents('tr.custom_pub-option-row').next("tr.custom_pub-form-edit").toggle();
-        $txt = $this.text();
-        $this.text($opt[$txt]);
+        $this.text(opt[txt]);
         return false;
       });
-      $("th.close-cusotm-pub-table").html('<a>X</a>')
+      $("th.close-custom-pub-table").html('<a>X</a>')
       .css('text-align', 'right');
-      $("th.close-cusotm-pub-table > a")
+      $("th.close-custom-pub-table > a")
       .css('cursor', 'pointer')
-      .live('click', function() {
-        $this = $(this);
-        $opt = new Array();
-        $opt["Edit"] = "Close";
-        $opt["Close"] = "Edit";
-        $row = $this.parents("tr.custom_pub-form-edit");
-        $row.toggle()
-        $link = $row.prev('tr.custom_pub-option-row').find("td.custom_pub-option-edit-cell > a");
-        $txt = $link.text();
-        $link.text($opt[$txt]);
+      .live('click', function () {
+        var $this = $(this);
+        var $row = $this.parents("tr.custom_pub-form-edit");
+        var $link = $row.prev('tr.custom_pub-option-row').find("td.custom_pub-option-edit-cell > a");
+        $link.click();
         return false;
       });
     }
-  }
+  };
 })(jQuery);

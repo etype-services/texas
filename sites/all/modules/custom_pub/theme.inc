@@ -1,16 +1,20 @@
 <?php
 /**
  * @file
- *   Theme functions for Custom publishing options
+ * Theme functions for Custom Publishing Options.
+ */
+
+/**
+ * Return markup for the edit form.
  */
 function theme_custom_pub_edit_form($vars) {
   $form = $vars['form'];
-  $type = $form['type']['#value'];  
+  $type = $form['type']['#value'];
   $head = array(
     t('Label'),
     t('Machine Name'),
     t('Node Types'),
-    array('data' => '', 'class' => array('close-cusotm-pub-table')),
+    array('data' => '', 'class' => array('close-custom-pub-table')),
   );
   $rows = array(
     array(

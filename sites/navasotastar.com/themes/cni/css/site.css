@@ -3,12 +3,12 @@
 .site-logo {
     width: 100%;
     margin: 0 auto;
-    max-width: 2262px;
+    max-width: 995px;
 }
 
 .site-logo img {
     width: 100%;
-    max-width: 2262px;
+    max-width: 995px;
 }
 
 /* MAIN MENU
@@ -34,24 +34,31 @@
     background-color: blue;
 }
 
+/* TAGS ON TAXONOMY PAGES */
+
+.node-teaser .taxonomy-inner .field-name-field-tags .field-items .field-item {
+    margin-right: 0.3em;
+}
+
 /* FRONT PAGE BLOCKS
 --------------------------------------------------------------------------*/
 
-#block-views-top-news-stories-block a, #block-views-top-news-stories-block .content {
+#block-views-top-news-stories-block .title a {
     color: red;
 }
 
-#block-views-business-top-stories-block a, #block-views-business-top-stories-block .content {
+#block-views-business-top-stories-block .title a {
     color: green;
 }
 
-#block-views-lifestyle-top-stories-block a, #block-views-lifestyle-top-stories-block .content {
+#block-views-lifestyle-top-stories-block .title a {
     color: orange;
 }
 
-#block-views-sports-top-stories-block a, #block-views-sports-top-stories-block .content {
+#block-views-sports-top-stories-block .title a {
     color: blue;
 }
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 

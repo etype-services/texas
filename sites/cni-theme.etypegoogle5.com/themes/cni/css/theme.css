@@ -1,4 +1,4 @@
-/* HTML 
+/* HTML
 --------------------------------------------------------------------------*/
 
 body {
@@ -65,7 +65,7 @@ td {
     border: 1px solid #dddddd;
 }
 
-/* HEADER 
+/* HEADER
 --------------------------------------------------------------------------*/
 
 .header-wrapper-inner {
@@ -88,10 +88,10 @@ h3.site-slogan {
 }
 
 .region-headerad .block {
-	float: left;
+    float: left;
 }
 
-/* SLIDESHOW 
+/* SLIDESHOW
 --------------------------------------------------------------------------*/
 
 .view-slideshow {
@@ -176,7 +176,7 @@ h3.site-slogan {
     margin-right: 0;
 }
 
-/* PREFACE 
+/* PREFACE
 --------------------------------------------------------------------------*/
 
 .preface-wrapper .views-row {
@@ -237,12 +237,12 @@ h3.site-slogan {
 }
 
 .preface-wrapper .block-inner .views-field-title h3 {
-	line-height: 1.5em;
-	margin-bottom: 3pt;
+    line-height: 1.5em;
+    margin-bottom: 3pt;
 }
 
 .preface-wrapper .block-inner .views-field-title h3 a {
-	
+
 }
 
 .preface-wrapper .block-inner .views-field-body p {
@@ -255,7 +255,7 @@ h3.site-slogan {
     font-style: italic;
 }
 
-/* MAIN CONTENT 
+/* MAIN CONTENT
 --------------------------------------------------------------------------*/
 
 .main-content-wrapper {
@@ -272,10 +272,10 @@ h3.site-slogan {
 }
 
 article .field-image {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
-/* SIDEBARS 
+/* SIDEBARS
 --------------------------------------------------------------------------*/
 
 .sidebar .content {
@@ -292,7 +292,7 @@ article .field-image {
     margin-bottom: 0;
 }
 
-/* POSTSCRIPT 
+/* POSTSCRIPT
 --------------------------------------------------------------------------*/
 
 #postscript {
@@ -313,6 +313,11 @@ article .field-image {
     border-top: 20px solid #252525;
 }
 
+/* override widths for .grid_3 in footer */
+.container_12 .postscript-wrapper .grid_3 {
+    width: 31% !important;
+}
+
 .postscript-wrapper .block-inner {
     padding: 0;
 }
@@ -324,7 +329,6 @@ article .field-image {
 
 .postscript-wrapper h3 {
     display: block;
-    margin-left: 20px;
     margin-bottom: 10px;
 }
 
@@ -332,6 +336,12 @@ article .field-image {
     padding-right: 5px;
     background: #333333;
     color: #999999;
+}
+
+/* override default styles for user menu in footer */
+#postscript .block-menu-block ul.menu li {
+    padding-left: 0 !important;
+    list-style-type: none !important;
 }
 
 #postscript .item-list ul li {
@@ -388,7 +398,7 @@ article .field-image {
 --------------------------------------------------------------------------*/
 
 
-/* LISTS 
+/* LISTS
 --------------------------------------------------------------------------*/
 
 .item-list ul {
@@ -1482,7 +1492,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 --------------------------------------------------------------------------*/
 
 .region-main-menu .contextual-links-region #block-simpleads-ad-groups-436 {
-	text-align:center;
+    text-align:center;
 }
 
 /* advanced poll block */

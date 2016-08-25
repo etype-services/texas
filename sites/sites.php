@@ -181,9 +181,12 @@ $sites['www.bartonpublications.com'] =  'haysfreepress.com';
 $sites['bartonpublicationsinc.com'] =  'haysfreepress.com';
 $sites['www.bartonpublicationsinc.com'] =  'haysfreepress.com';
 
-$sites['haysfreepressnewcontent.etypegoogle5.com'] =  'haysfreepressnewcontent';
-
 /* ozonastockman.etypegoogle5.com */
 $sites['ozonastockman.etypegoogle5.com'] =  'ozonastockman.com';
 $sites['ozonastockman.com'] =  'ozonastockman.com';
 $sites['www.ozonastockman.com'] =  'ozonastockman.com';
+
+/* frio-nuecescurrent.etypegoogle5.com */
+$sites['frio-nuecescurrent.etypegoogle5.com'] =  'frio-nuecescurrent.com';
+$sites['frio-nuecescurrent.com'] =  'frio-nuecescurrent.com';
+$sites['www.frio-nuecescurrent.com'] =  'frio-nuecescurrent.com';

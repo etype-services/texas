@@ -190,3 +190,5 @@ $sites['www.ozonastockman.com'] =  'ozonastockman.com';
 $sites['frio-nuecescurrent.etypegoogle5.com'] =  'frio-nuecescurrent.com';
 $sites['frio-nuecescurrent.com'] =  'frio-nuecescurrent.com';
 $sites['www.frio-nuecescurrent.com'] =  'frio-nuecescurrent.com';
+$sites['fncnow.com'] =  'frio-nuecescurrent.com';
+$sites['www.fncnow.com'] =  'frio-nuecescurrent.com';

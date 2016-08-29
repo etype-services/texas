@@ -658,7 +658,8 @@ table ul.links li {
     padding: 15px;
 }
 #content img {
-	max-width: 100%;
+	/* max-width: 100%; */
+	width: 100%;
 	height: auto;
 }
 #content-left {

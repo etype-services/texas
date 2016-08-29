@@ -8,7 +8,7 @@
       <h2<?php print $title_attributes; ?> class="article-title">
         <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
       </h2>
-      
+
       <?php if ($display_submitted): ?>
         <div class="meta submitted">
           <?php print $user_picture; ?>

@@ -737,8 +737,6 @@ function md_thenews_process_maintenance_page(&$vars) {
  */
 function md_thenews_preprocess_node(&$vars) {
 
-  dpm($vars);
-
 	if (theme_get_setting('extra_article_classes')) {
     if (module_exists('translation')) {
       if ($vars['node']->language) {

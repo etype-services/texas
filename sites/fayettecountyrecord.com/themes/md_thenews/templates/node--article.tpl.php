@@ -62,10 +62,9 @@
   // FULL NODE
   else: ?>
 
-    <?php if (isset ($content['sub_headline'])): ?>
-      hide ($content['sub_headline']);
+    <?php if (isset ($content['field_sub_headline'])): ?>
       <div class="subhead">
-        <?php print render($content['sub_headline']); ?>
+        <?php print render($content['field_sub_headline']); ?>
       </div>
     <?php endif; ?>
 
@@ -84,6 +83,7 @@
 
     <div class="node-content clearfix"<?php print $content_attributes; ?>>
       <?php
+      hide ($content['field_sub_headline']);
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);

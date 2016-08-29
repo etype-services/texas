@@ -92,6 +92,7 @@ $sites['www.myeldorado.net'] = 'eldoradosuccess.com';
 $sites['fayettecountyrecord.etypegoogle5.com'] = 'fayettecountyrecord.com';
 $sites['fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['www.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
+$sites['fayettecountyrecorddev.etypegoogle5.com'] = 'fayettecountyrecord.com';
 
 /* haysnewsdispatch.etypegoogle5.com */
 $sites['haysnewsdispatch.etypegoogle5.com'] = 'haysnewsdispatch.com';
@@ -188,5 +189,7 @@ $sites['ozonastockman.etypegoogle5.com'] =  'ozonastockman.com';
 $sites['ozonastockman.com'] =  'ozonastockman.com';
 $sites['www.ozonastockman.com'] =  'ozonastockman.com';
 
+/* cni-theme.etypegoogle5.com */
+$sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';
 /* cni-theme.etypegoogle5.com */
 $sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';

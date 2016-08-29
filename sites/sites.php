@@ -92,6 +92,7 @@ $sites['www.myeldorado.net'] = 'eldoradosuccess.com';
 $sites['fayettecountyrecord.etypegoogle5.com'] = 'fayettecountyrecord.com';
 $sites['fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['www.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
+$sites['fayettecountyrecorddev.etypegoogle5.com'] = 'fayettecountyrecord.com';
 
 /* haysnewsdispatch.etypegoogle5.com */
 $sites['haysnewsdispatch.etypegoogle5.com'] = 'haysnewsdispatch.com';
@@ -181,14 +182,14 @@ $sites['www.bartonpublications.com'] =  'haysfreepress.com';
 $sites['bartonpublicationsinc.com'] =  'haysfreepress.com';
 $sites['www.bartonpublicationsinc.com'] =  'haysfreepress.com';
 
+$sites['haysfreepressnewcontent.etypegoogle5.com'] =  'haysfreepressnewcontent';
+
 /* ozonastockman.etypegoogle5.com */
 $sites['ozonastockman.etypegoogle5.com'] =  'ozonastockman.com';
 $sites['ozonastockman.com'] =  'ozonastockman.com';
 $sites['www.ozonastockman.com'] =  'ozonastockman.com';
 
-/* frio-nuecescurrent.etypegoogle5.com */
-$sites['frio-nuecescurrent.etypegoogle5.com'] =  'frio-nuecescurrent.com';
-$sites['frio-nuecescurrent.com'] =  'frio-nuecescurrent.com';
-$sites['www.frio-nuecescurrent.com'] =  'frio-nuecescurrent.com';
-$sites['fncnow.com'] =  'frio-nuecescurrent.com';
-$sites['www.fncnow.com'] =  'frio-nuecescurrent.com';
+/* cni-theme.etypegoogle5.com */
+$sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';
+/* cni-theme.etypegoogle5.com */
+$sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';

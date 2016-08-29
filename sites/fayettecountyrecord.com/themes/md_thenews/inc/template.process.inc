@@ -736,6 +736,7 @@ function md_thenews_process_maintenance_page(&$vars) {
  * Override or insert vars into the node template.
  */
 function md_thenews_preprocess_node(&$vars) {
+
 	if (theme_get_setting('extra_article_classes')) {
     if (module_exists('translation')) {
       if ($vars['node']->language) {

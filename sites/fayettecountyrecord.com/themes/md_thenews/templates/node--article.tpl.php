@@ -62,11 +62,10 @@
   // FULL NODE
   else: ?>
 
-    <?php var_dump($content); ?>
     <?php if (isset ($content['sub_headline'])): ?>
       hide ($content['sub_headline']);
       <div class="subhead">
-        <?php print $content['sub_headline']; ?>
+        <?php print render($content['sub_headline']); ?>
       </div>
     <?php endif; ?>
 

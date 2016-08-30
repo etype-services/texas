@@ -157,6 +157,7 @@ $sites['www.thevidorian.com'] = 'thevidorian.com';
 $sites['pleasantonexpress.etypegoogle5.com'] = 'pleasantonexpress.com';
 $sites['pleasantonexpress.com'] = 'pleasantonexpress.com';
 $sites['www.pleasantonexpress.com'] = 'pleasantonexpress.com';
+$sites['pleasantonexpressdev.etypegoogle5.com'] = 'pleasantonexpress.com';
 
 /* navasotastar.etypegoogle5.com */
 $sites['navasotastar.etypegoogle5.com'] = 'navasotastar.com';

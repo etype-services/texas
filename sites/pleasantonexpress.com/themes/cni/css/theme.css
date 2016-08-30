@@ -558,7 +558,7 @@ article .field-image {
     width: 100%;
 }
 
-#block-superfish-1 .content {
+#block-superfish-1 .content, #block-system-user-menu .content {
     margin: 0 auto;
 }
 

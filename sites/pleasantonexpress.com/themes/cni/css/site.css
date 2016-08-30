@@ -149,3 +149,10 @@
 	text-align:center;
 	margin-top: 5px;
 }
+
+/* User Menu */
+#block-system-user-menu {
+    background-color: #094385;
+    width: 100%;
+    border-top: 1px solid black;
+}

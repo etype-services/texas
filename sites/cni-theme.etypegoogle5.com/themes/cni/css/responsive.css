@@ -215,10 +215,6 @@
         color: #ffffff;
     }
 
-    .main-content-wrapper {
-        margin-top: 0px;
-    }
-
     .node-teaser .field-name-field-image img {
         float: none;
         margin: 0 0 20px 0;
@@ -287,6 +283,16 @@
         margin-left: 0;
         margin-bottom: 10px;
         background: none;
+    }
+
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
     }
 
     .region-postscript-4 {
@@ -420,10 +426,19 @@
         background: none;
     }
 
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
+    }
+
     .region-postscript-4 {
         margin-top: 1em;
     }
-
 
     /* weather block */
     #block-block-35 .block-inner {
@@ -553,6 +568,16 @@
         background: none;
     }
 
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
+    }
+
     .region-postscript-4 {
         margin-top: 1em;
     }
@@ -562,5 +587,13 @@
         border: none;
         box-shadow: none;
     }
+
+}
+
+
+/* less granular switch for big and small */
+@media only screen and (max-width: 767px) {
+
+
 
 }

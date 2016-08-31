@@ -1,20 +1,5 @@
 (function ($) {
 
-    $(document).ready(function(){															 
-
-	  if ($.browser.msie) { } else {
-		$('ul.menu').mobileMenu({
-		combine: true,
-		switchWidth: 760,
-		prependTo: ".header-wrapper-inner",
-		nested: false,
-		groupPageText: 'More',
-		topOptionText: 'Menu'
-		});
-	  }
-	
-    }); 
-
  	Drupal.behaviors.bonesSuperfish = {
 	
 	  attach: function(context, settings) {

@@ -165,6 +165,10 @@
     border-bottom: 1px solid black;
 }
 
+#block-system-user-menu ul.menu li {
+    height: 27px;
+}
+
 #block-system-user-menu ul.menu li a {
     font-size: 0.8em;
 }

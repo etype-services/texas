@@ -5,7 +5,7 @@
 	  if ($.browser.msie) { } else {
 		$('ul.menu').mobileMenu({
 		combine: true,
-		switchWidth: 760,
+		switchWidth: 767,
 		prependTo: ".header-wrapper-inner",
 		nested: false,
 		groupPageText: 'More',

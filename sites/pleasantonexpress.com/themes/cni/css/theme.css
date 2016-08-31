@@ -654,6 +654,11 @@ article .field-image {
     background: 0;
 }
 
+#mm0 {
+    display: none;
+    visibility: hidden;
+}
+
 /* SIDE MENU
 --------------------------------------------------------------------------*/
 

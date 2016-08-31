@@ -305,6 +305,16 @@
         background: none;
     }
 
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
+    }
+
     .region-postscript-4 {
         margin-top: 1em;
     }
@@ -436,10 +446,19 @@
         background: none;
     }
 
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
+    }
+
     .region-postscript-4 {
         margin-top: 1em;
     }
-
 
     /* weather block */
     #block-block-35 .block-inner {
@@ -567,6 +586,16 @@
         margin-left: 0;
         margin-bottom: 10px;
         background: none;
+    }
+
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
     }
 
     .region-postscript-4 {

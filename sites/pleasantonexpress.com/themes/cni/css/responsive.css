@@ -59,9 +59,15 @@
 @media only screen and (max-width: 958px) and (min-width: 768px) {
 
     /* main menu */
-    #block-superfish-1 .content, #block-system-user-menu .content {
+    #block-superfish-1 .content {
         width: 797px;
         font-size: 0.8em;
+    }
+
+    /* user menu */
+    #block-system-user-menu .content {
+        width: 797px;
+        font-size: 0.7em;
     }
 
     #block-superfish-1 ul #menu-1797-1 {

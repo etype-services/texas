@@ -159,8 +159,7 @@
 #block-system-user-menu {
     background-color: #ffffff;
     width: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    height: 29px;
 }
 
 #block-system-user-menu ul.menu li {

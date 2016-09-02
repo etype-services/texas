@@ -108,8 +108,6 @@
                 class="grid_3"><?php print render($page['postscript_2']); ?></div>
               <div
                 class="grid_3"><?php print render($page['postscript_3']); ?></div>
-              <div
-                class="grid_3"><?php print render($page['postscript_4']); ?></div>
             </section>
           </div>
         </div>

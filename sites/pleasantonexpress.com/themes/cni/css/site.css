@@ -13,7 +13,7 @@
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 
-.block-simpleads .block-inner {
+#main-content .block-simpleads .block-inner {
     padding: 0;
 	margin: 0;
 	border-style: none;
@@ -21,7 +21,7 @@
 	box-shadow: none;
 }
 
-#block-simpleads img {
+#main-content .block-simpleads img {
 	max-width:100%;
 }
 

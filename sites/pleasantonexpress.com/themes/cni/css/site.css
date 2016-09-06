@@ -21,8 +21,8 @@
 	box-shadow: none;
 }
 
-#main-content .block-simpleads img {
-	max-width:100%;
+#main-content .block-simpleads img, .block-simpleads img {
+	max-width: 100%;
 }
 
 #block-simpleads-ad-groups-437, #block-simpleads-ad-groups-416 {

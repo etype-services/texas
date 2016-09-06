@@ -15,7 +15,7 @@
 
 #main-content .block-simpleads .block-inner {
     padding: 0;
-	margin: 0;
+	margin: 0 0 20px 0;
 	border-style: none;
     border-width: 0;
 	box-shadow: none;
@@ -25,7 +25,7 @@
 	max-width:100%;
 }
 
-#block-simpleads-ad-groups-437 {
+#block-simpleads-ad-groups-437, #block-simpleads-ad-groups-416 {
 	text-align:center;
 	margin-top: 5px;
 }

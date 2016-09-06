@@ -25,15 +25,10 @@
 	max-width: 100%;
 }
 
-#block-simpleads-ad-groups-437, #block-simpleads-ad-groups-416 {
+.region-main-menu-second-level .block-simpleads {
 	text-align:center;
 	margin-top: 5px;
 }
-
-#block-simpleads-ad-groups-415 {
-    text-align:center;
-}
-
 
 /* Google DFP Ads
 --------------------------------------------------------------------------*/

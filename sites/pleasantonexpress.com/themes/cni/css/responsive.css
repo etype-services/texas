@@ -614,4 +614,9 @@
         visibility: hidden;
     }
 
+    #block-dfp-tpa-southleaderboard {
+        display: none;
+        visibility: hidden;
+    }
+
 }

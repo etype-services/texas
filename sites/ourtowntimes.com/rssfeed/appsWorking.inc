@@ -97,9 +97,9 @@ function process() {
 			$outputStarter = "<key>output</key><array>";
 			$outputBody = '';
 			$outputEnder = "</array>";
-			 $pubview= "1213";
+			 $pubview= "2796";
 			 
-			$pre="smr";
+			$pre="ott";
 			$canView[strtolower($pre)] = true;
 			
 			 $return = $this->buildOutput("KO", "Your subscription to our Town Times Expired . Please contact the Helpdesk to renew your subscription", $canView,$pubview,$pre);
@@ -112,9 +112,9 @@ function process() {
 			$outputStarter = "<key>output</key><array>";
 			$outputBody = '';
 			$outputEnder = "</array>";
-			 $pubview= "1213";
+			 $pubview= "2796";
 			
-			$pre="smr";
+			$pre="ott";
 			$canView[strtolower($pre)] = true;
 			$return = $this->buildOutput("OK", "Success", $canView,$pubview,$pre);
 		}

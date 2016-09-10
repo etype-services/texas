@@ -1,6 +1,6 @@
 <?php
 $url = $_SERVER['HTTP_HOST'];
-if($url=='ourtowntimes.com' || $url=='www.ourtowntimes.com' || $url=='www.easttexaspress.com' || $url=='easttexaspress.com')
+if($url == 'ourtowntimes.com' || $url == 'www.ourtowntimes.com' || $url == 'www.easttexaspress.com' || $url == 'easttexaspress.com')
 {
  require_once('sites/ourtowntimes.com/rssfeed/feed.inc');
 }

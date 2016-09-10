@@ -6,7 +6,7 @@ if ((isset($_POST['usr'])) && (isset($_POST['pwd']))) {
 //die();
 
 $url = $_SERVER['HTTP_HOST'];
-if($url=='ourtowntimes.com' || $url=='www.ourtowntimes.com')
+if($url=='ourtowntimes.com' || $url=='www.ourtowntimes.com' || $url=='www.easttexaspress.com' || $url=='easttexaspress.com')
 {
 require_once('sites/easttexaspress.com/rssfeed/login.inc');
 }

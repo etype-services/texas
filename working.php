@@ -8,7 +8,7 @@ if ((isset($_POST['usr'])) && (isset($_POST['pwd']))) {
 $url = $_SERVER['HTTP_HOST'];
 if($url=='ourtowntimes.com' || $url=='www.ourtowntimes.com')
 {
-require_once('sites/ourtowntimes.com/rssfeed/login.inc');
+require_once('sites/easttexaspress.com/rssfeed/login.inc');
 }
 else if($url == 'eastlandcountytoday.com' || $url == 'www.eastlandcountytoday.com')
 {

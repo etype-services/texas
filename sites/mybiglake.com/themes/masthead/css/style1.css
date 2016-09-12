@@ -1081,5 +1081,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 /* title */
 .node-content-wrapper h2.title {
     margin-bottom: 10px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #dddddd;
 }

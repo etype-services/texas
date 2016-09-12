@@ -53,19 +53,13 @@ p {
     padding-bottom: 10px;
 }
 
-table {
-}
-
-tr {
-}
-
 td {
     padding: 5px;
     vertical-align: middle;
     border: 1px solid #dddddd;
 }
 
-img:not(.file-icon) {
+img {
     max-width: 100%;
 }
 
@@ -179,6 +173,10 @@ h3.site-slogan {
 
 .view-slideshow .views-slideshow-controls-bottom #views_slideshow_pager_field_item_bottom_slideshow-block_5 .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom #views_slideshow_pager_field_item_bottom_slideshow-block_5 .views-field-field-video img {
     margin-right: 0;
+}
+
+.view .pager {
+    font-family: 'Lato', sans-serif;
 }
 
 /* PREFACE
@@ -425,7 +423,6 @@ article .field-image {
     list-style-position: outside;
     list-style-type: square;
     color: #000;
-    border-bottom: 1px dotted #999999;
 }
 
 .item-list ul li.last {

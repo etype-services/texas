@@ -135,7 +135,7 @@
 
 #block-dfp-tpa-northsidebar {
 	margin-bottom: 10px;
-}	
+}
 
 #block-dfp-tpa-northsidebar .block-inner {
     padding: 0;
@@ -148,4 +148,13 @@
 #block-dfp-tpa-northleaderboard {
 	text-align:center;
 	margin-top: 5px;
+}
+
+/* hide info on webforms */
+article.node-webform .node-content-wrapper .submitted span {
+    display: none;
+}
+
+article.node-webform .node-content-wrapper h1.title {
+    margin-bottom: 0;
 }

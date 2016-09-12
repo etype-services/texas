@@ -8,11 +8,6 @@
       <span class="new"><?php print $new ?></span>
     <?php endif; ?>
     
-    <div class="submitted">
-      <?php print $author; ?> wrote on <?php print $created; ?>
-      <?php print $permalink; ?>
-    </div>
-    
     <div class="content"<?php print $content_attributes; ?>>
       
       <?php

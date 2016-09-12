@@ -1077,3 +1077,9 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0px;
     margin: 0px 0px 20px 0px;
 }
+
+/* title */
+.node-content-wrapper h2.title {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+}

@@ -2495,3 +2495,5 @@ div.admin-panel .description {
   list-style-image: none;
 }  
 
+#block-widgets-s_socialmedia_profile-default .blcontent {padding: 0; background:none; border:none;}
+#widgets-element-socialmedia_profile-default {float:right; background:none;}

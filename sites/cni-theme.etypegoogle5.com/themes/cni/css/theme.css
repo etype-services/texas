@@ -65,6 +65,10 @@ td {
     border: 1px solid #dddddd;
 }
 
+img:not(.file-icon) {
+    max-width: 100%;
+}
+
 /* HEADER
 --------------------------------------------------------------------------*/
 
@@ -116,6 +120,7 @@ h3.site-slogan {
 
 .view-slideshow .views_slideshow_main .views-field-field-image img {
     display: block;
+    max-width: none;
 }
 
 .view-slideshow .views_slideshow_main .views-field-title {

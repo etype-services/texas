@@ -315,19 +315,21 @@ function premium_node_level_data($node) {
     return $node->premium_level;
   }
 
-  $query = db_query("
+  if (isset($node->nid)) {
+    $query = db_query("
     SELECT pn.level_name, pn.start_ts, pn.end_ts
     FROM {premium_nodes} AS pn
     WHERE pn.nid = :nid
   ", array(':nid' => $node->nid));
 
-  $level = $query->fetchAssoc();
+    $level = $query->fetchAssoc();
 
-  if ($level) {
-    // Merge in the settings from the premium level.
-    $level += (array) premium_level_load($level['level_name']);
+    if ($level) {
+      // Merge in the settings from the premium level.
+      $level += (array) premium_level_load($level['level_name']);
 
-    return $level;
+      return $level;
+    }
   }
 
   return array();
@@ -394,7 +396,7 @@ function premium_user_content_access($node, $account = NULL) {
   // Access is granted or revoked explicitly.
   foreach (module_implements('premium_access') as $name) {
     $function = $name . '_premium_access';
-    if (is_bool($access = $function($node, $teaser))) {
+    if (is_bool($access = $function($node))) {
       return $access;
     }
   }

@@ -213,6 +213,14 @@ function etype_menu() {
     'menu_name' => 'user-menu',
     'type' => MENU_NORMAL_ITEM,
   );
+
+  $items['etype-node-cleanup'] = array(
+    'title' => t('Cleanup Classified Ads'),
+    'page callback' => 'etype_node_cleanup',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access administration pages')
+    );
+
   return $items;
 }
 
@@ -223,3 +231,15 @@ function _etype_e_edition() {
   drupal_goto($path);
 }
 
+function etype_node_cleanup() {
+
+    $res = db_query('SELECT n.nid FROM node n LEFT JOIN node_revision nr ON nr.nid = n.nid WHERE nr.vid IS NULL');
+    if (count($res) > 0) {
+        $nids = array();
+        foreach ($res as $record) {
+            // Do something with each $record
+            $nids[] = $record->nid;
+        }
+        node_delete_multiple($nids);
+    }
+}

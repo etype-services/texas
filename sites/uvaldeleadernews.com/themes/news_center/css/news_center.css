@@ -369,7 +369,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
 #block-views-articles-block-4-block .attachment img,
 #block-views-articles-block-5-block .attachment img,
 #block-views-articles-block-6-block .attachment img,
-#block-views-most-popular-block img, {
+#block-views-most-popular-block img {
     margin-left: -71px;
 }
 

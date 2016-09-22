@@ -190,3 +190,8 @@ $sites['www.ozonastockman.com'] =  'ozonastockman.com';
 
 /* cni-theme.etypegoogle5.com */
 $sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';
+
+/* quinlan-tawakoninews.com */
+$sites['quinlan-tawakoninews.etypegoogle5.com'] =  'quinlan-tawakoninews.com';
+$sites['quinlan-tawakoninews.com'] =  'quinlan-tawakoninews.com';
+$sites['www.quinlan-tawakoninews.com'] =  'quinlan-tawakoninews.com';

@@ -195,3 +195,8 @@ $sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';
 $sites['quinlan-tawakoninews.etypegoogle5.com'] =  'quinlan-tawakoninews.com';
 $sites['quinlan-tawakoninews.com'] =  'quinlan-tawakoninews.com';
 $sites['www.quinlan-tawakoninews.com'] =  'quinlan-tawakoninews.com';
+
+/* thecantonherald.etypegoogle5.com */
+$sites['thecantonherald.etypegoogle5.com'] =  'thecantonherald.com';
+$sites['thecantonherald.com'] =  'thecantonherald.com';
+$sites['www.thecantonherald.com'] =  'thecantonherald.com';

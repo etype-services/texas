@@ -31,8 +31,7 @@ body.front h1{display:none;}
 #block-superfish-1 ul li{display:inline-block;float:none;font-weight:bold;margin-left:4px !important;padding:11px 0;text-transform:uppercase;width:auto;}
 #block-superfish-1 ul li a{color:#FFFFFF;display:block;font-weight:600;font-size:14px;height:22px;line-height:20px;margin-top:0;padding:0 17px;text-decoration:none;background:none repeat scroll 0 0 transparent;}
 .sf-menu.sf-style-default a{border-top:none !important;padding:0.75em 1em;line-height:normal!important;height:auto!important;padding-top:0px!important;}
-#block-superfish-1 ul li a.active, #block-menu-menu-news-categories ul li a:hover{background:none repeat scroll 0 0 transparent;height:30px
-color:#333333;padding-top:5px;}
+#block-superfish-1 ul li a.active, #block-menu-menu-news-categories ul li a:hover{background:none repeat scroll 0 0 transparent;height:30px;color:#333333;padding-top:5px;}
 #block-superfish-1 a.active-trail .active li{background:none repeat scroll 0 0 #000033;color:#333333;padding-top:0px;padding-left:15px;}
 .image-show{background:none repeat scroll 0 0 #000000;color:#AAAAAA;cursor:default;font-size:0.8em;opacity:0.6;padding:4px 12px 4px 8px;position:absolute;right:0;top:7px;}
 #menu-1003-1 a {border-right: none;}
@@ -59,11 +58,11 @@ color:#333333;padding-top:5px;}
 .view-id-home_page .views-slideshow-controls-bottom .views-slideshow-pager-field-item .views-field-field-image .views-content-field-image{border-right:1px solid #333333;height:60px;overflow:hidden;width:91px;}
 #views_slideshow_pager_field_item_bottom_home_page-block_4 .views-field-field-image .views-content-field-image{width:85px;}
 #block-views-home-page-block{float:left;}
-#block-views-most-popular-block{float:left;margin-right:0;margin-top:0px;padding-bottom:6px;width:220px;}
+#block-views-most-popular-block{float:left;margin-right:0;margin-top:0;padding-bottom:6px;width:220px;}
 #block-views-most-popular-block .view-most-popular{border-left:1px solid #EEEEEE;padding-left:10px;}
 #block-views-most-popular-block h2{margin-left:10px;}
 
-#block-views-education-block{float:left;margin-right:-20;margin-top:0px;padding-bottom:6px;width:220px;}
+#block-views-education-block{float:left;margin-right:-20px;margin-top:0px;padding-bottom:6px;width:220px;}
 #block-views-education-block .view-education{border-left:1px solid #EEEEEE;padding-left:10px;}
 #block-views-education-block h2{margin-left:10px;}
 

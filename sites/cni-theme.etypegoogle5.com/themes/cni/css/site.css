@@ -133,21 +133,26 @@
 /* Google DFP Ads
 --------------------------------------------------------------------------*/
 
-#block-dfp-tpa-northsidebar {
-	margin-bottom: 10px;
+.block-dfp {
+    margin-bottom: 10px;
 }
 
-#block-dfp-tpa-northsidebar .block-inner {
+.block-dfp .block-inner, #main-content .block-dfp .block-inner {
     padding: 0;
-	margin: 0;
-	border-style: none;
+    margin: 0;
+    border-style: none;
     border-width: 0;
-	box-shadow: none;
+    box-shadow: none;
 }
 
-#block-dfp-tpa-northleaderboard {
-	text-align:center;
-	margin-top: 5px;
+.preface-wrapper-top .block-dfp .content {
+    background: none;
+}
+
+#block-dfp-acadia-leaderboard {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 /* hide info on webforms */
@@ -157,4 +162,46 @@ article.node-webform .node-content-wrapper .submitted span {
 
 article.node-webform .node-content-wrapper h1.title {
     margin-bottom: 0;
+}
+
+/* wide desktop browsers */
+@media only screen and (min-width: 959px) {
+
+    /* dfp ads */
+    #block-dfp-acadia-banner2 {
+        width: 468px;
+        margin: 0 auto 0 70px;
+    }
+
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 768px) and (max-width: 958px) {
+
+    /* dfp ads */
+    #block-dfp-acadia-banner2 {
+        width: 468px;
+        margin: 0;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-acadia-leaderboard, #block-dfp-acadia-banner2 {
+        display: none;
+        visibility: hidden;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-acadia-leaderboard, #block-dfp-acadia-banner2 {
+        display: block;
+        visibility: visible;
+    }
+
 }

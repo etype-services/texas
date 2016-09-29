@@ -335,4 +335,8 @@ h2.node-title{}
 
 .image-ad a img{max-width:100%;}
 
+#superfish-1 li a {
+	border-right: none;
+}
+
 #block-block-14{margin-left:-12px;}

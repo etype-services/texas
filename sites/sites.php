@@ -210,8 +210,3 @@ $sites['www.vanbanner.com'] =  'vanbanner.etypegoogle5.com';
 $sites['willspointchronicle.etypegoogle5.com'] =  'willspointchronicle.etypegoogle5.com';
 $sites['willspointchronicle.com'] =  'willspointchronicle.etypegoogle5.com';
 $sites['www.willspointchronicle.com'] =  'willspointchronicle.etypegoogle5.com';
-
-/* winnparishenterprise.etypegoogle5.com */
-$sites['winnparishenterprise.etypegoogle5.com'] =  'winnparishenterprise.etypegoogle5.com';
-$sites['winnparishenterprise.com'] =  'winnparishenterprise.etypegoogle5.com';
-$sites['www.winnparishenterprise.com'] =  'winnparishenterprise.etypegoogle5.com';

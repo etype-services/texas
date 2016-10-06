@@ -210,3 +210,9 @@ $sites['www.vanbanner.com'] =  'vanbanner.etypegoogle5.com';
 $sites['willspointchronicle.etypegoogle5.com'] =  'willspointchronicle.etypegoogle5.com';
 $sites['willspointchronicle.com'] =  'willspointchronicle.etypegoogle5.com';
 $sites['www.willspointchronicle.com'] =  'willspointchronicle.etypegoogle5.com';
+
+/* sabinecountyreporter.etypegoogle5.com */
+$sites['sabinecountyreporter.etypegoogle5.com'] =  'sabinecountyreporter.etypegoogle5.com';
+$sites['sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com';
+$sites['www.sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com';
+

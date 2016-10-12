@@ -25,6 +25,8 @@ define('CLAMAV_DEFAULT_HOST', 'localhost');
 define('CLAMAV_DEFAULT_PORT', 3310);
 // Default path (in Executable-mode)
 define('CLAMAV_DEFAULT_PATH', '/usr/bin/clamscan');
+// Default params for executable
+define('CLAMAV_DEFAULT_PARAMS', '');
 
 // The file was not checked (e.g. because the AV daemon wasn't running).
 define('CLAMAV_SCANRESULT_UNCHECKED', -1);
@@ -76,6 +78,12 @@ function clamav_menu() {
 function clamav_file_validate($file) {
   $errors = array();
 
+  // Check whether files of this scheme should be scanned.
+  $scheme = clamav_get_file_scheme($file);
+  if (!empty($scheme) && !clamav_scheme_is_scannable($scheme)) {
+    return $errors;
+  }
+
   // If any module that implements hook_clamav_file_is_scannable() returns
   // FALSE then we don't scan this file and finish with no errors.
   $modules = module_implements('clamav_file_is_scannable');
@@ -85,6 +93,14 @@ function clamav_file_validate($file) {
     }
   }
 
+  // Don't try to scan non-existent files.
+  if (!file_exists($file->uri)) {
+    if (variable_get('clamav_verbose', CLAMAV_VERBOSE_DEFAULT)) {
+      watchdog('clamav', 'Non-existent file sent for scanning: %filename (%fileuri)',
+        array('%filename' => $file->filename, '%fileuri' => $file->uri), WATCHDOG_DEBUG);
+    }
+    return $errors;
+  }
   require_once dirname(__FILE__) . '/clamav.inc';
   $result = clamav_scan_file($file->uri, $file->filename);
   if ($result == CLAMAV_SCANRESULT_INFECTED) {
@@ -95,4 +111,45 @@ function clamav_file_validate($file) {
   }
 
   return $errors;
+}
+
+/**
+ * Determine the scheme of a file object.
+ *
+ * @param $file
+ *   A file object.
+ *
+ * @return
+ *   The name of a stream wrapper scheme, or FALSE.
+ */
+function clamav_get_file_scheme($file) {
+  $scheme = file_uri_scheme($file->uri);
+  // An ordinary file upload won't have a stream wrapper URI during validation;
+  // instead there's a destination property.
+  // @see: file_save_upload()
+  if (empty($scheme) && isset($file->destination)) {
+    $scheme = file_uri_scheme($file->destination);
+  }
+  return $scheme;
+}
+
+/**
+ * Determine whether files of a given scheme should be scanned.
+ *
+ * @param $scheme
+ *   The name of the scheme.
+ *
+ * @return
+ *   TRUE or FALSE.
+ */
+function clamav_scheme_is_scannable($scheme) {
+  // By default all local schemes should be scannable.
+  $local_schemes = array_keys(file_get_stream_wrappers(STREAM_WRAPPERS_LOCAL));
+  $scheme_is_local = in_array($scheme, $local_schemes);
+
+  // The default can be overridden per scheme.
+  $overridden_schemes = variable_get('clamav_overridden_schemes', array());
+  $scheme_is_overridden = in_array($scheme, $overridden_schemes);
+
+  return ($scheme_is_local xor $scheme_is_overridden);
 }

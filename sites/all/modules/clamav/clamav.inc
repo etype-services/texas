@@ -164,9 +164,21 @@ function _clamav_scan_via_exec($filepath, $filename) {
     return CLAMAV_SCANRESULT_UNCHECKED;
   }
 
+  // optional additional options for the executable
+  $exec_params = trim(variable_get('clamav_executable_parameters', CLAMAV_DEFAULT_PARAMS));
+  if (!empty($exec_params)) {
+    // individually shell-escape multiple options in the string
+    $exec_params = explode(' ', $exec_params);
+    $exec_params = array_filter($exec_params);
+    $exec_params = array_map('escapeshellarg', $exec_params);
+    $exec_params = implode(' ', $exec_params);
+  }
+
   $filepath = drupal_realpath($filepath);
   // using 2>&1 to grab the full command-line output.
-  $cmd = escapeshellcmd($executable) . ' ' . escapeshellarg($filepath) . ' 2>&1';
+  $cmd = escapeshellcmd($executable);
+  $cmd .= !empty($exec_params) ? ' ' . $exec_params : ''; // already escaped
+  $cmd .= ' ' . escapeshellarg($filepath) . ' 2>&1';
 
   // exec:
   // The lines of text output by clamscan are assigned as an array to $output

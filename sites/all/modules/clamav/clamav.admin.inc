@@ -53,6 +53,38 @@ function clamav_admin_settings($form, &$form_state) {
     '#description' => t('Log all scanned files, including files which pass the virus-check.'),
   );
 
+  $form['schemes'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Scannable schemes / stream wrappers',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#description' => t('By default only !local schemes are scannable.',
+      array('!local' => l('STREAM_WRAPPERS_LOCAL',
+        'https://api.drupal.org/api/drupal/includes!stream_wrappers.inc/7')
+      )
+    ),
+  );
+
+  $local_schemes = clamav_scheme_options('local');
+  $remote_schemes = clamav_scheme_options('remote');
+
+  if (count($local_schemes)) {
+    $form['schemes']['clamav_local_schemes'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Local schemes'),
+      '#options' => $local_schemes,
+      '#default_value' => clamav_scheme_options_defaults('local'),
+    );
+  }
+  if (count($remote_schemes)) {
+    $form['schemes']['clamav_remote_schemes'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Remote schemes'),
+      '#options' => $remote_schemes,
+      '#default_value' => clamav_scheme_options_defaults('remote'),
+    );
+  }
+
 
   // ---
   // --- DAEMON MODE configuration
@@ -136,6 +168,115 @@ function clamav_admin_settings($form, &$form_state) {
     '#maxlength' => 255,
     '#description' => t("Full path to the 'clamscan' utility."),
   );
+  $form['executable']['clamav_executable_parameters'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Executable parameters'),
+    '#default_value' => variable_get('clamav_executable_parameters', CLAMAV_DEFAULT_PARAMS),
+    '#maxlength' => 255,
+    '#description' => t("Extra options for the 'clamscan' utility (e.g. --no-summary). See man clamscan."),
+  );
 
+
+  $form['#submit'][] = "clamav_settings_submit";
   return system_settings_form($form);
+}
+
+/**
+ * Return a list of all remote (non-local) schemes.
+ *
+ * @return
+ *   Array of scheme names.
+ */
+function clamav_get_remote_schemes() {
+  $all_schemes = array_keys(file_get_stream_wrappers());
+  $local_schemes = array_keys(file_get_stream_wrappers(STREAM_WRAPPERS_LOCAL));
+  $remote_schemes = array_diff($all_schemes, $local_schemes);
+  return $remote_schemes;
+}
+
+/**
+ * Provide an array of checkbox options for all stream wrappers.
+ *
+ * @param string $type
+ *   Type of schemes; either 'local' or 'remote'.
+ *
+ * @return
+ *   Associative array of options to display keyed by scheme names.
+ */
+function clamav_scheme_options($type) {
+  switch ($type) {
+    case 'local':
+      $schemes = array_keys(file_get_stream_wrappers(STREAM_WRAPPERS_LOCAL));
+      break;
+
+    case 'remote':
+      $schemes = clamav_get_remote_schemes();
+      break;
+
+    default:
+      $schemes = array();
+  }
+  $options = array();
+  foreach ($schemes as $scheme) {
+    $options[$scheme] = $scheme . '://';
+  }
+  return $options;
+}
+
+/**
+ * Return defaults for scheme checkboxes.
+ *
+ * @param string $type
+ *   Type of schemes; either 'local' or 'remote'.
+ *
+ * @return
+ *   Array of schemes which should be selected by default.
+ */
+function clamav_scheme_options_defaults($type) {
+  switch ($type) {
+    case 'local':
+      $schemes = array_keys(file_get_stream_wrappers(STREAM_WRAPPERS_LOCAL));
+      break;
+
+    case 'remote':
+      $schemes = clamav_get_remote_schemes();
+      break;
+
+    default:
+      $schemes = array();
+  }
+  $defaults = array();
+  foreach ($schemes as $scheme) {
+    if (clamav_scheme_is_scannable($scheme)) {
+      $defaults[] = $scheme;
+    }
+  }
+  return $defaults;
+}
+
+/**
+ * Form submission handler for the clamav_admin_settings form.
+ */
+function clamav_settings_submit($form, &$form_state) {
+  // Process per-scheme settings.
+  $overridden_schemes = array();
+  if (isset($form['schemes']['clamav_local_schemes'])) {
+    // Any options which were un-checked are overridden.
+    foreach ($form_state['values']['clamav_local_schemes'] as $scheme => $val) {
+      if ($val === 0) {
+        $overridden_schemes[$scheme] = $scheme;
+      }
+    }
+    unset($form_state['values']['clamav_local_schemes']);
+  }
+  if (isset($form['schemes']['clamav_remote_schemes'])) {
+    // Any options which were checked are overridden.
+    foreach ($form_state['values']['clamav_remote_schemes'] as $scheme => $val) {
+      if ($val !== 0) {
+        $overridden_schemes[$scheme] = $scheme;
+      }
+    }
+    unset($form_state['values']['clamav_remote_schemes']);
+  }
+  variable_set('clamav_overridden_schemes', $overridden_schemes);
 }

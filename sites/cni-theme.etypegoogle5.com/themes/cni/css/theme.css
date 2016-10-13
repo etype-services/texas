@@ -306,6 +306,15 @@ article .field-image {
     padding: 0;
 }
 
+/* weather block in sidebar */
+#block-block-1 .block-inner {
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+}
+
 /* POSTSCRIPT
 --------------------------------------------------------------------------*/
 
@@ -1254,6 +1263,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 .region-main-menu-second-level .block-simpleads {
     text-align: center;
     margin-top: 20px;
+}
+
+.slideshow-wrapper-inner .block-simpleads {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* OWN LOCAL

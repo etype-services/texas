@@ -17,28 +17,6 @@
 /* Google DFP Ads
 --------------------------------------------------------------------------*/
 
-.block-dfp {
-    margin-bottom: 10px;
-}
-
-.block-dfp .block-inner, #main-content .block-dfp .block-inner {
-    padding: 0;
-    margin: 0;
-    border-style: none;
-    border-width: 0;
-    box-shadow: none;
-}
-
-.preface-wrapper-top .block-dfp .content {
-    background: none;
-}
-
-#block-dfp-acadia-leaderboard {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-
 /* hide info on webforms */
 article.node-webform .node-content-wrapper .submitted span {
     display: none;

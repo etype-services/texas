@@ -300,7 +300,6 @@ article .field-image {
 
 .sidebar .block-inner h3.title {
     font-size: 1em;
-    margin-bottom: 0;
 }
 
 .sidebar div:first-child .content {
@@ -1097,172 +1096,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     float: right;
 }
 
-.lettersopinion .node-teaser .node-content-wrapper {
-    margin-left: 10px;
-}
-
-.obituaries .node-teaser .node-content-wrapper {
-    margin-left: 10px;
-}
-
-/* Video block on Home Page */
-#block-views-featured-view-block .content {
-    text-align: center;
-}
-
-#block-block-1 .content {
-    padding: 0;
-    color: #999;
-}
-
-#block-block-1 .block-inner {
-    padding: 0;
-    margin: 0 0 20px 0;
-    border: none;
-    box-shadow: none;
-}
-
-/* e-edition in sidebar */
-#block-block-5 .block-inner img {
-    max-width: 100%;
-}
-
-#block-block-5 .block-inner h4 {
-    text-align: center;
-}
-
-/* Facebook Block */
-#block-block-20 .block-inner {
-    padding: 0;
-    margin: 0 0 20px 0;
-    border: none;
-    box-shadow: none;
-}
-
-#block-block-28 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-28 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-10 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-10 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-9 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-9 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-8 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-8 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-13 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-13 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-11 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-11 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-14 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-14 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-16 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-16 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-17 .content {
-    padding: 0;
-    color: #000;
-}
-
-#block-block-17 .block-inner {
-    padding: 5px;
-    margin: 0;
-}
-
-#block-block-11 {
-    box-shadow: none;
-}
-
-#block-block-7 {
-    float: right;
-    margin-top: -90px;
-}
-
-#block-block-25 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-25 .content {
-    padding: 0;
-    color: #000;
-}
-
-#block-block-24 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-24 .content {
-    padding: 0;
-    color: #000;
-}
-
-#block-block-12 .block-inner {
-    text-align: center;
-    padding-left: 100px;
-}
-
 .field-name-field-subhead {
     font-weight: bold;
     font-size: 22px;
@@ -1284,7 +1117,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 .field-name-field-pulled-quote {
-    background-image: url("/sites/all/themes/bones/images/icons_48/openquote.png");
     width: 300px;
     min-height: 100px;
     font-size: 18px;
@@ -1305,36 +1137,6 @@ blockquote p {
     background: none;
 }
 
-#block-menu-block-2 ul.menu li, #block-menu-block-2 #main-menu ul.menu li, #block-menu-block-2 #user-menu ul.menu li, #block-menu-block-2 #nav-menu ul.menu li {
-    float: none;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 10px;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    list-style-type: circle;
-    list-style-image: none;
-    list-style-position: inside;
-}
-
-#block-menu-block-3 ul.menu li, #block-menu-block-3 #main-menu ul.menu li, #block-menu-block-3 #user-menu ul.menu li, #block-menu-block-3 #nav-menu ul.menu li {
-    float: none;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 10px;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    list-style-type: circle;
-    list-style-image: none;
-    list-style-position: inside;
-}
-
 #views-slideshow-galleria-1 .views-slideshow-galleria-images-1 {
     max-width: 230px;
     height: auto;
@@ -1351,63 +1153,6 @@ blockquote p {
     padding: 0;
     text-align: center;
     margin-left: 100px;
-}
-
-/* CLASSIFIED ADS
---------------------------------------------------------------------------*/
-
-.view-classifieds .views-fluid-grid-list li {
-    width: 48% !important;
-}
-
-.view-classifieds .views-fluid-grid-list li.views-fluid-grid-item {
-    border: none;
-    background-color: #ffffff;
-}
-.page-classifieds div.views-fluid-grid {
-    margin-bottom: 2em;
-}
-
-.page-classifieds .views-fluid-grid h3 {
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 1em;
-}
-
-.page-classifieds .views-fluid-grid .term-after {
-    font-size: 1em;
-    font-weight: normal;
-    text-transform: lowercase;
-}
-
-.page-classifieds .views-fluid-grid h3 a {
-    text-decoration: underline;
-    color: blue;
-}
-
-.page-classifieds .views-field-classified-category .field-content {
-    font-style: oblique;
-    float: left;
-    margin-right: 0.4em;
-}
-
-.page-classifieds .views-field-title .field-content {
-    margin-bottom: 0.3em;
-}
-
-.page-classifieds .views-field-title .field-content {
-    font-weight: bold;
-    font-size: 1.1em;
-    text-transform: uppercase;
-}
-
-.page-classifieds .views-field-body .field-content {
-    clear: both;
-}
-
-.page-classifieds div.views-row {
-    border-bottom: 1px #dddddd solid;
-    margin-bottom: 1.5em;
 }
 
 /* PREMIUM CONTENT
@@ -1485,7 +1230,29 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     top: 308px
 }
 
-/* own local */
+/* SIMPLE ADS
+--------------------------------------------------------------------------*/
+
+#main-content .block-simpleads .block-inner {
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+}
+
+.region-main-menu .block-simpleads {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.region-main-menu-second-level .block-simpleads {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* OWN LOCAL
+--------------------------------------------------------------------------*/
 #block-etype-own-local .block-inner {
     padding: 0;
     margin: 0;
@@ -1497,10 +1264,12 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     padding: 0;
 }
 
-/* advanced poll block */
+/* ADVANCED POLL
+--------------------------------------------------------------------------*/
 #block-advpoll-advpoll-recent h2.title {
     font-size: 1em;
     line-height: 1.3em;
+    text-transform: none;
 }
 
 #block-advpoll-advpoll-recent .submitted {
@@ -1510,4 +1279,10 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 
 #block-advpoll-advpoll-recent .content {
     padding: 0;
+}
+
+#block-advpoll-advpoll-recent .poll-message {
+    font: 0.9em/1em 'Lato';
+    color: #000;
+    margin: 1em 0;
 }

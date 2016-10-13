@@ -19,6 +19,26 @@ Installation
    the path to the ClamAV "clamscan" binary.  On most systems this will be:
    /usr/bin/clamscan
 
+Configuration
+-------------
+
+By default only STREAM_WRAPPERS_LOCAL schemes are scannable, but this default
+behaviour can be overridden; either in the admin UI, or with a variable.
+
+For example, putting this in settings.php
+
+$conf['clamav_overridden_schemes'] = array(
+  'public',
+  'external',
+);
+
+...would override the default for the public:// and external:// schemes.
+
+Overriding a local scheme will stop it from being scannable, and a remote
+scheme will become scannable if it is overridden.
+
+See: https://api.drupal.org/api/drupal/includes!stream_wrappers.inc/7
+
 Acknowledgements
 ----------------
 

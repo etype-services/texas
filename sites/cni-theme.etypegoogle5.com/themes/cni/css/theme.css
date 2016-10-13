@@ -314,6 +314,11 @@ article .field-image {
     font-size: 0.9em;
 }
 
+#postscript .grid_4 {
+    width: 28%;
+    margin-left: 2em;
+}
+
 #postscript a {
     color: #dddddd;
     font-weight: normal;

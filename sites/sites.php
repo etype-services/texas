@@ -216,3 +216,8 @@ $sites['sabinecountyreporter.etypegoogle5.com'] =  'sabinecountyreporter.etypego
 $sites['sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com';
 $sites['www.sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com';
 
+/* gatesvillemessenger.etypegoogle5.com */
+$sites['gatesvillemessenger.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
+$sites['gatesvillemessenger-drupal.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
+$sites['gatesvillemessenger.com'] = 'gatesvillemessenger.etypegoogle5.com';
+$sites['www.gatesvillemessenger.com'] = 'gatesvillemessenger.etypegoogle5.com';

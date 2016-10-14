@@ -150,6 +150,9 @@
     <?php print render($page['sidebar_second']); ?>
 
   </div></div><!-- /#main, /#main-wrapper -->
+  <div id="bottom">
+    <?php print render($page['bottom']); ?>
+  </div>
   </div></div><!-- /#page, /#page-wrapper -->
   <div id="footer">
   <div class="footer-inner">
@@ -173,4 +176,4 @@
 
 
 
-<?php print render($page['bottom']); ?>
+

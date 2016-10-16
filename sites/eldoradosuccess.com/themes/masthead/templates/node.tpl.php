@@ -25,13 +25,6 @@
       <?php endif; ?>
          
     <?php print render($title_suffix); ?>
-    
-    <?php if ($display_submitted): ?>
-      <div class="submitted">
-          <span class="date"><?php print $date; ?></span>
-          <?php print $name; ?>
-      </div>
-    <?php endif; ?>      
   
     <div class="content"<?php print $content_attributes; ?>>
 	  <?php

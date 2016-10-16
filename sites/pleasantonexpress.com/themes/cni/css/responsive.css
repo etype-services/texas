@@ -75,7 +75,7 @@
     }
 
     /* user-menu */
-    #block-superfish-1 .content, #block-system-user-menu .content {
+    #block-system-user-menu .content {
         width: 797px;
     }
 
@@ -610,6 +610,11 @@
 @media only screen and (max-width: 767px) {
 
     #block-system-user-menu {
+        display: none;
+        visibility: hidden;
+    }
+
+    #block-dfp-tpa-southleaderboard {
         display: none;
         visibility: hidden;
     }

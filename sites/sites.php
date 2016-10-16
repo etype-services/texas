@@ -112,36 +112,34 @@ $sites['normangeestar.etypegoogle5.com'] = 'normangeestar.com';
 $sites['normangeestar.com'] = 'normangeestar.com';
 $sites['www.normangeestar.com'] = 'normangeestar.com';
 
-/* ourtowntimes.etypegoogle5.com */
-$sites['ourtowntimes.etypegoogle5.com'] = 'ourtowntimes.com';
-$sites['ourtowntimes.com'] = 'ourtowntimes.com';
-$sites['www.ourtowntimes.com'] = 'ourtowntimes.com';
-$sites['prod.ourtowntimes.com'] = 'ourtowntimes.com';
-$sites['dev.ourtowntimes.com'] = 'ourtowntimes.com';
+/* easttexaspress.etypegoogle5.com */
+$sites['easttexaspress.etypegoogle5.com'] = 'easttexaspress.com';
+$sites['easttexaspress.com'] = 'easttexaspress.com';
+$sites['www.easttexaspress.com'] = 'easttexaspress.com';
 
-$sites['easttexaspress.com'] = 'ourtowntimes.com';
-$sites['www.easttexaspress.com'] = 'ourtowntimes.com';
+$sites['ourtowntimes.com'] = 'easttexaspress.com';
+$sites['www.ourtowntimes.com'] = 'easttexaspress.com';
 
-$sites['theeasttexaspress.com'] = 'ourtowntimes.com';
-$sites['www.theeasttexaspress.com'] = 'ourtowntimes.com';
+$sites['theeasttexaspress.com'] = 'easttexaspress.com';
+$sites['www.theeasttexaspress.com'] = 'easttexaspress.com';
 
-$sites['inbetweenprint.com'] = 'ourtowntimes.com';
-$sites['www.inbetweenprint.com'] = 'ourtowntimes.com';
+$sites['inbetweenprint.com'] = 'easttexaspress.com';
+$sites['www.inbetweenprint.com'] = 'easttexaspress.com';
 
-$sites['inbetweenprint.net'] = 'ourtowntimes.com';
-$sites['www.inbetweenprint.net'] = 'ourtowntimes.com';
+$sites['inbetweenprint.net'] = 'easttexaspress.com';
+$sites['www.inbetweenprint.net'] = 'easttexaspress.com';
 
-$sites['inbetweenprint.info'] = 'ourtowntimes.com';
-$sites['www.inbetweenprint.info'] = 'ourtowntimes.com';
+$sites['inbetweenprint.info'] = 'easttexaspress.com';
+$sites['www.inbetweenprint.info'] = 'easttexaspress.com';
 
-$sites['inbetweenprint.org'] = 'ourtowntimes.com';
-$sites['www.inbetweenprint.org'] = 'ourtowntimes.com';
+$sites['inbetweenprint.org'] = 'easttexaspress.com';
+$sites['www.inbetweenprint.org'] = 'easttexaspress.com';
 
-$sites['ottnews.co'] = 'ourtowntimes.com';
-$sites['www.ottnews.co'] = 'ourtowntimes.com';
+$sites['ottnews.co'] = 'easttexaspress.com';
+$sites['www.ottnews.co'] = 'easttexaspress.com';
 
-$sites['ott.news'] = 'ourtowntimes.com';
-$sites['www.ott.news'] = 'ourtowntimes.com';
+$sites['ott.news'] = 'easttexaspress.com';
+$sites['www.ott.news'] = 'easttexaspress.com';
 
 /* snyderdailynews.etypegoogle5.com */
 $sites['snyderdailynews.etypegoogle5.com'] = 'snyderdailynews.com';
@@ -192,5 +190,29 @@ $sites['www.ozonastockman.com'] =  'ozonastockman.com';
 
 /* cni-theme.etypegoogle5.com */
 $sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';
-/* cni-theme.etypegoogle5.com */
-$sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';
+
+/* quinlan-tawakoninews.etypegoogle5.com */
+$sites['quinlan-tawakoninews.etypegoogle5.com'] =  'quinlan-tawakoninews.com';
+$sites['quinlan-tawakoninews.com'] =  'quinlan-tawakoninews.com';
+$sites['www.quinlan-tawakoninews.com'] =  'quinlan-tawakoninews.com';
+
+/* thecantonherald.etypegoogle5.com */
+$sites['thecantonherald.etypegoogle5.com'] =  'thecantonherald.com';
+$sites['thecantonherald.com'] =  'thecantonherald.com';
+$sites['www.thecantonherald.com'] =  'thecantonherald.com';
+
+/* vanbanner.etypegoogle5.com */
+$sites['vanbanner.etypegoogle5.com'] =  'vanbanner.etypegoogle5.com';
+$sites['vanbanner.com'] =  'vanbanner.etypegoogle5.com';
+$sites['www.vanbanner.com'] =  'vanbanner.etypegoogle5.com';
+
+/* willspointchronicle.etypegoogle5.com */
+$sites['willspointchronicle.etypegoogle5.com'] =  'willspointchronicle.etypegoogle5.com';
+$sites['willspointchronicle.com'] =  'willspointchronicle.etypegoogle5.com';
+$sites['www.willspointchronicle.com'] =  'willspointchronicle.etypegoogle5.com';
+
+/* sabinecountyreporter.etypegoogle5.com */
+$sites['sabinecountyreporter.etypegoogle5.com'] =  'sabinecountyreporter.etypegoogle5.com';
+$sites['sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com';
+$sites['www.sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com';
+

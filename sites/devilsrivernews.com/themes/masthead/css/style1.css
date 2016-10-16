@@ -1,4 +1,4 @@
-/* HTML 
+/* HTML
 --------------------------------------------------------------------------*/
 
 body {
@@ -68,7 +68,7 @@ td {
     border: 1px solid #dddddd;
 }
 
-/* HEADER 
+/* HEADER
 --------------------------------------------------------------------------*/
 
 .header-wrapper-inner {
@@ -94,7 +94,7 @@ h3.site-slogan {
     text-shadow: 1px 1px #ffffff;
 }
 
-/* SLIDESHOW 
+/* SLIDESHOW
 --------------------------------------------------------------------------*/
 
 .view-slideshow {
@@ -176,7 +176,7 @@ h3.site-slogan {
     margin-right: 0;
 }
 
-/* PREFACE 
+/* PREFACE
 --------------------------------------------------------------------------*/
 .preface-wrapper .block .content {
     height: 300px;
@@ -196,7 +196,7 @@ h3.site-slogan {
     background: #f9f9f9;
 }
 
-/* MAIN CONTENT 
+/* MAIN CONTENT
 --------------------------------------------------------------------------*/
 
 .main-content-wrapper {
@@ -212,7 +212,7 @@ h3.site-slogan {
     box-shadow: 0px 1px 5px #bbbbbb;
 }
 
-/* SIDEBARS 
+/* SIDEBARS
 --------------------------------------------------------------------------*/
 
 .sidebar .content {
@@ -229,7 +229,7 @@ h3.site-slogan {
     background: #f9f9f9;
 }
 
-/* POSTSCRIPT 
+/* POSTSCRIPT
 --------------------------------------------------------------------------*/
 
 #postscript {
@@ -301,7 +301,7 @@ h3.site-slogan {
     color: #ffffff;
 }
 
-/* LISTS 
+/* LISTS
 --------------------------------------------------------------------------*/
 
 .item-list ul {
@@ -1054,14 +1054,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 .field-name-field-mugshot {
     float: left;
     margin-right: 10px;
-}
-
-.will-maines .field-image, byron-mcnutt .field-image, cal-thomas .field-image, andy-rooney .field-image, rock-doc .field-image, robert-reich .field-image {
-    display: none;
-}
-
-.will-maines h1#page-title, .byron-mcnutt h1#page-title, .cal-thomas h1#page-title, .andy-rooney h1#page-title, .rock-doc h1#page-title, .robert-reich h1#page-title {
-    display: none;
 }
 
 .field-name-field-mug {

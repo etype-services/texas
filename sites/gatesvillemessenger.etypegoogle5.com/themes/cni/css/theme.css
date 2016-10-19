@@ -1291,7 +1291,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     text-transform: none;
 }
 
-#block-advpoll-advpoll-recent .submitted {
+#block-advpoll-advpoll-recent .submitted, #block-advpoll-advpoll-recent .total {
     display: none;
     visibility: hidden;
 }

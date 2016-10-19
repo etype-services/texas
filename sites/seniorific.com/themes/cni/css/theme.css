@@ -176,6 +176,13 @@ h3.site-slogan {
     margin-right: 0;
 }
 
+/* IMAGE FIELD CAPTION
+--------------------------------------------------------------------------*/
+.view blockquote.image-field-caption, .node-teaser blockquote.image-field-caption {
+    display: none;
+    visibility: hidden;
+}
+
 /* PREFACE 
 --------------------------------------------------------------------------*/
 

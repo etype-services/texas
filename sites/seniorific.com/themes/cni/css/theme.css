@@ -550,7 +550,7 @@ article .field-image {
 /* Main Menu custom styling */
 
 #block-superfish-1 {
-    background-color: #094385;
+    background-color: #ff9933;
     height: 33px;
 }
 
@@ -563,7 +563,7 @@ article .field-image {
 }
 
 .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
-    background: #094385;
+    background: #ff9933;
 }
 
 /* MAIN MENU SECOND LEVEL

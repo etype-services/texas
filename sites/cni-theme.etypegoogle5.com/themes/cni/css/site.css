@@ -29,6 +29,11 @@ article.node-webform .node-content-wrapper h1.title {
 /* wide desktop browsers */
 @media only screen and (min-width: 959px) {
 
+    /* main menu */
+    #block-superfish-1 .content {
+        width: 979px;
+    }
+
     /* dfp ads */
     #block-dfp-acadia-banner2 {
         width: 468px;
@@ -39,6 +44,12 @@ article.node-webform .node-content-wrapper h1.title {
 
 /* desktop browsers */
 @media only screen and (min-width: 768px) and (max-width: 958px) {
+
+    /* main menu */
+    #block-superfish-1 .content {
+        width: 797px;
+        font-size: 0.8em;
+    }
 
     /* dfp ads */
     #block-dfp-acadia-banner2 {

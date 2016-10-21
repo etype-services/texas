@@ -10,6 +10,15 @@
     max-width: 670px;
 }
 
+/* main-menu background-color */
+#block-superfish-1 {
+    background-color: #094385;
+}
+
+.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
+    background: #094385;
+}
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 

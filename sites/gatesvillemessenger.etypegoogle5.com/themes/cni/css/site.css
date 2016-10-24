@@ -11,7 +11,7 @@
 }
 
 /* poll */
-#block-poll-recent .total {
+#block-poll-recent .total, .node-type-poll .content .poll .total, .node-type-poll .content .poll .percent {
     display: none;
     visibility: hidden;
 }

@@ -10,14 +10,14 @@
     max-width: 670px;
 }
 
-/* poll customization */
+/* poll customization to hide numbers */
 #block-poll-recent .total, .node-type-poll .content .poll .total, .node-type-poll .content .poll .percent {
     display: none;
     visibility: hidden;
 }
 
-.page-poll .content li a::after {
-    content: "";
+.page-poll .content li {
+    color: transparent;
 }
 
 /* SIMPLE ADS

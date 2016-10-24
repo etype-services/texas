@@ -10,7 +10,7 @@
     max-width: 670px;
 }
 
-/* poll */
+/* poll customization */
 #block-poll-recent .total, .node-type-poll .content .poll .total, .node-type-poll .content .poll .percent {
     display: none;
     visibility: hidden;

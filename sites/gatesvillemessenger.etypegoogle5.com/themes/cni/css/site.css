@@ -16,6 +16,10 @@
     visibility: hidden;
 }
 
+.page-poll .content li a::after {
+    content: "";
+}
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 

@@ -2,12 +2,12 @@
 .site-logo {
     width: 100%;
     margin: 0 auto;
-    max-width: 670px;
+    max-width: 680px;
 }
 
 .site-logo img {
     width: 100%;
-    max-width: 670px;
+    max-width: 680px;
 }
 
 /* main-menu background-color */
@@ -43,12 +43,6 @@ article.node-webform .node-content-wrapper h1.title {
         width: 979px;
     }
 
-    /* dfp ads */
-    #block-dfp-acadia-banner2 {
-        width: 468px;
-        margin: 0 auto 0 70px;
-    }
-
 }
 
 /* desktop browsers */
@@ -60,30 +54,12 @@ article.node-webform .node-content-wrapper h1.title {
         font-size: 0.8em;
     }
 
-    /* dfp ads */
-    #block-dfp-acadia-banner2 {
-        width: 468px;
-        margin: 0;
-    }
-
 }
 
 @media only screen and (max-width: 767px) {
 
-    /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-acadia-leaderboard, #block-dfp-acadia-banner2 {
-        display: none;
-        visibility: hidden;
-    }
-
 }
 
 @media only screen and (min-width: 768px) {
-
-    /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-acadia-leaderboard, #block-dfp-acadia-banner2 {
-        display: block;
-        visibility: visible;
-    }
 
 }

@@ -5,6 +5,13 @@
 function audiofield_players() {
   $players = module_invoke_all('audiofield_players');
 
+  $players['html5'] = array(
+    'name' => 'HTML5 <audio>',
+    'filetypes' => array('mp3', 'wav', 'ogg'),
+    'local' => TRUE,
+    'callback' => 'audiofield_html5_audio',
+  );
+
   $players['wpaudioplayer'] = array(
     'path' => variable_get('audiofield_players_dir', 'sites/all/libraries/player') . "/audio-player/player.swf",
     'name' => 'WordPress Audio Player',
@@ -55,7 +62,6 @@ function audiofield_players() {
   );
 
     $players['flowplayer'] = array(
-      'path' => drupal_get_path('module', 'flowplayer') . '/flowplayer/flowplayer.swf',
       'name' => 'Flowplayer',
       'download_link' => 'http://drupal.org/project/flowplayer',
       'filetypes' => array('mp3'),
@@ -72,13 +78,6 @@ function audiofield_players() {
     'callback' => 'audiofield_soundmanager2',
   );
 
-  $players['google_reader'] = array(
-    'path' => '',
-    'name' => 'Google Reader MP3 Player',
-    'filetypes' => array('mp3'),
-    'callback' => 'audiofield_googlereader',
-    'external' => TRUE,
-  );
     $players['jplayer'] = array(
       'path' => variable_get('audiofield_players_dir', 'sites/all/libraries/player') . "/jplayer/jquery.jplayer.min.js",
       'css' => variable_get('audiofield_players_dir', 'sites/all/libraries/player') . "/jplayer/jplayer.css",
@@ -113,16 +112,17 @@ function _audiofield_theme() {
     'audiofield_players_premium_beat_mini' => array(
       'variables' => array('player_path' => NULL, 'audio_file' => NULL),
     ),
-    'audiofield_googlereader' => array(
-      'arguments' => array('player_path' => NULL, 'audio_file' => NULL),
-    ),
   );
 }
 
 /* Audio Callback Functions */
 
 function audiofield_embeddedplayer($audio_file) {
-  return '<embed height="15" src="' . $audio_file . '" autostart="false"></embed>';
+  return '<audio src="' . $audio_file . '" controls><embed height="15" src="' . $audio_file . '" autostart="false"></embed></audio>';
+}
+
+function audiofield_html5_audio($player_path, $audio_file) {
+  return '<audio src="' . $audio_file . '" controls></audio>';
 }
 
 function audiofield_wpaudioplayer($player_path, $audio_file) {
@@ -168,10 +168,10 @@ function audiofield_xspf_button($player_path, $audio_file) {
     'player_path' => $player_path,
     'audio_file' => $audio_file,
   );
-  return theme('audiofield_xspf_button', $variables);
+  return theme('audiofield_players_xspf_button', $variables);
 }
 
-function theme_audiofield_xspf_button($variables) {
+function theme_audiofield_players_xspf_button($variables) {
   $player_path = $variables['player_path'];
   $audio_file = $variables['audio_file'];
   return '<object type="application/x-shockwave-flash" width="17" height="17"
@@ -247,11 +247,11 @@ function audiofield_soundmanager2($player_path, $audio_file) {
     );
     drupal_add_html_head($ie_js, 'audiofield');
 
-    drupal_add_js($player_base_path . '/script/soundmanager2.js');
+    drupal_add_js($player_base_path . '/script/soundmanager2.js', array('weight' => 0));
 
     //360 viewer
-    drupal_add_js($player_base_path . '/demo/360-player/script/berniecode-animator.js');
-    drupal_add_js($player_base_path . '/demo/360-player/script/360player.js');
+    drupal_add_js($player_base_path . '/demo/360-player/script/berniecode-animator.js', array('weight' => 1));
+    drupal_add_js($player_base_path . '/demo/360-player/script/360player.js', array('weight' => 1));
     drupal_add_css($player_base_path . '/demo/360-player/360player.css');
 
     return '
@@ -292,19 +292,6 @@ if (module_exists('flowplayer')) {
     );
     return theme('flowplayer', $variables);
   }
-}
-
-function audiofield_googlereader($player_path, $audio_file) {
-  $variables = array(
-    'player_path' => $player_path,
-    'audio_file' => $audio_file,
-  );
-  return theme('audiofield_googlereader', $variables);
-}
-
-function theme_audiofield_googlereader($variables) {
-  $audio_file = $variables['audio_file'];
-  return '<embed type="application/x-shockwave-flash" flashvars="audioUrl=' . $audio_file . '" src="http://www.google.com/reader/ui/3523697345-audio-player.swf" width="400" height="27" quality="best"></embed>';
 }
 
 function audiofield_jplayer($player_path, $audio_file, $options) {

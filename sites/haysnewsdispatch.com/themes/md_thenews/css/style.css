@@ -301,7 +301,7 @@ ul.quicktabs-tabs,
 #content .last {
     margin-right: 0;
 }
-blockquote:before {
+/*blockquote:before {
     color: #bbb;
     content: "\201C";
     font-size: 3em;
@@ -315,7 +315,7 @@ blockquote:after {
     font-size: 3em;
     line-height: 0.1em;
     vertical-align: -.45em;
-}
+}*/
 blockquote :first-child {
     display: inline;
 }

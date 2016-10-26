@@ -218,6 +218,16 @@ $sites['www.sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com
 
 /* gatesvillemessenger.etypegoogle5.com */
 $sites['gatesvillemessenger.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
-$sites['gatesvillemessenger-drupal.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
 $sites['gatesvillemessenger.com'] = 'gatesvillemessenger.etypegoogle5.com';
 $sites['www.gatesvillemessenger.com'] = 'gatesvillemessenger.etypegoogle5.com';
+
+/* rockspringsrecord.etypegoogle5.com */
+$sites['rockspringsrecord.etypegoogle5.com'] = 'rockspringsrecord.etypegoogle5.com';
+$sites['rockspringsrecord.com'] = 'rockspringsrecord.etypegoogle5.com';
+$sites['www.rockspringsrecord.com'] = 'rockspringsrecord.etypegoogle5.com';
+
+/* timestribune.etypegoogle5.com */
+$sites['timestribune.etypegoogle5.com'] = 'timestribune.etypegoogle5.com';
+$sites['timestribune-drupal.etypegoogle5.com'] = 'timestribune.etypegoogle5.com';
+$sites['timestribune.com'] = 'timestribune.etypegoogle5.com';
+$sites['www.timestribune.com'] = 'timestribune.etypegoogle5.com';

@@ -10,6 +10,11 @@
     max-width: 700px;
 }
 
+/* calendar */
+.view-calendar .view-footer {
+    margin-top: 1em;
+}
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 

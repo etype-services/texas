@@ -1518,10 +1518,12 @@ h1#page-title {
   margin: 0;
   list-style: none;
 }
+/* byline fix - making authors name larger, added font-size 18 and top padding 1px*/
 .field-type-taxonomy-term-reference ul.links li {
   float: left; /* LTR */
-  padding: 0 1em 0 0; /* LTR */
+  padding: 1px 1em 0 0; /* LTR */
   white-space: nowrap;
+  font-size:20px;
 }
 .link-wrapper ul.inline li{
   padding: 0;
@@ -2497,3 +2499,5 @@ div.admin-panel .description {
 
 #block-widgets-s_socialmedia_profile-default .blcontent {padding: 0; background:none; border:none;}
 #widgets-element-socialmedia_profile-default {float:right; background:none;}
+
+

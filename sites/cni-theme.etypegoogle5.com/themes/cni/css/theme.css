@@ -459,10 +459,10 @@ article .field-image {
     list-style-type: decimal;
 }
 
-/* normalize lists on Basic Pages */
-.content .node-page ul {
+/* normalize lists on Basic Pages and Articles */
+.content .node-page ul, .content .node-article ul {
     margin: 0 0 1em 1em;
-    list-style: disc inside;
+    list-style: disc outside;
 }
 
 /* USER MENU
@@ -584,9 +584,7 @@ article .field-image {
 }
 
 /* Main Menu custom styling */
-
 #block-superfish-1 {
-    background-color: #094385;
     height: 33px;
 }
 
@@ -596,10 +594,6 @@ article .field-image {
 
 #block-superfish-1 .content {
     margin: 0 auto;
-}
-
-.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
-    background: #094385;
 }
 
 /* MAIN MENU SECOND LEVEL

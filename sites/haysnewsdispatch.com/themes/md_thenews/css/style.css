@@ -2523,3 +2523,12 @@ div.admin-panel .description {
 
 #block-simpleads-ad_groups_303 {clear:both; display: block;}
 #block-simpleads-ad_groups_303 img {text-align: center; max-width:100%;}
+
+/* image captions */
+.node-article .field-type-image img {
+    margin-bottom: 0;
+}
+
+.node-article .field-type-image .image-field-caption {
+    margin-bottom: 1em;
+}

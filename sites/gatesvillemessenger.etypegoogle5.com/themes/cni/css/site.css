@@ -10,11 +10,19 @@
     max-width: 670px;
 }
 
+<<<<<<< HEAD
 /* poll customization to hide numbers, etc */
 #block-poll-recent .total,
 #block-poll-recent ul.links
 .node-type-poll .content .poll .total,
 .node-type-poll .content .poll .percent {
+=======
+/* poll customization to hide numbers */
+#block-poll-recent .total,
+.node-type-poll .content .poll .total,
+.node-type-poll .content .poll .percent,
+#block-poll-recent ul.links li.last {
+>>>>>>> origin/dev
     display: none;
     visibility: hidden;
 }

@@ -12,9 +12,9 @@
 
 /* poll customization to hide numbers, etc */
 #block-poll-recent .total,
+#block-poll-recent ul.links
 .node-type-poll .content .poll .total,
-.node-type-poll .content .poll .percent,
-#block-poll-recent ul.links li.last {
+.node-type-poll .content .poll .percent {
     display: none;
     visibility: hidden;
 }

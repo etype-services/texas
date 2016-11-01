@@ -10,8 +10,11 @@
     max-width: 670px;
 }
 
-/* poll customization to hide numbers */
-#block-poll-recent .total, .node-type-poll .content .poll .total, .node-type-poll .content .poll .percent {
+/* poll customization to hide numbers, etc */
+#block-poll-recent .total,
+.node-type-poll .content .poll .total,
+.node-type-poll .content .poll .percent,
+#block-poll-recent ul.links > li.last {
     display: none;
     visibility: hidden;
 }

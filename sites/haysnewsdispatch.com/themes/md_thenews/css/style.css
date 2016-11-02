@@ -2532,3 +2532,8 @@ div.admin-panel .description {
 .node-article .field-type-image .image-field-caption {
     margin-bottom: 1em;
 }
+
+#block-views-editorspick-block blockquote .image-field-caption {
+    display: none;
+    visibility: hidden;
+}

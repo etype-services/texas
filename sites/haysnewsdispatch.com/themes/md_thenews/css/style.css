@@ -2533,7 +2533,7 @@ div.admin-panel .description {
     margin-bottom: 1em;
 }
 
-#block-views-editorspick-block blockquote .image-field-caption {
+#block-views-editorspick-block blockquote.image-field-caption {
     display: none;
     visibility: hidden;
 }

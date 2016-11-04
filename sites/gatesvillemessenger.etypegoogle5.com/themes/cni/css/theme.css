@@ -302,10 +302,6 @@ article .field-image {
     font-size: 1em;
 }
 
-.sidebar div:first-child .content {
-    /* padding: 0; */
-}
-
 /* weather block in sidebar */
 #block-block-1 .block-inner {
     padding: 0;
@@ -458,10 +454,10 @@ article .field-image {
     list-style-type: decimal;
 }
 
-/* normalize lists on Basic Pages */
-.content .node-page ul {
+/* normalize lists on Basic Pages and Articles */
+.content .node-page ul, .content .node-article ul {
     margin: 0 0 1em 1em;
-    list-style: disc inside;
+    list-style: disc outside;
 }
 
 /* USER MENU
@@ -583,7 +579,6 @@ article .field-image {
 }
 
 /* Main Menu custom styling */
-
 #block-superfish-1 {
     background-color: #094385;
     height: 33px;
@@ -1290,7 +1285,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     text-transform: none;
 }
 
-#block-advpoll-advpoll-recent .submitted, #block-advpoll-advpoll-recent .total {
+#block-advpoll-advpoll-recent .submitted {
     display: none;
     visibility: hidden;
 }
@@ -1303,4 +1298,14 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     font: 0.9em/1em 'Lato';
     color: #000;
     margin: 1em 0;
+}
+
+/* hide info on webforms */
+article.node-webform .node-content-wrapper .submitted span {
+    display: none;
+    visibility: hidden;
+}
+
+article.node-webform .node-content-wrapper h1.title {
+    margin-bottom: 0;
 }

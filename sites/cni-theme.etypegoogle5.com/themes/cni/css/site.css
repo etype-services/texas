@@ -26,15 +26,6 @@
 /* Google DFP Ads
 --------------------------------------------------------------------------*/
 
-/* hide info on webforms */
-article.node-webform .node-content-wrapper .submitted span {
-    display: none;
-}
-
-article.node-webform .node-content-wrapper h1.title {
-    margin-bottom: 0;
-}
-
 /* wide desktop browsers */
 @media only screen and (min-width: 959px) {
 

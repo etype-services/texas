@@ -302,14 +302,9 @@ article .field-image {
     font-size: 1em;
 }
 
-.sidebar div:first-child .content {
-    padding: 0;
-}
-
 /* weather block in sidebar */
 #block-block-1 .block-inner {
     padding: 0;
-    margin: 0;
     border-style: none;
     border-width: 0;
     box-shadow: none;
@@ -1290,7 +1285,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     visibility: hidden;
 }
 
-#block-advpoll-advpoll-recent .content {
+#block-advpoll-advpoll-recent .content .content {
     padding: 0;
 }
 
@@ -1298,4 +1293,14 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     font: 0.9em/1em 'Lato';
     color: #000;
     margin: 1em 0;
+}
+
+/* hide info on webforms */
+article.node-webform .node-content-wrapper .submitted span {
+    display: none;
+    visibility: hidden;
+}
+
+article.node-webform .node-content-wrapper h1.title {
+    margin-bottom: 0;
 }

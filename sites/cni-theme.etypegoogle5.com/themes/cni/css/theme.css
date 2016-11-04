@@ -288,6 +288,10 @@ article .field-image {
 
 /* SIDEBARS
 --------------------------------------------------------------------------*/
+/* counteract margin from first block in sidebar */
+.sidebar {
+    margin-top: -20px;
+}
 
 .sidebar .content {
     padding: 20px 0 0 0;

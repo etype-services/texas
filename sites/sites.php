@@ -228,6 +228,10 @@ $sites['www.rockspringsrecord.com'] = 'rockspringsrecord.etypegoogle5.com';
 
 /* timestribune.etypegoogle5.com */
 $sites['timestribune.etypegoogle5.com'] = 'timestribune.etypegoogle5.com';
-$sites['timestribune-drupal.etypegoogle5.com'] = 'timestribune.etypegoogle5.com';
 $sites['timestribune.com'] = 'timestribune.etypegoogle5.com';
 $sites['www.timestribune.com'] = 'timestribune.etypegoogle5.com';
+
+/* baycitysentinel.etypegoogle5.com */
+$sites['baycitysentinel.etypegoogle5.com'] = 'baycitysentinel.etypegoogle5.com';
+$sites['baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';
+$sites['www.baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';

@@ -303,13 +303,12 @@ article .field-image {
 }
 
 .sidebar div:first-child .content {
-    padding: 0;
+    /* padding: 0; */
 }
 
 /* weather block in sidebar */
 #block-block-1 .block-inner {
     padding: 0;
-    margin: 0;
     border-style: none;
     border-width: 0;
     box-shadow: none;

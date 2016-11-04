@@ -18,7 +18,8 @@
 --------------------------------------------------------------------------*/
 
 /* poll customization */
-#block-advpoll-advpoll-recent .total, #block-advpoll-advpoll-recent .percent {
+#block-advpoll-advpoll-recent .total, #block-advpoll-advpoll-recent .percent,
+.node-advpoll .poll .total, .node-advpoll .poll .percent {
     display: none;
     visibility: hidden;
 }

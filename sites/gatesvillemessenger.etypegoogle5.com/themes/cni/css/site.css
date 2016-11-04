@@ -17,14 +17,6 @@
 /* Google DFP Ads
 --------------------------------------------------------------------------*/
 
-/* poll customization */
-#block-advpoll-advpoll-recent .total, #block-advpoll-advpoll-recent .percent,
-.page-node-advpoll .total, .page-node-advpoll .percent,
-.node-advpoll .total, .node-advpoll .percent {
-    display: none;
-    visibility: hidden;
-}
-
 /* wide desktop browsers */
 @media only screen and (min-width: 959px) {
 

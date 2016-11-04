@@ -2,12 +2,12 @@
 .site-logo {
     width: 100%;
     margin: 0 auto;
-    max-width: 670px;
+    max-width: 608px;
 }
 
 .site-logo img {
     width: 100%;
-    max-width: 670px;
+    max-width: 608px;
 }
 
 /* main-menu background-color */
@@ -40,7 +40,7 @@ article.node-webform .node-content-wrapper h1.title {
 
     /* main menu */
     #block-superfish-1 .content {
-        width: 979px;
+        width: 775px;
     }
 
     /* dfp ads */
@@ -52,7 +52,7 @@ article.node-webform .node-content-wrapper h1.title {
 
     /* main menu */
     #block-superfish-1 .content {
-        width: 797px;
+        width: 628px;
         font-size: 0.8em;
     }
 

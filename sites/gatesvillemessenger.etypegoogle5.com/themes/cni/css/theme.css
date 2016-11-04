@@ -1296,7 +1296,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     visibility: hidden;
 }
 
-#block-advpoll-advpoll-recent .content {
+#block-advpoll-advpoll-recent .content .content {
     padding: 0;
 }
 

@@ -19,7 +19,7 @@
 
 /* poll customization */
 #block-advpoll-advpoll-recent .total, #block-advpoll-advpoll-recent .percent,
-.node-advpoll .total, .node-advpoll .percent {
+.page-node-advpoll .total, .page-node-advpoll .percent {
     display: none;
     visibility: hidden;
 }

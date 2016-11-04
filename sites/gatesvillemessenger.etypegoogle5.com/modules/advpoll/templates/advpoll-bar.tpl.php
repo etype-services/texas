@@ -23,6 +23,6 @@ if ($voted) {
     <div style="width: <?php print $percentage; ?>%;" class="foreground"></div>
   </div>
   <div class="percent">
-    <?php print $percentage; ?>% (<?php print format_plural($votes, '1 vote', '@count votes'); ?>)
+    <?php print $percentage; ?>%
   </div>
 </div>

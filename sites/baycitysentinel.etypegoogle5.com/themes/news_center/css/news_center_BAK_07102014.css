@@ -1,0 +1,861 @@
+/* BluePrint Reset */
+
+p + p {
+    margin-top: 0;
+    text-indent: 0;
+}
+
+a{
+	color: #333333;
+}
+
+a:hover, a:focus{
+	color: #666666;	
+}
+
+/* General Layout & Theme Styles */
+
+
+
+
+h1, h2, h3 {
+	font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {    
+    line-height: 1.3em;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{	
+	text-decoration: none;
+}
+
+#block-system-main {
+    clear: both;
+}
+
+.region-top-area {
+    float: right;
+    margin-right: 12px;
+    margin-bottom: 8px;
+	border: 0px solid #000; 
+	height: 105px;
+	background: none repeat scroll 0 0 #eee;
+}
+
+.region-top-area .block {
+    float: left;
+    margin-bottom: 5px;padding: 5px;
+	
+	
+}
+
+#content .region {   
+    clear: both;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+#content .region-content0, #content .region-slideshow{
+    background: none;    
+}
+
+.sidebar-second h2.block-title, .footer h2.block-title {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.region-sidebar-second  .block h3 {
+    margin-bottom: 7px;
+}
+
+.region-sidebar-second  .block{
+    background: none repeat scroll 0 0 #fff;
+    padding: 10px;
+}
+
+
+.with-navigation #content, .with-navigation .region-sidebar-first, .with-navigation .region-sidebar-second {
+    margin-top: 0;
+}
+
+
+
+/* Main Menu Block */
+
+#block-system-main-menu {
+    background: none repeat scroll 0 0 #222222;
+    margin-bottom: 0;
+}
+
+#block-system-main-menu ul {
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+
+#block-system-main-menu ul li {
+    display: inline-block;
+    margin-left: 0;
+    padding-right: 0;
+}
+
+#block-system-main-menu ul li a {
+    color: #BBBBBB;
+    display: block;
+    font-size: 0.95em;
+    height: 20px;
+    margin-bottom: 0;
+    padding: 3px 8px 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#block-system-main-menu ul li a.active, #block-system-main-menu ul li a:hover {
+    background: none repeat scroll 0 0 #333333;
+    color: #FFFFFF;
+}
+
+
+/* User Login Block Styles */
+
+#block-user-login label{
+	display: none;
+}
+
+#block-user-login input {
+    font-size: 0.9em;
+    padding: 3px;
+    width: 110px;
+}
+
+#block-user-login .form-item {
+    float: left;
+    margin: 0 7px 0 0;
+}
+
+#block-user-login .form-item, #block-user-login .form-actions {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#block-user-login .form-actions {
+    float: right;
+}
+
+#block-user-login .form-actions .form-submit {
+    background: none repeat scroll 0 0 #666666;
+    border: 1px solid #888888;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Tahoma,sans-serif;
+    font-size: 0.88em;
+    font-weight: bold;
+    height: 21px;
+    margin-top: 5px;
+    padding-top: 0;
+    width: 50px;
+}
+
+#block-user-login .form-actions .form-submit:hover {
+    background: none repeat scroll 0 0 #FFFFFF;    
+    color: #666666;
+}
+
+#block-user-login {
+    background: none repeat scroll 0 0 #444444;
+    padding: 4px 12px 24px;
+}
+
+.region-top-area a{
+    color: #CCCCCC;
+}
+
+#block-user-login .item-list {
+    font-size: 0.9em;
+    margin-top: 30px;
+    position: absolute;
+}
+
+#block-user-login .item-list ul {
+   padding: 0;
+}
+
+#block-user-login .item-list ul li {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+#block-user-login .item-list ul li.first {
+    font-weight: bold;
+}
+
+
+
+
+
+/*     Dropdown Behavior & Styles */
+
+/*
+#block-menu-menu-news-categories ul li:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+
+#block-menu-menu-news-categories ul li:hover a{
+    color: #333333;
+}
+*/
+#block-menu-menu-news-categories ul.expanded li ul {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 3px 3px 3px #000000;
+    color: #333333;
+    display: none;
+    height: auto;
+    opacity: 0.9;
+    padding-left: 0;
+    position: absolute;
+    width: 150px;
+    z-index: 100;
+}
+
+#block-menu-menu-news-categories ul.expanded li ul li{	
+	display: block;
+	height: auto;
+}
+
+#block-menu-menu-news-categories ul.expanded li ul li a{	
+	color: #333333;
+}
+
+#block-menu-menu-news-categories ul.expanded li:hover ul.menu{
+    display: block;		
+}
+
+#block-menu-menu-news-categories ul.expanded li ul li:hover{
+    background: none;
+}
+
+#block-menu-menu-news-categories ul.expanded li ul li a:hover {
+    background: none;
+    box-shadow: none;
+    color: #333333;   
+	padding-top: 0;
+}
+
+/* Sidebar Default Styles*/
+
+.region-sidebar-second {   
+    font-size: 0.8em;    
+}
+
+#block-views-ads-sidebar-block-block{
+	font-size: 1.2em;
+	background: none;
+	padding: 0;
+}
+
+/* Content Areas General Styles */
+
+.region-content0 .block, .region-content1 .block, .region-content2 .block {
+	color: #666666;   	
+    font-size: 0.85em;
+}
+
+.region-content0 h2.block-title, .region-content1 h2.block-title, .region-content2 h2.block-title {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 1.65em;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.region-content0 .block-views img, .region-content1 .block-views img, .region-content2 .block-views img {
+    border: 1px solid #CCCCCC;
+    float: left;
+    margin-bottom: 6px;
+    margin-right: 10px;
+    padding: 3px;
+	-moz-transition: background-color 0.5s ease-out;
+	-o-transition: background-color 0.5s ease-out;
+	-webkit-transition: background-color 0.5s ease-out;
+	transition: background-color 0.5s ease-out;
+}
+
+.region-content0 .block-views img:hover, .region-content1 .block-views img:hover, .region-content2 .block-views img:hover {
+    background: none repeat scroll 0 0 #EEEEEE;
+}
+
+.region-content0 .block-views h3, .region-content1 .block-views h3, .region-content2 .block-views h3 {   
+    margin-bottom: 4px;
+}
+
+.region-content0 .block-views h4 , .region-content1 .block-views h4 , .region-content2 .block-views h4{
+    font-size: 1.3em;
+    margin-bottom: 7px;
+}
+
+
+  
+
+/* 
+ * CONTENT AREA BLOCKS 
+ *
+ * These are the styles from the blocks located in the main content area
+ * of the Page. It's recommended to use them all on the front page as
+ * "Articles Dashboard" and in inner pages depending of their purpose.
+ *
+ */
+ 
+/* 
+ * Featured Article Styles 
+ */
+
+#block-views-featured-article-block .views-row {
+    clear: both;
+    margin-bottom: 16px;
+    min-height: 166px;
+    padding-bottom: 17px;
+}
+
+#block-views-featured-article-block .views-row-first {
+    border-bottom: 1px dashed #CCCCCC;    
+}
+
+#block-views-featured-article-block .views-field-body-1{   
+    margin-top: 8px;
+}
+
+
+/* 
+ * Last Week Most Popular Styles 
+ */
+
+#block-views-most-popular-block .views-row-last {
+    border-bottom: none !important;    
+}
+
+
+/*
+ * Articles Blocks Styles 
+ */
+
+#block-views-articles-block-3-block, #block-views-articles-block-6-block {   
+    margin-right: 0;    
+}
+
+#block-views-articles-categories-block-block .attachment .views-row,
+#block-views-articles-block-2-block .attachment .views-row,
+#block-views-articles-block-3-block .attachment .views-row,
+#block-views-articles-block-4-block .attachment .views-row,
+#block-views-articles-block-5-block .attachment .views-row,
+#block-views-articles-block-6-block .attachment .views-row,
+#block-views-most-popular-block .views-row{
+    border-bottom: 1px dashed #CCCCCC;
+    clear: both;
+    margin-bottom: 10px;
+    min-height: 62px;
+    padding-bottom: 10px;
+	padding-left: 71px;
+}
+
+#block-views-articles-categories-block-block .attachment img,
+#block-views-articles-block-2-block .attachment img, 
+#block-views-articles-block-3-block .attachment img,
+#block-views-articles-block-4-block .attachment img,
+#block-views-articles-block-5-block .attachment img,
+#block-views-articles-block-6-block .attachment img,
+#block-views-most-popular-block img{
+    margin-left: -71px;
+}
+
+
+#block-views-articles-categories-block-block .views-field-body-1, 
+#block-views-articles-block-2-block .views-field-body-1, 
+#block-views-articles-block-3-block .views-field-body-1,
+#block-views-articles-block-4-block .views-field-body-1,
+#block-views-articles-block-5-block .views-field-body-1,
+#block-views-articles-block-6-block .views-field-body-1{
+    border-bottom: 1px dashed #CCCCCC;
+    margin-bottom: 9px;
+    margin-top: 8px;
+    padding-bottom: 17px;
+}
+
+#block-views-articles-categories-block-block .view-footer, 
+#block-views-articles-block-2-block .view-footer, 
+#block-views-articles-block-3-block .view-footer,
+#block-views-articles-block-4-block .view-footer,
+#block-views-articles-block-5-block .view-footer,
+#block-views-articles-block-6-block .view-footer{
+    padding-bottom: 0;
+    padding-right: 7px;
+    padding-top: 0;
+    text-align: right;
+}
+
+
+/*  
+ * Articles Images Block 
+ */
+
+#block-views-articles-images-block img{
+	float: none;
+}
+
+#block-views-articles-images-block .views-row-5, #block-views-articles-images-block .views-row-10, #block-views-articles-images-block .views-row-15, #block-views-articles-images-block .views-row-20{
+	margin-right: 0px;
+}
+
+#block-views-articles-images-block .views-field-field-image {
+    height: 111px;
+}
+
+#block-views-articles-images-block .views-field-title {
+    background: none repeat scroll 0 0 #000000;
+    margin-left: 4px;
+    margin-top: -64px;
+    opacity: 0.6;
+    padding: 0 3px 3px;
+    position: absolute;
+    width: 119px;
+	display: none;
+}
+
+#block-views-articles-images-block .views-field-title a{
+    color: #FFFFFF;
+}
+
+
+
+
+/* 
+ * RIGHT SIDEBAR REGION BLOCKS 
+ *
+ * These are the blocks located at the right side of every page. 
+ *
+ */ 
+ 
+/* 
+ * Sidebar Advertisement Styles 
+ */
+
+#block-views-ads-sidebar-block-block a {
+    font-size: 0.8em;   
+}
+
+#block-views-ads-sidebar-block-block .view-header a {
+    color: #333333;    
+    font-size: 0.9em;    
+}
+
+#block-views-ads-sidebar-block-block .view-header p {
+    margin-bottom: 2px;
+}
+
+#block-views-ads-sidebar-block-block .view-header em.advertisement {
+    color: #888888;
+    display: block;
+    float: left;
+    font-size: 0.9em;
+    font-style: normal;
+    margin-top: -4px;
+}
+
+#block-views-ads-sidebar-block-block .views-field-title {
+    font-size: 1.1em;    
+}
+ 
+ 
+/*
+ * Today's Most Popular
+ */
+
+#block-views-most-popular-today-block .views-field-field-image {
+    float: left;
+    margin-left: -51px;
+    margin-right: 8px;
+}
+
+#block-views-most-popular-today-block .views-field-field-image img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+}
+#block-views-most-popular-today-block h4 {
+	font-size: 1.3em;
+    margin-bottom: 7px;
+}
+
+#block-views-most-popular-today-block .views-row {
+    border-bottom: 1px dashed #CCCCCC;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    padding-left: 51px;
+}
+
+#block-views-most-popular-today-block .views-row-last{
+	border-bottom: none;
+}
+
+
+/*  
+ * All time Most Popular
+ */
+
+#block-views-most-popular-all-time-block .views-field-field-image {
+    float: left;
+    margin-left: -51px;
+    margin-right: 8px;
+}
+
+#block-views-most-popular-all-time-block .views-field-field-image img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+}
+#block-views-most-popular-all-time-block h4 {
+	font-size: 1.3em;
+    margin-bottom: 7px;
+}
+
+#block-views-most-popular-all-time-block .views-row {
+    border-bottom: 1px dashed #CCCCCC;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    padding-left: 51px;
+}
+
+#block-views-most-popular-all-time-block .views-row-last{
+	border-bottom: none;
+}
+
+
+/*  
+ * Most Commented Block
+ */
+
+#block-views-most-commented-block .views-field-field-image {
+    float: left;
+    margin-left: -51px;
+    margin-right: 8px;
+}
+
+#block-views-most-commented-block .views-field-field-image img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+}
+#block-views-most-commented-block h4 {
+	font-size: 1.3em;
+    margin-bottom: 7px;
+}
+
+#block-views-most-commented-block .views-row {
+    border-bottom: 1px dashed #CCCCCC;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    padding-left: 51px;
+}
+
+#block-views-most-commented-block .views-row-last{
+	border-bottom: none;
+}
+
+
+/*  
+ * Top Rated Articles 
+ */
+
+#block-views-top-rated-articles-block .views-field-field-image {
+    float: left;
+    margin-left: -51px;
+    margin-right: 8px;
+}
+
+#block-views-top-rated-articles-block .views-field-field-image img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 3px;
+}
+#block-views-top-rated-articles-block h4 {
+	font-size: 1.3em;
+    margin-bottom: 7px;
+}
+
+#block-views-top-rated-articles-block .views-row {
+    border-bottom: 1px dashed #CCCCCC;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    padding-left: 51px;
+}
+
+#block-views-top-rated-articles-block .views-row-last{
+	border-bottom: none;
+}
+
+#block-views-top-rated-articles-block .views-field-field-rate .description{
+	font-size: 1em;
+}
+
+#block-views-top-rated-articles-block .views-field-field-rate .fivestar-outline {
+    margin-bottom: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Articles Styles */
+
+.node-article.node-teaser img {
+    border: 1px solid #CCCCCC;
+    float: left;
+    margin-right: 10px;
+    padding: 6px;
+}
+
+.node-article.node-teaser h2 a{
+	color: #333333;
+	text-decoration: none;
+}
+
+.node-article {
+    background: url("../images/article-bottom.png") no-repeat scroll center bottom transparent;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+h2.node-title {
+}
+
+.node-article.node-teaser ul.links a {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #333333;
+    color: #333333;
+    display: inline-block;
+    padding: 6px;
+    text-decoration: none;
+}
+
+.node-article.node-teaser ul.links a:hover{
+    background: none repeat scroll 0 0 #333333;    
+    color: #EEEEEE;    
+}
+
+.node-article.node-teaser ul.links .node-readmore a{
+	
+}
+
+.node-article.node-teaser .comment-add a{
+	
+}
+
+
+/* Footer Region General Styles */
+
+
+#footer h2, #footer h3, #footer h4, #footer h5, #footer h6{    
+    color: #CCCCCC;
+}
+
+#footer a{    
+    color: #EEEEEE;
+}
+
+.footer-logo {
+    background: url("../images/footer_logo.png") no-repeat scroll 0 0 transparent;
+    height: 80px;
+    width: 200px;
+}
+
+
+
+
+
+/* Footer: Common Footer Region */
+
+.region-footer {    
+    margin-right: 0;    
+}
+
+.region-footer-closure{
+	clear: both;
+}
+
+
+
+/* Follow Us Block */
+
+#block-block-2{
+	margin-bottom: 40px;
+}
+
+#block-block-2 .content a {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 7px;
+    padding: 5px 4px 4px 25px;
+    text-decoration: none;
+}
+
+#block-block-2 .content .rss a {
+    background: url("../images/follow_feed.png") no-repeat scroll 0 4px transparent;
+}
+
+#block-block-2 .content .twitter a {
+    background: url("../images/follow_twitter.png") no-repeat scroll 0 4px transparent;
+}
+
+#block-block-2 .content .fb a {
+    background: url("../images/follow_facebook.png") no-repeat scroll 0 4px transparent;
+}
+
+#block-block-2 .content .mail a {
+    background: url("../images/follow_newsletter.png") no-repeat scroll 0 4px transparent;
+}
+
+
+/* Recent Posts Block */
+
+#block-views-recent-posts-block .views-field-field-image img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #444444;
+    padding: 3px;
+}
+
+#block-views-recent-posts-block .views-field-field-image{
+	float: left;
+	margin-left: -51px;
+    margin-right: 8px;
+}
+
+#block-views-recent-posts-block .views-row {
+    border-bottom: 1px dashed #444444;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    padding-left: 51px;
+}
+
+#block-views-recent-posts-block .views-row-last {
+    border-bottom: medium none;
+}
+
+
+/* Last Viewed Posts Block */
+
+
+#block-views-last-viewed-block .views-field-field-image img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #444444;
+    padding: 3px;
+}
+
+#block-views-last-viewed-block .views-field-field-image{
+	float: left;
+	margin-left: -51px;
+    margin-right: 8px;
+}
+
+#block-views-last-viewed-block .views-row {
+    border-bottom: 1px dashed #444444;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    padding-left: 51px;
+}
+
+#block-views-last-viewed-block .views-row-last {
+    border-bottom: medium none;
+}
+
+
+
+
+/* NewsLetter (SimpleNews Module) Block Styles */
+
+.block-simplenews .form-submit {
+    background: none repeat scroll 0 0 #666666;
+    border: 1px solid #888888;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Tahoma,sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 26px;
+    margin-top: 5px;
+    padding-top: 0;
+    width: 73px;
+}
+
+.block-simplenews label{
+	display: none;
+}
+
+.block-simplenews .form-item {
+    margin-bottom: 7px;
+    margin-top: 14px;
+}
+
+
+/* Copyright Block */
+
+#block-block-1 {
+    border-top: 1px solid #CCCCCC;
+    clear: both;
+    margin: 12px -12px 0;
+    padding: 10px 10px 0;
+}
+
+#block-block-1 p{    
+    margin: 0;
+}
+
+#block-views-most-popular-today-block .views-row, #block-views-most-commented-block .views-row {padding-left:0px; margin:0px; font-size: 80%; width: 100%}
+
+.ui-accordion .ui-accordion-content
+{
+  padding-top: 0em;
+  padding-right: 0em;
+  padding-bottom: 0em;
+  padding-left: 0em;
+  border-top-width: 0px;
+  border-top-style: none;
+  margin-top: -7px;
+  position: relative;
+  top: 0px;
+  margin-bottom: 0px;
+ width: 99%;
+  display: none;
+ 
+}
+#block-views-special-sections-block {clear:both; margin-top: 65px;}
+
+#block-quicktabs-qtmostpopular .quicktabs-ui-wrapper {min-height: 400px;}
+
+#block-menu-menu-secondary-menu li {display:inline; height: 20px; padding: 0px; margin-bottom:-10px;}
+#block-menu-menu-secondary-menu {float: right; display:block; clear:both; width: 100%; text-align: right}
+
+#block-simpleads-ad-groups-12, #block-simpleads-ad-groups-15 {background: transparent; margin-left: -10px;}
+#block-simpleads-ad-groups-12 img, #block-simpleads-ad-groups-15 img {width: 290px; height: auto; margin-bottom: 10px;}
+
+.calendar-calendar {margin-top:-20px;}
+
+#block-views-calendar-block-2, #block-poll-recent {background: #E5ECF9; padding: 3px; border: 1px solid #ddd;}
+#block-simpleads-ad-groups-13 img {max-width: 99%; height:auto;}
+
+#photowithcaption {max-width: 440px; float: left;}
+.image_field_caption {max-width: 420px;}
+.front #capption {display:none;}
+.front #photowithcaption {margin-right: -40px;}
+.front #block-views-featured-article-block #photowithcaption  {margin-right: -120px;}
+.page-taxonomy #capption {display:none;}
+#block-simpleads-ad-groups-24 {margin-left: -10px;}
+#block-simpleads-ad-groups-25, #block-simpleads-ad-groups-26,  #block-simpleads-ad-groups-28 {margin-left: -10px; margin-top:-17px;}
+#block-block-9 {margin-left: -10px; margin-top:-17px;}
+
+#block-simpleads-ad-groups-27 img {width: 218px; height: 100px; float: left; margin-right: 15px; margin-bottom: 20px;}

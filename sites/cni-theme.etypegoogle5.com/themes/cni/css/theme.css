@@ -1235,6 +1235,18 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 /* DFP / GOOGLE ADS
 --------------------------------------------------------------------------*/
 
+.block-dfp {
+    margin-bottom: 20px;
+}
+
+.block-dfp .block-inner, #main-content .block-dfp .block-inner {
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+}
+
 .region-content-bottom .block-dfp {
     width: 728px;
     margin: 0 auto 20px;

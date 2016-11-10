@@ -1240,9 +1240,9 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin: 0 auto;
 }
 
-.region-slideshow .block-dfp {
+.region-slideshow .block-dfp, .region-preface-1 .block-dfp {
     width: 468px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
 }
 
 /* SIMPLE ADS

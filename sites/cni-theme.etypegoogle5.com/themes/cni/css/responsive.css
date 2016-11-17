@@ -294,6 +294,12 @@
         border: none;
         box-shadow: none;
     }
+
+    /* hide large dfp ads */
+    .region-content-bottom .block-dfp {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 /* larger phones */
@@ -436,6 +442,12 @@
         box-shadow: none;
     }
 
+    /* hide large dfp ads */
+    .region-content-bottom .block-dfp {
+        display: none;
+        visibility: hidden;
+    }
+
 }
 
 /* smaller phones */
@@ -576,6 +588,12 @@
     #block-block-1 .block-inner {
         border: none;
         box-shadow: none;
+    }
+
+    /* hide large dfp ads */
+    .region-content-bottom .block-dfp {
+        display: none;
+        visibility: hidden;
     }
 
 }

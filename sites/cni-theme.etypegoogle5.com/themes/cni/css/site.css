@@ -34,7 +34,7 @@
         width: 979px;
     }
 
-    /* dfp ads */
+	/* add rules here if necessary */
 
 }
 
@@ -47,18 +47,14 @@
         font-size: 0.8em;
     }
 
-    /* dfp ads */
+	/* add rules here if necessary */
 
 }
 
 @media only screen and (max-width: 767px) {
-
-    /* Hide larger DFP ads on non full-size browsers */
-
+	/* add rules here if necessary */
 }
 
 @media only screen and (min-width: 768px) {
-
-    /* Hide larger DFP ads on non full-size browsers */
-
+	/* add rules here if necessary */
 }

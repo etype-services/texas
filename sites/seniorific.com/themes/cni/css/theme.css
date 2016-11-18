@@ -290,7 +290,7 @@ article .field-image {
 /* SIDEBARS
 --------------------------------------------------------------------------*/
 .sidebar .content {
-    padding: 20px 0 0 0;
+    padding: 0 0 10px 0;
     color: #999999;
 }
 

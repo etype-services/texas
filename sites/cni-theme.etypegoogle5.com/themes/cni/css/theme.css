@@ -91,10 +91,6 @@ h3.site-slogan {
 
 /* SLIDESHOW
 --------------------------------------------------------------------------*/
-
-.view-slideshow {
-}
-
 .view-slideshow .views_slideshow_main {
     position: relative;
     height: 400px;
@@ -1229,12 +1225,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 
 /* galleria on article pages */
 .page-node .node-article .galleria-info {
-    top: 308px
+    top: 308px;
 }
 
 /* DFP / GOOGLE ADS
 --------------------------------------------------------------------------*/
-
 .block-dfp {
     margin-bottom: 20px;
 }
@@ -1245,6 +1240,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     border-style: none;
     border-width: 0;
     box-shadow: none;
+}
+
+.region-main-menu-second-level .block-dfp {
+    width: 728px;
+    margin: 20px auto 0;
 }
 
 .region-content-bottom .block-dfp {
@@ -1267,8 +1267,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 #main-content .block-simpleads .block-inner {
     padding: 0;
     margin: 0;
-    border-style: none;
-    border-width: 0;
+    border: none;
     box-shadow: none;
 }
 

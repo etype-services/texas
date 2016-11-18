@@ -296,7 +296,7 @@
     }
 
     /* hide large dfp ads */
-    .region-content-bottom .block-dfp {
+    .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp {
         display: none;
         visibility: hidden;
     }
@@ -443,7 +443,7 @@
     }
 
     /* hide large dfp ads */
-    .region-content-bottom .block-dfp {
+    .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp {
         display: none;
         visibility: hidden;
     }
@@ -591,7 +591,7 @@
     }
 
     /* hide large dfp ads */
-    .region-content-bottom .block-dfp {
+    .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp {
         display: none;
         visibility: hidden;
     }

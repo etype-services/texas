@@ -65,10 +65,6 @@ td {
     border: 1px solid #dddddd;
 }
 
-img {
-    max-width: 100%;
-}
-
 /* HEADER
 --------------------------------------------------------------------------*/
 
@@ -1525,6 +1521,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 .region-main-menu .block-simpleads {
     text-align: center;
     margin-bottom: 20px;
+}
+
+.region-content-bottom .block-simpleads {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .region-main-menu-second-level .block-simpleads {

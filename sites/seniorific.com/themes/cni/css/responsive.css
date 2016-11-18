@@ -289,7 +289,7 @@
         background: none;
     }
 
-    .region-postscript-2 {
+    .region-postscript-2, .region-postscript-3 {
         display: none;
         visibility: hidden;
     }
@@ -430,7 +430,7 @@
         background: none;
     }
 
-    .region-postscript-2 {
+    .region-postscript-2, .region-postscript-3 {
         display: none;
         visibility: hidden;
     }
@@ -573,7 +573,7 @@
         background: none;
     }
 
-    .region-postscript-2 {
+    .region-postscript-2, .region-postscript-3 {
         display: none;
         visibility: hidden;
     }

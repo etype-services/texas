@@ -331,7 +331,7 @@ article .field-image {
 
 /* override widths for .grid_3 in footer */
 .container_12 .postscript-wrapper .grid_3 {
-    width: 25% !important;
+    width: 22% !important;
 }
 
 .postscript-wrapper .block-inner {
@@ -1509,6 +1509,9 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
+.block-simpleads img {
+    max-width: 100%;
+}
 
 #main-content .block-simpleads .block-inner {
     padding: 0;

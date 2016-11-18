@@ -331,7 +331,7 @@ article .field-image {
 
 /* override widths for .grid_3 in footer */
 .container_12 .postscript-wrapper .grid_3 {
-    width: 30% !important;
+    width: 25% !important;
 }
 
 .postscript-wrapper .block-inner {

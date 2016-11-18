@@ -1,4 +1,4 @@
-/* HTML 
+/* HTML
 --------------------------------------------------------------------------*/
 
 body {
@@ -65,7 +65,11 @@ td {
     border: 1px solid #dddddd;
 }
 
-/* HEADER 
+img {
+    max-width: 100%;
+}
+
+/* HEADER
 --------------------------------------------------------------------------*/
 
 .header-wrapper-inner {
@@ -91,7 +95,7 @@ h3.site-slogan {
 	float: left;
 }
 
-/* SLIDESHOW 
+/* SLIDESHOW
 --------------------------------------------------------------------------*/
 
 .view-slideshow {
@@ -176,6 +180,11 @@ h3.site-slogan {
     margin-right: 0;
 }
 
+.view .pager {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7em;
+}
+
 /* IMAGE FIELD CAPTION
 --------------------------------------------------------------------------*/
 .view blockquote.image-field-caption, .node-teaser blockquote.image-field-caption {
@@ -183,7 +192,7 @@ h3.site-slogan {
     visibility: hidden;
 }
 
-/* PREFACE 
+/* PREFACE
 --------------------------------------------------------------------------*/
 
 .preface-wrapper .views-row {
@@ -249,7 +258,7 @@ h3.site-slogan {
 }
 
 .preface-wrapper .block-inner .views-field-title h3 a {
-	
+
 }
 
 .preface-wrapper .block-inner .views-field-body p {
@@ -262,7 +271,7 @@ h3.site-slogan {
     font-style: italic;
 }
 
-/* MAIN CONTENT 
+/* MAIN CONTENT
 --------------------------------------------------------------------------*/
 
 .main-content-wrapper {
@@ -279,12 +288,11 @@ h3.site-slogan {
 }
 
 article .field-image {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
-/* SIDEBARS 
+/* SIDEBARS
 --------------------------------------------------------------------------*/
-
 .sidebar .content {
     padding: 20px 0 0 0;
     color: #999999;
@@ -299,12 +307,17 @@ article .field-image {
     margin-bottom: 0;
 }
 
-/* POSTSCRIPT 
+/* POSTSCRIPT
 --------------------------------------------------------------------------*/
 
 #postscript {
     color: #dddddd;
     font-size: 0.9em;
+}
+
+#postscript .grid_4 {
+    width: 28%;
+    margin-left: 2em;
 }
 
 #postscript a {
@@ -318,6 +331,11 @@ article .field-image {
     margin: 10px -10px 0;
     background: url(../images/postscript-bg.png);
     border-top: 20px solid #252525;
+}
+
+/* override widths for .grid_3 in footer */
+.container_12 .postscript-wrapper .grid_3 {
+    width: 30% !important;
 }
 
 .postscript-wrapper .block-inner {
@@ -339,6 +357,12 @@ article .field-image {
     padding-right: 5px;
     background: #333333;
     color: #999999;
+}
+
+/* override default styles for user menu in footer */
+#postscript .block-menu-block ul.menu li {
+    padding-left: 0 !important;
+    list-style-type: none !important;
 }
 
 #postscript .item-list ul li {
@@ -395,7 +419,7 @@ article .field-image {
 --------------------------------------------------------------------------*/
 
 
-/* LISTS 
+/* LISTS
 --------------------------------------------------------------------------*/
 
 .item-list ul {
@@ -430,10 +454,10 @@ article .field-image {
     list-style-type: decimal;
 }
 
-/* normalize lists on Basic Pages */
-.content .node-page ul {
+/* normalize lists on Basic Pages and Articles */
+.content .node-page ul, .content .node-article ul {
     margin: 0 0 1em 1em;
-    list-style: disc inside;
+    list-style: disc outside;
 }
 
 /* USER MENU
@@ -555,7 +579,6 @@ article .field-image {
 }
 
 /* Main Menu custom styling */
-
 #block-superfish-1 {
     background-color: #ff9933;
     height: 33px;
@@ -661,6 +684,12 @@ article .field-image {
     background: 0;
 }
 
+/* theme default mobile menu */
+#mm0 {
+    display: none;
+    visibility: hidden;
+}
+
 /* SIDE MENU
 --------------------------------------------------------------------------*/
 
@@ -674,7 +703,7 @@ article .field-image {
     display: block;
     margin-top: 0;
     margin-left: 0;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 100%;
     height: auto
 }
@@ -1271,7 +1300,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 .field-name-field-pulled-quote {
-    background-image: url("/sites/all/themes/bones/images/icons_48/openquote.png");
     width: 300px;
     min-height: 100px;
     font-size: 18px;

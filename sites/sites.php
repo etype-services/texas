@@ -166,7 +166,7 @@ $sites['www.navasotastar.com'] = 'navasotastar.com';
 $sites['seniorific.etypegoogle5.com'] = 'seniorific.com';
 $sites['seniorific.com'] = 'seniorific.com';
 $sites['www.seniorific.com'] = 'seniorific.com';
-
+$sites['seniorific-archives.etypegoogle5.com'] = 'seniorific-archives.etypegoogle5.com';
 
 /* haysfreepress.etypegoogle5.com */
 $sites['haysfreepress.etypegoogle5.com'] =  'haysfreepress.com';

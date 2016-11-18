@@ -1138,140 +1138,16 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 /* Facebook Block */
-#block-block-20 .block-inner {
+#block-etype-facebook .block-inner {
     padding: 0;
     margin: 0 0 20px 0;
     border: none;
     box-shadow: none;
 }
 
-/* Twitter Block */
-#block-block-36 .block-inner {
-
-}
-
 #block-block-28 .content {
     padding: 0 0 0 0;
     color: #999999;
-}
-
-#block-block-28 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-10 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-10 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-9 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-9 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-8 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-8 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-13 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-13 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-11 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-11 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-14 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-14 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-16 .content {
-    padding: 0 0 0 0;
-    color: #999999;
-}
-
-#block-block-16 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-17 .content {
-    padding: 0;
-    color: #000;
-}
-
-#block-block-17 .block-inner {
-    padding: 5px;
-    margin: 0;
-}
-
-#block-block-11 {
-    box-shadow: none;
-}
-
-#block-block-7 {
-    float: right;
-    margin-top: -90px;
-}
-
-#block-block-25 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-25 .content {
-    padding: 0;
-    color: #000;
-}
-
-#block-block-24 .block-inner {
-    padding: 0 0 0 0;
-    margin: 0 0 20px 0;
-}
-
-#block-block-24 .content {
-    padding: 0;
-    color: #000;
-}
-
-#block-block-12 .block-inner {
-    text-align: center;
-    padding-left: 100px;
 }
 
 .field-name-field-subhead {

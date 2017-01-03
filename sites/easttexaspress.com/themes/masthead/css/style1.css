@@ -1057,16 +1057,18 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
   margin-left: 10px;
 }
 
+/* weather in header */
 #block-block-1
 {
-  width: 220px;
-  float: right;
-  margin-top: -130px;
-  margin-left: 700px;
-  display: block;
-  position: relative;
-  z-index: 99;
+    width: 180px;
+    float: right;
+    margin-top: -157px;
+    margin-left: 768px;
+    display: block;
+    position: absolute;
+    z-index: 99;
 }
+
 #block-simpleads-ad-groups-283 .content, #block-simpleads-ad-groups-239 .content, #block-simpleads-ad-groups-240 .content, #block-simpleads-ad-groups-241 .content, #block-simpleads-ad-groups-242 .content, #block-simpleads-ad-groups-243 .content, #block-simpleads-ad-groups-244 .content, #block-simpleads-ad-groups-245 .content, #block-simpleads-ad-groups-246 .content, #block-simpleads-ad-groups-247 .content, #block-simpleads-ad-groups-248 .content, #block-simpleads-ad-groups-249 .content, #block-simpleads-ad-groups-250 .content, #block-simpleads-ad-groups-273 .content, #block-simpleads-ad-groups-277 .content, #block-simpleads-ad-groups-278 .content, #block-simpleads-ad-groups-279 .content, #block-simpleads-ad-groups-280 .content {
   padding: 0px;
   color: #000;	

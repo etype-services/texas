@@ -36,6 +36,7 @@ function facebook_comments_block_info() {
   $blocks = array();
   $blocks['facebook-comments'] = array(
     'info' => t('Facebook comments'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
   );
   return $blocks;
 }
@@ -63,16 +64,10 @@ function facebook_comments_block_view($delta = '') {
  */
 function facebook_comments_admin() {
   $form = array();
-  $form['facebook_comments_appid'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Facebook App ID'),
-    '#default_value' => variable_get('facebook_comments_appid', ''),
-    '#description' => t('Enter the Facebook App ID to ensure that all comments can be grouped for moderation.'),
-  );
   $form['facebook_comments_style'] = array(
     '#type' => 'select',
     '#title' => t('Color Scheme'),
-    '#default_value' => variable_get('facebook_comments_style', 'light'), 
+    '#default_value' => variable_get('facebook_comments_style', 'light'),
     '#options' => array('light' => t('Light'), 'dark' => t('Dark')),
   );
   $form['facebook_comments_viewmode'] = array(
@@ -81,17 +76,40 @@ function facebook_comments_admin() {
     '#default_value' => variable_get('facebook_comments_viewmode', 'full'),
     '#options' => array('both' => t('Both full node and teaser'), 'full' => t('Full node'), 'teaser' => t('Teaser')),
   );
+  $form['facebook_comments_views'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Views support'),
+    '#default_value' => variable_get('facebook_comments_views', 0),
+    '#description' => t('Enable support for the Views module. Warning: you might lose comments on existing pages.'),
+  );
+  $form['facebook_comments_ssl'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('SSL support'),
+    '#default_value' => variable_get('facebook_comments_ssl', 0),
+    '#description' => t('Enable support for SSL. Warning: you might lose comments on existing pages.'),
+  );
+  $form['facebook_comments_status'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show comments on unpublished nodes'),
+    '#default_value' => variable_get('facebook_comments_status', 1),
+  );
   $form['facebook_comments_width'] = array(
     '#type' => 'textfield',
     '#title' => t('Facebook comment plugin width (nodes)'),
     '#default_value' => variable_get('facebook_comments_width', 620),
     '#description' => t('The width of the Facebook comment plugin for nodes, in pixels. Example: 620'),
   );
+  $form['facebook_comments_width_fluid'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Fluid Facebook comment plugin width (nodes)'),
+    '#default_value' => variable_get('facebook_comments_width_fluid', 0),
+    '#description' => t('Make the width of the Facebook comment plugin for nodes fluid (100%)'),
+  );
   $form['facebook_comments_block_width'] = array(
     '#type' => 'textfield',
-    '#title' => t('Facebook comment block plugin width (block)'),
+    '#title' => t('Facebook comment plugin width (block)'),
     '#default_value' => variable_get('facebook_comments_block_width', 208),
-    '#description' => t('The width of the Facebook comment plugin for the block, in pixels. Example: 250'),
+    '#description' => t('The width of the Facebook comment plugin for the block, in pixels. Example: 208'),
   );
   $form['facebook_comments_block_amount'] = array(
     '#type' => 'select',
@@ -99,7 +117,12 @@ function facebook_comments_admin() {
     '#options' => array(1 => 1, 2 => 2, 3 => 3, 5 => 5, 7 => 7, 10 => 10, 15 => 15, 20 => 20, 30 => 30),
     '#default_value' => variable_get('facebook_comments_block_amount', 15),
   );
-
+  $form['facebook_comments_appid'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Facebook App ID'),
+    '#default_value' => variable_get('facebook_comments_appid', ''),
+    '#description' => t('Enter the Facebook App ID to ensure that all comments can be grouped for moderation.'),
+  );
   $defaulttypes = array();
   $types = node_type_get_types();
   foreach ($types as $key => $type) {
@@ -110,11 +133,11 @@ function facebook_comments_admin() {
     '#title' => t('Facebook comment default content types'),
     '#options' => $defaulttypes,
     '#default_value' => variable_get('facebook_comments_types', array()),
-    '#description' => t('Check the content types that should have Facebook comments enabled by default.'),
+    '#description' => t('Check the content types that should have Facebook comments enabled by default.<br/>This default value can be changed per node by users with the "Enable/disable Facebook comments per node" permission.'),
   );
   $form['facebook_comments_applyall'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Enable Facebook comments on existing content for the selected content types.'),
+    '#title' => t('Enable Facebook comments on existing content for the selected content types above.'),
     '#default_value' => FALSE,
   );
   $form['#submit'][] = 'facebook_comments_admin_applyall';
@@ -142,8 +165,44 @@ function facebook_comments_admin_applyall(&$form, $form_state) {
         ->fields(array('enabled' => 1))
         ->execute();
     }
-    drupal_set_message('Facebook comments have been enabled on existing content for the selected content types.');
+    drupal_set_message(t('Facebook comments have been enabled on existing content for the selected content types.'));
   }
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function facebook_comments_field_extra_fields() {
+  $extra = array();
+
+  $default_types = variable_get('facebook_comments_types', array());
+  foreach (node_type_get_types() as $type) {
+    if (facebook_comments_is_enabled($type->type)) {
+      $extra['node'][$type->type] = array(
+        'display' => array(
+          'facebook_comments' => array(
+            'label' => t('Facebook comments'),
+            'description' => t('Facebook comments'),
+            'weight' => 1002,
+          ),
+        ),
+      );
+    }
+  }
+
+  return $extra;
+}
+
+/**
+ * Helper function to determine if Facebook commenting is enabled.
+ */
+function facebook_comments_is_enabled($type) {
+  $default_types = variable_get('facebook_comments_types', array());
+  if (isset($default_types[$type]) && $default_types[$type] === $type) {
+    return TRUE;
+  }
+
+  return FALSE;
 }
 
 /**
@@ -152,11 +211,9 @@ function facebook_comments_admin_applyall(&$form, $form_state) {
  * Add the Facebook commenting options for a node.
  */
 function facebook_comments_form_node_form_alter(&$form, $form_state) {
-  // Check if the user has permission to enabled and disable Facebook comments for this node
-  if (!user_access('moderate facebook comments')) return;
   // Load the default values
   $node = $form['#node'];
-  // If this is a preview then get the values from the form, not the db
+  // If this is a preview then get the values from the form, not the db.
   if (isset($form_state['values']['op']) && $form_state['values']['op'] == t('Preview')) {
     $defaults = new StdClass;
     $defaults->enabled = $form_state['values']['facebook_comments_enabled'];
@@ -169,16 +226,16 @@ function facebook_comments_form_node_form_alter(&$form, $form_state) {
       ->condition('f.nid', $node->nid, '=')
       ->execute()
       ->fetchObject();
-    // If the node is existed before we installed facebook_comments add default values.
-    if(!$defaults) {
+    // If the node existed before we installed facebook_comments add, default values.
+    if (!$defaults) {
       $defaulttypes = variable_get('facebook_comments_types', array());
       $defaults = new StdClass;
-      $defaults->enabled =  !empty($defaulttypes[$node->type]) ? 1 : 0;;
+      $defaults->enabled =  FALSE;
       $defaults->amount = 15;
     }
   }
   else {
-    // Init standard values
+    // Init standard values.
     $defaulttypes = variable_get('facebook_comments_types', array());
     $defaults = new StdClass;
     $defaults->enabled = !empty($defaulttypes[$node->type]) ? 1 : 0;
@@ -188,15 +245,11 @@ function facebook_comments_form_node_form_alter(&$form, $form_state) {
     '#type' => 'fieldset',
     '#title' => t('Facebook comments'),
     '#group' => 'additional_settings',
+    '#access' => user_access('moderate facebook comments'),
     '#attributes' => array('class' => array('edit-facebook-comments')),
     '#attached' => array(
       'js' => array('vertical-tabs' => drupal_get_path('module', 'facebook_comments') . "/facebook_comments_vertical_tabs.js"),
-    ),    
-  );
-  $form['facebook_comments']['facebook_comments_description'] = array(
-    '#prefix' => '<div class="description">',
-    '#suffix' => '</div>',
-    '#markup' => t('The Facebook App ID can be set <a href="@link">here</a>.', array('@link' => url('admin/config/content/facebook-comments'))),
+    ),
   );
   // Enable or disable Facebook comments for this node
   $form['facebook_comments']['facebook_comments_enabled'] = array(
@@ -256,6 +309,8 @@ function facebook_comments_node_delete($node) {
  * Implements hook_node_view().
  */
 function facebook_comments_node_view($node, $view_mode, $langcode) {
+  // Check if the node is published.
+  if (!variable_get('facebook_comments_status', 1) && !$node->status) return;
   // Check the view mode to display the comments or not
   $fc_viewmode = variable_get('facebook_comments_viewmode', 'full');
   if ($fc_viewmode != "both" && $view_mode != $fc_viewmode) return;
@@ -268,10 +323,12 @@ function facebook_comments_node_view($node, $view_mode, $langcode) {
   if (!isset($comments->enabled) || !$comments->enabled) return;
   // Add the Facebook App ID if it exists
   $width = variable_get('facebook_comments_width', 620);
-  $output = facebook_comments_display($width, $comments->amount);
+  $fluid = variable_get('facebook_comments_width_fluid', 0);
+  $fragment = variable_get('facebook_comments_views', 0) ? $node->nid : 0;
+  $output = facebook_comments_display($width, $comments->amount, $fluid, $fragment);
   $node->content['facebook_comments'] = array(
-    '#markup' => $output, 
-    '#weight' => 1002, 
+    '#markup' => $output,
+    '#weight' => 1002,
   );
 }
 
@@ -282,10 +339,12 @@ function facebook_comments_node_view($node, $view_mode, $langcode) {
  *   The width of the plugin in pixels.
  * @param amount
  *   The amount of comments to display.
+ * @param nid
+ *   The unique identifier of the node.
  */
-function facebook_comments_display($width, $amount) {
+function facebook_comments_display($width, $amount, $fluid = 0, $fragment) {
   // Add the Facebook App ID if it exists
-  if ($appid = variable_get('facebook_comments_appid', '')) {    
+  if ($appid = variable_get('facebook_comments_appid', '')) {
     $element = array(
       '#tag' => 'meta',
       '#attributes' => array(
@@ -295,9 +354,21 @@ function facebook_comments_display($width, $amount) {
     );
     drupal_add_html_head($element, 'facebook_comments');
   }
+  if ($fluid) {
+    $class = "fb-comments-fluid";
+    drupal_add_css('#fbcomments, .fb-comments, .fb-comments iframe, .fb-comments span {width: 100% !important;}', array('type' => 'inline'));
+  }
+  else {
+    $class = "";
+  }
   // Generate the URL
-  global $base_url;
-  $url = $base_url .'/'. drupal_get_path_alias($_GET['q']);
+  $options = array('absolute' => TRUE);
+  if ($fragment) $options['fragment'] = $fragment;
+  $url = url(request_path(), $options);
+  // If the path is non-SSL, rewrite it to SSL.
+  if (variable_get('facebook_comments_ssl', 0) && strpos($url, "http://") !== FALSE) {
+    $url = str_ireplace("http://", "https://", $url);
+  }
   // Add user defined settings
   $style = variable_get('facebook_comments_style', 'light');
   $output = '<div id="fb-root"></div>
@@ -305,9 +376,147 @@ function facebook_comments_display($width, $amount) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  js.src = "//connect.facebook.net/' . _facebook_comments_get_language_code() . '/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, "script", "facebook-jssdk"));</script>
-<div class="fb-comments" data-href="'. $url .'" data-num-posts="'. $amount .'" data-width="'. $width .'" data-colorscheme="'.$style.'"></div>';
+<div class="fb-comments ' . $class . '" data-href="' . $url . '" data-num-posts="' . $amount . '" data-width="' . $width . '" data-colorscheme="' . $style . '"></div>';
   return $output;
+}
+
+/**
+ * Returns a Language code format pt_PT.
+ * If the current language code is not in the conversion array it returns
+ * English as default language.
+ */
+function _facebook_comments_get_language_code() {
+  // Get global language.
+  global $language;
+  // Current language.
+  $current_language = $language->language;
+  // Get available languages.
+  $language_codes = _facebook_comments_get_language_codes();
+  $languages = array();
+  // Get available language codes.
+  if (array_key_exists($current_language, $language_codes)) {
+    $languages = $language_codes[$current_language];
+  }
+  else {
+    $languages = $language_codes['en'];
+  }
+  // Get the first elements key, for the available language codes.
+  reset($languages);
+  return key($languages);
+}
+
+/**
+ * Returns an array with the relation of the languages with its pt_PT code.
+ */
+function _facebook_comments_get_language_codes() {
+  return array(
+    'af' => array('af_ZA' => 'Afrikaans'),
+    'ar' => array('ar_AR' => 'Arabic'),
+    'ay' => array('ay_BO' => 'Aymara'),
+    'az' => array('az_AZ' => 'Azeri'),
+    'be' => array('be_BY' => 'Belarusian'),
+    'bg' => array('bg_BG' => 'Bulgarian'),
+    'bn' => array('bn_IN' => 'Bengali'),
+    'bs' => array('bs_BA' => 'Bosnian'),
+    'ca' => array('ca_ES' => 'Catalan'),
+    'ck' => array('ck_US' => 'Cherokee'),
+    'cs' => array('cs_CZ' => 'Czech'),
+    'cy' => array('cy_GB' => 'Welsh'),
+    'da' => array('da_DK' => 'Danish'),
+    'de' => array('de_DE' => 'German'),
+    'el' => array('el_GR' => 'Greek'),
+    'en' => array(
+      'en_GB' => 'English (UK)', 'en_PI' => 'English (Pirate)',
+      'en_UD' => 'English (Upside Down)',
+      'en_US' => 'English (US)'),
+    'eo' => array('eo_EO' => 'Esperanto'),
+    'es' => array(
+      'es_LA' => 'Spanish',
+      'es_CL' => 'Spanish (Chile)',
+      'es_CO' => 'Spanish (Colombia)',
+      'es_MX' => 'Spanish (Mexico)',
+      'es_VE' => 'Spanish (Venezuela)'),
+    'et' => array('et_EE' => 'Estonian'),
+    'eu' => array('eu_ES' => 'Basque'),
+    'fa' => array('fa_IR' => 'Persian'),
+    'fb' => array('fb_FI' => 'Finnish (test)', 'fb_LT' => 'Leet Speak'),
+    'fi' => array('fi_FI' => 'Finnish'),
+    'fo' => array('fo_FO' => 'Faroese'),
+    'fr' => array('fr_FR' => 'French (France)', 'fr_CA' => 'French (Canada)'),
+    'ga' => array('ga_IE' => 'Irish'),
+    'gl' => array('gl_ES' => 'Galician'),
+    'gn' => array('gn_PY' => 'Guarani'),
+    'gu' => array('gu_IN' => 'Gujarati'),
+    'he' => array('he_IL' => 'Hebrew'),
+    'hi' => array('hi_IN' => 'Hindi'),
+    'hr' => array('hr_HR' => 'Croatian'),
+    'hu' => array('hu_HU' => 'Hungarian'),
+    'hy' => array('hy_AM' => 'Armenian'),
+    'id' => array('id_ID' => 'Indonesian'),
+    'is' => array('is_IS' => 'Icelandic'),
+    'it' => array('it_IT' => 'Italian'),
+    'ja' => array('ja_JP' => 'Japanese'),
+    'jv' => array('jv_ID' => 'Javanese'),
+    'ka' => array('ka_GE' => 'Georgian'),
+    'kk' => array('kk_KZ' => 'Kazakh'),
+    'km' => array('km_KH' => 'Khmer'),
+    'kn' => array('kn_IN' => 'Kannada'),
+    'ko' => array('ko_KR' => 'Korean'),
+    'ku' => array('ku_TR' => 'Kurdish'),
+    'la' => array('la_VA' => 'Latin'),
+    'li' => array('li_NL' => 'Limburgish'),
+    'lt' => array('lt_LT' => 'Lithuanian'),
+    'lv' => array('lv_LV' => 'Latvian'),
+    'mg' => array('mg_MG' => 'Malagasy'),
+    'mk' => array('mk_MK' => 'Macedonian'),
+    'ml' => array('ml_IN' => 'Malayalam'),
+    'mn' => array('mn_MN' => 'Mongolian'),
+    'mr' => array('mr_IN' => 'Marathi'),
+    'ms' => array('ms_MY' => 'Malay'),
+    'mt' => array('mt_MT' => 'Maltese'),
+    'nb' => array('nb_NO' => 'Norwegian (bokmal)'),
+    'ne' => array('ne_NP' => 'Nepali'),
+    'nl' => array('nl_NL' => 'Dutch', 'nl_BE' => 'Dutch (Belgium)'),
+    'nn' => array('nn_NO' => 'Norwegian (nynorsk)'),
+    'pa' => array('pa_IN' => 'Punjabi'),
+    'pl' => array('pl_PL' => 'Polish'),
+    'ps' => array('ps_AF' => 'Pashto'),
+    'pt' => array('pt_BR' => 'Portuguese (Brazil)'),
+    'pt' => array('pt_PT' => 'Portuguese (Portugal)'),
+    'qu' => array('qu_PE' => 'Quechua'),
+    'rm' => array('rm_CH' => 'Romansh'),
+    'ro' => array('ro_RO' => 'Romanian'),
+    'ru' => array('ru_RU' => 'Russian'),
+    'sa' => array('sa_IN' => 'Sanskrit'),
+    'se' => array('se_NO' => 'Northern Sami'),
+    'sk' => array('sk_SK' => 'Slovak'),
+    'sl' => array('sl_SI' => 'Slovenian'),
+    'so' => array('so_SO' => 'Somali'),
+    'sq' => array('sq_AL' => 'Albanian'),
+    'sr' => array('sr_RS' => 'Serbian'),
+    'sv' => array('sv_SE' => 'Swedish'),
+    'sw' => array('sw_KE' => 'Swahili'),
+    'sy' => array('sy_SY' => 'Syriac'),
+    'ta' => array('ta_IN' => 'Tamil'),
+    'te' => array('te_IN' => 'Telugu'),
+    'tg' => array('tg_TJ' => 'Tajik'),
+    'th' => array('th_TH' => 'Thai'),
+    'tl' => array('tl_PH' => 'Filipino', 'tl_ST' => 'Klingon'),
+    'tr' => array('tr_TR' => 'Turkish'),
+    'tt' => array('tt_RU' => 'Tatar'),
+    'uk' => array('uk_UA' => 'Ukrainian'),
+    'ur' => array('ur_PK' => 'Urdu'),
+    'uz' => array('uz_UZ' => 'Uzbek'),
+    'vi' => array('vi_VN' => 'Vietnamese'),
+    'xh' => array('xh_ZA' => 'Xhosa'),
+    'yi' => array('yi_DE' => 'Yiddish'),
+    'zh' => array(
+      'zh_CN' => 'Simplified Chinese (China)',
+      'zh_HK' => 'Traditional Chinese (Hong Kong)',
+      'zh_TW' => 'Traditional Chinese (Taiwan)'),
+    'zu' => array('zu_ZA' => 'Zulu')
+  );
 }

@@ -1,7 +1,7 @@
 
 screenshot  = screenshot.png
-name        = News Center - Fully Responsive Premium Drupal 7.x Theme v 1.1
-description = Premium theme for building responsive <strong>Newspapers sites</strong> for Drupal 7.x.  
+name        = Fred 22
+description = Premium theme for building responsive <strong>Newspapers sites</strong> for Drupal 7.x.
 
 core        = 7.x
 base theme  = zen
@@ -18,7 +18,7 @@ stylesheets[all][]        = css/views-styles.css
 stylesheets[all][]        = css/nodes.css
 stylesheets[all][]        = css/comments.css
 stylesheets[all][]        = css/forms.css
-stylesheets[all][]        = css/fields.css	
+stylesheets[all][]        = css/fields.css
 stylesheets[all][]        = css/mobile-portrait-layout.css
 stylesheets[all][]        = css/news_center.css
 stylesheets[print][]      = css/blueprint/print.css
@@ -31,7 +31,7 @@ stylesheets[all and (min-width: 980px) and (min-device-width: 980px), all and (m
 stylesheets-conditional[lt IE 9][all][]  = css/blueprint/ie.css
 stylesheets-conditional[lt IE 9][all][]  = css/ie-mobile-landscape-layout.css
 stylesheets-conditional[lt IE 9][all][]  = css/ie-tablet-layout.css
-stylesheets-conditional[lt IE 9][all][]  = css/ie-screen-layout.css 
+stylesheets-conditional[lt IE 9][all][]  = css/ie-screen-layout.css
 
 scripts[] = js/news_center.js
 

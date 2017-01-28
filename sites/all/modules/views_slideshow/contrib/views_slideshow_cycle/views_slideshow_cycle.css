@@ -28,3 +28,7 @@
 .views-slideshow-pager-fields .active {
   text-decoration: underline;
 }
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
+margin : 0;
+}

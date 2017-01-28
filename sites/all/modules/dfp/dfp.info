@@ -21,9 +21,9 @@ files[] = tests/dfp.test
 
 testing_api = 2.x
 
-; Information added by Drupal.org packaging script on 2015-06-05
-version = "7.x-1.4"
+; Information added by Drupal.org packaging script on 2017-01-04
+version = "7.x-1.5"
 core = "7.x"
 project = "dfp"
-datestamp = "1433521683"
+datestamp = "1483556045"
 

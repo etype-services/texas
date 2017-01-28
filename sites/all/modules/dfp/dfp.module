@@ -24,6 +24,7 @@ function dfp_permission() {
     'administer DFP' => array(
       'title' => t('Administer Doubleclick for Publisher ads'),
       'description' => t('Users can create, edit, and delete Doubleclick for Publishers (dfp) ad tags and configure how and when they should be displayed.'),
+      'restrict access' => TRUE,
     ),
   );
 }
@@ -407,7 +408,7 @@ function dfp_tag($machinename) {
             ),
           ),
           'slug' => array(
-            '#markup' => $tag->slug,
+            '#markup' => check_plain($tag->slug),
           ),
           '#weight' => -1,
         );
@@ -612,7 +613,7 @@ function dfp_format_size($size) {
  *
  */
 function dfp_format_slug($slug) {
-  $formatted_slug = t(check_plain(variable_get('dfp_default_slug', '')));
+  $formatted_slug = variable_get('dfp_default_slug', '');
 
   if ($slug == '<none>') {
     $formatted_slug = "";
@@ -736,6 +737,12 @@ function _dfp_js_global_settings() {
  * it to the head tag.
  */
 function _dfp_js_slot_definition($tag) {
+  // Avoid accidentaly adding ad slot definition more than once.
+  if (isset($tag->processed) && $tag->processed === TRUE) {
+    watchdog('dfp', 'DFP tag %machinename is being added to the page more than once.', array('%machinename' => $tag->machinename), WATCHDOG_WARNING);
+    return;
+  }
+
   // Add the js needed to define this adSlot to <head>.
   $js = '';
   // Start by defining breakpoints for this ad.
@@ -755,11 +762,7 @@ function _dfp_js_slot_definition($tag) {
   }
   $click_url = variable_get('dfp_click_url', '');
   if (!empty($click_url)) {
-    if (!preg_match("/^https?:\/\//", $click_url)) {
-      // relative URL; prepend site domain
-      $click_url = (($GLOBALS['is_https']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . "/" . $click_url;
-    }
-    $js .= '  .setClickUrl("' . $click_url . '")' . "\n";
+    $js .= '  .setClickUrl("' . url($click_url, array('absolute' => TRUE)) . '")' . "\n";
   }
   $js .= '  .addService(googletag.pubads())' . "\n";
 
@@ -873,7 +876,8 @@ function dfp_token_replace($text, $tag = NULL, array $options = array()) {
   // reliably.
   $key = _dfp_token_replace_make_key($text, $data);
 
-  $cache_item = DFP_TOKEN_CACHE . ':' . current_path();
+  // Use the same granularity as the blocks.
+  $cache_item = DFP_TOKEN_CACHE . ':' . implode(':', drupal_render_cid_parts(DRUPAL_CACHE_PER_PAGE));
 
   // Lookup any already-cached token replacements.
   if (is_null($processed_strings)) {
@@ -953,7 +957,7 @@ function template_preprocess_dfp_tag(&$variables) {
         ),
       ),
       'slug' => array(
-        '#markup' => $tag->slug,
+        '#markup' => check_plain($tag->slug),
       ),
       '#weight' => -1,
     );
@@ -961,6 +965,9 @@ function template_preprocess_dfp_tag(&$variables) {
 
   // Define a javascript ad slot for this tag.
   _dfp_js_slot_definition($tag);
+
+  // Flag the slot as processed.
+  $variables['tag']->processed = TRUE;
 }
 
 /**

@@ -857,6 +857,14 @@ h2.node-title {
 
 /* weather */
 #block-block-5 {float: left;}
+
+
+/* SIMPLE ADS */
+.simplead-container {
+    display: flex;
+    justify-content: space-around;
+}
+
 #block-simpleads-ad-groups-26 {width: 468px; margin-left: 0;clear:none;}
 #block-simpleads-ad-groups-26 img {width: 468px;}
 #block-simpleads-ad-groups-27 {float: left; width: 220px; margin-left: 35px;clear:none;}

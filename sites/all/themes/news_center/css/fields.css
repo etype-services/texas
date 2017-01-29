@@ -3,8 +3,8 @@
  * Field Styling
  */
 
-
-.field /* Wrapper for any field. */ {
+.field /* Wrapper for any field. */
+{
 }
 
 /*
@@ -52,7 +52,8 @@
 /*
  * Field types (Contrib)
  */
-.field-type-datetime /* Always use "datetime" when creating new CCK date fields. "date" and "datestamp" are legacy types. */ {
+.field-type-datetime /* Always use "datetime" when creating new CCK date fields. "date" and "datestamp" are legacy types. */
+{
 }
 
 .field-type-node-reference {
@@ -60,7 +61,6 @@
 
 .field-type-user-reference {
 }
-
 
 /*
  * Named fields
@@ -74,5 +74,6 @@
 .field-name-field-tags {
 }
 
-.field-name-field-FIELDNAME /* Underscores in field name are replaced with dashes. */ {
+.field-name-field-FIELDNAME /* Underscores in field name are replaced with dashes. */
+{
 }

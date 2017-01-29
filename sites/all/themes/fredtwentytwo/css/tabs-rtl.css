@@ -3,20 +3,19 @@
  * RTL companion for the tabs.css file.
  */
 
-
 ul.primary {
-  padding: 0 10px 0 0;
+    padding: 0 10px 0 0;
 }
 
 ul.primary li {
-  float: right;
+    float: right;
 }
 
 ul.secondary {
-  padding: 0 5px 0 0;
+    padding: 0 5px 0 0;
 }
 
 ul.secondary li {
-  float: right;
-  border-left: none;
+    float: right;
+    border-left: none;
 }

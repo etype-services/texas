@@ -3,14 +3,12 @@
  * RTL companion for the forms.css file.
  */
 
-
 /*
  * Drupal's default login form block
  */
 #user-login-form {
-  text-align: right;
+    text-align: right;
 }
-
 
 /*
  * OpenID
@@ -20,11 +18,11 @@
  */
 
 html.js #user-login-form li.openid-link,
-#user-login-form li.openid-link /* The "Log in using OpenID" link. */ {
-  margin-left: 0;
-  margin-right: -20px; /* Un-do some of the padding on the ul list. */
+#user-login-form li.openid-link /* The "Log in using OpenID" link. */
+{
+    margin-left: 0;
+    margin-right: -20px; /* Un-do some of the padding on the ul list. */
 }
-
 
 /*
  * Drupal admin tables
@@ -34,7 +32,7 @@ html.js #user-login-form li.openid-link,
  */
 
 form th {
-  text-align: right;
-  padding-left: 1em;
-  padding-right: 0;
+    text-align: right;
+    padding-left: 1em;
+    padding-right: 0;
 }

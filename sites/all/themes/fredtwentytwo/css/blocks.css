@@ -1,67 +1,101 @@
-.block{}
+.block {
+}
 
-.block.first{}
+.block.first {
+}
 
-.block.last{}
+.block.last {
+}
 
-.block.odd{}
+.block.odd {
+}
 
-.block.even{}
+.block.even {
+}
 
-h2.block-title{}
+h2.block-title {
+}
 
-.block .content{}
+.block .content {
+}
 
-#block-aggregator-category-1{}
+#block-aggregator-category-1 {
+}
 
-#block-aggregator-feed-1{}
+#block-aggregator-feed-1 {
+}
 
-#block-block-1{}
+#block-block-1 {
+}
 
-#block-blog-recent{}
+#block-blog-recent {
+}
 
-#block-book-navigation{}
+#block-book-navigation {
+}
 
-#block-comment-recent{}
+#block-comment-recent {
+}
 
-#block-forum-active{}
+#block-forum-active {
+}
 
-#block-forum-new{}
+#block-forum-new {
+}
 
-#block-locale-language{}
+#block-locale-language {
+}
 
-#block-menu-menu-NAME{}
+#block-menu-menu-NAME {
+}
 
-#block-node-recent{}
+#block-node-recent {
+}
 
-#block-node-syndicate{}
+#block-node-syndicate {
+}
 
-#block-poll-recent{}
+#block-poll-recent {
+}
 
-#block-profile-author-information{}
+#block-profile-author-information {
+}
 
-#block-search-form{}
+#block-search-form {
+}
 
-#block-shortcut-shortcuts{}
+#block-shortcut-shortcuts {
+}
 
-#block-statistics-popular{}
+#block-statistics-popular {
+}
 
-#block-system-main-menu{}
+#block-system-main-menu {
+}
 
-#block-system-management{}
+#block-system-management {
+}
 
-#block-system-navigation{}
+#block-system-navigation {
+}
 
-#block-system-user-menu{}
+#block-system-user-menu {
+}
 
-#block-system-help{}
+#block-system-help {
+}
 
-#block-system-main{}
+#block-system-main {
+}
 
-#block-system-powered-by{}
+#block-system-powered-by {
+}
 
-#block-user-login{}
+#block-user-login {
+}
 
-#block-user-new{}
+#block-user-new {
+}
 
-#block-user-online{}
+#block-user-online {
+}

@@ -7,7 +7,6 @@
  * sub-theme's .info file for an easy way to use them.
  */
 
-
 /*
  * Tabs
  */
@@ -16,15 +15,15 @@ ul.primary li a,
 ul.primary li a .tab,
 ul.secondary li a,
 ul.secondary li a .tab {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /*
  * Drupal nodes
  */
 
-.node-unpublished>* {
-  position: relative; /* Otherwise these elements will appear below the "Unpublished" text. */
+.node-unpublished > * {
+    position: relative; /* Otherwise these elements will appear below the "Unpublished" text. */
 }
 
 /*
@@ -34,5 +33,5 @@ tr.even th,
 tr.even td,
 tr.odd th,
 tr.odd td {
-  border-bottom: 1px solid #ccc; /* IE doesn't display borders on table rows */
+    border-bottom: 1px solid #ccc; /* IE doesn't display borders on table rows */
 }

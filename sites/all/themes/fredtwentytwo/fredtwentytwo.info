@@ -1,7 +1,7 @@
 
 screenshot  = screenshot.png
 name        = Fred 22
-description = Premium theme for building responsive <strong>Newspapers sites</strong> for Drupal 7.x.
+description = Customized News Center Theme
 
 core        = 7.x
 base theme  = zen

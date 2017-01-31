@@ -1,7 +1,7 @@
 
 screenshot  = screenshot.png
 name        = Fredericksburg
-description = Premium theme for building responsive <strong>Newspapers sites</strong> for Drupal 7.x. Configured by for <a href="http://surfnewmedia.com/"><strong>Surf New Media</strong></a> for use in the production of media sites. 
+description = Customized News Center Theme
 
 core        = 7.x
 base theme  = zen

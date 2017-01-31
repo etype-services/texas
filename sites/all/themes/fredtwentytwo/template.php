@@ -67,15 +67,60 @@
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+
+function fredtwentytwo_preprocess_html(&$variables, $hook) {
+
+    /* add site-specific css */
+    $base_path = base_path();
+    $conf_path = conf_path();
+    $site_css = $base_path . $conf_path . '/local.css';
+
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . $site_css)) {
+        drupal_add_css(
+            $site_css,
+            array(
+                'type' => 'file',
+                'media' => 'all',
+                'preprocess' => FALSE,
+                'every_page' => TRUE,
+                'weight' => 999,
+                'group' => CSS_THEME
+            )
+        );
+    }
+
+    $nav_color = theme_get_setting('nav_color');
+    if (!empty($nav_color)) {
+        drupal_add_css(
+            '#block-superfish-1 ul {background: '. $nav_color .' !important;}',
+            array(
+                'group' => CSS_THEME,
+                'type' => 'inline',
+                'media' => 'screen',
+                'preprocess' => FALSE,
+                'weight' => '9999',
+            )
+        );
+    }
+
+    $nav_color = theme_get_setting('body_background');
+    if (!empty($body_background)) {
+        drupal_add_css(
+            'body {background: '. $body_background .' !important;}',
+            array(
+                'group' => CSS_THEME,
+                'type' => 'inline',
+                'media' => 'screen',
+                'preprocess' => FALSE,
+                'weight' => '9999',
+            )
+        );
+    }
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
   //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
 }
-// */
 
 /**
  * Override or insert variables into the page templates.

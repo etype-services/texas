@@ -1,7 +1,7 @@
 
 screenshot  = screenshot.png
 name        = Fred 22
-description = Customized News Center Theme
+description = Custom Theme based on News Center
 
 core        = 7.x
 base theme  = zen
@@ -12,13 +12,11 @@ stylesheets[all][]        = css/layout-fixed.css
 stylesheets[all][]        = css/page-backgrounds.css
 stylesheets[all][]        = css/tabs.css
 stylesheets[all][]        = css/pages.css
-stylesheets[all][]        = css/blocks.css
 stylesheets[all][]        = css/navigation.css
 stylesheets[all][]        = css/views-styles.css
 stylesheets[all][]        = css/nodes.css
 stylesheets[all][]        = css/comments.css
 stylesheets[all][]        = css/forms.css
-stylesheets[all][]        = css/fields.css
 stylesheets[all][]        = css/mobile-portrait-layout.css
 stylesheets[all][]        = css/news_center.css
 stylesheets[print][]      = css/blueprint/print.css
@@ -26,12 +24,6 @@ stylesheets[print][]      = css/blueprint/print.css
 stylesheets[(min-width: 479px)][] = css/mobile-landscape-layout.css
 stylesheets[(min-width: 767px)][] = css/tablet-layout.css
 stylesheets[all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)][] = css/screen-layout.css
-
-
-stylesheets-conditional[lt IE 9][all][]  = css/blueprint/ie.css
-stylesheets-conditional[lt IE 9][all][]  = css/ie-mobile-landscape-layout.css
-stylesheets-conditional[lt IE 9][all][]  = css/ie-tablet-layout.css
-stylesheets-conditional[lt IE 9][all][]  = css/ie-screen-layout.css
 
 scripts[] = js/news_center.js
 

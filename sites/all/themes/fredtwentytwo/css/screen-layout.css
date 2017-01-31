@@ -842,3 +842,21 @@ body.page-taxonomy-term .node-teaser .submitted {
 a img {
     max-width: 100%;
 }
+
+/* IMAGE FIELD CAPTION
+--------------------------------------------------------------------------*/
+.view blockquote.image-field-caption, .node-teaser blockquote.image-field-caption {
+    display: none;
+    visibility: hidden;
+}
+
+.page-node .node-article .content .field-type-image blockquote.image-field-caption {
+    float: left;
+    max-width: 380px;
+    margin: 5px 0 0;
+}
+
+blockquote.image-field-caption p {
+    line-height: 1.5em;
+    margin: 0 0 0.6em;
+}

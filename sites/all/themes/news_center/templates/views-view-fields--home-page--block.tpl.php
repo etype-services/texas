@@ -31,26 +31,19 @@
 	<?php print $fields['field_image']->content; ?>
   <?php print $fields['field_image']->wrapper_suffix; ?>
 
-<div class="slideshow-overlay" >
+<?php foreach ($fields as $id => $field): ?>
 
-	
-	<?php foreach ($fields as $id => $field): ?>
-	
-	  <?php if ($field->content != $fields['field_image']->content): ?>
-	  
-		  <?php if (!empty($field->separator)): ?>
-			<?php print $field->separator; ?>
-		  <?php endif; ?>
+    <?php if ($field->content != $fields['field_image']->content): ?>
 
-		  <?php print $field->wrapper_prefix; ?>
-			<?php print $field->label_html; ?>
-			<?php print $field->content; ?>
-		  <?php print $field->wrapper_suffix; ?>
-		  
-	  <?php endif; ?>
-	  
-	<?php endforeach; ?>
-	
-	<div class="bottom-shadow">
-	</div>	
-</div>
+        <?php if (!empty($field->separator)): ?>
+            <?php print $field->separator; ?>
+        <?php endif; ?>
+
+        <?php print $field->wrapper_prefix; ?>
+        <?php print $field->label_html; ?>
+        <?php print $field->content; ?>
+        <?php print $field->wrapper_suffix; ?>
+
+    <?php endif; ?>
+
+<?php endforeach; ?>

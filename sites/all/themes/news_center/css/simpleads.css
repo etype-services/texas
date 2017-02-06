@@ -1,0 +1,70 @@
+/* SIMPLE ADS -- AND DFP */
+
+/* line up ads */
+#header .block-simpleads .adslist > div > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.simplead-container img {
+    height: auto;
+    width: 100%;
+}
+
+/* dfp ads */
+.block-dfp {
+    width: 100% !important;
+    overflow: hidden;
+}
+
+.region-content2 .block-simpleads > div > div > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ad formatting in region-content2 */
+.region-sidebar-second .block-simpleads > div > div > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 901px) {
+
+    .region-slideshow .simplead-container {
+        width: 100%;
+        margin: 0 0 1em 0;
+    }
+
+    /* ad formatting in region-content2 */
+    .region-content2 .block-simpleads > div > div > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .region-content2 .simplead-container {
+        width: 29%;
+    }
+
+    .region-sidebar-second .block-simpleads,
+    .region-sidebar-second .block-dfp {
+        padding: 0;
+        border: none;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    .region-content2 .simplead-container {
+        width: 29%;
+    }
+
+    .region-sidebar-second .simplead-container {
+        width: 49%;
+    }
+
+}

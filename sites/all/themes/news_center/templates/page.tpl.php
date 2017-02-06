@@ -63,7 +63,7 @@
  * - $page['sidebar_first']: Items for the first sidebar.
  * - $page['sidebar_second']: Items for the second sidebar.
  * - $page['header']: Items for the header region.
- * - $page['top_area']: Items for the Top Area region. 
+ * - $page['top_area']: Items for the Top Area region.
  * - $page['footer']: Items for the footer region.
  * - $page['footer_first_column']: Items for the footer first column region.
  * - $page['footer_second_column']: Items for the footer second column region.
@@ -78,114 +78,113 @@
  * @see template_process()
  */
 ?>
-<style type="text/css">
-#mobile-logo {
-margin-bottom: 0px !important;
-margin-top: 0px !important;
-}
-.region-top-area{
-border:none !important;
-height: 80px;
-}
-.region-top-area .block{
-margin-top: -17px;
-}
-.field-content{
-margin-top: 20px !important;
-}
-.menu{
-margin: 0px 0px 0px 0px !important;
-}
-</style>
-<div id="page-wrapper" class="container" ><div id="page">
-		
-		<?php print render($page['top_advertisement']); ?>  
-	
-  <div id="header"><div class="section clearfix">
+    <div id="page-wrapper" class="container">
+        <div id="page">
 
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-    <?php endif; ?>
+            <?php print render($page['top_advertisement']); ?>
 
-    <?php if ($site_name || $site_slogan): ?>
-      <div id="name-and-slogan">
-        <?php if ($site_name): ?>
-          <?php if ($title): ?>
-            <div id="site-name"><strong>
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-            </strong></div>
-          <?php else: /* Use h1 when the content title is empty */ ?>
-            <h1 id="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-            </h1>
-          <?php endif; ?>
-        <?php endif; ?>
+            <div id="header">
+                <div class="section">
 
-        <?php if ($site_slogan): ?>
-          <div id="site-slogan"><?php print $site_slogan; ?></div>
-        <?php endif; ?>
-      </div><!-- /#name-and-slogan -->
-    <?php endif; ?>
-	
-	<?php print render($page['top_area']); ?>    
+                    <?php if ($logo): ?>
+                        <a href="<?php print $front_page; ?>"
+                           title="<?php print t('Home'); ?>" rel="home"
+                           id="logo"><img src="<?php print $logo; ?>"
+                                          alt="<?php print t('Home'); ?>"/></a>
+                    <?php endif; ?>
 
-    <?php print render($page['header']); ?>
+                    <?php if ($site_name || $site_slogan): ?>
+                        <div id="name-and-slogan">
+                            <?php if ($site_name): ?>
+                                <?php if ($title): ?>
+                                    <div id="site-name"><strong>
+                                            <a href="<?php print $front_page; ?>"
+                                               title="<?php print t('Home'); ?>"
+                                               rel="home"><span><?php print $site_name; ?></span></a>
+                                        </strong></div>
+                                <?php else: /* Use h1 when the content title is empty */ ?>
+                                    <h1 id="site-name">
+                                        <a href="<?php print $front_page; ?>"
+                                           title="<?php print t('Home'); ?>"
+                                           rel="home"><span><?php print $site_name; ?></span></a>
+                                    </h1>
+                                <?php endif; ?>
+                            <?php endif; ?>
 
-  </div></div><!-- /.section, /#header -->
+                            <?php if ($site_slogan): ?>
+                                <div id="site-slogan"><?php print $site_slogan; ?></div>
+                            <?php endif; ?>
+                        </div><!-- /#name-and-slogan -->
+                    <?php endif; ?>
 
-  <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?>">
+                    <?php print render($page['top_area']); ?>
 
-    <div id="content" class="column"><div class="section">
-      <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
-	  
-	  <?php print render($page['slideshow']); ?>
-	  
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if ($tabs = render($tabs)): ?>
-        <div class="tabs"><?php print $tabs; ?></div>
-      <?php endif; ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-	  <?php print render($page['content0']); ?>
-	  <?php print render($page['content1']); ?>
-	  <?php print render($page['content2']); ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
-    </div></div><!-- /.section, /#content -->   
+                    <?php print render($page['header']); ?>
 
-    <?php print render($page['sidebar_first']); ?>
+                </div>
+            </div><!-- /.section, /#header -->
 
-    <?php print render($page['sidebar_second']); ?>
+            <div id="main-wrapper">
+                <div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) {
+                         print ' with-navigation';
+                     } ?>">
 
-  </div></div><!-- /#main, /#main-wrapper -->
-  
-  <div id="footer">
-  
-    <?php print render($page['footer']); ?>
-  
-    <?php print render($page['footer_first_column']); ?>
-	
-	<?php print render($page['footer_second_column']); ?>
-	
-	<?php print render($page['footer_third_column']); ?>
-	
-	<?php print render($page['footer_fourth_column']); ?>
-	
-	<div class="clear"></div>
-	
-	<?php print render($page['footer_closure']); ?>
-	
-  </div>
+                    <div id="content" class="column">
+                        <div class="section">
+                            <?php print render($page['highlighted']); ?>
+                            <?php print $breadcrumb; ?>
 
-</div></div><!-- /#page, /#page-wrapper -->
+                            <?php print render($page['slideshow']); ?>
+
+                            <a id="main-content"></a>
+                            <?php print render($title_prefix); ?>
+                            <?php if ($title): ?>
+                                <h1 class="title"
+                                    id="page-title"><?php print $title; ?></h1>
+                            <?php endif; ?>
+                            <?php print render($title_suffix); ?>
+                            <?php print $messages; ?>
+                            <?php if ($tabs = render($tabs)): ?>
+                                <div class="tabs"><?php print $tabs; ?></div>
+                            <?php endif; ?>
+                            <?php print render($page['help']); ?>
+                            <?php if ($action_links): ?>
+                                <ul class="action-links"><?php print render($action_links); ?></ul>
+                            <?php endif; ?>
+                            <?php print render($page['content0']); ?>
+                            <?php print render($page['content1']); ?>
+                            <?php print render($page['content2']); ?>
+                            <?php print render($page['content']); ?>
+                            <?php print $feed_icons; ?>
+                        </div>
+                    </div><!-- /.section, /#content -->
+
+                    <?php print render($page['sidebar_first']); ?>
+
+                    <?php print render($page['sidebar_second']); ?>
+
+                </div>
+            </div><!-- /#main, /#main-wrapper -->
+
+            <div id="footer">
+
+                <?php print render($page['footer']); ?>
+
+                <?php print render($page['footer_first_column']); ?>
+
+                <?php print render($page['footer_second_column']); ?>
+
+                <?php print render($page['footer_third_column']); ?>
+
+                <?php print render($page['footer_fourth_column']); ?>
+
+                <div class="clear"></div>
+
+                <?php print render($page['footer_closure']); ?>
+
+            </div>
+
+        </div>
+    </div><!-- /#page, /#page-wrapper -->
 
 <?php print render($page['bottom']); ?>

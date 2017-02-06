@@ -324,9 +324,11 @@ blockquote.image-field-caption p {
     border-top: 1px solid #000000;
     color: #cccccc;
     padding: 1em;
+    width: 100%;
 }
 
 #footer {
+    background-color: #333333;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

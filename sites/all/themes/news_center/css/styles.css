@@ -318,15 +318,15 @@ blockquote.image-field-caption p {
 }
 
 /* FOOTER */
-#footer-wrapper {
-    width: 100%;
-}
 
-#footer {
+#footer-wrapper {
     background-color: #333333;
     border-top: 1px solid #000000;
     color: #cccccc;
     padding: 1em;
+}
+
+#footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

@@ -67,7 +67,6 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=no" />
-  <meta property="og:image" content="http://www.auroranewsregister.com/sites/default/files/FB_web_image.gif" />  
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>

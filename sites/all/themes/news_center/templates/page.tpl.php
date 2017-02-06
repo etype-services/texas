@@ -168,7 +168,7 @@
 
             <div id="footer">
 
-                <?php print render($page['footer']); ?>
+                <?php print render($page['footer_ad']); ?>
 
                 <?php print render($page['footer_first_column']); ?>
 

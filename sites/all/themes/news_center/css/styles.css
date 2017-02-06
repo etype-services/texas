@@ -331,6 +331,10 @@ blockquote.image-field-caption p {
     width: 100%;
 }
 
+#footer .region-footer-ad {
+    width: 100%;
+}
+
 #footer .region-footer-closure {
     width: 100%;
     margin: 0;

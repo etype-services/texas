@@ -318,6 +318,10 @@ blockquote.image-field-caption p {
 }
 
 /* FOOTER */
+#footer-wrapper {
+    width: 100%;
+}
+
 #footer {
     background-color: #333333;
     border-top: 1px solid #000000;
@@ -326,6 +330,10 @@ blockquote.image-field-caption p {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+#footer .block-simpleads {
+    width: 100%;
 }
 
 #footer .region-footer-closure {

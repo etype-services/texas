@@ -237,6 +237,7 @@ blockquote.image-field-caption p {
     float: left;
     margin-right: 10px;
     margin-bottom: 7px;
+    color: #ffffff;
 }
 
 #views_slideshow_cycle_main_home_page-block .views-field-field-rate {
@@ -318,7 +319,6 @@ blockquote.image-field-caption p {
 }
 
 /* FOOTER */
-
 #footer {
     background-color: #333333;
     border-top: 1px solid #000000;

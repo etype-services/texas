@@ -68,6 +68,27 @@
  *   The name of the template being rendered ("html" in this case.)
  */
 
+/**
+ * @param $head_elements
+ */
+function fredtwentytwo_html_head_alter(&$head_elements) {
+
+    global $base_url;
+    $base_path = base_path();
+    $conf_path = conf_path();
+
+    /* remove current favicon if updated favicons exit */
+    $icon_path = $base_path . $conf_path .'/files/favicons';
+
+    if (is_dir($_SERVER['DOCUMENT_ROOT'] . $icon_path)) {
+
+        $orig_icon_path = $base_path . $conf_path .'/files';
+        $favicon = 'drupal_add_html_head_link:shortcut icon:' . $base_url . $orig_icon_path . '/favicon.ico';
+        unset($head_elements[$favicon]);
+
+    }
+}
+
 function fredtwentytwo_preprocess_html(&$variables, $hook) {
 
     /* add site-specific css */
@@ -116,6 +137,92 @@ function fredtwentytwo_preprocess_html(&$variables, $hook) {
             )
         );
     }
+
+        /* add favicons if they exist */
+    $icon_path = $base_path . $conf_path .'/files/favicons';
+    if (is_dir($_SERVER['DOCUMENT_ROOT'] . $icon_path)) {
+
+        $icon_path .= '/';
+
+        $theme_color = array(
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => array(
+                'name' => 'theme-color',
+                'content' => '#ffffff',
+            )
+        );
+        drupal_add_html_head($theme_color, 'theme_color');
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . $icon_path . 'safari-pinned-tab.svg')) {
+            $mask_icon = array(
+                '#type' => 'html_tag',
+                '#tag' => 'link',
+                '#attributes' => array(
+                    'rel' => 'mask-icon',
+                    'href' => $icon_path . 'safari-pinned-tab.svg',
+                    'color' => '#5bbad5',
+                )
+            );
+            drupal_add_html_head($mask_icon, 'mask_icon');
+
+        }
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . $icon_path . 'manifest.json')) {
+            $manifest = array(
+                '#type' => 'html_tag',
+                '#tag' => 'link',
+                '#attributes' => array(
+                    'rel' => 'manifest',
+                    'href' => $icon_path . 'manifest.json',
+                )
+            );
+            drupal_add_html_head($manifest, 'manifest');
+        }
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . $icon_path . 'favicon-16x16.png')) {
+            $icon16 = array(
+                '#type' => 'html_tag',
+                '#tag' => 'link',
+                '#attributes' => array(
+                    'rel' => 'icon',
+                    'type' => 'image/png',
+                    'sizes' => '16x16',
+                    'href' => $icon_path . 'favicon-16x16.png',
+                )
+            );
+            drupal_add_html_head($icon16, 'icon16');
+        }
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . $icon_path . 'favicon-32x32.png')) {
+            $icon32 = array(
+                '#type' => 'html_tag',
+                '#tag' => 'link',
+                '#attributes' => array(
+                    'rel' => 'icon',
+                    'type' => 'image/png',
+                    'sizes' => '32x32',
+                    'href' => $icon_path . 'favicon-32x32.png',
+                )
+            );
+            drupal_add_html_head($icon32, 'icon32');
+        }
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . $icon_path . 'apple-touch-icon.png')) {
+            $appletouchicon = array(
+                '#type' => 'html_tag',
+                '#tag' => 'link',
+                '#attributes' => array(
+                    'rel' => 'apple-touch-icon',
+                    'sizes' => '180x180',
+                    'href' => $icon_path . 'apple-touch-icon.png',
+                )
+            );
+            drupal_add_html_head($appletouchicon, 'apple-touch-icon');
+        }
+
+    }
+
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().

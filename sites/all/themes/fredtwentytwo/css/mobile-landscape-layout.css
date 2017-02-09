@@ -8,13 +8,6 @@ body.front h1 {
     overflow: hidden;
 }
 
-#header .region-header {
-    background: none repeat scroll 0 0 #fff;
-    display: block;
-    min-height: 22px;
-    padding-top: 6px;
-}
-
 #block-user-login {
     display: none;
 }

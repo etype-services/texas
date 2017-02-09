@@ -122,6 +122,7 @@ img {
 #block-menu-menu-secondary-menu {
     margin-top: 7px;
     float: right;
+    height: 24px;
 }
 
 #block-menu-menu-secondary-menu ul {

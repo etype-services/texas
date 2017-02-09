@@ -34,17 +34,6 @@ body.front h1 {
     display: block;
 }
 
-#logo {
-    margin-top: 10px;
-    width: 700px;
-    text-align: center;
-    float: left;
-}
-
-#logo img {
-    width: 700px;
-}
-
 #page-wrapper {
     max-width: 1040px;
     min-width: 1040px;

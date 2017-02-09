@@ -26,16 +26,6 @@ body {
 #header .section {
 }
 
-#logo {
-    float: left;
-    margin: -20px 0px 5px 0px;
-    padding: 0;
-}
-
-#logo img {
-    vertical-align: bottom;
-}
-
 #name-and-slogan {
     float: left;
 }

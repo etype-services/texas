@@ -128,7 +128,6 @@ body.front h1 {
     display: block;
     position: inherit;
     z-index: 99;
-    height: 24px;
     clear: left;
 }
 
@@ -149,8 +148,6 @@ body.front h1 {
     display: block;
     font-weight: 600;
     font-size: 14px;
-    height: 22px;
-    line-height: 20px;
     margin-top: 0;
     padding: 0 17px;
     text-decoration: none;

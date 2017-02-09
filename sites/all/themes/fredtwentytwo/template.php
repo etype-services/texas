@@ -291,3 +291,4 @@ function STARTERKIT_preprocess_block(&$variables, $hook) {
   // Add a count to all the blocks in the region.
   $variables['classes_array'][] = 'count-' . $variables['block_id'];
 }
+// */

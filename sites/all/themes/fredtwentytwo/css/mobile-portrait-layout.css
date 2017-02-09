@@ -19,28 +19,6 @@ h2, h3, h4, h5, h6 {
     padding-top: 6px;
 }
 
-/* top menu */
-#block-menu-menu-secondary-menu .menu li a {
-    padding: 8px 0 5px;
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-#block-menu-menu-secondary-menu {
-    float: none;
-    display: block;
-    text-align: inherit;
-}
-
-#block-menu-menu-secondary-menu ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
 .messages.error {
     display: none;
 }

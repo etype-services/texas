@@ -26,14 +26,6 @@ ul.menu li {
     padding: 0;
 }
 
-.region-top-advertisement #block-menu-menu-secondary-menu {
-    margin-top: 7px;
-}
-
-#block-menu-menu-secondary-menu {
-    float: right;
-}
-
 body.front h1 {
     display: none;
 }

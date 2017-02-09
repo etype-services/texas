@@ -117,6 +117,24 @@ img {
     color: #FFFFFF;
 }
 
+/* secondary menu */
+
+#block-menu-menu-secondary-menu {
+    margin-top: 7px;
+    float: right;
+}
+
+#block-menu-menu-secondary-menu li {
+    padding: 0 1em 0;
+}
+
+#block-menu-menu-secondary-menu .menu li a {
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
 #block-user-login label {
     display: none;
 }
@@ -723,20 +741,6 @@ h2.node-title {
 #block-quicktabs-qtmostpopular .quicktabs-ui-wrapper {
     min-height: 400px;
 }
-
-#block-menu-menu-secondary-menu li {
-    display: inline;
-    height: 20px;
-    padding: 0px;
-    margin-bottom: 10px;
-}
-
-/*#block-menu-menu-secondary-menu {
-    float: right;
-    display: block;
-    clear: both;
-    text-align: right
-}*/
 
 .calendar-calendar {
     margin-top: -20px;

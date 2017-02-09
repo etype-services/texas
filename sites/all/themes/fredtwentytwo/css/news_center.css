@@ -128,10 +128,16 @@ img {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
 #block-menu-menu-secondary-menu li {
     padding: 0 1em 0;
+}
+
+#block-menu-menu-secondary-menu li.last {
+    padding: 0;
 }
 
 #block-menu-menu-secondary-menu .menu li a {

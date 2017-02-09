@@ -124,6 +124,12 @@ img {
     float: right;
 }
 
+#block-menu-menu-secondary-menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #block-menu-menu-secondary-menu li {
     padding: 0 1em 0;
 }

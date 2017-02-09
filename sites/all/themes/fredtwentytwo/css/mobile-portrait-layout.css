@@ -14,9 +14,9 @@ h2, h3, h4, h5, h6 {
 
 #header .region-header {
     background: none repeat scroll 0 0 #fff;
-    display: block;
-    min-height: 22px;
-    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .messages.error {
@@ -84,10 +84,12 @@ h2, h3, h4, h5, h6 {
 }
 
 #block-multiblock-1 {
-    margin-bottom: 19px;
+    /*margin-bottom: 19px;
     margin-left: 0;
     padding: 0;
-    width: 296px;
+    width: 296px;*/
+    display: none;
+    visibility: hidden;
 }
 
 #block-multiblock-1 .form-text {

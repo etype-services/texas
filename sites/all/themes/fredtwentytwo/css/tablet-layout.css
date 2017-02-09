@@ -44,16 +44,6 @@ body.front h1 {
     width: 768px;
 }
 
-#block-superfish-1 ul li a {
-    color: #FFFFFF;
-    display: block;
-    font-weight: bold;
-    height: 23px;
-    margin-top: 0;
-    padding: 7px 15px 0 26px;
-    text-decoration: none;
-}
-
 .sidebar-second #content {
     float: none;
     margin-left: 0;

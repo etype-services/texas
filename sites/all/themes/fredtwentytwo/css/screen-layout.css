@@ -167,6 +167,7 @@ body.front h1 {
     text-transform: uppercase;
     width: auto;
     border-right: 1px solid #003366;
+    background: none repeat scroll 0 0 transparent;
 }
 
 #block-superfish-1 ul li a {

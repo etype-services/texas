@@ -103,37 +103,8 @@ body.front h1 {
     width: 30px;
 }
 
-#block-superfish-1 {
-    margin-bottom: 0;
+#block-superfish-1, #block-superfish-1 ul li {
     width: 480px;
-    height: 30px
-}
-
-#block-superfish-1 ul {
-    margin-bottom: 0;
-    margin-right: 0;
-    margin-top: 0;
-    padding-left: 0;
-}
-
-#block-superfish-1 ul li {
-    background: none repeat scroll 0 0 transparent;
-    border-top: none;
-    clear: both;
-    display: inline-block;
-    float: left;
-    text-transform: uppercase;
-    width: 480px;
-}
-
-
-
-#block-superfish-1 ul li a.active, #block-superfish-1 ul li a.active-trail, #block-superfish-1 ul li a:hover {
-    color: #FFF;
-}
-
-#block-superfish-1 ul li a.active, #block-menu-menu-news-categories ul li a:first-child {
-    border: medium none !important;
 }
 
 /* SlideShow Block Styles */

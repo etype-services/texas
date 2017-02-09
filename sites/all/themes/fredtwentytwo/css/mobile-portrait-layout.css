@@ -117,50 +117,32 @@ h2, h3, h4, h5, h6 {
 }
 
 #block-superfish-1 {
-    margin-bottom: 0;
-    width: 320px;
-    height: 30px
+
 }
 
 #block-superfish-1 ul {
-    margin-bottom: 0;
-    margin-right: 0;
-    margin-top: 0;
-    padding-left: 0;
     background-color: #333333
 }
 
 #block-superfish-1 ul li {
     background: none repeat scroll 0 0 #222222;
-    border-top: 1px dashed #CCCCCC;
     clear: both;
     display: inline-block;
     float: left;
-    margin-left: 0 !important;
-    margin-top: 0;
-    padding: 0;
     text-transform: uppercase;
-    width: 310px;
+    width: 320px;
 }
 
 #block-superfish-1 ul li a {
-    background: #000 url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
+    background: #000 url("../images/mobile_menu.png") no-repeat scroll 7px 8px;
     color: #FFFFFF;
     display: block;
     font-weight: bold;
-    height: 30px;
-    margin-top: 0;
-    padding: 7px 15px 0 26px;
     text-decoration: none;
-    -moz-transition: background-color 0.5s ease-out;
-    -o-transition: background-color 0.5s ease-out;
-    -webkit-transition: background-color 0.5s ease-out;
-    transition: background-color 0.5s ease-out;
 }
 
 #block-superfish-1 ul li a.active, #block-superfish-1 ul li a.active-trail, #block-superfish-1 ul li a:hover {
     color: #f2f2f2;
-    background: #f2f2f2 url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
 }
 
 /* SlideShow Block Styles */

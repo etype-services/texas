@@ -126,14 +126,7 @@ body.front h1 {
     width: 480px;
 }
 
-#block-superfish-1 ul li a {
-    color: #FFFFFF;
-    display: block;
-    font-weight: bold;
-    height: auto;
-    margin-top: 0;
-    text-decoration: none;
-}
+
 
 #block-superfish-1 ul li a.active, #block-superfish-1 ul li a.active-trail, #block-superfish-1 ul li a:hover {
     color: #FFF;

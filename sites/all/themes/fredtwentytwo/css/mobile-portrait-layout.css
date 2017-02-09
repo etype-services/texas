@@ -20,7 +20,7 @@ h2, h3, h4, h5, h6 {
 }
 
 /* top menu */
-.content .menu li a {
+#block-menu-menu-secondary-menu .menu li a {
     padding: 8px 0 5px;
     font-size: 10px;
     font-weight: 600;

@@ -118,13 +118,10 @@ body.front h1 {
 
 #block-superfish-1 ul li {
     background: none repeat scroll 0 0 transparent;
-    border-top: 0px dashed #CCCCCC;
+    border-top: none;
     clear: both;
     display: inline-block;
     float: left;
-    margin-left: 0 !important;
-    margin-top: 0;
-    padding: 0;
     text-transform: uppercase;
     width: 480px;
 }
@@ -133,9 +130,8 @@ body.front h1 {
     color: #FFFFFF;
     display: block;
     font-weight: bold;
-    height: 23px;
+    height: auto;
     margin-top: 0;
-    padding: 7px 15px 0 26px;
     text-decoration: none;
 }
 

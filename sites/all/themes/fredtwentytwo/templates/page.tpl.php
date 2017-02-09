@@ -86,7 +86,7 @@
   <div id="header"><div class="section clearfix">
 
     <?php if ($logo): ?>
-      <div id="logo"></div>
+      <div id="logo">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
       </div>
     <?php endif; ?>

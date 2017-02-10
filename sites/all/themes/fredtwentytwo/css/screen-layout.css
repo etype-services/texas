@@ -252,6 +252,10 @@ body.front h1 {
     z-index: 1;
 }
 
+#views_slideshow_cycle_main_home_page-block .view-content {
+    color: #ffffff;
+}
+
 #views_slideshow_cycle_main_home_page-block .views-field-comment-count, #views_slideshow_cycle_main_home_page-block .views-field-created, #views_slideshow_cycle_main_home_page-block .views-field-term-node-tid, #views_slideshow_cycle_main_home_page-block .views-field-name, #views_slideshow_cycle_main_home_page-block .views-field-field-rate {
     background: url("../images/comment.png") no-repeat scroll 0 0 transparent;
     display: block;

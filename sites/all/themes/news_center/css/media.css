@@ -7,6 +7,10 @@
         margin: 2em auto;
     }
 
+    #block-menu-menu-secondary-menu {
+        margin-right: 0;
+    }
+
 }
 
 /* desktop break */
@@ -19,10 +23,10 @@
     #page {
         margin: 0 auto;
     }
-    /* user menu to the right and make some space */
+
+    /* user menu to the right */
     #block-menu-menu-secondary-menu {
         float: right;
-        margin-right: 1em;
         height: 30px;
     }
 
@@ -192,6 +196,11 @@
     #block-superfish-1 a.active-trail .active li {
         background: none repeat 0 0 #000033;
         color: #333333;
+    }
+
+    #block-menu-menu-secondary-menu ul li.leaf,
+    #block-menu-menu-secondary-menu ul li.expanded {
+        padding: 0 0 0.3em 0.6em;
     }
 
     a.back-to-top {

@@ -166,13 +166,13 @@ body.front h1 {
 #block-superfish-1 ul li a.active, #block-menu-menu-news-categories ul li a:hover {
     background: none repeat scroll 0 0 transparent;
     height: 30px;
-    color: #e8e882;
+    color: #ffa4a4;
     padding-top: 5px;
 }
 
 #block-superfish-1 a.active-trail .active li {
     background: none repeat scroll 0 0 #000033;
-    color: #e8e882;
+    color: #ffa4a4;
     padding-top: 0;
     padding-left: 15px;
 }

@@ -110,3 +110,8 @@ ul li.leaf, ul li.expanded {
 .sf-menu.sf-style-default {
     float: none;
 }
+
+/* this comes with CKEditor, but in case that gets turned off */
+.rtecenter {
+    text-align: center;
+}

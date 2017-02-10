@@ -58,15 +58,6 @@ body.front h1 {
     margin-top: 39px;
 }
 
-.content .menu li a {
-    text-decoration: none;
-    padding: 8px 10px 5px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-right: 1px solid #242424;
-}
-
 #block-multiblock-1 {
     /*margin-bottom: 19px;
     margin-left: 47px;

@@ -68,6 +68,13 @@
 .region-top-area {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+/* menus */
+
+#block-menu-menu-secondary-menu {
+    margin-right: 1em;
 }
 
 /*

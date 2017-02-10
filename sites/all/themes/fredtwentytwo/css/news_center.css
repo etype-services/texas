@@ -121,7 +121,7 @@ img {
 #block-menu-menu-secondary-menu {
     margin-top: 7px;
     float: right;
-    height: 24px;
+    min-height: 24px;
 }
 
 #block-menu-menu-secondary-menu ul {
@@ -138,6 +138,11 @@ img {
 
 #block-menu-menu-secondary-menu li.last {
     padding: 0;
+}
+
+/* override system menus */
+#block-menu-menu-secondary-menu li.leaf {
+    list-style: none;
 }
 
 #block-menu-menu-secondary-menu .menu li a {
@@ -809,7 +814,7 @@ h2.node-title {
 }
 
 /* former simplead styling */
-/* 
+/*
 #block-simpleads-ad-groups-12, #block-simpleads-ad-groups-15, #block-simpleads-ad-groups-49, #block-simpleads-ad-groups-52, #block-simpleads-ad-groups-53, #block-simpleads-ad-groups-54, #block-simpleads-ad-groups-59  {background:transparent;margin-left:-10px;}
 #block-simpleads-ad-groups-56 img{max-width:99%;height:auto;float:left;margin-right:7px;}
 
@@ -846,4 +851,3 @@ h2.node-title {
     padding: 0px;
     margin-bottom: 5px;
 }
-	

@@ -135,7 +135,8 @@ h2, h3, h4, h5, h6 {
     float: left;
     text-transform: uppercase;
     width: 320px;
-    border-top: 1px solid #3a3838;
+    border-top: none;
+    margin: 0;
 }
 
 #block-superfish-1 ul li a {
@@ -148,7 +149,7 @@ h2, h3, h4, h5, h6 {
 }
 
 #block-superfish-1 ul li a.active, #block-superfish-1 ul li a.active-trail, #block-superfish-1 ul li a:hover {
-    color: #cfdeff;
+    color: #ffa4a4;
 }
 
 /* SlideShow Block Styles */

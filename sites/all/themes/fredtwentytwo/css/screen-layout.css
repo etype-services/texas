@@ -111,7 +111,8 @@ body.front h1 {
 }
 
 #block-superfish-1, #superfish-1, .superfish-1 {
-    background: none repeat scroll 0 0 transparent
+    background: none repeat scroll 0 0 transparent;
+    width: 1040px;
 }
 
 #block-superfish-1 ul {
@@ -124,7 +125,6 @@ body.front h1 {
 
 #block-superfish-1 {
     margin-bottom: 0;
-    width: 1040px;
     display: block;
     position: inherit;
     z-index: 99;
@@ -140,7 +140,7 @@ body.front h1 {
     text-transform: uppercase;
     width: auto;
     border-right: 1px solid #003366;
-    background: none repeat scroll 0 0 transparent;
+    background: url(/sites/all/themes/fredtwentytwo/images/nav_bg.gif) repeat-x scroll 0 0;
 }
 
 #block-superfish-1 ul li a {
@@ -153,6 +153,7 @@ body.front h1 {
     text-decoration: none;
     background: none repeat scroll 0 0 transparent;
     border-right: none;
+    border-left: none;
 }
 
 .sf-menu.sf-style-default a {
@@ -175,6 +176,11 @@ body.front h1 {
     color: #ffa4a4;
     padding-top: 0;
     padding-left: 15px;
+}
+
+#block-superfish-1 ul li ul li {
+    margin-left: 0;
+    border-right: none;
 }
 
 /* SlideShow Block Styles */

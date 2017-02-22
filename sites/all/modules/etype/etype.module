@@ -184,7 +184,7 @@ function _etype_e_edition_content() {
   $fixed = $arr[0];
 
   $output = '
-<p class="rtecenter" style="text-align: center;"><a href="http://etypeservices.com/' . $e_edition . '/"><img src="http://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg" width="193"></a></p><h4 class="rtecenter" style="text-align: center;"><a href="http://etypeservices.com/' . $e_edition . '/">Click here to read ' . $site_name . '</a></h4>
+<p class="rtecenter" style="text-align: center;"><a href="https://etypeservices.com/' . $e_edition . '/"><img src="https://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg" width="193"></a></p><h4 class="rtecenter" style="text-align: center;"><a href="https://etypeservices.com/' . $e_edition . '/">Click here to read ' . $site_name . '</a></h4>
 ';
   return $output;
 }

@@ -2,8 +2,18 @@
 @media only screen and (min-width: 959px) {
 
     /* main menu */
+    #block-superfish-1 .content {
+        width: 100%;
+    }
+
     #main-menu ul.menu {
-        margin: 0;
+        margin: 0 auto;
+        max-width: 960px;
+        white-space: nowrap;
+    }
+
+    #main-menu ul.menu li, .sf-menu.sf-style-space {
+        float: none;
     }
 
     #main-menu ul.menu li ul {
@@ -12,7 +22,6 @@
 
     #main-menu ul.menu li a, #main-menu ul.menu li li a {
         padding: 0 8px;
-        font-size: 1.2em;
     }
 
     #block-superfish-1 ul #menu-1797-1 {
@@ -49,22 +58,47 @@
         margin-top: -13px;
     }
 
+    /* footer */
+    .postscript-wrapper {
+        margin-right: 10px;
+    }
+
+    .container_12 #postscript .grid_4 {
+        width: 286px;
+    }
+
+    /* galleria */
+    .galleria-theme-classic .galleria-info {
+        left: 0;
+        width: 215px;
+    }
+
 }
 
 /* desktop browsers */
 @media only screen and (max-width: 958px) and (min-width: 768px) {
+
+
+    /* main menu */
+    #block-superfish-1 .content {
+        width: 100%;
+    }
 
     #block-superfish-1 ul #menu-1797-1 {
         display: none;
     }
 
     #main-menu ul.menu {
-        margin: 0;
+        margin: 0 auto;
+        white-space: nowrap;
     }
 
-    #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active  {
+    #main-menu ul.menu li, .sf-menu.sf-style-space {
+        float: none;
+    }
+
+    #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
         padding: 0 7px;
-        font-size: 1em;
     }
 
     #main-menu ul.menu li ul {
@@ -154,6 +188,21 @@
         height: 120px;
     }
 
+    /* footer */
+    .postscript-wrapper {
+        margin-right: 10px;
+    }
+
+    .container_12 #postscript .grid_4 {
+        width: 30%;
+    }
+
+    /* galleria */
+    .galleria-theme-classic .galleria-info {
+        left: 0;
+        width: 150px;
+    }
+
 }
 
 /* smaller browsers, tablets */
@@ -179,7 +228,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -228,7 +277,6 @@
 
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
-
     .view-slideshow .views_slideshow_main {
         height: 200px;
     }
@@ -258,6 +306,7 @@
         margin-left: 20px;
         margin-top: 20px;
     }
+
     .views-slideshow-controls-bottom {
         margin-top: 34px;
     }
@@ -273,20 +322,6 @@
         margin-left: 0;
         margin-bottom: 10px;
         background: none;
-    }
-
-    .region-postscript-2 {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* override widths for .grid_3 in footer */
-    .container_12 .postscript-wrapper .grid_3 {
-        width: 49% !important;
-    }
-
-    .region-postscript-4 {
-        margin-top: 1em;
     }
 
     /* weather block */
@@ -335,7 +370,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -410,6 +445,10 @@
     }
 
     /* FOOTER */
+    #postscript .grid_4 {
+        margin-left: 1em;
+    }
+
     .postscript-wrapper {
         padding: 1em;
         margin: 0;
@@ -448,6 +487,13 @@
         visibility: hidden;
     }
 
+    /* galleria fixes */
+    .galleria-theme-classic .galleria-info {
+        width: 100%;
+        top: 10px;
+        left: 0;
+    }
+
 }
 
 /* smaller phones */
@@ -483,7 +529,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -515,7 +561,7 @@
     }
 
     .video .node-teaser .node-content-wrapper {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .node-teaser .field-name-field-video iframe {
@@ -558,6 +604,11 @@
     }
 
     /* FOOTER */
+    #postscript .grid_4 {
+        width: inherit;
+        margin-left: 1em;
+    }
+
     .postscript-wrapper {
         padding: 1em;
         margin: 0;
@@ -580,10 +631,6 @@
         width: 49% !important;
     }
 
-    .region-postscript-4 {
-        margin-top: 1em;
-    }
-
     /* weather block */
     #block-block-1 .block-inner {
         border: none;
@@ -591,13 +638,18 @@
     }
 
     /* hide large dfp ads */
-    .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp {
+    .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp, .region-slideshow .block-dfp {
         display: none;
         visibility: hidden;
     }
 
+    /* galleria fixes */
+    .galleria-theme-classic .galleria-info {
+        width: 100%;
+        top: 10px;
+        left: 0;
+    }
 }
-
 
 /* less granular switch for big and small */
 @media only screen and (max-width: 767px) {
@@ -605,6 +657,11 @@
     #block-system-user-menu {
         display: none;
         visibility: hidden;
+    }
+
+    /* space for Menus and Follow Blocks */
+    .region-postscript-2, .region-postscript-3 {
+        margin-top: 1em;
     }
 
 }

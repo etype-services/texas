@@ -1,0 +1,46 @@
+/* SIMPLE ADS
+--------------------------------------------------------------------------*/
+
+#main-content .block-simpleads .block-inner {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.region-main-menu .block-simpleads {
+    margin-bottom: 20px;
+}
+
+/* banner below menu */
+.region-main-menu-second-level .block-simpleads {
+    margin-top: 20px;
+}
+
+.slideshow-wrapper-inner .block-simpleads {
+    margin-bottom: 20px;
+}
+
+/* margin bottom */
+.region-content-bottom .block-simpleads {
+    margin-bottom: 20px;
+}
+
+/* center ads */
+.block-simpleads > div > div > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* OWN LOCAL
+--------------------------------------------------------------------------*/
+#block-etype-own-local .block-inner {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+#block-etype-own-local .block-inner .content {
+    padding: 0;
+}

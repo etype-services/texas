@@ -102,7 +102,7 @@ function _etype_social_content() {
     $output .= '<li><a class="googleplus" href="https://plus.google.com/' . $googleplus . '"></a></li>';
   }
   if (!empty($rssfeed)) {
-    $output .= '<li><a class="googleplus" href="/rss.xml"></a></li>';
+    $output .= '<li><a class="rss" href="/rss.xml"></a></li>';
   }
   $output .= '</ul></div>';
   return $output;

@@ -119,6 +119,7 @@ function _etype_follow_content() {
   $pinterest = theme_get_setting('pinterest');
   $instagram = theme_get_setting('instagram');
   $googleplus = theme_get_setting('googleplus');
+  $rssfeed = theme_get_setting('rssfeed');
   if (!empty($facebook)) {
     $output .= '<div class="facebook"><a href="https://www.facebook.com/' . $facebook . '">Like us on Facebook</a></div>';
   }
@@ -133,6 +134,9 @@ function _etype_follow_content() {
   }
   if (!empty($googleplus)) {
       $output .= '<div class="googleplus"><a href="https://plus.google.com/' . $googleplus . '">Follow us on Google Plus</a></div>';
+  }
+  if (!empty($rssfeed)) {
+    $output .= '<div class="rss"><a href="/rss.xml">RSS Feed</a></div>';
   }
   return $output;
 }

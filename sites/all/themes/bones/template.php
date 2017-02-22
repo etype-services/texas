@@ -19,6 +19,7 @@ function bones_preprocess_page(&$vars) {
   $vars['sidebar_second_grid_width'] = 'grid_' . $grid_info['sidebar_second_width'];
   $vars['twitter'] = theme_get_setting('twitter');
   $vars['facebook'] = theme_get_setting('facebook');
+  $vars['pinterest'] = theme_get_setting('pinterest');
 
   for ($region_count = 1; $region_count <= 4; $region_count++) {
     $vars['preface_' . $region_count . '_grid_width'] = 'grid_' . $grid_info['preface_' . $region_count . '_grid_width'];

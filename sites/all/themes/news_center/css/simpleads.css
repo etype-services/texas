@@ -55,6 +55,11 @@
         border: none;
     }
 
+    /* space at top of sidebar */
+    .region-sidebar-second .block-simpleads.first {
+        margin-top: 1em;
+    }
+
 }
 
 @media only screen and (max-width: 900px) {

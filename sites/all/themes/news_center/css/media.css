@@ -55,7 +55,7 @@
     }
 
     #main #content {
-        width: 758px;
+        width: 748px;
         margin-right: 10px;
     }
 
@@ -186,11 +186,6 @@
 
     .sf-menu.sf-style-default a {
         padding: 0.75em 0.8em;
-    }
-
-    #block-superfish-1 ul li a.active, #block-superfish-1 ul li a:hover, #block-menu-menu-news-categories ul li a:hover {
-        background: none repeat 0 0 #FFFFFF;
-        color: #333333;
     }
 
     #block-superfish-1 ul li a.active, #block-superfish-1 ul li a:hover, #block-menu-menu-news-categories ul li a:hover {

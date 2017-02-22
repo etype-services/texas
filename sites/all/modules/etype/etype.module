@@ -85,6 +85,7 @@ function _etype_social_content() {
   $pinterest = theme_get_setting('pinterest');
   $instagram = theme_get_setting('instagram');
   $googleplus = theme_get_setting('googleplus');
+  $rssfeed = theme_get_setting('rssfeed');
   if (!empty($facebook)) {
     $output .= '<li><a class="facebook" href="https://www.facebook.com/' . $facebook . '"></a></li>';
   }
@@ -99,6 +100,9 @@ function _etype_social_content() {
   }
   if (!empty($googleplus)) {
     $output .= '<li><a class="googleplus" href="https://plus.google.com/' . $googleplus . '"></a></li>';
+  }
+  if (!empty($rssfeed)) {
+    $output .= '<li><a class="googleplus" href="/rss.xml"></a></li>';
   }
   $output .= '</ul></div>';
   return $output;

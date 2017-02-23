@@ -6,7 +6,7 @@
         width: 100%;
     }
 
-    #block-superfish-1 ul.menu {
+    #main-menu #block-superfish-1 ul.menu {
         margin: 0 auto;
         max-width: 960px;
         white-space: nowrap;
@@ -24,7 +24,7 @@
         padding: 0 8px;
     }
 
-    #block-superfish-1 ul #menu-1797-1 {
+    #main-menu #block-superfish-1 ul #menu-1797-1 {
         display: none;
     }
 
@@ -54,7 +54,7 @@
         background-color: #eaeaea;
     }
 
-    #block-system-user-menu ul.menu {
+    #main-menu #block-system-user-menu ul.menu {
         margin: 0 auto;
         max-width: 800px;
         white-space: nowrap;
@@ -83,7 +83,6 @@
 
 /* desktop browsers */
 @media only screen and (max-width: 958px) and (min-width: 768px) {
-
 
     /* main menu */
     #main-menu .content {

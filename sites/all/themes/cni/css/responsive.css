@@ -2,11 +2,11 @@
 @media only screen and (min-width: 959px) {
 
     /* main menu */
-    #block-superfish-1 .content {
+    #main-menu .content {
         width: 100%;
     }
 
-    #main-menu ul.menu {
+    #block-superfish-1 ul.menu {
         margin: 0 auto;
         max-width: 960px;
         white-space: nowrap;
@@ -54,6 +54,12 @@
         background-color: #eaeaea;
     }
 
+    #block-system-user-menu ul.menu {
+        margin: 0 auto;
+        max-width: 800px;
+        white-space: nowrap;
+    }
+
     .page-node.not-logged-in .content .node-content-wrapper {
         margin-top: -13px;
     }
@@ -80,7 +86,7 @@
 
 
     /* main menu */
-    #block-superfish-1 .content {
+    #main-menu .content {
         width: 100%;
     }
 
@@ -88,7 +94,7 @@
         display: none;
     }
 
-    #main-menu ul.menu {
+    #block-superfish-1 ul.menu {
         margin: 0 auto;
         white-space: nowrap;
     }

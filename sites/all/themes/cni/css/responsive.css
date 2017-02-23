@@ -45,6 +45,10 @@
 
     #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
         padding: 0 8px;
+        color: #ffffff;
+    }
+
+    #main-menu ul.menu li li a.active {
         color: #000000;
     }
 

@@ -2,29 +2,23 @@
 --------------------------------------------------------------------------*/
 
 #superfish-1 #menu-2339-1 {
-    background-color: black;
+    background-color: black !important;
 }
 
 #superfish-1 #menu-1284-1 {
-    background-color: red;
+    background-color: red !important;
 }
 
 #superfish-1 #menu-2340-1 {
-    background-color: green;
+    background-color: green !important;
 }
 
 #superfish-1 #menu-2302-1 {
-    background-color: orange;
+    background-color: orange !important;
 }
 
 #superfish-1 #menu-1285-1 {
-    background-color: blue;
-}
-
-/* TAGS ON TAXONOMY PAGES */
-
-.node-teaser .taxonomy-inner .field-name-field-tags .field-items .field-item {
-    margin-right: 0.3em;
+    background-color: blue !important;
 }
 
 /* FRONT PAGE BLOCKS

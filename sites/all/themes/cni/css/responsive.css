@@ -43,7 +43,7 @@
         width: 100%;
     }
 
-    #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
+    #main-menu ul.menu li li a {
         padding: 0 8px;
         color: #ffffff;
     }
@@ -129,8 +129,12 @@
         width: 100%;
     }
 
-    #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
+    #main-menu ul.menu li li a {
         padding: 0 10px;
+        color: #ffffff;
+    }
+
+    #main-menu ul.menu li li a.active {
         color: #000000;
     }
 

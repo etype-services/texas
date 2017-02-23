@@ -1,0 +1,47 @@
+/* MAIN MENU
+--------------------------------------------------------------------------*/
+
+#superfish-1 #menu-2339-1 {
+    background-color: black;
+}
+
+#superfish-1 #menu-1284-1 {
+    background-color: red;
+}
+
+#superfish-1 #menu-2340-1 {
+    background-color: green;
+}
+
+#superfish-1 #menu-2302-1 {
+    background-color: orange;
+}
+
+#superfish-1 #menu-1285-1 {
+    background-color: blue;
+}
+
+/* TAGS ON TAXONOMY PAGES */
+
+.node-teaser .taxonomy-inner .field-name-field-tags .field-items .field-item {
+    margin-right: 0.3em;
+}
+
+/* FRONT PAGE BLOCKS
+--------------------------------------------------------------------------*/
+
+#block-views-top-news-stories-block .title a {
+    color: red;
+}
+
+#block-views-business-top-stories-block .title a {
+    color: green;
+}
+
+#block-views-lifestyle-top-stories-block .title a {
+    color: orange;
+}
+
+#block-views-sports-top-stories-block .title a {
+    color: blue;
+}

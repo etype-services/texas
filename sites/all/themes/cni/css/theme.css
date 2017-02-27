@@ -357,6 +357,7 @@ article .field-image {
 .postscript-wrapper h3 {
     display: block;
     margin-bottom: 0.4em;
+    line-height: 1.4em; /* for titles that go to second line */
 }
 
 .postscript-wrapper h3 span {
@@ -1321,45 +1322,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin: 0 auto 20px;
 }
 
-.preface-wrapper .block-dfp .content, .sidebar .block-dfp .content  {
-    padding: 0;
-}
-
-/* SIMPLE ADS
---------------------------------------------------------------------------*/
-
-#main-content .block-simpleads .block-inner {
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-}
-
-.region-main-menu .block-simpleads {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.region-main-menu-second-level .block-simpleads {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.slideshow-wrapper-inner .block-simpleads {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* OWN LOCAL
---------------------------------------------------------------------------*/
-#block-etype-own-local .block-inner {
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-}
-
-#block-etype-own-local .block-inner .content {
+.preface-wrapper .block-dfp .content, .sidebar .block-dfp .content {
     padding: 0;
 }
 
@@ -1462,4 +1425,3 @@ article.node-webform .node-content-wrapper h1.title {
 .galleria-theme-classic .galleria-thumb-nav-right, .galleria-theme-classic .galleria-thumb-nav-keft {
     top: 4px;
 }
-

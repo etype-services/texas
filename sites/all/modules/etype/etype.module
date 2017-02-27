@@ -197,14 +197,11 @@ function _etype_e_edition_content() {
   return $output;
 }
 
+$ownlocal_path = drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js';
+if (file_exists($ownlocal_path)) {
+    drupal_add_js(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js', 'file');
+    drupal_add_css(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.css', array('group' => CSS_THEME, 'type' => 'file'));
 
-$own_local_file = drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js';
-if (file_exists($own_local_file)) {
-  drupal_add_js(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js', 'file');
-  drupal_add_css(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.css', array(
-    'group' => CSS_THEME,
-    'type' => 'file'
-  ));
 }
 
 
@@ -233,10 +230,10 @@ function etype_menu() {
 }
 
 function _etype_e_edition() {
-  /* redirect to e-Edition */
-  $e_edition = theme_get_setting('e_edition');
-  $path = 'http://etypeservices.com/' . $e_edition . '/';
-  drupal_goto($path);
+    /* redirect to e-Edition */
+    $e_edition = theme_get_setting('e_edition', 'cni');
+    $path = 'https://etypeservices.com/' . $e_edition . '/';
+    drupal_goto($path);
 }
 
 function etype_node_cleanup() {

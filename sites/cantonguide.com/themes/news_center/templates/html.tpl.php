@@ -67,14 +67,10 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=no" />
-  <meta property="og:image" content="http://www.auroranewsregister.com/sites/default/files/FB_web_image.gif" />  
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
-  <div id="skip-link">
-    <a href="#<?php print $jump_link_target; ?>" class="element-invisible element-focusable"><?php print t('Jump to Navigation'); ?></a>
-  </div>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>

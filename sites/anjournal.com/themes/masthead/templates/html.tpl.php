@@ -38,7 +38,7 @@ color: #ffebee !important;
   .postscript-wrapper {
   padding: 20px 0;
   margin: 0 -10px;
-  background: url(/sites/advance/themes/masthead/images/style1/postscript-bg.png) !important; }
+  background: url(/sites/anjournal.com/themes/masthead/images/style1/postscript-bg.png) !important; }
   .postscript-wrapper h3 span {
   padding-right: 5px !important;
   background: #333333 !important;

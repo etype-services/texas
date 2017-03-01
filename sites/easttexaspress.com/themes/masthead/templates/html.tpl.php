@@ -37,7 +37,7 @@ $ua = $_SERVER["HTTP_USER_AGENT"];
   <?php print $scripts; ?>
   
   
-  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
    <link href="/sites/all/themes/masthead/templates/popupdata/styles.css" rel="stylesheet" type="text/css" />
 

@@ -52,11 +52,11 @@ color: #ffebee !important;
  
 <meta name="description" content="Advance Publishing Company | Advance News Journal">
 <meta name="keywords" content=" Advance Publishing Company | Advance News Journal">
-<meta name="author" content="http://theadvancenewsjournal.com"/>
+<meta name="author" content="https://www.theadvancenewsjournal.com"/>
 <meta name="rating" content="General"/>
 <meta name="revisit-after" content="7 days"/>
 <meta name="robots" content="index, follow"/>
-<meta property="og:image" content="http://anjournal.com/sites/advance/files/400pxAdvanceforWeb.gif">  
+<meta property="og:image" content="httpw://www.anjournal.com/sites/advance/files/400pxAdvanceforWeb.gif">
   
   
   <?php print $styles; ?>

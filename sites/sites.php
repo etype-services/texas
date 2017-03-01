@@ -20,6 +20,8 @@ $sites['www.yourforneymessenger.com'] = 'yourforneymessenger.com';
 $sites['forneymessengernewspaper.com'] = 'yourforneymessenger.com';
 $sites['www.forneymessengernewspaper.com'] = 'yourforneymessenger.com';
 
+$sites ['yourforneymessengercni.etypegoogle5.com'] = 'yourforneymessenger.etypegoogle5.com';
+
 /* jdcmountaindispatch.etypegoogle5.com */
 $sites['jdcmountaindispatch.etypegoogle5.com'] = 'jdcmountaindispatch.com';
 $sites['jdcmountaindispatch.com'] = 'jdcmountaindispatch.com';

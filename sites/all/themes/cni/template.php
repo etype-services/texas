@@ -35,10 +35,8 @@ function cni_preprocess_node(&$variables) {
 
   if (isset($file)) {
     $content = file_get_contents($file);
+    $vars['content']['body'][0]['#markup'] = $content;
   }
-
-  print_r($variables['content']);
-  exit;
 
   $node = $variables['node'];
   if (!empty($node->classes_array)) {

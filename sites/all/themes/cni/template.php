@@ -33,7 +33,7 @@ function cni_preprocess_node(&$variables) {
       break;
   }
 
-  if (isset($file)) {
+  if (isset($replace_file)) {
     $variables['replace_file'] = $replace_file;
   }
 

@@ -38,7 +38,6 @@
 
         <div class="content"<?php print $content_attributes; ?>>
             <?php
-
             if (isset($replace_file)) {
               include ("$replace_file");
             } else {

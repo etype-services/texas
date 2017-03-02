@@ -35,7 +35,7 @@ function cni_preprocess_node(&$variables) {
 
   if (isset($file)) {
     $content = file_get_contents($file);
-    $vars['content']['body'][0]['#markup'] = $content;
+    $variables['content']['body'][0]['#markup'] = $content;
   }
 
   $node = $variables['node'];

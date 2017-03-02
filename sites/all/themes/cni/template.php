@@ -26,11 +26,15 @@ function cni_preprocess_node(&$variables) {
 
   // include login and sub templates
   $alias = drupal_get_path_alias();
-  $path = path_to_theme();
+  $theme_path = path_to_theme();
+  $path = $_SERVER['DOCUMENT_ROOT'] . '/' . $theme_path . '/templates/';
   switch ($alias) {
     case 'login':
-      $replace_file = $_SERVER['DOCUMENT_ROOT'] . '/' . $path . '/templates/login.tpl.php';
+      $replace_file = $path . '/templates/login.tpl.php';
       break;
+
+    case 'forgot-password':
+      $replace_file = $path . 'forgot-password.tpl.php';
   }
 
   if (isset($replace_file)) {

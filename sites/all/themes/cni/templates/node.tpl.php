@@ -38,7 +38,8 @@
 
         <div class="content"<?php print $content_attributes; ?>>
             <?php
-            if (isset($replace_file)) {
+            /* for login and subscriber page */
+            if ((isset($replace_file)) && (!empty($replace_file))){
               include ("$replace_file");
             } else {
               // We hide the comments and links now so that we can render them later.

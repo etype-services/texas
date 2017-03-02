@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
 
 
       if ($response->ValidateSubscriberResult == -1) {
-        $msg = "Your Subscription has been expired  <a href='https://www.etypeservices.com/Subscriber/SignIn.aspx?IssueID=103864&ReturnUrl=https://www.etypeservices.com/Subscriber/ReSubscribe.aspx?PubID=3191'>Click here</a>  to re-subscribe.";
+        $msg = "Your Subscription has expired. <a href='https://www.etypeservices.com/Subscriber/SignIn.aspx?IssueID=103864&ReturnUrl=https://www.etypeservices.com/Subscriber/ReSubscribe.aspx?PubID=3191'>Click here</a>  to re-subscribe.";
       }
       else {
         global $user;

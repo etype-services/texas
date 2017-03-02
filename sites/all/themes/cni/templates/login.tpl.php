@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 
 
   if ($response12->GetPublicationIDResult == -9) {
-    $msg = "Invalid UserName or Password. ";
+    $msg = "Invalid User Name or Password. ";
   }
   else {
     if ($response12->GetPublicationIDResult == 3191) {

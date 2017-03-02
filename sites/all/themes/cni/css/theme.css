@@ -1199,11 +1199,6 @@ blockquote p {
     background: none;
 }
 
-#views-slideshow-galleria-1 .views-slideshow-galleria-images-1 {
-    max-width: 230px;
-    height: auto;
-}
-
 .views-slideshow-controls-bottom img {
     float: left;
     margin-right: 10px;
@@ -1280,11 +1275,6 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin-bottom: 10px;
     color: #999999;
     border-bottom: 1px solid #dddddd;
-}
-
-.page-node .node-article .galleria-info-link {
-    display: none;
-    visibility: hidden;
 }
 
 /* DFP / GOOGLE ADS
@@ -1369,55 +1359,6 @@ article.node-webform .node-content-wrapper h1.title {
 .preface-wrapper #block-views-ticker-block .content {
     margin-top: 0;
     padding: 0;
-}
-
-/* GALLERIA -- override galleria classic theme */
-.galleria-theme-classic {
-    background-color: #ffffff;
-}
-
-.galleria-theme-classic .galleria-stage {
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.galleria-theme-classic .galleria-thumb-nav-left, .galleria-theme-classic .galleria-thumb-nav-right, .galleria-theme-classic .galleria-info-link, .galleria-theme-classic .galleria-info-close, .galleria-theme-classic .galleria-image-nav-left, .galleria-theme-classic .galleria-image-nav-right {
-    background-image: url(../../../../all/themes/cni/images/classic-map-cni.png);
-}
-
-.galleria-theme-classic .galleria-info {
-    top: 31px;
-    left: 0;
-}
-
-.galleria-theme-classic .galleria-info-text {
-    display: block;
-    opacity: 0.5;
-}
-
-.galleria-theme-classic .galleria-info-title {
-    margin-bottom: 0;
-    font-family: 'Lato', sans-serif;
-    font-weight: normal;
-}
-
-.galleria-theme-classic .galleria-info-link {
-    display: none;
-    visibility: hidden;
-}
-
-.galleria-theme-classic.notouch .galleria-thumb-nav-left:hover, .galleria-theme-classic.notouch .galleria-thumb-nav-right:hover {
-    background-color: #fff;
-}
-
-.galleria-theme-classic .galleria-thumbnails .galleria-image {
-    width: 50px;
-    height: 50px;
-}
-
-.galleria-theme-classic .galleria-thumb-nav-right, .galleria-theme-classic .galleria-thumb-nav-keft {
-    top: 4px;
 }
 
 /* flexslider overrides */

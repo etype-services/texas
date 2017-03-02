@@ -5,10 +5,11 @@ engine = phptemplate
 screenshot = screenshot.png
 base theme = bones
 
+stylesheets[all][] = css/jcarousel.css
+stylesheets[all][] = css/galleria.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/responsive.css
 stylesheets[all][] = css/ads.css
-stylesheets[all][] = css/jcarousel.css
 
 scripts[] = js/scripts.js
 scripts[] = js/jquery.color.js

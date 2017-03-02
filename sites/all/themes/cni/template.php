@@ -30,14 +30,12 @@ function cni_preprocess_node(&$variables) {
   switch ($alias) {
     case 'login':
       $file = $_SERVER['DOCUMENT_ROOT'] . '/' . $path . '/templates/login.tpl.php';
-      echo $file;
       break;
   }
 
   if (isset($file)) {
     $content = file_get_contents($file);
     $variables['content'] = $content;
-
   }
 
   $node = $variables['node'];

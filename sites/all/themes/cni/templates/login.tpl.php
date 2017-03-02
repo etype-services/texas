@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
           }
           else {
             if ($response->ValidateSubscriberResult == -5) {
-              $msg = "Invalid UserName or Password";
+              $msg = "Invalid UserName or Password.";
             }
             else {
 
@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
       }
     }
     else {
-      $msg = "Invalid UserName or Password";
+      $msg = "Invalid UserName or Password.";
     }
   }
 }

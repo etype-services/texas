@@ -46,7 +46,10 @@ function cni_preprocess_node(&$variables) {
     $variables['replace_file'] = $replace_file;
   }
 
+  /* not sure this is necessary */
   $node = $variables['node'];
+  print_r($node->classes_array);
+  exit;
   if (!empty($node->classes_array)) {
     $variables['classes_array'] = array_merge($variables['classes_array'], $node->classes_array);
   }

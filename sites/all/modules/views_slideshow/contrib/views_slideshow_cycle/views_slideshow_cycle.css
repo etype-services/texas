@@ -13,11 +13,11 @@
   display: block;
 }
 
-.views-slideshow-cycle-main-frame,
+/*.views-slideshow-cycle-main-frame,
 .views-slideshow-cycle-main-frame div,
 .views-slideshow-cycle-main-frame img {
   max-width: 100%;
-}
+}*/
 
 
 /* Pager Settings */
@@ -31,7 +31,7 @@
   display: inline;
 }
 
-.views-slideshow-pager-fields > div{
+.views-slideshow-pager-fields > div {
   padding-left: 10px;
 }
 

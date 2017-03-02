@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
   $_SESSION['uname'] = $_POST['name'];
   $_SESSION['upass'] = $_POST['password'];
   $param12 = array('UserName' => "$username");
-  $client12 = new soapclient('http://etypeservices.com/service_GetPublicationIDByUserName.asmx?WSDL');
+  $client12 = new soapclient('https://etypeservices.com/service_GetPublicationIDByUserName.asmx?WSDL');
   $response12 = $client12->GetPublicationID($param12);
 
 
@@ -16,12 +16,12 @@ if (isset($_POST['submit'])) {
   else {
     if ($response12->GetPublicationIDResult == 3191) {
       $param = array('UserName' => "$username", 'Password' => "$Password");
-      $client = new soapclient('http://etypeservices.com/Service_SubscriberLogin.asmx?WSDL');
+      $client = new soapclient('https://etypeservices.com/Service_SubscriberLogin.asmx?WSDL');
 
       $response = $client->ValidateSubscriber($param);
 
       $param1 = array('UserName' => "$username");
-      $client1 = new soapclient('http://etypeservices.com/Get_EmailbyUserName.asmx?WSDL');
+      $client1 = new soapclient('https://etypeservices.com/Get_EmailbyUserName.asmx?WSDL');
 
       $response1 = $client1->GetSubscriberEmail($param1);
 
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 
 
       if ($response->ValidateSubscriberResult == -1) {
-        $msg = "Your Subscription has been expired  <a href='http://www.etypeservices.com/Subscriber/SignIn.aspx?IssueID=103864&ReturnUrl=http://www.etypeservices.com/Subscriber/ReSubscribe.aspx?PubID=3191'>Click here</a>  to re-subscribe.";
+        $msg = "Your Subscription has been expired  <a href='https://www.etypeservices.com/Subscriber/SignIn.aspx?IssueID=103864&ReturnUrl=https://www.etypeservices.com/Subscriber/ReSubscribe.aspx?PubID=3191'>Click here</a>  to re-subscribe.";
       }
       else {
         global $user;
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
             else {
 
               $param1 = array('UserName' => "$username");
-              $client = new soapclient('http://etypeservices.com/Get_EmailbyUserName.asmx?WSDL');
+              $client = new soapclient('https://etypeservices.com/Get_EmailbyUserName.asmx?WSDL');
 
               $response1 = $client->GetSubscriberEmail($param1);
               $fields = array(
@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
 
               $param = array('UserName' => "$username");
 
-              $client1 = new soapclient('http://etypeservices.com/Service_GetExpiryDate.asmx?WSDL');
+              $client1 = new soapclient('https://etypeservices.com/Service_GetExpiryDate.asmx?WSDL');
 
               $response = $client1->SubscriptionExpiryDate($param);
 
@@ -120,7 +120,7 @@ if (isset($_POST['submit'])) {
 
 <div class="login">
     <form method="POST" action="">
-        <p style="color:red"><?php echo $msg; ?></p>
+        <p class="error"><?php echo $msg; ?></p>
         <p><input type="text" name="name" placeholder="User Name"
                   required="required"></p>
         <p><input type="password" name="password" placeholder="Password"
@@ -132,14 +132,11 @@ if (isset($_POST['submit'])) {
              </label> -->
         </p>
         <p class="submit">
-            <input type="submit" name="submit" value="Login"
-                   style="background-color: gainsboro;border-radius: 4px;width: 93px;height: 28px;border: 1px solid #CCC;text-decoration: none;color: #000;text-shadow: white 0 1px 1px;padding: 2px;"/>
+            <input type="submit" name="submit" value="Login" />
         </p>
     </form>
 </div>
 
-<div class="login-help" style="color:#000">
-    <p style="color:#000">Forgot your password? <a href="/forgot-password"
-                                                   style="color:#000">Click
-            here </a>.</p>
+<div class="login-help">
+    <p><a href="/forgot-password">Forgot your password?</a></p>
 </div>

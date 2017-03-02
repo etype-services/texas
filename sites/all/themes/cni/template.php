@@ -24,7 +24,7 @@ function cni_preprocess_page(&$variables) {
 
 function cni_preprocess_node(&$variables) {
 
-  echo current_path();
+  echo drupal_get_path_alias();
   exit;
 
   $node = $variables['node'];

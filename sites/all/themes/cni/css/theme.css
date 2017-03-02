@@ -629,9 +629,8 @@ article .field-image {
 }
 
 /* Main Menu custom styling */
-#block-superfish-1 {
-    height: 33px;
-    background-color: #000000;
+#block-superfish-1, .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
+    background: #000000;
 }
 
 #block-superfish-1 .block-inner {

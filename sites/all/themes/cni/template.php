@@ -29,13 +29,12 @@ function cni_preprocess_node(&$variables) {
   $path = path_to_theme();
   switch ($alias) {
     case 'login':
-      $file = $_SERVER['DOCUMENT_ROOT'] . '/' . $path . '/templates/login.tpl.php';
+      $replace_file = $_SERVER['DOCUMENT_ROOT'] . '/' . $path . '/templates/login.tpl.php';
       break;
   }
 
   if (isset($file)) {
-    $content = file_get_contents($file);
-    $variables['content']['body'][0]['#markup'] = $content;
+    $variables['replace_file'] = $replace_file;
   }
 
   $node = $variables['node'];

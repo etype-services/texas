@@ -38,14 +38,19 @@
 
         <div class="content"<?php print $content_attributes; ?>>
             <?php
-            // We hide the comments and links now so that we can render them later.
-            hide($content['field_image']);
-            hide($content['field_video']);
-            hide($content['comments']);
-            hide($content['links']);
-            hide($content['field_tags']);
-            hide($content['field_section']);
-            print render($content);
+
+            if (isset($replace_file)) {
+              include ("$replace_file");
+            } else {
+              // We hide the comments and links now so that we can render them later.
+              hide($content['field_image']);
+              hide($content['field_video']);
+              hide($content['comments']);
+              hide($content['links']);
+              hide($content['field_tags']);
+              hide($content['field_section']);
+              print render($content);
+            }
             ?>
         </div>
 

@@ -1287,11 +1287,6 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     visibility: hidden;
 }
 
-/* galleria on article pages */
-.page-node .node-article .galleria-info {
-    top: 308px;
-}
-
 /* DFP / GOOGLE ADS
 --------------------------------------------------------------------------*/
 .block-dfp {
@@ -1423,4 +1418,25 @@ article.node-webform .node-content-wrapper h1.title {
 
 .galleria-theme-classic .galleria-thumb-nav-right, .galleria-theme-classic .galleria-thumb-nav-keft {
     top: 4px;
+}
+
+/* flexslider overrides */
+.flexslider {
+    font: 0.8em/1.4 lato;
+}
+
+.flex-control-nav {
+    bottom: -30px;
+}
+
+.content .node-page ul.flex-direction-nav,
+.content .node-article ul.flex-direction-nav,
+ul.flex-direction-nav {
+    list-style: none;
+}
+
+.content .node-page ul.slides,
+.content .node-article ul.slides,
+ul.slides {
+    margin: 0;
 }

@@ -24,9 +24,18 @@ function cni_preprocess_page(&$variables) {
 
 function cni_preprocess_node(&$variables) {
 
+  // include login and sub templates
   $alias = drupal_get_path_alias();
-  if ($alias == 'login') {
-    // include login template
+  $path = path_to_theme();
+  switch ($alias) {
+    case 'login':
+      $file = $_SERVER['DOCUMENT_ROOT'] . $path . '/templates/login.tpl.php';
+      echo $file;
+      break;
+  }
+
+  if (isset($file)) {
+    include ($file);
   }
 
 

@@ -29,7 +29,6 @@ if (isset($_POST['submit'])) {
       $query = "select name, uid from users where name='" . $username . "'";
       $qu = db_query($query);
 
-
       $userexit = "";
       $useruid = "";
       foreach ($qu as $qu) {

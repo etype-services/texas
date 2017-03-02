@@ -24,7 +24,11 @@ function cni_preprocess_page(&$variables) {
 
 function cni_preprocess_node(&$variables) {
 
-  echo drupal_get_path_alias();
+  $alias = drupal_get_path_alias();
+  if ($alias == 'login') {
+    // include login template
+  }
+
 
   $node = $variables['node'];
   if (!empty($node->classes_array)) {

@@ -129,12 +129,7 @@ $msg="Invalid UserName or Password";
 }
 ?>
 
-
-<body>
-
-  <section class="container">
     <div class="login">
-      <h1>Login Page</h1>
       <form method="POST" action="">
         <p style="color:red"><?php echo $msg; ?></p>
         <p><input type="text" name="name"  placeholder="User Name" required="required"></p>
@@ -154,6 +149,3 @@ $msg="Invalid UserName or Password";
     <div class="login-help" style="color:#000">
      <p style="color:#000">Forgot your password? <a href="/forgot-password" style="color:#000">Click here </a>.</p>
     </div>
-  </section>
-
- </body>

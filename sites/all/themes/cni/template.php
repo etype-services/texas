@@ -35,7 +35,9 @@ function cni_preprocess_node(&$variables) {
   }
 
   if (isset($file)) {
-    include ($file);
+    $content = file_get_contents($file);
+    $variables['content'] = $content;
+
   }
 
   $node = $variables['node'];

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TS News Features feature.
+ */
+
+include_once 'etype_cni_features.features.inc';

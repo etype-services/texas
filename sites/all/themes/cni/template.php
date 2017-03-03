@@ -33,6 +33,10 @@ function cni_preprocess_node(&$variables) {
       $replace_file = $path . 'login.tpl.php';
       break;
 
+    case 'custom-login-page':
+      $replace_file = $path . 'login.tpl.php';
+      break;
+
     case 'forgot-password':
       $replace_file = $path . 'forgot-password.tpl.php';
       break;

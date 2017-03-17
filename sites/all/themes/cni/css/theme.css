@@ -57,7 +57,6 @@ p {
 td {
     padding: 5px;
     vertical-align: middle;
-    border: 1px solid #dddddd;
 }
 
 img {
@@ -280,7 +279,7 @@ h3.site-slogan {
 /* MAIN CONTENT
 --------------------------------------------------------------------------*/
 
-.main-content-wrapper {
+.front .main-content-wrapper {
     margin-top: 20px;
 }
 
@@ -326,6 +325,10 @@ article .field-image {
 #postscript {
     color: #dddddd;
     font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
 #postscript a {
@@ -335,15 +338,14 @@ article .field-image {
 }
 
 .postscript-wrapper {
-    padding: 1em 1em 0;
+    padding: 1em;
     margin: 0;
     background: url(../images/postscript-bg.png);
-    border-top: 3px solid #252525;
 }
 
 /* override widths for .grid_3 in footer */
-.container_12 .postscript-wrapper .grid_3 {
-    width: 30% !important;
+.container_12 .postscript-wrapper .grid_4 {
+    width: inherit;
 }
 
 .postscript-wrapper .block-inner {
@@ -356,13 +358,12 @@ article .field-image {
 
 .postscript-wrapper h3 {
     display: block;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.3em;
     line-height: 1.4em; /* for titles that go to second line */
 }
 
 .postscript-wrapper h3 span {
     padding-right: 5px;
-    background: #333333;
     color: #999999;
 }
 
@@ -604,7 +605,7 @@ article .field-image {
     height: 100%;
     min-height: 33px;
     max-height: 85px;
-    margin: 0;
+    margin: 0 auto;
     font-family: 'Lato', sans-serif;
 }
 
@@ -615,6 +616,7 @@ article .field-image {
     text-transform: uppercase;
     height: 33px;
     line-height: 33px;
+    font-size: 13px;
 }
 
 #main-menu ul.menu li a:hover {
@@ -631,6 +633,7 @@ article .field-image {
 /* Main Menu custom styling */
 #block-superfish-1, .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
     background: #000000;
+    font-size: inherit;
 }
 
 #block-superfish-1 .block-inner {
@@ -1296,6 +1299,10 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin: 20px auto 0;
 }
 
+.not-front .region-main-menu-second-level .block-dfp {
+    margin: 20px auto 20px;
+}
+
 .region-content-bottom .block-dfp {
     width: 728px;
     margin: 0 auto 20px;
@@ -1316,6 +1323,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     font-size: 1em;
     line-height: 1.3em;
     text-transform: none;
+    margin-top: 1em;
 }
 
 #block-advpoll-advpoll-recent .submitted {
@@ -1359,6 +1367,13 @@ article.node-webform .node-content-wrapper h1.title {
 .preface-wrapper #block-views-ticker-block .content {
     margin-top: 0;
     padding: 0;
+}
+
+/* Florida Public Legals */
+.view-id-legals .view-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* flexslider overrides */

@@ -28,7 +28,7 @@ function cni_preprocess_node(&$variables) {
         $variables['classes_array'] = array_merge($variables['classes_array'], $node->classes_array);
     }
 
-  // include login and sub templates
+  /* include login and sub templates
   $alias = drupal_get_path_alias();
   $theme_path = path_to_theme();
   $path = $_SERVER['DOCUMENT_ROOT'] . '/' . $theme_path . '/templates/';
@@ -53,6 +53,7 @@ function cni_preprocess_node(&$variables) {
   if (isset($replace_file)) {
     $variables['replace_file'] = $replace_file;
   }
+  */
 
   /* add extra classes */
   $node = $variables['node'];

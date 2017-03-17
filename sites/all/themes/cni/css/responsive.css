@@ -73,7 +73,7 @@
     }
 
     .container_12 #postscript .grid_4 {
-        width: 286px;
+        width: inherit;
     }
 
 }
@@ -101,6 +101,7 @@
 
     #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
         padding: 0 7px;
+        font-size: 13px;
     }
 
     #main-menu ul.menu li ul {
@@ -197,10 +198,6 @@
     /* footer */
     .postscript-wrapper {
         margin-right: 10px;
-    }
-
-    .container_12 #postscript .grid_4 {
-        width: 30%;
     }
 
 }
@@ -335,6 +332,7 @@
         display: none;
         visibility: hidden;
     }
+
 }
 
 /* larger phones */
@@ -457,22 +455,7 @@
 
     .postscript-wrapper h3 {
         margin-left: 0;
-        margin-bottom: 10px;
         background: none;
-    }
-
-    .region-postscript-2 {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* override widths for .grid_3 in footer */
-    .container_12 .postscript-wrapper .grid_3 {
-        width: 49% !important;
-    }
-
-    .region-postscript-4 {
-        margin-top: 1em;
     }
 
     /* weather block */
@@ -597,11 +580,6 @@
     }
 
     /* FOOTER */
-    #postscript .grid_4 {
-        width: inherit;
-        margin-left: 1em;
-    }
-
     .postscript-wrapper {
         padding: 1em;
         margin: 0;
@@ -610,18 +588,7 @@
 
     .postscript-wrapper h3 {
         margin-left: 0;
-        margin-bottom: 10px;
         background: none;
-    }
-
-    .region-postscript-2 {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* override widths for .grid_3 in footer */
-    .container_12 .postscript-wrapper .grid_3 {
-        width: 49% !important;
     }
 
     /* weather block */
@@ -646,8 +613,12 @@
         visibility: hidden;
     }
 
-    /* space for Menus and Follow Blocks */
-    .region-postscript-2, .region-postscript-3 {
+    #postscript {
+        flex-wrap: wrap;
+    }
+
+    /* add space after menu */
+    #postscript .grid_4 #block-etype-follow {
         margin-top: 1em;
     }
 

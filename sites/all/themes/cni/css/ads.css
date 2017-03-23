@@ -32,6 +32,17 @@
     justify-content: space-around;
 }
 
+/* styles for preface tile ads */
+.preface-wrapper .region-preface-1 .block-simpleads .content {
+    padding: 1em;
+}
+
+.region-preface-1 .block-simpleads > div > div > div > div > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 /* css for etype google DFP bottom leaderboard */
 #div-gpt-ad-1487352373268-0 {
     margin: 0 auto 20px;

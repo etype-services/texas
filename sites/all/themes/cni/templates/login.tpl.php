@@ -131,7 +131,7 @@ if (isset($_POST['submit'])) {
              </label> -->
         </p>
         <p class="submit">
-            <input type="submit" name="submit" value="Login" />
+            <input type="submit" name="submit" value="Login"/>
         </p>
     </form>
 </div>

@@ -36,5 +36,5 @@ if (isset($_POST['send'])) {
 <form action="" method="post">
     <p class="error"><?php echo $msg; ?></p>
     <p>Enter User Name <input type="text" name="mail" required="required">
-    <input type="submit" name="send" value="Submit" /></p>
+        <input type="submit" name="send" value="Submit"/></p>
 </form>

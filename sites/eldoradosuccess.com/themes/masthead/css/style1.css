@@ -176,6 +176,7 @@ h3.site-slogan {
 
 .view-slideshow .views-slideshow-controls-bottom #views_slideshow_pager_field_item_bottom_slideshow-block_5 .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom #views_slideshow_pager_field_item_bottom_slideshow-block_5 .views-field-field-video img {
     margin-right: 0;
+	margin-top: -21px;
 }
 
 /* PREFACE 

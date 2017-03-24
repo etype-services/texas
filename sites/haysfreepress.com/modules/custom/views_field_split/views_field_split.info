@@ -1,9 +1,0 @@
-name = Views field split
-description = Display row fields by your way.
-core = 7.x
-package = Views
-
-dependencies[] = views
-files[] = views_field_split.module
-files[] = views/views_field_split.views.inc
-files[] = views/views_field_split_plugin_style.inc

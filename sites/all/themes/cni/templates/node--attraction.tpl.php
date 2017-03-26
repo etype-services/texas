@@ -3,6 +3,21 @@
 
     <div class="node-content-wrapper">
 
+      <?php print render($title_prefix); ?>
+
+      <?php if ($page): ?>
+          <h1 class="title"<?php print $title_attributes; ?>><?php print $title; ?></h1>
+      <?php endif; ?>
+
+      <?php print render($title_suffix); ?>
+
+      <?php if ($display_submitted): ?>
+          <div class="submitted">
+              <span class="date"><?php print $date; ?></span>
+            <?php print $name; ?>
+          </div>
+      <?php endif; ?>
+
       <?php if (isset($content['field_image'])): ?>
           <div class="field-image">
             <?php print render($content['field_image']); ?>
@@ -12,35 +27,6 @@
       <?php if (isset($content['field_video'])): ?>
           <div class="field-video">
             <?php print render($content['field_video']); ?>
-          </div>
-      <?php endif; ?>
-
-      <?php print render($title_prefix); ?>
-
-      <?php if (!$page): ?>
-          <h2 class="title"<?php print $title_attributes; ?>><a
-                      href="<?php print $node_url; ?>"><?php print $title; ?></a>
-          </h2>
-      <?php endif; ?>
-
-      <?php if ($page): ?>
-          <h1
-                  class="title"<?php print $title_attributes; ?>><?php print $title; ?></h1>
-      <?php endif; ?>
-
-      <?php print render($title_suffix); ?>
-
-      <?php if ($page) { ?>
-          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-          <div class="addthis_sharing_toolbox"></div>
-      <?php } ?>
-
-      <?php if ($display_submitted): ?>
-          <div class="submitted<?php if ($page) {
-            echo ' clearfix';
-          } ?>">
-              <span class="date"><?php print $date; ?></span>
-            <?php print $name; ?>
           </div>
       <?php endif; ?>
 
@@ -55,6 +41,9 @@
           hide($content['field_section']);
           print render($content);
           ?>
+            <p class="attribution">Hike descriptions adapted from <a
+                        href="www.highlandhiker.com">the Highland Hiker’s Guide
+                    to Day Hikes</a>.</p>
         </div>
 
       <?php if (isset($content['links'])): ?>

@@ -43,6 +43,31 @@
     justify-content: space-between;
 }
 
+/* OWN LOCAL
+--------------------------------------------------------------------------*/
+#block-etype-own-local .block-inner {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+#block-etype-own-local .block-inner .content {
+    padding: 0;
+}
+
+/* css for Crowdy news sidebar ads */
+
+#CrowdynewsAd {
+    margin: -20px;
+}
+
+/* css for etype google DFP sidebar ads */
+
+#div-gpt-ad-1487352373268-1 {
+    margin: -20px;
+}
+
 /* css for etype google DFP bottom leaderboard */
 #div-gpt-ad-1487352373268-0 {
     margin: 0 auto 20px;

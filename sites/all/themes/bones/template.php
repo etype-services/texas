@@ -21,29 +21,20 @@ function bones_preprocess_page(&$vars) {
   $vars['facebook'] = theme_get_setting('facebook');
   $vars['pinterest'] = theme_get_setting('pinterest');
 
-  for ($region_count = 1; $region_count <= 4; $region_count++) {
-    $vars['preface_' . $region_count . '_grid_width'] = 'grid_' . $grid_info['preface_' . $region_count . '_grid_width'];
-    $vars['postscript_' . $region_count . '_grid_width'] = 'grid_' . $grid_info['postscript_' . $region_count . '_grid_width'];
-  }
+	for ($region_count = 1; $region_count <= 4; $region_count++) {
+	  $vars['preface_' . $region_count . '_grid_width'] = 'grid_' . $grid_info['preface_' . $region_count . '_grid_width'];
+		$vars['postscript_' . $region_count . '_grid_width'] = 'grid_' . $grid_info['postscript_' . $region_count . '_grid_width'];
+	}
 
-  if (empty($vars['page']['sidebar_first']) && empty($vars['page']['sidebar_second'])) {
-    $vars['main_content_grid_width'] = 'grid_' . $grid_info['grid_size'];
-  }
-  else {
-    if (!empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
-      $vars['main_content_grid_width'] = 'grid_' . ($grid_info['grid_size'] - ($grid_info['sidebar_first_width'] + $grid_info['sidebar_second_width']));
-    }
-    else {
-      if (empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
-        $vars['main_content_grid_width'] = 'grid_' . ($grid_info['grid_size'] - $grid_info['sidebar_second_width']);
-      }
-      else {
-        if (!empty($vars['page']['sidebar_first']) && empty($vars['page']['sidebar_second'])) {
-          $vars['main_content_grid_width'] = 'grid_' . ($grid_info['grid_size'] - $grid_info['sidebar_first_width']);
-        }
-      }
-    }
-  }
+	if (empty($vars['page']['sidebar_first']) && empty($vars['page']['sidebar_second'])) {
+		$vars['main_content_grid_width'] = 'grid_' . $grid_info['grid_size'];
+	} else if (!empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
+		$vars['main_content_grid_width'] = 'grid_' . ($grid_info['grid_size'] - ($grid_info['sidebar_first_width'] + $grid_info['sidebar_second_width']));
+ 	} else if (empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
+		$vars['main_content_grid_width'] = 'grid_' . ($grid_info['grid_size'] - $grid_info['sidebar_second_width']);
+	} else if (!empty($vars['page']['sidebar_first']) && empty($vars['page']['sidebar_second'])) {
+		$vars['main_content_grid_width'] = 'grid_' . ($grid_info['grid_size'] - $grid_info['sidebar_first_width']);
+	}
 
 }
 

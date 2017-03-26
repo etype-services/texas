@@ -1,19 +1,19 @@
 <article id="node-<?php print $node->nid; ?>"
          class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
+  <?php if (isset($content['field_image'])): ?>
+      <div class="field-image">
+        <?php print render($content['field_image']); ?>
+      </div>
+  <?php endif; ?>
+
+  <?php if (isset($content['field_video'])): ?>
+      <div class="field-video">
+        <?php print render($content['field_video']); ?>
+      </div>
+  <?php endif; ?>
+
     <div class="node-content-wrapper">
-
-      <?php if (isset($content['field_image'])): ?>
-          <div class="field-image">
-            <?php print render($content['field_image']); ?>
-          </div>
-      <?php endif; ?>
-
-      <?php if (isset($content['field_video'])): ?>
-          <div class="field-video">
-            <?php print render($content['field_video']); ?>
-          </div>
-      <?php endif; ?>
 
       <?php print render($title_prefix); ?>
 
@@ -24,21 +24,13 @@
       <?php endif; ?>
 
       <?php if ($page): ?>
-          <h1
-                  class="title"<?php print $title_attributes; ?>><?php print $title; ?></h1>
+          <h1 class="title"<?php print $title_attributes; ?>><?php print $title; ?></h1>
       <?php endif; ?>
 
       <?php print render($title_suffix); ?>
 
-      <?php if ($page) { ?>
-          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-          <div class="addthis_sharing_toolbox"></div>
-      <?php } ?>
-
       <?php if ($display_submitted): ?>
-          <div class="submitted<?php if ($page) {
-            echo ' clearfix';
-          } ?>">
+          <div class="submitted">
               <span class="date"><?php print $date; ?></span>
             <?php print $name; ?>
           </div>

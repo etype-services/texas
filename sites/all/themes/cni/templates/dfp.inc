@@ -1,4 +1,5 @@
-<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<!-- begin code for etype google dfp ads -->
+<script async='async' src='//www.googletagservices.com/tag/js/gpt.js'></script>
     <script>
 var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -12,3 +13,4 @@ googletag.cmd.push(function() {
     googletag.enableServices();
 });
 </script>
+<!-- end code for etype google dfp ads -->

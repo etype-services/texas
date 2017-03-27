@@ -124,11 +124,11 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
     '#default_value' => theme_get_setting('logo_width'),
   );
 
-  $form['advanced_settings']['misc_settings']['dfp_code'] = array(
+  $form['advanced_settings']['misc_settings']['extra_dfp_code'] = array(
     '#type' => 'radios',
     '#title' => t('Add Extra DFP Code in Header'),
     '#options' => array('0'  => "No", '1' => "Yes"),
-    '#default_value' => theme_get_setting('dfp_code'),
+    '#default_value' => theme_get_setting('extra_dfp_code'),
   );
 
   // Grid Settings

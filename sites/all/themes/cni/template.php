@@ -147,8 +147,8 @@ function cni_preprocess_html(&$variables) {
     );
   }
 
-  $dfp_code = theme_get_setting('dfp_code');
-  if ($dfp_code == '1') {
+  $extra_dfp_code = theme_get_setting('extra_dfp_code');
+  if ($extra_dfp_code == '1') {
     $variables['dfp_file'] = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'dfp.inc';
   }
 

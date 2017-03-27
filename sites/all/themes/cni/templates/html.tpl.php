@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="<?php print $language->language; ?>"
       dir="<?php print $language->dir; ?>" <?php print $rdf_namespaces; ?>>
-
 <head>
   <?php print $head; ?>
     <title><?php print $head_title; ?></title>
@@ -16,7 +15,6 @@
     <![endif]-->
     <?php if ($dfp_code === 1) include(DIR . '/dfp.inc'); ?>
 </head>
-
 <body class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <div id="fb-root"></div>
 <script>(function (d, s, id) {

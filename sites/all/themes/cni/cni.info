@@ -66,3 +66,4 @@ settings[postscript_4_grid_width] = 0
 settings[facebook] = ''
 settings[twitter] = ''
 settings[pinterest] = ''
+settings[dfp_code] = 'No'

@@ -1,6 +1,3 @@
-/**
- * Created by charlie on 3/27/17.
- */
 <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
     <script>
 var googletag = googletag || {};

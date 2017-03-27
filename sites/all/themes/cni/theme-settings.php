@@ -37,7 +37,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
     '#title' => t('Misc Settings'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
-    '#weight' => 10,
+    '#weight' => -10,
   );
 
   $form['advanced_settings']['misc_settings']['twitter'] = array(
@@ -129,8 +129,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
     '#type' => 'fieldset',
     '#title' => t('Grid Settings'),
     '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-    '#weight' => -10,
+    '#collapsed' => TRUE
   );
 
   $form['advanced_settings']['grid_settings']['grid_size'] = array(

@@ -126,7 +126,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
 
   $form['advanced_settings']['misc_settings']['dfp_code'] = array(
     '#type' => 'radios',
-    '#title' => t('Add DFP Code in Header'),
+    '#title' => t('Add Extra DFP Code in Header'),
     '#options' => array('0'  => "No", '1' => "Yes"),
     '#default_value' => theme_get_setting('dfp_code'),
   );

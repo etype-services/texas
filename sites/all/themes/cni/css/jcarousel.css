@@ -30,7 +30,7 @@
     overflow: hidden;
     list-style: none;
     border: none;
-    background: url(../images/preface-view.png);
+    background-color: #f3f1f1;;
     font-weight: bold;
 }
 
@@ -155,7 +155,7 @@
 .jcarousel li img {
     vertical-align: middle;
     border: 4px solid #ffffff;
-    margin: 0 10px;
+    margin: 10px 10px 0;
     width: 80px;
 }
 
@@ -163,6 +163,7 @@
     width: 100px;
     height: 100px;
     line-height: 100px;
+    overflow: hidden;
 }
 
 

@@ -1,3 +1,41 @@
+
+/* DFP / GOOGLE ADS
+--------------------------------------------------------------------------*/
+.block-dfp {
+    margin-bottom: 20px;
+}
+
+.block-dfp .block-inner, #main-content .block-dfp .block-inner {
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+}
+
+.region-main-menu-second-level .block-dfp {
+    width: 728px;
+    margin: 20px auto 0;
+}
+
+.not-front .region-main-menu-second-level .block-dfp {
+    margin: 20px auto 20px;
+}
+
+.region-content-bottom .block-dfp {
+    width: 728px;
+    margin: 0 auto 20px;
+}
+
+.region-slideshow .block-dfp, .region-preface-1 .block-dfp {
+    width: 468px;
+    margin: 0 auto 20px;
+}
+
+.preface-wrapper .block-dfp .content, .sidebar .block-dfp .content {
+    padding: 0;
+}
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 

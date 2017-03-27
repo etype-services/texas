@@ -470,6 +470,11 @@
         visibility: hidden;
     }
 
+    .submitted {
+        clear: both;
+        margin-left: 0;
+    }
+
 }
 
 /* smaller phones */
@@ -601,6 +606,11 @@
     .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp, .region-slideshow .block-dfp {
         display: none;
         visibility: hidden;
+    }
+
+    .submitted {
+        clear: both;
+        margin-left: 0;
     }
 
 }

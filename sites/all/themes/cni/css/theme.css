@@ -1,19 +1,5 @@
 /* HTML
 --------------------------------------------------------------------------*/
-
-body {
-    font-size: 1em;
-    font-family: "Adobe Garamond Pro", Arial, Helvetica, sans-serif;
-    line-height: 1.3em;
-    color: #444444;
-    background: #ffffff;
-}
-
-a {
-    font-weight: normal;
-    color: #333;
-}
-
 a:hover {
     text-decoration: underline;
 }
@@ -43,7 +29,7 @@ h2 {
 }
 
 #page {
-
+    margin-top: 1em;
 }
 
 .page-inner {
@@ -206,12 +192,7 @@ h3.site-slogan {
 
 .preface-wrapper .views-row {
     padding: 10px 10px 0 10px;
-    background: url(../images/preface-view.png);
     overflow: hidden;
-}
-
-.preface-wrapper .views-row a {
-
 }
 
 .preface-wrapper .views-row .views-field-field-image img {
@@ -242,17 +223,11 @@ h3.site-slogan {
 }
 
 .preface-wrapper .block .content {
-    /*height: 300px;*/
-}
-
-.preface-wrapper-top .block .content {
-    height: auto;
-    background: transparent url("../images/preface-view.png") repeat scroll 0% 0%;
-    margin-top: 20px;
+    background: #f3f1f1;
 }
 
 .preface-wrapper .content {
-    padding: 20px 0 0 0;
+    padding: 5px 0 10px 0;
     color: #999999;
 }
 
@@ -279,7 +254,7 @@ h3.site-slogan {
 --------------------------------------------------------------------------*/
 
 .front .main-content-wrapper {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #main-content .block-inner, #preface .block-inner, h1#page-title {
@@ -289,6 +264,10 @@ h3.site-slogan {
     border-bottom: 3px solid #111111;
     background: #ffffff;
     box-shadow: 0 1px 5px #bbbbbb;
+}
+
+#main-content #block-system-main .block-inner {
+    padding: 0 20px 20px;
 }
 
 article .field-image {
@@ -384,6 +363,10 @@ article .field-image {
 
 #postscript .item-list ul li.last {
     border-bottom: 0 dotted #555555;
+}
+
+#block-etype-follow .content div {
+    background-size: 16px;
 }
 
 #block-etype-follow .content div > a {
@@ -507,7 +490,6 @@ article .field-image {
 }
 
 /* User Menu Drop Down */
-
 #user-menu ul.menu li ul {
     position: absolute;
     padding: 0;
@@ -819,7 +801,7 @@ article .field-image {
     display: block;
     padding: 10px;
     float: left;
-    margin: 0 20px 0 0;
+    margin: 0 7px 7px 0;
     background: url(../images/image-background.png);
     width: auto;
 }
@@ -957,6 +939,10 @@ article .field-image {
 #search-form .archive_message {
     padding-top: 21px;
     font-style: italic;
+}
+
+#search-control {
+    display: none;
 }
 
 /* SOCIAL
@@ -1188,9 +1174,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding-left: 50px;
 }
 
-/* removes quote icons from bones layout.css */
 blockquote {
-    background-image: none;
     margin: 0;
     padding: 0;
 }
@@ -1276,43 +1260,8 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin-bottom: 10px;
     color: #999999;
     border-bottom: 1px solid #dddddd;
-}
-
-/* DFP / GOOGLE ADS
---------------------------------------------------------------------------*/
-.block-dfp {
-    margin-bottom: 20px;
-}
-
-.block-dfp .block-inner, #main-content .block-dfp .block-inner {
-    padding: 0;
-    margin: 0;
-    border-style: none;
-    border-width: 0;
-    box-shadow: none;
-}
-
-.region-main-menu-second-level .block-dfp {
-    width: 728px;
-    margin: 20px auto 0;
-}
-
-.not-front .region-main-menu-second-level .block-dfp {
-    margin: 20px auto 20px;
-}
-
-.region-content-bottom .block-dfp {
-    width: 728px;
-    margin: 0 auto 20px;
-}
-
-.region-slideshow .block-dfp, .region-preface-1 .block-dfp {
-    width: 468px;
-    margin: 0 auto 20px;
-}
-
-.preface-wrapper .block-dfp .content, .sidebar .block-dfp .content {
-    padding: 0;
+    font: 0.6em "Lato", sans-serif;
+    margin-left: 168px;
 }
 
 /* ADVANCED POLL

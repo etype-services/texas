@@ -1236,7 +1236,8 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 
 /* PAGE
 --------------------------------------------------------------------------*/
-.not-front.page-node #block-system-main .content .node-article {
+.not-front.page-node #block-system-main .content .node-article,
+.not-front.page-node #block-system-main .content .node-page {
     margin-top: 1em;
 }
 

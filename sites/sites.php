@@ -1,5 +1,4 @@
 <?php
-
 $sites['uvaldeleadernews.etypegoogle5.com'] = 'uvaldeleadernews.com';
 $sites['uvaldeleadernews.com'] = 'uvaldeleadernews.com';
 $sites['www.uvaldeleadernews.com'] = 'uvaldeleadernews.com';
@@ -239,3 +238,6 @@ $sites['www.timestribune.com'] = 'timestribune.etypegoogle5.com';
 $sites['baycitysentinel.etypegoogle5.com'] = 'baycitysentinel.etypegoogle5.com';
 $sites['baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';
 $sites['www.baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';
+
+$sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
+

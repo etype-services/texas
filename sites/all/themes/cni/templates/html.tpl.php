@@ -13,7 +13,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <?php if ($dfp_code === 1) echo DIR . '/dfp.inc'; exit; include(DIR . '/dfp.inc'); ?>
+    <?php if (! isset($dfp_file)) include("$dfp_file"); ?>
 </head>
 <body class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <div id="fb-root"></div>

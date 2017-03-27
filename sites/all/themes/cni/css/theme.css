@@ -263,7 +263,6 @@ h3.site-slogan {
     border: 1px solid #ddd;
     border-bottom: 3px solid #111111;
     background: #ffffff;
-    box-shadow: 0 1px 5px #bbbbbb;
 }
 
 #main-content #block-system-main .block-inner {
@@ -1235,6 +1234,12 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     font-family: 'Lato', sans-serif;
 }
 
+/* PAGE
+--------------------------------------------------------------------------*/
+.not-front.page-node #block-system-main .content .node-article {
+    margin-top: 1em;
+}
+
 /* ARTICLE
 --------------------------------------------------------------------------*/
 .page-node .node-article .field-name-field-dateline {
@@ -1326,6 +1331,7 @@ article.node-webform .node-content-wrapper h1.title {
 /* flexslider overrides */
 .flexslider {
     font: 0.8em/1.4 lato;
+    margin: 0;
 }
 
 .flex-control-nav {

@@ -263,9 +263,7 @@ function etype_cronapi($op, $job = NULL) {
   $etype_site_path = etype_site_path();
   $settings_file = $etype_site_path . '/etype_settings.php';
   if (file_exists($settings_file)) {
-
     include($etype_site_path . '/etype_settings.php');
-
     if (!empty($cron_schedule)) {
       /* Classified importer */
       $items['etype_cron'] = array(
@@ -280,128 +278,121 @@ function etype_cronapi($op, $job = NULL) {
         ),
       );
     }
-
-    $items['etype-node-cleanup'] = array(
-      'title' => t('Cleanup Classified Ads'),
-      'page callback' => 'etype_node_cleanup',
-      'type' => MENU_CALLBACK,
-      'access arguments' => array('access administration pages')
-    );
-
-    return $items;
   }
+}
 
-  /**
-   * redirect to e-Edition
-   */
-  function _etype_e_edition() {
-    $uid = user_is_logged_in();
-    $e_edition = theme_get_setting('e_edition');
-    if ($uid > 0) {
-      global $user;
-      $pub = theme_get_setting('pub');
-      $ptype = theme_get_setting('ptype');
-      if (!empty ($pub)) {
-        $path = 'http://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $pub . "&PType=" . $ptype;
-      }
-      else {
-        $path = 'http://etypeservices.com/' . $e_edition . '/';
-      }
-    }
-    else {
-      $path = 'http://etypeservices.com/' . $e_edition . '/';
-    }
-    drupal_goto($path);
-  }
 
-  /**
-   * Clean up node table
-   */
-  function etype_node_cleanup() {
-    $res = db_query('SELECT n.nid FROM node n LEFT JOIN node_revision nr ON nr.nid = n.nid WHERE nr.vid IS NULL');
-    if (count($res) > 0) {
-      $nids = array();
-      foreach ($res as $record) {
-        // Do something with each $record
-        $nids[] = $record->nid;
-      }
-      node_delete_multiple($nids);
-    }
-  }
-
-  /**
-   * @param $vid
-   * @return int|mixed|void
-   * Map xml classified categories to Drupal taxonomy items
-   */
-  function etype_classfied_mapping($vid) {
-
-    $categories = array(); // set in include file, just to avoid IDE errors
-    $etype_site_path = etype_site_path();
-    include($etype_site_path . '/etype_settings.php');
-
-    if (!isset($vid)) {
-      drupal_set_message(t("No category id for item"), 'error');
-      return;
-    }
-    else {
-
-      $ad_cat = 0;
-
-      foreach ($categories as $k => $v) {
-        if ($vid == $k) {
-          $ad_cat = $v;
-          continue;
-        }
-      }
-
-      if ($ad_cat == 0) {
-        drupal_set_message(t("$vid not matched"), 'error');
-      }
-    }
-    return $ad_cat;
-
-  }
-
-  /**
-   * Create Entity
-   * @param array $item
-   * @param array $values
-   * @param string $entity_type
-   */
-  function etype_entity_create($item = array(), $values = array(), $entity_type = 'node') {
-
-    $entity = entity_create($entity_type, $values);
-    $ewrapper = entity_metadata_wrapper($entity_type, $entity);
-    if (count($item) > 0) {
-      foreach ($item as $k => $v) {
-        switch ($k) {
-
-          case 'body':
-            $ewrapper->body->set(array('value' => $v));
-            break;
-
-          case 'category':
-            $v = intval($v);
-            $ewrapper->classified_category->set($v);
-            break;
-
-          default:
-            $ewrapper->$k->set($v);
-        }
-      }
-      $ewrapper->save(TRUE);
-    }
-  }
-
-  /**
-   * feeds cron job
-   */
-  function etype_classified_ad_importer() {
-
+/**
+ * redirect to e-Edition
+ */
+function _etype_e_edition() {
+  $uid = user_is_logged_in();
+  $e_edition = theme_get_setting('e_edition');
+  if ($uid > 0) {
     global $user;
-    $url = ''; // set in include file, just to avoid IDE errors
-    $etype_site_path = etype_site_path();
+    $pub = theme_get_setting('pub');
+    $ptype = theme_get_setting('ptype');
+    if (!empty ($pub)) {
+      $path = 'https://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $pub . "&PType=" . $ptype;
+    }
+    else {
+      $path = 'https://etypeservices.com/' . $e_edition . '/';
+    }
+  }
+  else {
+    $path = 'https://etypeservices.com/' . $e_edition . '/';
+  }
+  drupal_goto($path);
+}
+
+/**
+ * Clean up node table
+ */
+function etype_node_cleanup() {
+  $res = db_query('SELECT n.nid FROM node n LEFT JOIN node_revision nr ON nr.nid = n.nid WHERE nr.vid IS NULL');
+  if (count($res) > 0) {
+    $nids = array();
+    foreach ($res as $record) {
+      // Do something with each $record
+      $nids[] = $record->nid;
+    }
+    node_delete_multiple($nids);
+  }
+}
+
+/**
+ * @param $vid
+ * @return int|mixed|void
+ * Map xml classified categories to Drupal taxonomy items
+ */
+function etype_classfied_mapping($vid) {
+
+  $categories = array(); // set in include file, just to avoid IDE errors
+  $etype_site_path = etype_site_path();
+  include($etype_site_path . '/etype_settings.php');
+
+  if (!isset($vid)) {
+    drupal_set_message(t("No category id for item"), 'error');
+    return;
+  }
+  else {
+
+    $ad_cat = 0;
+
+    foreach ($categories as $k => $v) {
+      if ($vid == $k) {
+        $ad_cat = $v;
+        continue;
+      }
+    }
+
+    if ($ad_cat == 0) {
+      drupal_set_message(t("$vid not matched"), 'error');
+    }
+  }
+  return $ad_cat;
+
+}
+
+/**
+ * Create Entity
+ * @param array $item
+ * @param array $values
+ * @param string $entity_type
+ */
+function etype_entity_create($item = array(), $values = array(), $entity_type = 'node') {
+
+  $entity = entity_create($entity_type, $values);
+  $ewrapper = entity_metadata_wrapper($entity_type, $entity);
+  if (count($item) > 0) {
+    foreach ($item as $k => $v) {
+      switch ($k) {
+
+        case 'body':
+          $ewrapper->body->set(array('value' => $v));
+          break;
+
+        case 'category':
+          $v = intval($v);
+          $ewrapper->classified_category->set($v);
+          break;
+
+        default:
+          $ewrapper->$k->set($v);
+      }
+    }
+    $ewrapper->save(TRUE);
+  }
+}
+
+/**
+ * feeds cron job
+ */
+function etype_classified_ad_importer() {
+
+  global $user;
+  $url = ''; // set in include file, just to avoid IDE errors
+  $etype_site_path = etype_site_path();
     $settings_file = $etype_site_path . '/etype_settings.php';
 
     if (file_exists($settings_file)) {
@@ -479,7 +470,6 @@ function etype_cronapi($op, $job = NULL) {
       }
 
     }
-  }
 }
 
 function etype_clear_cache() {

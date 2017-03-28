@@ -609,6 +609,10 @@ article .field-image {
     background-color: #cccccc;
 }
 
+#main-menu ul.menu li ul li a {
+    font-size: inherit;
+}
+
 /* Main Menu custom styling */
 #block-superfish-1, .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
     background: #000000;

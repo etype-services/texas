@@ -17,6 +17,8 @@ $sites['yourforneymessenger.com'] = 'yourforneymessenger.etypegoogle5.com';
 $sites['www.yourforneymessenger.com'] = 'yourforneymessenger.etypegoogle5.com';
 $sites['forneymessengernewspaper.com'] = 'yourforneymessenger.etypegoogle5.com';
 $sites['www.forneymessengernewspaper.com'] = 'yourforneymessenger.etypegoogle5.com';
+$sites['forneymessenger.com'] = 'yourforneymessenger.etypegoogle5.com';
+$sites['www.forneymessenger.com'] = 'yourforneymessenger.etypegoogle5.com';
 $sites ['archive.yourforneymessenger.com'] = 'yourforneymessengerarchive.etypegoogle5.com';
 
 /* jdcmountaindispatch.etypegoogle5.com */

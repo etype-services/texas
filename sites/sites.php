@@ -12,14 +12,14 @@ $sites['devilsriver.news'] = 'devilsrivernews.com';
 $sites['www.devilsriver.news'] = 'devilsrivernews.com';
 
 /* yourforneymessenger.etypegoogle5.com */
-$sites['yourforneymessenger.etypegoogle5.com'] = 'yourforneymessenger.com';
-$sites['yourforneymessenger.com'] = 'yourforneymessenger.com';
-$sites['www.yourforneymessenger.com'] = 'yourforneymessenger.com';
+$sites['yourforneymessenger.etypegoogle5.com'] = 'yourforneymessenger.etypegoogle5.com';
+$sites['yourforneymessenger.com'] = 'yourforneymessenger.etypegoogle5.com';
+$sites['www.yourforneymessenger.com'] = 'yourforneymessenger.etypegoogle5.com';
 
-$sites['forneymessengernewspaper.com'] = 'yourforneymessenger.com';
-$sites['www.forneymessengernewspaper.com'] = 'yourforneymessenger.com';
+$sites['forneymessengernewspaper.com'] = 'yourforneymessenger.etypegoogle5.com';
+$sites['www.forneymessengernewspaper.com'] = 'yourforneymessenger.etypegoogle5.com';
 
-$sites ['yourforneymessengercni.etypegoogle5.com'] = 'yourforneymessenger.etypegoogle5.com';
+$sites ['archive.yourforneymessenger.com'] = 'yourforneymessengerarchive.etypegoogle5.com';
 
 /* jdcmountaindispatch.etypegoogle5.com */
 $sites['jdcmountaindispatch.etypegoogle5.com'] = 'jdcmountaindispatch.com';

@@ -15,10 +15,8 @@ $sites['www.devilsriver.news'] = 'devilsrivernews.com';
 $sites['yourforneymessenger.etypegoogle5.com'] = 'yourforneymessenger.etypegoogle5.com';
 $sites['yourforneymessenger.com'] = 'yourforneymessenger.etypegoogle5.com';
 $sites['www.yourforneymessenger.com'] = 'yourforneymessenger.etypegoogle5.com';
-
 $sites['forneymessengernewspaper.com'] = 'yourforneymessenger.etypegoogle5.com';
 $sites['www.forneymessengernewspaper.com'] = 'yourforneymessenger.etypegoogle5.com';
-
 $sites ['archive.yourforneymessenger.com'] = 'yourforneymessengerarchive.etypegoogle5.com';
 
 /* jdcmountaindispatch.etypegoogle5.com */

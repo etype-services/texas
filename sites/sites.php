@@ -78,11 +78,10 @@ $sites['edenecho.net'] = 'theedenecho.com';
 $sites['www.edenecho.net'] = 'theedenecho.com';
 
 /* eastlandcountytoday.etypegoogle5.com */
-$sites['eastlandcountytoday.etypegoogle5.com'] = 'eastlandcountytoday.com';
-$sites['eastlandcountytoday.com'] = 'eastlandcountytoday.com';
-$sites['www.eastlandcountytoday.com'] = 'eastlandcountytoday.com';
-
-$sites['eastlandcountytodaycni.etypegoogle5.com'] = 'eastlandcountytoday.etypegoogle5.com';
+$sites['eastlandcountytoday.etypegoogle5.com'] = 'eastlandcountytoday.etypegoogle5.com';
+$sites['eastlandcountytoday.com'] = 'eastlandcountytoday.etypegoogle5.com';
+$sites['www.eastlandcountytoday.com'] = 'eastlandcountytoday.etypegoogle5.com';
+$sites['archive.eastlandcountytoday.com'] = 'eastlandcountytodayarchive.etypegoogle5.com';
 
 $sites['eldoradosuccess.etypegoogle5.com'] = 'eldoradosuccess.com';
 $sites['eldoradosuccess.com'] = 'eldoradosuccess.com';

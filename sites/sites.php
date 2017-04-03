@@ -56,14 +56,10 @@ $sites['www.perrytonherald.com'] = 'perrytonherald.com';
 $sites['mybiglake.etypegoogle5.com'] = 'mybiglake.com';
 $sites['mybiglake.com'] = 'mybiglake.com';
 $sites['www.mybiglake.com'] = 'mybiglake.com';
-$sites['prod.mybiglake.com'] = 'mybiglake.com';
-$sites['dev.mybiglake.com'] = 'mybiglake.com';
 
 $sites['cantonguide.etypegoogle5.com'] = 'cantonguide.com';
 $sites['cantonguide.com'] = 'cantonguide.com';
 $sites['www.cantonguide.com'] = 'cantonguide.com';
-$sites['prod.cantonguide.com'] = 'cantonguide.com';
-$sites['dev.cantonguide.com'] = 'cantonguide.com';
 
 $sites['gonzalescannon.etypegoogle5.com'] = 'gonzalescannon.com';
 $sites['gonzalescannon.com'] = 'gonzalescannon.com';
@@ -73,7 +69,6 @@ $sites['www.gonzalescannon.com'] = 'gonzalescannon.com';
 $sites['theedenecho.etypegoogle5.com'] = 'theedenecho.com';
 $sites['theedenecho.com'] = 'theedenecho.com';
 $sites['www.theedenecho.com'] = 'theedenecho.com';
-
 $sites['edenecho.net'] = 'theedenecho.com';
 $sites['www.edenecho.net'] = 'theedenecho.com';
 
@@ -95,15 +90,6 @@ $sites['fayettecountyrecord.etypegoogle5.com'] = 'fayettecountyrecord.com';
 $sites['fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['www.fayettecountyrecord.com'] = 'fayettecountyrecord.com';
 $sites['fayettecountyrecorddev.etypegoogle5.com'] = 'fayettecountyrecord.com';
-
-/* haysnewsdispatch.etypegoogle5.com */
-$sites['haysnewsdispatch.etypegoogle5.com'] = 'haysnewsdispatch.com';
-$sites['haysnewsdispatch.com'] = 'haysnewsdispatch.com';
-$sites['www.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
-
-$sites['newsdispatchnewspaper.etypegoogle5.com'] = 'haysnewsdispatch.com';
-$sites['newsdispatchnewspaper.com'] = 'haysnewsdispatch.com';
-$sites['www.haysnewsdispatch.com'] = 'haysnewsdispatch.com';
 
 /* fishercountychronicle.etypegoogle5.com */
 $sites['fishercountychronicle.etypegoogle5.com'] = 'fishercountychronicle.com';
@@ -169,21 +155,6 @@ $sites['seniorific.etypegoogle5.com'] = 'seniorific.com';
 $sites['seniorific.com'] = 'seniorific.com';
 $sites['www.seniorific.com'] = 'seniorific.com';
 $sites['seniorific-archives.etypegoogle5.com'] = 'seniorific-archives.etypegoogle5.com';
-
-/* haysfreepress.etypegoogle5.com */
-$sites['haysfreepress.etypegoogle5.com'] =  'haysfreepress.com';
-$sites['haysfreepress.com'] =  'haysfreepress.com';
-$sites['www.haysfreepress.com'] =  'haysfreepress.com';
-$sites['hays-freepress.com'] =  'haysfreepress.com';
-$sites['www.hays-freepress.com'] =  'haysfreepress.com';
-$sites['haysfreepress.net'] =  'haysfreepress.com';
-$sites['www.haysfreepress.net'] =  'haysfreepress.com';
-$sites['bartonpublications.com'] =  'haysfreepress.com';
-$sites['www.bartonpublications.com'] =  'haysfreepress.com';
-$sites['bartonpublicationsinc.com'] =  'haysfreepress.com';
-$sites['www.bartonpublicationsinc.com'] =  'haysfreepress.com';
-
-$sites['haysfreepressnewcontent.etypegoogle5.com'] =  'haysfreepressnewcontent';
 
 /* ozonastockman.etypegoogle5.com */
 $sites['ozonastockman.etypegoogle5.com'] =  'ozonastockman.com';

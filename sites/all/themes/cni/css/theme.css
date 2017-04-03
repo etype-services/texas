@@ -269,6 +269,10 @@ h3.site-slogan {
     padding: 0 20px 20px;
 }
 
+#main-content #block-system-main .block-inner {
+    padding: 0 20px 20px;
+}
+
 article .field-image {
     margin-bottom: 1em;
 }
@@ -466,25 +470,45 @@ article .field-image {
 
 /* USER MENU
 --------------------------------------------------------------------------*/
+.region-user-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.6em;
+    background-color: #f3f1f1;
+}
 
 #user-menu {
     margin: 0;
-    border-bottom: 1px solid #dddddd;
-    background: #f5f5f5;
+    font-family: 'Lato', sans-serif;
+}
+
+#user-menu ul.menu {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#user-menu ul.menu li {
+    float: none;
 }
 
 #user-menu ul.menu li a {
     display: block;
-    line-height: 25px;
+    line-height: 36px;
     font-size: 11px;
-    padding: 0 20px;
+    padding: 0 12px;
     text-transform: uppercase;
     border-right: 1px solid #dddddd;
     color: #111111;
 }
 
+#user-menu ul.menu li.last a {
+    border-right: none;
+}
+
 #user-menu ul.menu li a:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
     text-decoration: none;
 }
 
@@ -522,7 +546,7 @@ article .field-image {
 }
 
 #user-menu ul.menu li li a:hover, #user-menu ul.menu li li a.active:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
 }
 
 #main-menu ul.menu li ul ul {
@@ -600,13 +624,13 @@ article .field-image {
 
 #main-menu ul.menu li a:hover {
     color: #333333;
-    background: #eeeeee;
+    background: #f3f1f1;
     text-decoration: none;
 }
 
 #main-menu ul.menu li a.active {
     color: #222222;
-    background-color: #cccccc;
+    background-color: #f3f1f1;
 }
 
 #main-menu ul.menu li ul li a {
@@ -695,7 +719,7 @@ article .field-image {
 }
 
 #main-menu-second-level ul.menu li li a:hover, #main-menu-second-level ul.menu li li a.active:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
     font-size: 0.9em;
 }
 
@@ -760,7 +784,7 @@ article .field-image {
     font-weight: bold;
     padding: 0 5px 0 5px;
     font-size: 0.9em;
-    background: #eeeeee;
+    background: #f3f1f1;
 }
 
 .node ul.links li.node-readmore a {
@@ -885,16 +909,16 @@ article .field-image {
 /* SEARCH FORM
 --------------------------------------------------------------------------*/
 
-.region-search-box {
-    float: right;
+#block-search-form {
+    padding: 0 8px;
+    flex-grow: 2;
 }
 
 #search-block-form {
     margin-top: 0;
     background: 0;
     line-height: 25px;
-    border-left: 1px solid #dddddd;
-    background: #ffffff;
+    float: right;
 }
 
 #search-block-form h2, #search-block-form label {
@@ -917,22 +941,22 @@ article .field-image {
 #search-block-form .form-submit {
     display: inline-block;
     width: auto;
-    height: 25px;
-    font-size: 0.8em;
+    height: 36px;
+    font-size: 11px;
     padding: 0 5px;
     border-radius: 0;
     text-transform: uppercase;
     background: 0;
     font-weight: normal;
-    background: #ffffff;
 }
 
 #search-block-form .form-text {
-    padding: 0 10px;
-    width: 200px;
+    padding: 0;
     color: #999999;
     font-style: italic;
-    background: #ffffff;
+    background-color: #ffffff;
+    position: relative;
+    top: 1px;
 }
 
 #search-block-form input:focus {
@@ -951,17 +975,10 @@ article .field-image {
 /* SOCIAL
 --------------------------------------------------------------------------*/
 
-#social {
-    float: left;
-    padding-left: 10px;
-    margin-right: -10px;
-    padding-top: 4px;
-    margin-bottom: -4px;
-}
-
-#social ul {
+ul.social-links {
     padding: 0;
     margin: 0;
+    height: 36px;
 }
 
 .social-links li {
@@ -971,10 +988,12 @@ article .field-image {
 }
 
 .social-links li a {
-    display: inline-block;
-    padding-left: 10px;
-    width: 16px;
-    height: 16px;
+    display: block;
+    width: 40px;
+    height: 36px;
+    background-size: 35px;
+    position: relative;
+    top: 2px;
 }
 
 .facebook {
@@ -1277,6 +1296,10 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin-left: 168px;
 }
 
+.node-article .submitted {
+    margin-left: 0;
+}
+
 /* ADVANCED POLL
 --------------------------------------------------------------------------*/
 #block-advpoll-advpoll-recent h2.title {
@@ -1339,7 +1362,7 @@ article.node-webform .node-content-wrapper h1.title {
 /* flexslider overrides */
 .flexslider {
     font: 0.8em/1.4 lato;
-    margin: 0;
+    margin: 0 0 6em 0;
 }
 
 .flex-control-nav {
@@ -1367,4 +1390,11 @@ li.views-fluid-grid-item {
     color: inherit;
     background: none;
     border: none;
+}
+
+/* override date.css from date module
+ * theme makes class from title which invokes calendar css
+ */
+.node-type-article.calendar {
+    width: inherit;
 }

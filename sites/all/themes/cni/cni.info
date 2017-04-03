@@ -31,7 +31,6 @@ regions[header] = Header
 regions[user_menu] = User Menu
 regions[main_menu] = Main Menu
 regions[main_menu_second_level] = Main Menu Second Level (via Menublock)
-regions[search_box] = Search Box
 regions[highlighted] = Highlighted
 regions[help] = Help
 regions[sidebar_first] = First sidebar

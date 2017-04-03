@@ -62,10 +62,6 @@ function etype_block_info() {
     'info' => t('Twitter'),
   );
 
-  $blocks['Own Local'] = array(
-    'info' => t('Own Local'),
-  );
-
   $blocks['e-Edition'] = array(
     'info' => t('e-Edition'),
   );
@@ -97,11 +93,6 @@ function etype_block_view($delta = '') {
     case 'Twitter':
       $block['subject'] = 'Twitter';
       $block['content'] = _etype_twitter_content();
-      break;
-
-    case 'Own Local':
-      $block['subject'] = '';
-      $block['content'] = _etype_ownlocal_content();
       break;
 
     case 'e-Edition':
@@ -218,18 +209,8 @@ function etype_site_path() {
 }
 
 /**
- * @return string
+ * e-Edition block
  */
-function _etype_ownlocal_content() {
-  $output = '';
-  $path = etype_site_path();
-  $file = $path . '/ownlocal.html';
-  if (file_exists($file)) {
-    $output .= file_get_contents($file);
-  }
-  return $output;
-}
-
 function _etype_e_edition_content() {
   $e_editions = etype_e_editions();
   $output = '';
@@ -239,17 +220,6 @@ function _etype_e_edition_content() {
 ';
   }
   return $output;
-}
-
-/* Add Own Local css and js if necessary */
-/* TODO Remove? */
-$own_local_file = etype_site_path() . '/ownlocal.html';
-if (file_exists($own_local_file)) {
-    drupal_add_js(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js', 'file');
-    drupal_add_css(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.css', array(
-        'group' => CSS_THEME,
-        'type' => 'file'
-    ));
 }
 
 /**

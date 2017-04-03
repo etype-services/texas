@@ -1,13 +1,13 @@
 <div id="page-top">
+
+  <?php if ($page['user_menu']): ?>
+      <nav id="user-menu" class="clearfix">
+        <?php print render($page['user_menu']); ?>
+        <?php print render($page['search_box']); ?>
+      </nav>
+  <?php endif; ?>
+
     <div class="page-inner <?php echo $grid_size ?>">
-
-      <?php if ($page['user_menu']): ?>
-          <nav id="user-menu" class="clearfix">
-            <?php print render($page['user_menu']); ?>
-            <?php print render($page['search_box']); ?>
-          </nav>
-      <?php endif; ?>
-
         <div class="header-wrapper clearfix">
             <div class="header-wrapper-inner <?php echo $grid_full_width ?>">
                 <header>

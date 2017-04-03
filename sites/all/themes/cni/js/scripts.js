@@ -1,62 +1,49 @@
 (function ($) {
-
-    Drupal.behaviors.bonesSuperfish = {
-
-        attach: function (context, settings) {
-
-            $('#user-menu ul.menu', context).superfish({
-                delay: 400,
-                animation: {height: 'show'},
-                speed: 500,
-                easing: 'easeOutBounce',
-                autoArrows: false,
-                dropShadows: false /* Needed for IE */
-            });
-
-        }
-    }
-
-    $(function () {
-
-        $('.postscript-wrapper img').hover(function () {
-            $(this).animate({
-                backgroundColor: "#ff7800", opacity: "1.0"
-            }, 'fast');
-        }, function () {
-            $(this).animate({
-                backgroundColor: "#555", opacity: "0.9"
-            }, 'normal');
-        });
-
-    });
-
-
-})(jQuery);
-
-(function ($) {
     Drupal.behaviors.superfish = {
         attach: function (context) {
-            var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
-            obj.click(function (e) {
-                var text = $(this).text();
-                e.preventDefault();
-                $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').toggle();
-                if (text == 'Show Menu') {
-                    $(this).text('Hide Menu');
+
+            function mobile_menu(w, searchForm) {
+                var wrapper = $('#mobile-menu-wrapper');
+
+                if (w > 767) {
+                    if ( wrapper.length > 0 ) {
+                        wrapper.remove();
+                        searchForm.show();
+                    }
                 } else {
-                    $(this).text('Show Menu');
+                    if ( wrapper.length === 0 ) {
+                        $('.region-user-menu').prepend('<div id="mobile-menu-wrapper"><div id="mobile-menu-control"></div><ul id="mobile-menu" class="menu"></ul></div>');
+
+                        searchForm.hide();
+                        $('#superfish-1 li').clone().appendTo($('#mobile-menu'));
+                        $('#block-system-user-menu ul.menu li').clone().appendTo($('#mobile-menu'));
+                        $('#mobile-menu li ul').remove();
+                        $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
+
+                    }
+                }
+            }
+
+            var searchForm = $('#search-block-form');
+            var search = $('#search-control');
+            if ( search.length === 0 ) {
+                $('#block-search-form .content').append('<div id="search-control"></div>');
+                var search = $('#search-control');
+            }
+
+            $(search).click(function(){
+                searchForm.toggle();
+                if(searchForm.is(':visible')) {
+                    $('#edit-search-block-form--2').focus();
                 }
             });
+
+            var w = $(window).width();
+            mobile_menu(w, searchForm);
 
             $(window).resize(function () {
                 var w = $(window).width();
-                if (w > 767) {
-                    $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').css("display", "list-item").show();
-                } else {
-                    $('#block-superfish-1 ul li.sf-depth-1:first-child a').text('Show Menu');
-                    $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').hide();
-                    $('#block-superfish-1 ul li.sf-depth-1 ul').hide();
-                }
+                mobile_menu(w, searchForm);
             });
         }
     };

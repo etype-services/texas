@@ -182,6 +182,21 @@ function cni_preprocess_html(&$variables) {
     );
   }
 
+  /* not using media to get smaller desktop browsers as well */
+  $max_user_nav_width  = theme_get_setting('max_user_nav_width');
+  if (!empty($max_user_nav_width)) {
+    drupal_add_css(
+      '#main-menu #block-system-user-menu ul.menu {max-width: ' . $max_user_nav_width . ' !important;}',
+      array(
+        'group' => CSS_THEME,
+        'type' => 'inline',
+        'media' => 'screen',
+        'preprocess' => FALSE,
+        'weight' => '9999',
+      )
+    );
+  }
+
   $body_background = theme_get_setting('body_background');
   if (!empty($body_background)) {
     drupal_add_css(

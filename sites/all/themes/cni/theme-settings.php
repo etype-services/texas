@@ -117,10 +117,18 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
 
   $form['advanced_settings']['misc_settings']['max_nav_width'] = array(
     '#type' => 'textfield',
-    '#title' => t('Max Main Navigation Width'),
-    '#description' => t('Optionally constrain main navigation width'),
+    '#title' => t('Max Main Menu Width'),
+    '#description' => t('Optionally constrain main menu width'),
     '#size' => 10,
     '#default_value' => theme_get_setting('max_nav_width'),
+  );
+
+  $form['advanced_settings']['misc_settings']['max_user_nav_width'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Max User Menu Width'),
+    '#description' => t('Optionally constrain user menu width'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('max_user_nav_width'),
   );
 
   $form['advanced_settings']['misc_settings']['logo_width'] = array(

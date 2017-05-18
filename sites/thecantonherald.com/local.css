@@ -1,0 +1,13 @@
+/* changed padding so all main nav menu items appear on one row and don't wrap */
+#block-superfish-1 ul li a {
+    background: transparent none repeat scroll 0 0;
+    border-left: medium none;
+    border-right: medium none;
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 0;
+    padding: 0 14px;
+    text-decoration: none;
+}

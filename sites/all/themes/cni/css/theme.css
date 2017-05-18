@@ -195,7 +195,8 @@ h3.site-slogan {
     overflow: hidden;
 }
 
-.preface-wrapper .views-row .views-field-field-image img {
+.preface-wrapper .views-row .views-field-field-image img,
+.preface-wrapper .views-row .views-field-field-mugshot img {
     display: block;
     float: left;
     margin-right: 10px;
@@ -754,13 +755,14 @@ article .field-image {
 /* NODES
 --------------------------------------------------------------------------*/
 
-.node .field-name-field-image img {
+/* image display on article page with flexslider override */
+.node .field-name-field-image img,
+.flexslider .slides img {
     display: block;
-    margin-top: 0;
-    margin-left: 0;
-    margin-bottom: 0;
-    width: 100%;
-    height: auto
+    height: auto;
+    width: initial;
+    max-width: 100%;
+    margin: auto;
 }
 
 .node .field-name-field-video iframe {
@@ -824,7 +826,8 @@ article .field-image {
     display: block;
 }
 
-.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img {
+.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img,
+.node-teaser .field-name-field-mugshot .field-items .field-item:first-child img {
     display: block;
     padding: 10px;
     float: left;
@@ -1158,11 +1161,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0 0 0 0;
 }
 
-.field-name-field-mugshot {
-    float: left;
-    margin-right: 10px;
-}
-
 .field-name-field-mug {
     float: right;
 }
@@ -1362,7 +1360,9 @@ article.node-webform .node-content-wrapper h1.title {
 /* flexslider overrides */
 .flexslider {
     font: 0.8em/1.4 lato;
-    margin: 0 0 6em 0;
+    /*margin: 0 0 6em 0;*/
+    margin: 0;
+    border: none;
 }
 
 .flex-control-nav {

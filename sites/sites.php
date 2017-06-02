@@ -209,9 +209,5 @@ $sites['baycitysentinel.etypegoogle5.com'] = 'baycitysentinel.etypegoogle5.com';
 $sites['baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';
 $sites['www.baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';
 
-$sites['infinitieplus.etypegoogle5.com'] = 'infinitieplus.etypegoogle5.com';
-$sites['infinitieplus.com'] = 'infinitieplus.etypegoogle5.com';
-$sites['www.infinitieplus.com'] = 'infinitieplus.etypegoogle5.com';
-
 $sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
 

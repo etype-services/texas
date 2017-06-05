@@ -1,7 +1,8 @@
 <?php
 $sites['uvaldeleadernews.etypegoogle5.com'] = 'uvaldeleadernews.com';
-$sites['uvaldeleadernews.com'] = 'uvaldeleadernews.com';
-$sites['www.uvaldeleadernews.com'] = 'uvaldeleadernews.com';
+$sites['uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
+$sites['www.uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
+$sites['archive.uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
 
 /* devilsrivernews.etypegoogle5.com */
 $sites['devilsrivernews.etypegoogle5.com'] = 'devilsrivernews.com';

@@ -1148,6 +1148,14 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 
 #widget_pager_bottom_slideshow-block {
     display: flex;
-    margin: 0px 10px 0 0;
+    margin: 0;
     justify-content: space-around;
+}
+
+.views-slideshow-pager-fields > div {
+    padding-left: 0;
+}
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img {
+    margin: 0;
 }

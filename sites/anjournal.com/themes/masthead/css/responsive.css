@@ -232,93 +232,93 @@ Note: Design for a width of 420px
 }
 
 #block-block-1 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-1 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 #block-block-1 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-1 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-10 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-10 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-9 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-9 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-8 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-8 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-13 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-13 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-11 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-11 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-14 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-14 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-16 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-16 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-17 .content {
@@ -366,8 +366,8 @@ Note: Design for a width of 420px
 }
 
 #block-simpleads-ad-groups-64 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 .page-taxonomy #capption {
@@ -465,12 +465,12 @@ blockquote {
 }
 
 #block-block-19 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-19 .block-inner {
-    padding: 0px 0 0 0;
+    padding: 0;
     margin: 0px;
 }
 
@@ -497,7 +497,7 @@ blockquote {
 
 #block-dfp-tpa-southsidebar1 .block-inner {
     padding: 0px;
-    margin: 0px 0px 20px 0px;
+    margin: 0 0 20px 0;
 }
 
 #block-dfp-tpa-southleaderboard iframe {

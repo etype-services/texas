@@ -1,8 +1,8 @@
 #mm0 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-/** 
+/**
 
 Note: Design for a width of 768px
 
@@ -22,13 +22,12 @@ Note: Design for a width of 768px
 
     .node .content img {
         max-width: 450px;
-        max-height: auto;
     }
 
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 240px;
+        height: 336px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
@@ -60,7 +59,7 @@ Note: Design for a width of 768px
 
 }
 
-/** 
+/**
 Note: Design for a width of 300px
 **/
 
@@ -72,7 +71,7 @@ Note: Design for a width of 300px
 
     .node-teaser .field-name-field-image img {
         float: none;
-        margin: 0 0 0px 0;
+        margin: 0;
     }
 
     .node-teaser .node-content-wrapper {
@@ -98,7 +97,6 @@ Note: Design for a width of 300px
 
     .node .content img {
         max-width: 240px;
-        max-height: auto;
     }
 
     /* SLIDESHOW
@@ -109,7 +107,7 @@ Note: Design for a width of 300px
     }
 
     .view-slideshow .views_slideshow_main {
-        height: 145px;
+        height: 218px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
@@ -139,7 +137,7 @@ Note: Design for a width of 300px
 
 }
 
-/** 
+/**
 Note: Design for a width of 420px
 **/
 
@@ -147,7 +145,6 @@ Note: Design for a width of 420px
 
     .node .content img {
         max-width: 380px;
-        max-height: auto;
     }
 
     .node-teaser .field-name-field-image img {
@@ -183,7 +180,7 @@ Note: Design for a width of 420px
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 200px;
+        height: 295px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
@@ -210,6 +207,16 @@ Note: Design for a width of 420px
         height: 220px;
     }
 
+}
+
+/*
+ * hack to deal with "flashing" menus on mobile
+ */
+@media only screen and (max-width: 759px) {
+    #superfish-1, #block-system-user-menu ul.menu {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 #block-block-1 .content {
@@ -318,8 +325,8 @@ Note: Design for a width of 420px
 }
 
 #block-simpleads-ad-groups-51 .block-inner {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 #block-simpleads-ad-groups-63 .content {

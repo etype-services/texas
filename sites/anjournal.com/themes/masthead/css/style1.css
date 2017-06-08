@@ -619,11 +619,7 @@ h3.site-slogan {
 
 .node .taxonomy .field-type-taxonomy-term-reference {
     margin: 5px 0;
-    field-type-taxonomy-term-reference background: #f9f9f9;
-}
-
-.node .taxonomy-inner {
-    ≈
+    background: #f9f9f9;
 }
 
 .node .taxonomy a {
@@ -633,7 +629,6 @@ h3.site-slogan {
 }
 
 /* Teasers */
-
 .node-teaser {
     margin-bottom: 20px;
 }

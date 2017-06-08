@@ -27,7 +27,7 @@ Note: Design for a width of 768px
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 336px;
+        height: 264px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
@@ -41,7 +41,7 @@ Note: Design for a width of 768px
 
     .view-slideshow .views_slideshow_main .views-field-body {
         width: 450px;
-        top: 130px;
+        top: 80px;
         font-size: 11px;
     }
 

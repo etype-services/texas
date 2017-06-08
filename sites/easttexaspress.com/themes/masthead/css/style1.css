@@ -1,4 +1,4 @@
-/* HTML 
+/* HTML
 --------------------------------------------------------------------------*/
 
 body {
@@ -68,7 +68,7 @@ td {
     border: 1px solid #dddddd;
 }
 
-/* HEADER 
+/* HEADER
 --------------------------------------------------------------------------*/
 
 .header-wrapper-inner {
@@ -84,9 +84,6 @@ header {
     max-width: 100%;
 }
 
-hgroup {
-}
-
 h1.site-name, h2.site-name {
     line-height: 48px;
     font-size: 48px;
@@ -98,7 +95,7 @@ h3.site-slogan {
     text-shadow: 1px 1px #ffffff;
 }
 
-/* SLIDESHOW 
+/* SLIDESHOW
 --------------------------------------------------------------------------*/
 
 .view-slideshow {
@@ -106,19 +103,19 @@ h3.site-slogan {
 
 .view-slideshow .views_slideshow_main {
     position: relative;
-    height: 400px;
+    height: 420px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-image {
     position: absolute;
-    top: -20px;
-    left: -20px;
+    /*top: -20px;
+    left: -20px;*/
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-video {
     position: absolute;
-    top: -20px;
-    left: -20px;
+    /*top: -20px;
+    left: -20px;*/
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-image img {
@@ -129,8 +126,8 @@ h3.site-slogan {
     position: absolute;
     padding: 20px;
     width: 578px;
-    top: -20px;
-    left: -20px;
+    /*top: -20px;
+    left: -20px;*/
     background: url(../images/style2/trans.png);
     color: #ffffff;
 }
@@ -149,7 +146,7 @@ h3.site-slogan {
     width: 578px;
     padding: 20px;
     top: 290px;
-    left: -20px;
+    /*left: -20px;*/
     background: url(../images/style2/trans.png);
     color: #fff;
     text-shadow: -1px -1px #000000;
@@ -178,9 +175,10 @@ h3.site-slogan {
 
 .view-slideshow .views-slideshow-controls-bottom #views_slideshow_pager_field_item_bottom_slideshow-block_5 .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom #views_slideshow_pager_field_item_bottom_slideshow-block_5 .views-field-field-video img {
     margin-right: 0;
+	/*margin-top: -21px;*/
 }
 
-/* PREFACE 
+/* PREFACE
 --------------------------------------------------------------------------*/
 .preface-wrapper .block .content {
     height: 300px;
@@ -200,7 +198,7 @@ h3.site-slogan {
     background: #f9f9f9;
 }
 
-/* MAIN CONTENT 
+/* MAIN CONTENT
 --------------------------------------------------------------------------*/
 
 .main-content-wrapper {
@@ -216,7 +214,7 @@ h3.site-slogan {
     box-shadow: 0px 1px 5px #bbbbbb;
 }
 
-/* SIDEBARS 
+/* SIDEBARS
 --------------------------------------------------------------------------*/
 
 .sidebar .content {
@@ -233,7 +231,7 @@ h3.site-slogan {
     background: #f9f9f9;
 }
 
-/* POSTSCRIPT 
+/* POSTSCRIPT
 --------------------------------------------------------------------------*/
 
 #postscript {
@@ -305,7 +303,7 @@ h3.site-slogan {
     color: #ffffff;
 }
 
-/* LISTS 
+/* LISTS
 --------------------------------------------------------------------------*/
 
 .item-list ul {
@@ -1033,14 +1031,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     margin-right: 10px;
 }
 
-.will-maines .field-image, byron-mcnutt .field-image, cal-thomas .field-image, andy-rooney .field-image, rock-doc .field-image, robert-reich .field-image {
-    display: none;
-}
-
-.will-maines h1#page-title, .byron-mcnutt h1#page-title, .cal-thomas h1#page-title, .andy-rooney h1#page-title, .rock-doc h1#page-title, .robert-reich h1#page-title {
-    display: none;
-}
-
 .field-name-field-mug {
     float: right;
 }
@@ -1090,4 +1080,23 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     width: 728px;
     height: 90px;
     margin-bottom: 5px;
+}
+
+/* slideshow fixes */
+#block-views-slideshow-block .block-inner {
+    padding: 0  0 20px 0 ;
+}
+
+#widget_pager_bottom_slideshow-block {
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+}
+
+.views-slideshow-pager-fields > div {
+    padding-left: 0;
+}
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img {
+    margin: 0;
 }

@@ -607,7 +607,7 @@ h3.site-slogan {
 .node ul.inline li {
     display: inline;
     list-style-type: none;
-    padding: 0 5px 0 0px;
+    padding: 0 5px 0 0;
 }
 
 .node ul.links li a {

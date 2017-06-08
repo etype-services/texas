@@ -96,7 +96,7 @@ h3.site-slogan {
 
 .view-slideshow .views_slideshow_main {
     position: relative;
-    height: 420px;
+    height: 320px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-image {
@@ -138,7 +138,7 @@ h3.site-slogan {
     height: 50px;
     width: 578px;
     padding: 20px;
-    top: 190px;
+    top: 156px;
     /*left: -20px;*/
     background: url(../images/style2/trans.png);
     color: #cccccc;

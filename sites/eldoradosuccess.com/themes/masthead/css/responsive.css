@@ -153,6 +153,7 @@ Note: Design for a width of 420px
 **/
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+
     #block-block-1 {
         display: block;
         width: 220px;
@@ -165,7 +166,6 @@ Note: Design for a width of 420px
 
     .node .content img {
         max-width: 380px;
-        max-height: auto;
     }
 
     .node-teaser .field-name-field-image img {
@@ -201,7 +201,7 @@ Note: Design for a width of 420px
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 200px;
+        height: 295px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {

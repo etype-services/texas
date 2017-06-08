@@ -70,7 +70,7 @@ Note: Design for a width of 300px
 @media only screen and (max-width: 767px) {
 
     .main-content-wrapper {
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     .node-teaser .field-name-field-image img {
@@ -79,7 +79,7 @@ Note: Design for a width of 300px
     }
 
     .node-teaser .node-content-wrapper {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .node-teaser .field-name-field-video iframe {
@@ -110,12 +110,12 @@ Note: Design for a width of 300px
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .social-links li a {
-        padding-left: 0px;
+        padding-left: 0;
         padding-right: 1px;
     }
 
     .view-slideshow .views_slideshow_main {
-        height: 218px;
+        height: 168px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {

@@ -237,9 +237,9 @@ Note: Design for a width of 420px
     #superfish-1, #block-system-user-menu ul.menu {
         display: none;
         visibility: hidden;
+
     }
 }
-
 
 #block-block-1 .content {
     padding: 0px 0 0 0;

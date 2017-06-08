@@ -22,7 +22,6 @@ Note: Design for a width of 768px
 
     .node .content img {
         max-width: 450px;
-        max-height: auto;
     }
 
     /* SLIDESHOW
@@ -118,7 +117,7 @@ Note: Design for a width of 300px
     }
 
     .view-slideshow .views_slideshow_main {
-        height: 195px;
+        height: 218px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {

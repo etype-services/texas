@@ -1536,8 +1536,8 @@ div.submitted span {
 }
 
 #block-dfp-tpa-westsidebar .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 /* dfp ads */
@@ -1545,4 +1545,22 @@ div.submitted span {
     max-width: 100%;
 }
 
+/* slideshow fixes */
+#block-views-slideshow-block .block-inner {
+    padding: 0  0 20px 0 ;
+}
+
+#widget_pager_bottom_slideshow-block {
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+}
+
+.views-slideshow-pager-fields > div {
+    padding-left: 0;
+}
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img {
+    margin: 0;
+}
 

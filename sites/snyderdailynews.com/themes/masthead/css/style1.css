@@ -1,4 +1,4 @@
-/* HTML 
+/* HTML
 --------------------------------------------------------------------------*/
 
 body {
@@ -68,7 +68,7 @@ td {
     border: 1px solid #dddddd;
 }
 
-/* HEADER 
+/* HEADER
 --------------------------------------------------------------------------*/
 
 .header-wrapper-inner {
@@ -94,7 +94,7 @@ h3.site-slogan {
     text-shadow: 1px 1px #ffffff;
 }
 
-/* SLIDESHOW 
+/* SLIDESHOW
 --------------------------------------------------------------------------*/
 
 .view-slideshow {
@@ -102,19 +102,15 @@ h3.site-slogan {
 
 .view-slideshow .views_slideshow_main {
     position: relative;
-    height: 400px;
+    height: 420px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-image {
     position: absolute;
-    top: -20px;
-    left: -20px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-video {
     position: absolute;
-    top: -20px;
-    left: -20px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-image img {
@@ -125,8 +121,6 @@ h3.site-slogan {
     position: absolute;
     padding: 20px;
     width: 578px;
-    top: -20px;
-    left: -20px;
     background: url(../images/style2/trans.png);
     color: #ffffff;
 }
@@ -145,7 +139,6 @@ h3.site-slogan {
     width: 578px;
     padding: 20px;
     top: 290px;
-    left: -20px;
     background: url(../images/style2/trans.png);
     color: #fff;
     text-shadow: -1px -1px #000000;
@@ -176,7 +169,7 @@ h3.site-slogan {
     margin-right: 0;
 }
 
-/* PREFACE 
+/* PREFACE
 --------------------------------------------------------------------------*/
 .preface-wrapper .block .content {
     height: 300px;
@@ -196,7 +189,7 @@ h3.site-slogan {
     background: #f9f9f9;
 }
 
-/* MAIN CONTENT 
+/* MAIN CONTENT
 --------------------------------------------------------------------------*/
 
 .main-content-wrapper {
@@ -212,7 +205,7 @@ h3.site-slogan {
     box-shadow: 0 1px 5px #bbbbbb;
 }
 
-/* SIDEBARS 
+/* SIDEBARS
 --------------------------------------------------------------------------*/
 
 .sidebar .content {
@@ -229,7 +222,7 @@ h3.site-slogan {
     background: #f9f9f9;
 }
 
-/* POSTSCRIPT 
+/* POSTSCRIPT
 --------------------------------------------------------------------------*/
 
 #postscript {
@@ -301,7 +294,7 @@ h3.site-slogan {
     color: #ffffff;
 }
 
-/* LISTS 
+/* LISTS
 --------------------------------------------------------------------------*/
 
 .item-list ul {
@@ -906,7 +899,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li {
     border: 1px solid #e5e5e5;
     border-bottom: none;
     padding: 2px 3px;
-    margin: 0 0 0 0;
+    margin: 0;
     position: relative;
 }
 
@@ -1443,5 +1436,24 @@ blockquote {
 #block-dfp-tpa-westsidebar iframe {
     width: 300px;
     height: 250px;
+}
+
+/* slideshow fixes */
+#block-views-slideshow-block .block-inner {
+    padding: 0 0 20px 0;
+}
+
+#widget_pager_bottom_slideshow-block {
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+}
+
+.views-slideshow-pager-fields > div {
+    padding-left: 0;
+}
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img {
+    margin: 0;
 }
 

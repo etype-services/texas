@@ -626,10 +626,6 @@ h3.site-slogan {
   background: #f9f9f9;	
 }
 
-.node .taxonomy-inner {
-≈
-}
-
 .node .taxonomy a {
   color: #254dbf;
   font-size: 0.8em;
@@ -739,7 +735,7 @@ h3.site-slogan {
 }
 
 #search-block-form {
-  margin-top: 0x;
+  margin-top: 0;
   background: 0;
   line-height: 25px;
   border-left: 1px solid #dddddd;
@@ -751,8 +747,8 @@ h3.site-slogan {
 }
 
 #search-block-form  .form-item, #search-block-form  .form-actions {
-  margin-bottom: 0em;
-  margin-top: 0em;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 #search-block-form .form-text, #search-block-form .form-submit {

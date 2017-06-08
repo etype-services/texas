@@ -109,14 +109,10 @@ h3.site-slogan {
 
 .view-slideshow .views_slideshow_main .views-field-field-image {
     position: absolute;
-    top: -20px;
-    left: -20px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-video {
     position: absolute;
-    top: -20px;
-    left: -20px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-image img {
@@ -127,8 +123,6 @@ h3.site-slogan {
     position: absolute;
     padding: 20px;
     width: 578px;
-    top: -20px;
-    left: -20px;
     background: url(../images/style2/trans.png);
     color: #ffffff;
 }
@@ -147,7 +141,6 @@ h3.site-slogan {
     width: 578px;
     padding: 20px;
     top: 290px;
-    left: -20px;
     background: url(../images/style2/trans.png);
     color: #fff;
     text-shadow: -1px -1px #000000;
@@ -172,11 +165,6 @@ h3.site-slogan {
 
 .view-slideshow .views-slideshow-controls-bottom .active .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .active .views-field-field-video img {
     opacity: 1;
-}
-
-.view-slideshow .views-slideshow-controls-bottom #views_slideshow_pager_field_item_bottom_slideshow-block_5 .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom #views_slideshow_pager_field_item_bottom_slideshow-block_5 .views-field-field-video img {
-    margin-right: 0;
-	margin-top: -20px;
 }
 
 /* PREFACE 
@@ -254,7 +242,7 @@ h3.site-slogan {
 }
 
 .postscript-wrapper .block-inner {
-    padding: 0px;
+    padding:0;
 }
 
 .postscript-wrapper .content {
@@ -582,7 +570,7 @@ h3.site-slogan {
 .node .field-name-field-image img {
     display: block;
     margin-top: -20px;
-    margin-left: 0px;
+    margin-left:0;
     margin-bottom: 10px;
 }
 
@@ -607,7 +595,7 @@ h3.site-slogan {
 .node ul.inline li {
     display: inline;
     list-style-type: none;
-    padding: 0 5px 0 0px;
+    padding: 0 5px 00;
 }
 
 .node ul.links li a {
@@ -673,7 +661,7 @@ h3.site-slogan {
 
 #comments .comment {
     padding: 10px 0;
-    margin-bottom: 0px;
+    margin-bottom:0;
     border-bottom: 1px solid #dddddd;
 }
 
@@ -714,7 +702,7 @@ h3.site-slogan {
 
 #comments .indented .comment {
     padding: 10px;
-    margin-left: 0px;
+    margin-left:0;
     margin-bottom: 0;
     background: #f9f9f9;
     border-bottom: 0;
@@ -880,8 +868,8 @@ ul.primary li a {
 --------------------------------------------------------------------------*/
 
 body #main-content .quicktabs-wrapper .block-inner {
-    padding: 0px;
-    margin-bottom: 0px;
+    padding:0;
+    margin-bottom:0;
     border: 0px solid #dddddd;
     border-bottom: 0px solid #000;
     background: 0;
@@ -1075,8 +1063,8 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 #block-dfp-tpa-westsidebar .block-inner {
-    padding: 0px;
-    margin: 0px 0px 20px 0px;
+    padding:0;
+    margin: 0 0 20px 0;
 }
 
 /* title */
@@ -1085,3 +1073,23 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding-bottom: 5px;
     border-bottom: 1px solid #dddddd;
 }
+
+/* slideshow fixes */
+#block-views-slideshow-block .block-inner {
+    padding: 0  0 20px 0 ;
+}
+
+#widget_pager_bottom_slideshow-block {
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+}
+
+.views-slideshow-pager-fields > div {
+    padding-left: 0;
+}
+
+.view-slideshow .views-slideshow-controls-bottom .views-field-field-image img {
+    margin: 0;
+}
+

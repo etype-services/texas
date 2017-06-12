@@ -27,7 +27,7 @@ Note: Design for a width of 768px
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 264px;
+        height: 260px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
@@ -41,7 +41,7 @@ Note: Design for a width of 768px
 
     .view-slideshow .views_slideshow_main .views-field-body {
         width: 450px;
-        top: 80px;
+        top: 130px;
         font-size: 11px;
     }
 
@@ -66,16 +66,16 @@ Note: Design for a width of 300px
 @media only screen and (max-width: 767px) {
 
     .main-content-wrapper {
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     .node-teaser .field-name-field-image img {
         float: none;
-        margin: 0;
+        margin: 0 0 20px 0;
     }
 
     .node-teaser .node-content-wrapper {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .node-teaser .field-name-field-video iframe {
@@ -102,7 +102,7 @@ Note: Design for a width of 300px
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .social-links li a {
-        padding-left: 0px;
+        padding-left: 0;
         padding-right: 1px;
     }
 
@@ -180,7 +180,7 @@ Note: Design for a width of 420px
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 224px;
+        height: 228px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
@@ -220,107 +220,107 @@ Note: Design for a width of 420px
 }
 
 #block-block-1 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-1 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 #block-block-1 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-1 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-10 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-10 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-9 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-9 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-8 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-8 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-13 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-13 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-11 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-11 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-14 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-14 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-16 .content {
-    padding: 0px 0 0 0;
+    padding: 0;
     color: #999999;
 }
 
 #block-block-16 .block-inner {
-    padding: 0px 0 0 0;
-    margin: 0px 0px 20px 0px;
+    padding: 0;
+    margin: 0 0 20px 0;
 }
 
 #block-block-17 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-block-17 .block-inner {
     padding: 5px;
-    margin: 0px;
+    margin: 0;
 }
 
 #block-simpleads-ad-groups-51 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
@@ -330,13 +330,13 @@ Note: Design for a width of 420px
 }
 
 #block-simpleads-ad-groups-63 .content {
-    padding: 0px;
+    padding: 0;
     color: #000;
 }
 
 #block-simpleads-ad-groups-63 .block-inner {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 #block-block-11 {

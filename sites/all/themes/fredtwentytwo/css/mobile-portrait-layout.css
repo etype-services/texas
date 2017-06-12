@@ -170,11 +170,11 @@ h2, h3, h4, h5, h6 {
     top: 7px;
 }
 
-#views_slideshow_cycle_main_home_page-block {
+#views_slideshow_cycle_main_home_page-block_1 {
     position: relative;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame-row-item {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame-row-item {
     border: none;
     height: 305px;
     width: 320px;
@@ -182,7 +182,7 @@ h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame .slideshow-overlay {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame .slideshow-overlay {
     background: none repeat-x scroll 0 bottom #333333;
     color: #FFFFFF;
     position: absolute;
@@ -192,22 +192,22 @@ h2, h3, h4, h5, h6 {
     z-index: 200;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame .slideshow-overlay a {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame .slideshow-overlay a {
     color: #CCCCCC;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame .slideshow-overlay .views-field-field-rate,
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame .slideshow-overlay .views-field-comment-count {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame .slideshow-overlay .views-field-field-rate,
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame .slideshow-overlay .views-field-comment-count {
     display: none;
     visibility: hidden;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame .views-field-title {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame .views-field-title {
     display: block;
     z-index: 1;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame .views-field-title h2 {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame .views-field-title h2 {
     border-bottom: 1px solid #555555;
     margin-bottom: 7px;
     margin-left: 10px;
@@ -217,7 +217,7 @@ h2, h3, h4, h5, h6 {
     margin-top: 0 !important;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame .views-field-title h2 a {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame .views-field-title h2 a {
     color: #FFFFFF;
     display: block;
     height: 97px;
@@ -227,7 +227,7 @@ h2, h3, h4, h5, h6 {
     width: 278px;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame .views-field-body-1 {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame .views-field-body-1 {
     clear: both;
     display: none;
     padding: 12px;
@@ -236,7 +236,7 @@ h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-field-comment-count, #views_slideshow_cycle_main_home_page-block .views-field-created, #views_slideshow_cycle_main_home_page-block .views-field-term-node-tid, #views_slideshow_cycle_main_home_page-block .views-field-name, #views_slideshow_cycle_main_home_page-block .views-field-field-rate {
+#views_slideshow_cycle_main_home_page-block_1 .views-field-comment-count, #views_slideshow_cycle_main_home_page-block_1 .views-field-created, #views_slideshow_cycle_main_home_page-block_1 .views-field-term-node-tid, #views_slideshow_cycle_main_home_page-block_1 .views-field-name, #views_slideshow_cycle_main_home_page-block_1 .views-field-field-rate {
     background: url("../images/comment.png") no-repeat scroll 0 0 transparent;
     display: block;
     font-size: 0.8em;
@@ -247,31 +247,31 @@ h2, h3, h4, h5, h6 {
     margin-bottom: 7px;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-field-field-rate {
+#views_slideshow_cycle_main_home_page-block_1 .views-field-field-rate {
     background: none repeat scroll 0 0 transparent;
     margin-right: 0;
     padding-left: 0;
     width: 158px;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-field-field-rate .views-label {
+#views_slideshow_cycle_main_home_page-block_1 .views-field-field-rate .views-label {
     float: left;
     margin-right: 7px;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-field-created {
+#views_slideshow_cycle_main_home_page-block_1 .views-field-created {
     background: url("../images/date.png") no-repeat scroll 0 0 transparent;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-field-term-node-tid {
+#views_slideshow_cycle_main_home_page-block_1 .views-field-term-node-tid {
     background: url("../images/tag.png") no-repeat scroll 0 0 transparent;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-field-name {
+#views_slideshow_cycle_main_home_page-block_1 .views-field-name {
     background: url("../images/author.png") no-repeat scroll 0 0 transparent;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame {
     height: 295px !important;
 }
 
@@ -295,7 +295,6 @@ h2, h3, h4, h5, h6 {
     height: 60px;
     margin-top: 0;
     left: 0;
-    width: 320px;
     z-index: 500;
     position: absolute;
     top: 430px;
@@ -332,15 +331,15 @@ h2, h3, h4, h5, h6 {
     width: 51px;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame-row-item .views-field-field-image {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame-row-item .views-field-field-image {
     margin-left: 0;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame-row-item .views-field-field-image .field-content {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame-row-item .views-field-field-image .field-content {
     margin-top: 0 !important;
 }
 
-#views_slideshow_cycle_main_home_page-block .views-slideshow-cycle-main-frame-row-item .views-field-field-image img {
+#views_slideshow_cycle_main_home_page-block_1 .views-slideshow-cycle-main-frame-row-item .views-field-field-image img {
     height: auto;
     margin-left: 0;
     width: 381px;

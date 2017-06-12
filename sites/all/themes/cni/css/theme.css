@@ -90,21 +90,23 @@ h3.site-slogan {
 
 /* SLIDESHOW
 --------------------------------------------------------------------------*/
+
+/* override #main-content .block-inner */
+#main-content #block-views-slideshow-block .block-inner {
+    padding: 0 0 20px 0;
+}
+
 .view-slideshow .views_slideshow_main {
     position: relative;
-    height: 400px;
+    height: 420px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-image {
     position: absolute;
-    top: -20px;
-    left: -20px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-video {
     position: absolute;
-    top: -20px;
-    left: -20px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-field-image img {
@@ -116,8 +118,6 @@ h3.site-slogan {
     position: absolute;
     padding: 20px;
     width: 578px;
-    top: -20px;
-    left: -20px;
     background: url(../images/trans.png);
     color: #ffffff;
     font-family: 'Lato', sans-serif;
@@ -136,7 +136,6 @@ h3.site-slogan {
     width: 578px;
     padding: 20px;
     top: 290px;
-    left: -20px;
     background: url(../images/trans.png);
     color: #ffffff;
 }
@@ -149,8 +148,7 @@ h3.site-slogan {
 
 .view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
     display: block;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin: 0;
     float: left;
     opacity: 0.5;
     border: 1px solid #333333;
@@ -159,7 +157,7 @@ h3.site-slogan {
 
 .view-slideshow .views-slideshow-controls-bottom .views-field-field-image img:hover, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img:hover {
     opacity: 1;
-    border: 1px solid #000
+    border: 1px solid #000;
 }
 
 .view-slideshow .views-slideshow-controls-bottom .active .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .active .views-field-field-video img {
@@ -174,6 +172,13 @@ h3.site-slogan {
     font-family: 'Lato', sans-serif;
     font-size: 0.7em;
 }
+
+#widget_pager_bottom_slideshow-block_1 {
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+}
+
 
 /* override module defaults */
 .views-slideshow-pager-fields > div {
@@ -255,7 +260,7 @@ h3.site-slogan {
 --------------------------------------------------------------------------*/
 
 .front .main-content-wrapper {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 
 #main-content .block-inner, #preface .block-inner, h1#page-title {

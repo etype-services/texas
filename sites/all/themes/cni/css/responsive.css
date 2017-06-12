@@ -155,20 +155,20 @@
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 240px;
+        height: 292px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
-        width: 452px;
+        width: 491px;
         height: auto;
     }
 
     .view-slideshow .views_slideshow_main .views-field-title {
-        width: 410px;
+        width: 451px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-body {
-        width: 410px;
+        width: 451px;
         top: 130px;
         font-size: 11px;
     }
@@ -228,16 +228,16 @@
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 200px;
+        height: 257px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
-        width: 379px;
+        width: 418px;
         height: auto;
     }
 
     .view-slideshow .views_slideshow_main .views-field-title {
-        width: 339px;
+        width: 378px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-body {
@@ -320,17 +320,16 @@
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 160px;
-        margin: 14px;
+        height: 210px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
-        width: 270px;
+        width: 298px;
         height: auto;
     }
 
     .view-slideshow .views_slideshow_main .views-field-title {
-        width: 230px;
+        width: 258px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-body {
@@ -411,17 +410,16 @@
     /* SLIDESHOW
 --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
-        height: 160px;
-        margin: 14px;
+        height: 210px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
-        width: 270px;
+        width: 298px;
         height: auto;
     }
 
     .view-slideshow .views_slideshow_main .views-field-title {
-        width: 230px;
+        width: 259px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-body {
@@ -473,10 +471,6 @@
 
 /* less granular switch for big and small */
 @media only screen and (max-width: 767px) {
-
-    #page, .front .main-content-wrapper {
-        margin-top: 0;
-    }
 
     #postscript {
         flex-wrap: wrap;

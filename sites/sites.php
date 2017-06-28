@@ -4,6 +4,10 @@ $sites['uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
 $sites['www.uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
 $sites['archive.uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
 $sites['uvaldeleadernewscni.etypegoogle5.com'] = 'uvaldeleadernews.etypegoogle5.com';
+$sites['ulnnow.com'] = 'archive.uvaldeleadernews.com';
+$sites['www.ulnnow.com'] = 'archive.uvaldeleadernews.com';
+$sites['ulntoday.com'] = 'archive.uvaldeleadernews.com';
+$sites['www.ulntoday.com'] = 'archive.uvaldeleadernews.com';
 
 /* devilsrivernews.etypegoogle5.com */
 $sites['devilsrivernews.etypegoogle5.com'] = 'devilsrivernews.com';

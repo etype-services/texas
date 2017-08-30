@@ -2502,3 +2502,8 @@ div.admin-panel .description {
 
 #block-block-36 iframe {margin-left:23px;}
 #block-block-36 img {margin-left:23px;}
+
+/* juicebox overrides */
+.jb-caption div.jb-caption-desc {
+  line-height: 1.3em;
+}

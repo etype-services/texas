@@ -338,8 +338,10 @@ blockquote.image-field-caption p {
     width: 100%;
 }
 
+/* added text align center for coupon block in footer */
 #footer .region-footer-ad {
     width: 100%;
+	text-align:center;
 }
 
 #footer .region-footer-closure {

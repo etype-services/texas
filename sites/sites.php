@@ -101,6 +101,7 @@ $sites['fayettecountyrecorddev.etypegoogle5.com'] = 'fayettecountyrecord.com';
 $sites['fishercountychronicle.etypegoogle5.com'] = 'fishercountychronicle.com';
 $sites['fishercountychronicle.com'] = 'fishercountychronicle.com';
 $sites['www.fishercountychronicle.com'] = 'fishercountychronicle.com';
+$sites['www.doublemountainchronicle.com'] = 'fishercountychronicle.com';
 
 $sites['normangeestar.etypegoogle5.com'] = 'normangeestar.com';
 $sites['normangeestar.com'] = 'normangeestar.com';

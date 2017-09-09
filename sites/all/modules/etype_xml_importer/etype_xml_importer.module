@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * add e-Edition link to user menu
+ * @return array
+ */
+function etype_xml_importer_menu() {
+
+  $items = array();
+
+  $items['import_olive_xml'] = array(
+    'title' => 'Import Olive XML',
+    'description' => 'Olive XML Importer',
+    'page callback' => 'etype_xml_importer_olive_import',
+    'access arguments' => array('access administration pages'),
+    'menu_name' => 'user-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/xml_importer.import.inc'
+  );
+
+  /* admin settings page */
+  $items['admin/config/etype_xml_importer'] = array(
+    'title' => 'eType',
+    'description' => 'eType Settings', // Like any other menu item
+    'position' => 'right',
+    'weight' => -15,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('administer site configuration'), // Permission needed to view this area
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  $items['admin/config/etype_xml_importer/settings'] = array(
+    'title' => 'XML Import Settings',
+    'description' => 'XML content import options.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('etype_xml_importer_admin'),
+    'access arguments' => array('access wire content'),
+    'file' => 'includes/xml_importer.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+
+  return $items;
+}
+
+/**
+ * Cron Jobs
+ * @param $op
+ * @param null $job
+ * @return mixed
+ */
+function etype_xml_importer_cronapi($op, $job = NULL) {
+  $xml_cron_schedule = variable_get('etype_xml_cron_schedule');
+  if (!empty($xml_cron_schedule)) {
+    /* Classified importer */
+    $items['etype_xml_importer_cron'] = array(
+      'description' => 'Import content via XML from Olive',
+      'rule' => $xml_cron_schedule,
+      'callback' => 'etype_xml_importer_olive_import',
+      'file' => 'includes/xml_importer.import.inc'
+    );
+    return $items;
+  }
+}

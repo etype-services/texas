@@ -660,6 +660,12 @@ h3.site-slogan {
     display: inline;
 }
 
+/* hide Read more links with premum content message */
+.not-logged-in.page-node article.node-teaser ul.links {
+    display: none;
+    visibility: hidden;
+}
+
 /* COMMENTS
 --------------------------------------------------------------------------*/
 

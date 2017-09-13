@@ -615,11 +615,7 @@ h3.site-slogan {
 
 .node .taxonomy .field-type-taxonomy-term-reference {
     margin: 5px 0;
-    field-type-taxonomy-term-reference background: #f9f9f9;
-}
-
-.node .taxonomy-inner {
-    ≈
+    background: #f9f9f9;
 }
 
 .node .taxonomy a {
@@ -731,7 +727,7 @@ h3.site-slogan {
 }
 
 #search-block-form {
-    margin-top: 0x;
+    margin-top: 0;
     background: 0;
     line-height: 25px;
     border-left: 1px solid #dddddd;

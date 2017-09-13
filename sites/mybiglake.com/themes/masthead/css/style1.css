@@ -651,7 +651,7 @@ h3.site-slogan {
 }
 
 /* hide Read more links with premum content message */
-.not-logged-in .page-node .node-teaser ul.links {
+.not-logged-in.page-node article.node-teaser ul.links {
     display: none;
     visibility: hidden;
 }

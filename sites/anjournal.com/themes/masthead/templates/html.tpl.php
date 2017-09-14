@@ -2,51 +2,6 @@
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>" <?php print $rdf_namespaces; ?>>
 
 <head>
-<style>
- .sf-menu.sf-style-default a {
- /* border-left: 1px solid #000 !important;
-  border-top: 1px solid #000 !important;
-  padding: 0.75em 1em !important; */
-  }
-  .sf-menu.sf-style-pomegranate li, .sf-menu.sf-style-pomegranate.sf-navbar {
-  background: #A8141A !important;
-  text-transform: uppercase !important;
-  font-size: 15px !important;
-  border-bottom:0px !important;
-  height:38px !important;
-  min-height:38px !important;
-  }
-  .sf-menu.sf-style-pomegranate a
-  {
-color: #ffebee !important; 
-  text-shadow:0px 0px !important;
-  border:0px !important;
-  padding: 0em 1em !important;
-  height:38px !important;
-  line-height:38px !important;
-  } 
- .sf-menu.sf-style-pomegranate li:hover, .sf-menu.sf-style-pomegranate li.sfHover, .sf-menu.sf-style-pomegranate li.active a, .sf-menu.sf-style-pomegranate a:focus, .sf-menu.sf-style-pomegranate a:hover, .sf-menu.sf-style-pomegranate a:active, .sf-menu.sf-style-pomegranate.sf-navbar li li
- {
-   background: #000 !important;
-  color: #ffffff !important;
-}
- .sf-menu.sf-style-pomegranate a:hover { text-decoration:underline !important; line-height: 38px !important;}
- .block-inner {overflow:hidden;}
- #block-simpleads-ad-groups-65 .block-inner .content .adslist {margin-top:15px;}
- .preface-wrapper .block .content {  height: 310px !important;
-  overflow: hidden !important;}
-  .postscript-wrapper {
-  padding: 20px 0;
-  margin: 0 -10px;
-  background: url(/sites/anjournal.com/themes/masthead/images/style1/postscript-bg.png) !important; }
-  .postscript-wrapper h3 span {
-  padding-right: 5px !important;
-  background: #333333 !important;
-  color: #999999 !important;
-  font-size: 11px;
-  font-weight: normal;
-}
-</style>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>  
  

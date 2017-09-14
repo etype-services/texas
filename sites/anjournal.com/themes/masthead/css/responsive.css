@@ -411,9 +411,13 @@ Note: Design for a width of 420px
 }
 
 blockquote {
-    background-image: none;
+    background: none;
     margin: 0px;
     padding: 0px;
+}
+
+blockquote p {
+    background: none;
 }
 
 #block-menu-block-2 ul.menu li, #block-menu-block-2 #main-menu ul.menu li, #block-menu-block-2 #user-menu ul.menu li, #block-menu-block-2 #nav-menu ul.menu li {

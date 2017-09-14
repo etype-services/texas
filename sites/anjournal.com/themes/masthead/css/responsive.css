@@ -401,12 +401,11 @@ Note: Design for a width of 420px
 }
 
 .field-name-field-pulled-quote {
-    background-image: url("/sites/all/themes/bones/images/icons_48/openquote.png");
+    background: url("/sites/all/themes/bones/images/icons_48/openquote.png") no-repeat;
     width: 300px;
     min-height: 100px;
     font-size: 18px;
     float: right;
-    background-repeat: no-repeat;
     padding-left: 50px;
 }
 

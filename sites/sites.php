@@ -211,6 +211,11 @@ $sites['baycitysentinel.etypegoogle5.com'] = 'baycitysentinel.etypegoogle5.com';
 $sites['baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';
 $sites['www.baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';
 
+/* thedamgoodtimes.etypegoogle5.com */
+$sites['thedamgoodtimes.etypegoogle5.com'] = 'thedamgoodtimes.etypegoogle5.com';
+$sites['thedamgoodtimes.com'] = 'thedamgoodtimes.etypegoogle5.com';
+$sites['www.thedamgoodtimes.com'] = 'thedamgoodtimes.etypegoogle5.com';
+
 /* testing */
 $sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
 

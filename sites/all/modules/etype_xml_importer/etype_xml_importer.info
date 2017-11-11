@@ -1,6 +1,0 @@
-name = eType Services XML Importer
-description = Custom module for EType Services.
-package = eType Services Custom Modules
-core = 7.x
-project = "etype_xml_importer"
-dependencies[] = entity

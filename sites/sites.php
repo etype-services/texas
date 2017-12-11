@@ -226,6 +226,11 @@ $sites['rockdalereporter.etypegoogle5.com'] = 'rockdalereporter.etypegoogle5.com
 $sites['rockdalereporter.com'] = 'rockdalereporter.etypegoogle5.com';
 $sites['www.rockdalereporter.com'] = 'rockdalereporter.etypegoogle5.com';
 
+/* polkabeat.etypegoogle5.com */
+$sites['polkabeat.etypegoogle5.com'] = 'polkabeat.etypegoogle5.com';
+$sites['polkabeat.com'] = 'polkabeat.etypegoogle5.com';
+$sites['www.polkabeat.com'] = 'polkabeat.etypegoogle5.com';
+
 /* testing */
 $sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
 

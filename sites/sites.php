@@ -221,6 +221,11 @@ $sites['lampasasdispatchrecord.etypegoogle5.com'] = 'lampasasdispatchrecord.etyp
 $sites['lampasasdispatchrecord.com'] = 'lampasasdispatchrecord.etypegoogle5.com';
 $sites['www.lampasasdispatchrecord.com'] = 'lampasasdispatchrecord.etypegoogle5.com';
 
+/* rockdalereporter.etypegoogle5.com */
+$sites['rockdalereporter.etypegoogle5.com'] = 'rockdalereporter.etypegoogle5.com';
+$sites['rockdalereporter.com'] = 'rockdalereporter.etypegoogle5.com';
+$sites['www.rockdalereporter.com'] = 'rockdalereporter.etypegoogle5.com';
+
 /* testing */
 $sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
 

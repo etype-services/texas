@@ -216,6 +216,11 @@ $sites['thedamgoodtimes.etypegoogle5.com'] = 'thedamgoodtimes.etypegoogle5.com';
 $sites['thedamgoodtimes.com'] = 'thedamgoodtimes.etypegoogle5.com';
 $sites['www.thedamgoodtimes.com'] = 'thedamgoodtimes.etypegoogle5.com';
 
+/* lampasasdispatchrecord.etypegoogle5.com */
+$sites['lampasasdispatchrecord.etypegoogle5.com'] = 'lampasasdispatchrecord.etypegoogle5.com';
+$sites['lampasasdispatchrecord.com'] = 'lampasasdispatchrecord.etypegoogle5.com';
+$sites['www.lampasasdispatchrecord.com'] = 'lampasasdispatchrecord.etypegoogle5.com';
+
 /* testing */
 $sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
 

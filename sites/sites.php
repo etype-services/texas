@@ -231,6 +231,11 @@ $sites['polkabeat.etypegoogle5.com'] = 'polkabeat.etypegoogle5.com';
 $sites['polkabeat.com'] = 'polkabeat.etypegoogle5.com';
 $sites['www.polkabeat.com'] = 'polkabeat.etypegoogle5.com';
 
+/* wingspannewspaper.etypegoogle5.com */
+$sites['wingspannewspaper.etypegoogle5.com'] = 'wingspannewspaper.etypegoogle5.com';
+$sites['wingspannewspaper.com'] = 'wingspannewspaper.etypegoogle5.com';
+$sites['www.wingspannewspaper.com'] = 'wingspannewspaper.etypegoogle5.com';
+
 /* testing */
 $sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
 

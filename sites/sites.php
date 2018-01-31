@@ -216,11 +216,6 @@ $sites['thedamgoodtimes.etypegoogle5.com'] = 'thedamgoodtimes.etypegoogle5.com';
 $sites['thedamgoodtimes.com'] = 'thedamgoodtimes.etypegoogle5.com';
 $sites['www.thedamgoodtimes.com'] = 'thedamgoodtimes.etypegoogle5.com';
 
-/* lampasasdispatchrecord.etypegoogle5.com */
-$sites['lampasasdispatchrecord.etypegoogle5.com'] = 'lampasasdispatchrecord.etypegoogle5.com';
-$sites['lampasasdispatchrecord.com'] = 'lampasasdispatchrecord.etypegoogle5.com';
-$sites['www.lampasasdispatchrecord.com'] = 'lampasasdispatchrecord.etypegoogle5.com';
-
 /* rockdalereporter.etypegoogle5.com */
 $sites['rockdalereporter.etypegoogle5.com'] = 'rockdalereporter.etypegoogle5.com';
 $sites['rockdalereporter.com'] = 'rockdalereporter.etypegoogle5.com';

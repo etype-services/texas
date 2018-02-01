@@ -223,8 +223,8 @@ $sites['www.rockdalereporter.com'] = 'rockdalereporter.etypegoogle5.com';
 
 /* polkabeat.etypegoogle5.com */
 $sites['polkabeat.etypegoogle5.com'] = 'polkabeat.etypegoogle5.com';
-$sites['texaspolkanews.com'] = 'texaspolkanews.etypegoogle5.com';
-$sites['www.texaspolkanews.com'] = 'texaspolkanews.etypegoogle5.com';
+$sites['texaspolkanews.com'] = 'polkabeat.etypegoogle5.com';
+$sites['www.texaspolkanews.com'] = 'polkabeat.etypegoogle5.com';
 
 /* wingspannewspaper.etypegoogle5.com */
 $sites['wingspannewspaper.etypegoogle5.com'] = 'wingspannewspaper.etypegoogle5.com';

@@ -294,3 +294,19 @@ function STARTERKIT_preprocess_block(&$variables, $hook) {
   $variables['classes_array'][] = 'count-' . $variables['block_id'];
 }
 // */
+
+/**
+ * @param $vars
+ */
+function news_center_preprocess_views_view_row_rss(&$vars) {
+  $item = $vars['row'];
+  $result = $vars['view']->result;
+  $id = $vars['id'];
+  $node = node_load( $result[$id-1]->nid );
+  $vars['title'] = trim(check_plain($item->title));
+  $vars['link'] = check_url($item->link);
+  $vars['description'] = check_plain($item->description);
+  $vars['node'] = $node;
+  $vars['item_elements'] = empty($item->elements) ? '' : format_xml_elements($item->elements);
+  empty($node->field_image['und'][0]['uri'])? $vars['img'] = '': $vars['img']  = file_create_url($node->field_image['und'][0]['uri']);
+}

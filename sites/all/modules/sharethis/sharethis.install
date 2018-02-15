@@ -80,9 +80,25 @@ function sharethis_update_7001() {
 
 /**
  * Removes variables sharethis_override_* & sharethis_service_option.
+ * @see https://www.drupal.org/node/2759221
  */
 function sharethis_update_7002() {
   db_delete('variable')->condition('name', db_like('sharethis_override_') . '%', 'LIKE')->execute();
-  variable_set("sharethis_service_option", str_replace('&quot;', '"', variable_get("sharethis_service_option")));
+  $sharethis_service_option = variable_get("sharethis_service_option");
+  $sharethis_service_option = str_replace('amp;', '', $sharethis_service_option);
+  $sharethis_service_option = str_replace('&quot;', '"', $sharethis_service_option);
+  variable_set("sharethis_service_option", $sharethis_service_option);
   cache_clear_all('variables', 'cache');
+}
+
+/**
+ * Update the sharethis_location variable to an array.
+ * @see https://www.drupal.org/node/2846151
+ */
+function sharethis_update_7003() {
+  $location_places = variable_get('sharethis_location', array('content' => 'content'));
+  if (!is_array($location_places)) {
+    $location_places = array('content' => $location_places);
+    variable_set('sharethis_location', $location_places);
+  }
 }

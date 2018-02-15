@@ -4,7 +4,7 @@
  */
 
 // Create the drupal ShareThis object for clean code and namespacing:
-(function () {
+(function ($) {
   // Adding use strict as function encapsulation ECMA 6.
   // 'use strict';
 
@@ -62,7 +62,9 @@
     },
     setupServiceText: function () {
       jQuery('#edit-sharethis-service-option').css({display: 'none'});
-
+      var picker = jQuery('#myPicker');
+      var service = picker.data("mark");
+      stlib_picker.setupPicker(picker, service, drupal_st.serviceCallback);
       if (jQuery('input[name=sharethis_callesi]').val() === 1) {
         drupal_st.getGlobalCNSConfig();
       }
@@ -156,4 +158,4 @@
   jQuery(document).ready(drupal_st.addEvents);
   // After it's all done, hide the text field for the service picker so that no one messes up the data.
   jQuery(document).ready(drupal_st.setupServiceText);
-})();
+})(jQuery);

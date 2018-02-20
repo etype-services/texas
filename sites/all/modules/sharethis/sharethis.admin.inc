@@ -66,11 +66,11 @@ function sharethis_configuration_form($form, &$form_state) {
     '#suffix' => '</div>',
   );
   $form['options']['sharethis_service_option'] = array(
-    '#description' => t('<b>Add</b> a service by selecting it on the right and clicking the <i>left arrow</i>.  <b>Remove</b> it by clicking the <i>right arrow</i>.<br /><b>Change the order</b> of services under \'Selected Services\' by using the <i>up</i> and <i>down</i> arrows.'),
+    '#description' => t("<b>Add</b> a service by selecting it on the right and clicking the <i>left arrow</i>.  <b>Remove</b> it by clicking the <i>right arrow</i>.<br /><b>Change the order</b> of services under 'Selected Services' by using the <i>up</i> and <i>down</i> arrows."),
     '#required' => TRUE,
     '#type' => 'textfield',
     '#prefix' => '<div>',
-    '#suffix' => '</div><div id="myPicker"></div><script type="text/javascript">stlib_picker.setupPicker(jQuery("#myPicker"), [' . $service_string_markup . '], drupal_st.serviceCallback);</script>',
+    '#suffix' => '</div><div id="myPicker" data-mark=['. $service_string_markup .']></div>',
     '#title' => t('Choose Your Services.'),
     '#default_value' => $service_string,
     '#maxlength' => 1024,

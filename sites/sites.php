@@ -228,8 +228,8 @@ $sites['www.texaspolkanews.com'] = 'polkabeat.etypegoogle5.com';
 
 /* wingspannewspaper.etypegoogle5.com */
 $sites['wingspannewspaper.etypegoogle5.com'] = 'wingspannewspaper.etypegoogle5.com';
-$sites['wingspannewspaper.com'] = 'wingspannewspaper.etypegoogle5.com';
-$sites['www.wingspannewspaper.com'] = 'wingspannewspaper.etypegoogle5.com';
+$sites['wingspancorpuschristi.com'] = 'wingspannewspaper.etypegoogle5.com';
+$sites['www.wingspancorpuschristi.com'] = 'wingspannewspaper.etypegoogle5.com';
 
 /* testing */
 $sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';

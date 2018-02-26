@@ -231,6 +231,16 @@ $sites['wingspannewspaper.etypegoogle5.com'] = 'wingspannewspaper.etypegoogle5.c
 $sites['wingspancorpuschristi.com'] = 'wingspannewspaper.etypegoogle5.com';
 $sites['www.wingspancorpuschristi.com'] = 'wingspannewspaper.etypegoogle5.com';
 
+/* bigbendnow.etypegoogle5.com */
+$sites['bigbendnow.etypegoogle5.com'] = 'bigbendnow.etypegoogle5.com';
+$sites['bigbendnow.com'] = 'bigbendnow.etypegoogle5.com';
+$sites['www.bigbendnow.com'] = 'bigbendnow.etypegoogle5.com';
+
+/* marfabigbendsentinel.etypegoogle5.com */
+$sites['marfabigbendsentinel.etypegoogle5.com'] = 'marfabigbendsentinel.etypegoogle5.com';
+$sites['marfabigbendsentinel.com'] = 'marfabigbendsentinel.etypegoogle5.com';
+$sites['www.marfabigbendsentinel.com'] = 'marfabigbendsentinel.etypegoogle5.com';
+
 /* testing */
 $sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
 

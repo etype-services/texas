@@ -85,6 +85,7 @@ function hook_premium_access(&$node, $teaser) {
 
   // If node has our custom level, we check the user.
   if ($node->premium == 'my_level') {
+    global $user;
     
     // You have a Reveal IT e-mail-address, you're granted access.
     // This is a silly example, but you can do arbitrarily complex logic here.

@@ -6,8 +6,8 @@
  * @todo
  * Add tests for archive, latest modes.
  */
- 
- class PremiumContentTestCase extends DrupalWebTestCase {
+
+class PremiumContentTestCase extends DrupalWebTestCase {
 
   protected $auth_user;
 
@@ -17,6 +17,13 @@
     'title' => 'Premium node',
     'premium' => 'default',
     'body' => array(LANGUAGE_NONE => array(array('value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae arcu at leo cursus laoreet. Curabitur dui tortor, adipiscing malesuada tempor in, bibendum ac diam. Cras non tellus a libero pellentesque condimentum. What is a Drupalism? Suspendisse ac lacus libero. Ut non est vel nisl faucibus interdum nec sed leo. Pellentesque sem risus, vulputate eu semper eget, auctor in libero. Ut fermentum est vitae metus convallis scelerisque. Phasellus pellentesque rhoncus tellus, eu dignissim purus posuere id. Quisque eu fringilla ligula. Morbi ullamcorper, lorem et mattis egestas, tortor neque pretium velit, eget eleifend odio turpis eu purus. Donec vitae metus quis leo pretium tincidunt a pulvinar sem. Morbi adipiscing laoreet mauris vel placerat. Nullam elementum, nisl sit amet scelerisque malesuada, dolor nunc hendrerit quam, eu ultrices erat est in orci. Curabitur feugiat egestas nisl sed accumsan.'))),
+    'promote' => 1,
+  );
+  // Sample content based on node.test
+  protected $default_node_settings_nonpremium = array(
+    'type' => 'article',
+    'title' => 'Non Premium node',
+    'body' => array(LANGUAGE_NONE => array(array('value' => 'Lorem non premium ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae arcu at leo cursus laoreet. Curabitur dui tortor, adipiscing malesuada tempor in, bibendum ac diam. Cras non tellus a libero pellentesque condimentum. What is a Drupalism? Suspendisse ac lacus libero. Ut non est vel nisl faucibus interdum nec sed leo. Pellentesque sem risus, vulputate eu semper eget, auctor in libero. Ut fermentum est vitae metus convallis scelerisque. Phasellus pellentesque rhoncus tellus, eu dignissim purus posuere id. Quisque eu fringilla ligula. Morbi ullamcorper, lorem et mattis egestas, tortor neque pretium velit, eget eleifend odio turpis eu purus. Donec vitae metus quis leo pretium tincidunt a pulvinar sem. Morbi adipiscing laoreet mauris vel placerat. Nullam elementum, nisl sit amet scelerisque malesuada, dolor nunc hendrerit quam, eu ultrices erat est in orci. Curabitur feugiat egestas nisl sed accumsan.'))),
     'promote' => 1,
   );
 
@@ -46,6 +53,8 @@
 
     $node1 = $this->drupalCreateNode($this->default_node_settings_premium);
 
+    $node2 = $this->drupalCreateNode($this->default_node_settings_nonpremium);
+
     // Request front page. Anon user should see teaser.
     $this->drupalGet('node');
     // The node teaser when it has 600 characters in length.
@@ -56,6 +65,11 @@
     $this->drupalGet('node/1');
     $this->assertText($access_denied_text, 'Anon user sees access denied text.');
     $this->assertNoText($expected, 'Anon user does not see node content.');
+
+    // Request full node (non-premium, make sure permissions dont bleed out to other items)
+    $this->drupalGet('node/2');
+    $this->assertNoText($access_denied_text, 'Anon user should not be limited');
+    $this->assertText($expected, 'Anon user reads text body fine');
 
     // Login auth user.
     $this->drupalLogin($this->auth_user);

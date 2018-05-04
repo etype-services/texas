@@ -3,3 +3,12 @@
 #block-block-15 {
 	text-align:center;
 }
+
+/* logo */
+#logo a {
+	display: block;
+	width: 100%
+}
+#logo a img {
+	max-width: 100%;
+}

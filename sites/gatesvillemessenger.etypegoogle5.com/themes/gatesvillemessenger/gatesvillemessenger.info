@@ -1,0 +1,26 @@
+name = Gatesville Messenger
+description = Custom sub-theme of the CNI Theme
+core = 7.x
+base theme = cni
+stylesheets[all][] = css/gatesvillemessenger.css
+
+regions[header] = Header
+regions[user_menu] = User Menu
+regions[main_menu] = Main Menu
+regions[main_menu_second_level] = Main Menu Second Level (via Menublock)
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[sidebar_first] = First sidebar
+regions[sidebar_second] = Second sidebar
+regions[slideshow] = Slideshow
+regions[preface_1] = Preface First
+regions[preface_2] = Preface Second
+regions[preface_3] = Preface Third
+regions[content] = Content
+regions[content_middle] = Content Middle
+regions[content_bottom] = Content Bottom
+regions[postscript_1] = Postscript First
+regions[postscript_2] = Postscript Second
+regions[postscript_3] = Postscript Third
+regions[postscript_banner] = Postscript Banner
+regions[footer] = Footer

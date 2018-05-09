@@ -240,7 +240,3 @@ $sites['www.bigbendnow.com'] = 'bigbendnow.etypegoogle5.com';
 $sites['presidiointernational.etypegoogle5.com'] = 'presidiointernational.etypegoogle5.com';
 $sites['presidiointernational.com'] = 'presidiointernational.etypegoogle5.com';
 $sites['www.presidiointernational.com'] = 'presidiointernational.etypegoogle5.com';
-
-/* testing */
-$sites['dfp.etypegoogle5.com'] = 'gatesvillemessenger.etypegoogle5.com';
-

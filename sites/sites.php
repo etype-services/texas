@@ -238,5 +238,6 @@ $sites['www.bigbendnow.com'] = 'bigbendnow.etypegoogle5.com';
 
 /* presidiointernational.etypegoogle5.com */
 $sites['presidiointernational.etypegoogle5.com'] = 'presidiointernational.etypegoogle5.com';
-$sites['presidiointernational.com'] = 'presidiointernational.etypegoogle5.com';
-$sites['www.presidiointernational.com'] = 'presidiointernational.etypegoogle5.com';
+$sites['presidiointernational.net'] = 'presidiointernational.etypegoogle5.com';
+$sites['www.presidiointernational.net'] = 'presidiointernational.etypegoogle5.com';
+

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,gDAAiD;EAC/C,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM",
+"sources": ["../gatesvillemessenger.scss"],
 "names": [],
 "file": "gatesvillemessenger.css"
 }

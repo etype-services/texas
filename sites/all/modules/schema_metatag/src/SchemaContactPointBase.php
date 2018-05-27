@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Schema.org CreativeWork items should extend this class.
+ * Schema.org Contact Point items should extend this class.
  */
-class SchemaCreativeWorkBase extends SchemaNameBase {
+class SchemaContactPointBase extends SchemaNameBase {
 
-  use SchemaCreativeWorkTrait;
+  use SchemaContactPointTrait;
 
   /**
    * {@inheritdoc}
@@ -22,7 +22,7 @@ class SchemaCreativeWorkBase extends SchemaNameBase {
       'visibility_selector' => $this->visibilitySelector(),
     ];
 
-    $form['value'] = $this->creativeWorkForm($input_values);
+    $form['value'] = $this->contactPointForm($input_values);
 
     if (empty($this->multiple())) {
       unset($form['value']['pivot']);
@@ -39,43 +39,19 @@ class SchemaCreativeWorkBase extends SchemaNameBase {
    */
   public static function testValue() {
     $items = [];
-    $keys = self::creativeWorkFormKeys('CreativeWork');
+    $keys = self::contactPointFormKeys();
     foreach ($keys as $key) {
       switch ($key) {
-
         case '@type':
-          $items[$key] = 'CreativeWork';
+          $items[$key] = 'ContactPoint';
           break;
 
-        case 'author':
-          $items[$key] = SchemaPersonOrgBase::testValue();
-          break;
-
-        case 'potentialAction':
-          $items[$key] = SchemaActionBase::testValue();
+        case 'areaServed':
+          $items[$key] = SchemaPlaceBase::testValue();
           break;
 
         default:
           $items[$key] = parent::testDefaultValue(1, '');
-          break;
-
-      }
-    }
-    return $items;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function processedTestValue($items) {
-    foreach ($items as $key => $value) {
-      switch ($key) {
-        case 'author':
-          $items[$key] = SchemaPersonOrgBase::processedTestValue($items[$key]);
-          break;
-
-        case 'potentialAction':
-          $items[$key] = SchemaActionBase::processedTestValue($items[$key]);
           break;
 
       }

@@ -241,3 +241,7 @@ $sites['presidiointernational.etypegoogle5.com'] = 'presidiointernational.etypeg
 $sites['presidiointernational.net'] = 'presidiointernational.etypegoogle5.com';
 $sites['www.presidiointernational.net'] = 'presidiointernational.etypegoogle5.com';
 
+/* brownfieldonline.etypegoogle5.com */
+$sites['brownfieldonline.etypegoogle5.com'] = 'presidiointernational.etypegoogle5.com';
+$sites['brownfieldonline.com'] = 'presidiointernational.etypegoogle5.com';
+$sites['www.presidiointernational.net'] = 'presidiointernational.etypegoogle5.com';

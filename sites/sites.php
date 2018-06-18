@@ -1,19 +1,8 @@
 <?php
-$sites['uvaldeleadernews.etypegoogle5.com'] = 'uvaldeleadernews.com';
-$sites['uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
-$sites['www.uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
-$sites['archive.uvaldeleadernews.com'] = 'archive.uvaldeleadernews.com';
-$sites['uvaldeleadernewscni.etypegoogle5.com'] = 'uvaldeleadernews.etypegoogle5.com';
-$sites['ulnnow.com'] = 'archive.uvaldeleadernews.com';
-$sites['www.ulnnow.com'] = 'archive.uvaldeleadernews.com';
-$sites['ulntoday.com'] = 'archive.uvaldeleadernews.com';
-$sites['www.ulntoday.com'] = 'archive.uvaldeleadernews.com';
-
 /* devilsrivernews.etypegoogle5.com */
 $sites['devilsrivernews.etypegoogle5.com'] = 'devilsrivernews.com';
 $sites['devilsrivernews.com'] = 'devilsrivernews.com';
 $sites['www.devilsrivernews.com'] = 'devilsrivernews.com';
-
 $sites['devilsriver.news'] = 'devilsrivernews.com';
 $sites['www.devilsriver.news'] = 'devilsrivernews.com';
 
@@ -145,12 +134,6 @@ $sites['www.snyderdailynews.com'] = 'snyderdailynews.com';
 $sites['thevidorian.etypegoogle5.com'] = 'thevidorian.com';
 $sites['thevidorian.com'] = 'thevidorian.com';
 $sites['www.thevidorian.com'] = 'thevidorian.com';
-
-/* pleasantonexpress.etypegoogle5.com */
-$sites['pleasantonexpress.etypegoogle5.com'] = 'pleasantonexpress.com';
-$sites['pleasantonexpress.com'] = 'pleasantonexpress.com';
-$sites['www.pleasantonexpress.com'] = 'pleasantonexpress.com';
-$sites['pleasantonexpressdev.etypegoogle5.com'] = 'pleasantonexpress.com';
 
 /* seniorific.etypegoogle5.com */
 $sites['seniorific.etypegoogle5.com'] = 'seniorific.com';

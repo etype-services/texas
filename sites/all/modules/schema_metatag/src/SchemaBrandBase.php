@@ -1,11 +1,18 @@
 <?php
 
 /**
- * Schema.org Place items should extend this class.
+ * Schema.org Brand items should extend this class.
  */
-class SchemaPlaceBase extends SchemaAddressBase {
+class SchemaBrandBase extends SchemaNameBase {
 
-  use SchemaPlaceTrait;
+  use SchemaBrandTrait;
+
+  /**
+   * The top level keys on this form.
+   */
+  public static function formKeys() {
+    return ['pivot'] + self::brandFormKeys();
+  }
 
   /**
    * {@inheritdoc}
@@ -13,7 +20,6 @@ class SchemaPlaceBase extends SchemaAddressBase {
   public function getForm(array $options = []) {
 
     $value = SchemaMetatagManager::unserialize($this->value());
-
     $input_values = [
       'title' => $this->label(),
       'description' => $this->description(),
@@ -22,7 +28,7 @@ class SchemaPlaceBase extends SchemaAddressBase {
       'visibility_selector' => $this->visibilitySelector(),
     ];
 
-    $form['value'] = $this->placeForm($input_values);
+    $form['value'] = $this->brandForm($input_values);
 
     if (empty($this->multiple())) {
       unset($form['value']['pivot']);
@@ -39,42 +45,19 @@ class SchemaPlaceBase extends SchemaAddressBase {
    */
   public static function testValue() {
     $items = [];
-    $keys = self::placeFormKeys();
+    $keys = self::brandFormKeys();
     foreach ($keys as $key) {
       switch ($key) {
-        case 'address':
-          $items[$key] = SchemaAddressBase::testValue();
-          break;
-
-        case 'geo':
-          $items[$key] = SchemaGeoBase::testValue();
+        case 'logo':
+          $items[$key] = SchemaImageBase::testValue();
           break;
 
         case '@type':
-          $items[$key] = 'Place';
+          $items[$key] = 'Brand';
           break;
 
         default:
           $items[$key] = parent::testDefaultValue(2, ' ');
-          break;
-
-      }
-    }
-    return $items;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function processedTestValue($items) {
-    foreach ($items as $key => $value) {
-      switch ($key) {
-        case 'address':
-          $items[$key] = SchemaAddressBase::processedTestValue($items[$key]);
-          break;
-
-        case 'geo':
-          $items[$key] = SchemaGeoBase::processedTestValue($items[$key]);
           break;
 
       }

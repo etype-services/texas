@@ -224,3 +224,5 @@ $sites['presidiointernational.etypegoogle5.com'] = 'presidiointernational.etypeg
 $sites['presidiointernational.net'] = 'presidiointernational.etypegoogle5.com';
 $sites['www.presidiointernational.net'] = 'presidiointernational.etypegoogle5.com';
 
+/* thealbanynews.etypegoogle5.com */
+$sites['www.thealbanynews.net'] = 'thealbanynews.etypegoogle5.com';

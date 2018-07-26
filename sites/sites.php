@@ -226,3 +226,6 @@ $sites['www.presidiointernational.net'] = 'presidiointernational.etypegoogle5.co
 
 /* thealbanynews.etypegoogle5.com */
 $sites['www.thealbanynews.net'] = 'thealbanynews.etypegoogle5.com';
+
+/* thecastrocountynews.etypegoogle5.com */
+$sites['www.thecastrocountynews.com'] = 'thecastrocountynews.etypegoogle5.com';

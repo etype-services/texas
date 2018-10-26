@@ -224,3 +224,6 @@ $sites['www.thealbanynews.net'] = 'thealbanynews.etypegoogle5.com';
 
 /* thecastrocountynews.etypegoogle5.com */
 $sites['www.thecastrocountynews.com'] = 'thecastrocountynews.etypegoogle5.com';
+
+/* hcnews.etypegoogle5.com */
+$sites['www.hcnews.com'] = 'hcnews.etypegoogle5.com';

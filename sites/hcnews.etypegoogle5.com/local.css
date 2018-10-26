@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.region-header {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+  header {
+    flex-wrap: wrap;
+  }
+}

@@ -67,11 +67,12 @@ header {
     background-size: contain;
     background-repeat: no-repeat;
     margin: 6px;
-    height: 17px;
+    height: 20px !important;
     span {
       display: none;
     }
     &:hover {
+      background: none!important;
       background-color: #7D8AB7;
     }
   }

@@ -9,16 +9,14 @@ header {
   align-items: center;
 }
 
-.region-user-menu {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 0;
-  background-color: #7D8AB7;
-  height: 27px;
-}
-
 @media only screen and (min-width: 959px) {
+
+  .region-user-menu {
+    justify-content: center;
+    margin-bottom: 0;
+    background-color: #7D8AB7;
+    height: 27px;
+  }
 
   #user-menu ul.menu li a {
     line-height: 26px;
@@ -89,6 +87,8 @@ header {
   .region-user-menu {
     justify-content: space-between;
     background-color: #7D8AB7;
+    height: 36px;
+    margin-bottom: 0;
   }
 
   #mobile-menu-wrapper {

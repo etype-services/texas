@@ -33,11 +33,19 @@ header {
   .region-user-menu {
     display: flex;
     justify-content: space-between;
-    height: 38px;
+    height: 36px;
   }
 
   #user-menu ul.menu li a {
     line-height: 36px;
+  }
+
+  #mobile-menu-wrapper {
+    background-color:#7D8AB7;
+  }
+
+  #mobile-menu-control {
+    background: #7D8AB7 url(../all/themes/cni/images/hamburger-menu.png) 3px no-repeat;
   }
 
 }

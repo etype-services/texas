@@ -44,7 +44,9 @@ header {
           padding: 0;
           font-weight: bold;
           line-height: initial;
-          font-family: Lato, sans-serif; }
+          font-family: Lato, sans-serif;
+          position: relative;
+          top: -1px; }
         #block-search-form #search-block-form .container-inline .form-type-textfield {
           margin-right: 6px; }
 
@@ -53,7 +55,7 @@ header {
     width: 17px;
     background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat;
     margin: 6px;
-    height: 20px; }
+    height: 20px !important; }
     #main-menu ul.menu li#menu-3554-1 a span {
       display: none; }
     #main-menu ul.menu li#menu-3554-1 a:hover {

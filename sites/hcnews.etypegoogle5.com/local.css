@@ -52,10 +52,11 @@ header {
 /* Search */
 #menu-3554-1 a {
   width: 17px;
+  background-image: url("../all/themes/cni/images/search-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
   margin: 6px;
-  height: 20px; }
+  height: 17px; }
   #menu-3554-1 a span {
     display: none; }
   #menu-3554-1 a:hover {

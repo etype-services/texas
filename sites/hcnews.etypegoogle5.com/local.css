@@ -14,7 +14,7 @@ header {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 0;
-  background-color: #f3f1f1;
+  background-color: #7D8AB7;
   height: 27px;
 }
 
@@ -38,7 +38,6 @@ header {
 
   #user-menu ul.menu li a {
     line-height: 36px;
-    font-weight: bold;
   }
 
 }

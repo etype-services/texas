@@ -45,7 +45,7 @@ header {
   }
 
   #mobile-menu-control {
-    background: #7D8AB7 url(../all/themes/cni/images/hamburger-menu.png) 3px no-repeat;
+    background: #7D8AB7 url(../all/themes/cni/images/hamburger-menu.png) 3px no-repeat !important;
   }
 
 }

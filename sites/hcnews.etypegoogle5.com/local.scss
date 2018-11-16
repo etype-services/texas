@@ -65,12 +65,12 @@ header {
       width: 17px;
       background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat;
       margin: 6px;
-      height: 20px !important;
+      height: 20px;
       span {
         display: none;
       }
       &:hover {
-        background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat !important;
+        background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat;
       }
     }
   }
@@ -97,7 +97,7 @@ header {
   }
 
   #mobile-menu-control {
-    background: #7D8AB7 url(../all/themes/cni/images/hamburger-menu.png) 3px no-repeat !important;
+    background: #7D8AB7 url(../all/themes/cni/images/hamburger-menu.png) 3px no-repeat;
   }
 
   #menu-3554-1 {

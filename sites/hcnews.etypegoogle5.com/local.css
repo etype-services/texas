@@ -53,11 +53,11 @@ header {
     width: 17px;
     background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat;
     margin: 6px;
-    height: 20px !important; }
+    height: 20px; }
     #menu-3554-1 a span {
       display: none; }
     #menu-3554-1 a:hover {
-      background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat !important; } }
+      background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat; } }
 @media only screen and (max-width: 958px) {
   header {
     flex-wrap: wrap;
@@ -74,7 +74,7 @@ header {
     margin-right: 4px; }
 
   #mobile-menu-control {
-    background: #7D8AB7 url(../all/themes/cni/images/hamburger-menu.png) 3px no-repeat !important; }
+    background: #7D8AB7 url(../all/themes/cni/images/hamburger-menu.png) 3px no-repeat; }
 
   #menu-3554-1 {
     display: none; }

@@ -62,9 +62,16 @@ header {
 /* Search */
 #menu-3554-1 {
   a {
-    background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) 3px no-repeat !important;
+    width: 17px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 6px;
+    height: 20px;
     span {
       display: none;
+    }
+    &:hover {
+      background-color: #7D8AB7;
     }
   }
 }

@@ -60,9 +60,8 @@ header {
   #menu-3554-1 a span {
     display: none; }
   #menu-3554-1 a:hover {
-    background: none !important;
-    background-color: #7D8AB7;
-    background-image: url("../all/themes/cni/images/search-icon.png"); }
+    background-color: #7D8AB7 !important;
+    background-image: url("../all/themes/cni/images/search-icon.png") !important; }
 
 @media only screen and (max-width: 958px) {
   header {

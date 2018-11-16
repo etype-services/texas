@@ -63,17 +63,14 @@ header {
 #menu-3554-1 {
   a {
     width: 17px;
-    background-image: url("../all/themes/cni/images/search-icon.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+    background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat;
     margin: 6px;
     height: 20px !important;
     span {
       display: none;
     }
     &:hover {
-      background-color: #7D8AB7!important;
-      background-image: url("../all/themes/cni/images/search-icon.png")!important;
+      background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) center/contain no-repeat !important;
     }
   }
 }

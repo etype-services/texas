@@ -72,9 +72,8 @@ header {
       display: none;
     }
     &:hover {
-      background: none!important;
-      background-color: #7D8AB7;
-      background-image: url("../all/themes/cni/images/search-icon.png");
+      background-color: #7D8AB7!important;
+      background-image: url("../all/themes/cni/images/search-icon.png")!important;
     }
   }
 }

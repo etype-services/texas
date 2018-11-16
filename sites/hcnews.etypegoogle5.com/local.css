@@ -23,7 +23,7 @@ header {
   font-weight: bold;
 }
 
-@media only screen and(min-width: 767px) {
+@media only screen and (max-width: 767px) {
 
   header {
     flex-wrap: wrap;
@@ -34,7 +34,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.6em;
-    height: auto;
+    height: 38px;
   }
 
   #user-menu ul.menu li a {

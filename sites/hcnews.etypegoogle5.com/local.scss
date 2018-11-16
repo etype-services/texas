@@ -59,6 +59,16 @@ header {
   }
 }
 
+/* Search */
+#menu-3554-1 {
+  a {
+    background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) 3px no-repeat !important;
+    span {
+      display: none;
+    }
+  }
+}
+
 @media only screen and (max-width: 958px) {
 
   header {

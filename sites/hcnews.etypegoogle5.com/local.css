@@ -49,6 +49,12 @@ header {
       #block-search-form #search-block-form .container-inline .form-type-textfield {
         margin-right: 6px; }
 
+/* Search */
+#menu-3554-1 a {
+  background: #7D8AB7 url(../all/themes/cni/images/search-icon.png) 3px no-repeat !important; }
+  #menu-3554-1 a span {
+    display: none; }
+
 @media only screen and (max-width: 958px) {
   header {
     flex-wrap: wrap;

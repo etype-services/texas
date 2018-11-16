@@ -9,16 +9,16 @@ header {
   align-items: center;
 }
 
-@media only screen and (min-width: 959px) {
+.region-user-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  background-color: #7D8AB7;
+  height: 27px;
+}
 
-  .region-user-menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-    background-color: #7D8AB7;
-    height: 27px;
-  }
+@media only screen and (min-width: 959px) {
 
   #user-menu ul.menu li a {
     line-height: 26px;
@@ -86,8 +86,13 @@ header {
     justify-content: center;
   }
 
+  .region-user-menu {
+    justify-content: space-between;
+  }
+
   #mobile-menu-wrapper {
     background-color:#7D8AB7;
+    margin-right: 4px;
   }
 
   #mobile-menu-control {
@@ -100,6 +105,10 @@ header {
 
   #search-control {
     background: #7D8AB7 url(../all/themes/cni/images/search-icon.png)3px 3px/contain no-repeat!important;
+  }
+
+  #block-search-form {
+    flex-grow: 1;
   }
 
 }

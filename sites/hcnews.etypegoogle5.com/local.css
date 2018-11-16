@@ -26,8 +26,7 @@ header {
   top: 0;
   right: 0;
   z-index: 999;
-  margin-right: 6px;
-  font-family: Lato, sans-serif; }
+  margin-right: 6px; }
   #block-search-form #search-block-form {
     margin-top: 0;
     background: 0;
@@ -37,14 +36,16 @@ header {
       display: flex; }
       #block-search-form #search-block-form .container-inline .form-text {
         top: 0;
-        height: 19px; }
+        height: 19px;
+        font-family: Lato, sans-serif; }
       #block-search-form #search-block-form .container-inline .form-submit {
         width: auto;
         height: auto;
         font-size: 11px;
         padding: 0;
         font-weight: bold;
-        line-height: initial; }
+        line-height: initial;
+        font-family: Lato, sans-serif; }
       #block-search-form #search-block-form .container-inline .form-type-textfield {
         margin-right: 6px; }
 

@@ -36,9 +36,8 @@ $sites['theadvancenewsjournal.com'] = 'anjournal.com';
 $sites['www.theadvancenewsjournal.com'] = 'anjournal.com';
 
 /* silsbeebee.etypegoogle5.com */
-$sites['silsbeebee.etypegoogle5.com'] = 'silsbeebee.com';
-$sites['silsbeebee.com'] = 'silsbeebee.com';
-$sites['www.silsbeebee.com'] = 'silsbeebee.com';
+$sites['www.silsbeebee.com'] = 'silsbeebee.etypegoogle5.com';
+$sites['archive.silsbeebee.com'] = 'archive.silsbeebee.etypegoogle5.com';
 
 $sites['coveleaderpress.etypegoogle5.com'] = 'coveleaderpress.com';
 $sites['coveleaderpress.com'] = 'coveleaderpress.com';
@@ -227,3 +226,6 @@ $sites['www.thecastrocountynews.com'] = 'thecastrocountynews.etypegoogle5.com';
 
 /* hcnews.etypegoogle5.com */
 $sites['www.hcnews.com'] = 'hcnews.etypegoogle5.com';
+
+/* pressreporter.etypegoogle5.com  */
+$sites['www.pressreporter.com'] = 'pressreporter.etypegoogle5.com';

@@ -2507,3 +2507,9 @@ div.admin-panel .description {
 .jb-caption div.jb-caption-desc {
   line-height: 1.3em;
 }
+
+/* image captions */
+.front .image-field-caption {
+  display: none;
+  visibility: hidden
+}

@@ -34,10 +34,14 @@ header {
 }
 
 /* change title fonts */
-.preface-wrapper .block-inner .views-field-title h3, h1.title, .node-teaser h2.title {
+.preface-wrapper .block-inner .views-field-title h3 a, h1.title, .node-teaser h2.title {
   font-family: "Georgia", serif;
   text-transform: none;
   font-weight: bold;
+  color: #000000;
+}
+
+.preface-wrapper .block-inner .views-field-title h3 {
   color: #000000;
 }
 

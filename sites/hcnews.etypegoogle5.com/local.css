@@ -21,6 +21,13 @@ header {
       font-size: 1.2em;
       font-weight: bold; }
 
+/* change title fonts */
+.preface-wrapper .block-inner .views-field-title h3, h1.title, .node-teaser h2.title {
+  font-family: "Georgia", serif;
+  text-transform: none;
+  font-weight: bold;
+  color: #000000; }
+
 @media only screen and (min-width: 959px) {
   .region-user-menu {
     justify-content: center;

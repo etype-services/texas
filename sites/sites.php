@@ -229,3 +229,6 @@ $sites['www.hcnews.com'] = 'hcnews.etypegoogle5.com';
 
 /* pressreporter.etypegoogle5.com  */
 $sites['www.pressreporter.com'] = 'pressreporter.etypegoogle5.com';
+
+/* elliscountypress.etypegoogle5.com */
+$sites['www.elliscountypress.com'] = 'elliscountypress.etypegoogle5.com';

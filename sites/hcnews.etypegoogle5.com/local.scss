@@ -22,6 +22,7 @@ header {
   .block-inner {
     border: 1px solid red;
     ul.liScroll {
+      display: flex;
       .views-field-title {
         a {
           font-size: 1.2em;

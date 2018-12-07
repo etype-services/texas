@@ -15,6 +15,9 @@ header {
 /* breaking news */
 #block-views-breaking-news-block .block-inner {
   border: 1px solid red; }
+  #block-views-breaking-news-block .block-inner ul.liScroll .views-field-title a {
+    font-size: 1.2em;
+    font-weight: bold; }
 
 @media only screen and (min-width: 959px) {
   .region-user-menu {

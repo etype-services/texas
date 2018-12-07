@@ -21,6 +21,14 @@ header {
 #block-views-breaking-news-block {
   .block-inner {
     border: 1px solid red;
+    ul.liScroll {
+      .views-field-title {
+        a {
+          font-size: 1.2em;
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
 

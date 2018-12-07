@@ -12,6 +12,10 @@ header {
   display: flex;
   align-items: center; }
 
+/* breaking news */
+#block-views-breaking-news-block .block-inner {
+  border: 1px solid red; }
+
 @media only screen and (min-width: 959px) {
   .region-user-menu {
     justify-content: center;

@@ -1,20 +1,3 @@
 .region-user-menu {
     background-color: #EC9026;
 }
-
-/* Home Page Flexslider fixes */
-#flexslider-1 {
-    overflow: hidden;
-}
-
-#flexslider-1 .views-field-field-image .field-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-#flexslider-1 .slides img {
-    height: auto;
-    max-width: unset;
-    width: fit-content;
-    margin: auto;
-}

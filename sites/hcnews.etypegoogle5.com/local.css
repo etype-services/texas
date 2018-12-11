@@ -32,10 +32,10 @@ header {
     justify-content: center;
     margin-bottom: 0;
     background-color: #7D8AB7;
-    height: 27px; }
+    height: 33px; }
 
   #user-menu ul.menu li a {
-    line-height: 26px;
+    line-height: 33px;
     font-weight: bold; }
 
   #block-search-form {

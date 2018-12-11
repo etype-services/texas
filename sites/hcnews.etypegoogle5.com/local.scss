@@ -67,6 +67,9 @@ header {
       background: 0;
       line-height: 23px;
       float: none;
+      .form-item {
+        margin-top: 3px;
+      }
       .container-inline {
         display: flex;
         .form-text {
@@ -83,7 +86,7 @@ header {
           line-height: initial;
           font-family: Lato, sans-serif;
           position: relative;
-          top: -1px;
+          top: 3px;
         }
         .form-type-textfield {
           margin-right: 6px;

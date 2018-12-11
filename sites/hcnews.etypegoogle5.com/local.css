@@ -51,6 +51,8 @@ header {
       background: 0;
       line-height: 23px;
       float: none; }
+      #block-search-form #search-block-form .form-item {
+        margin-top: 3px; }
       #block-search-form #search-block-form .container-inline {
         display: flex; }
         #block-search-form #search-block-form .container-inline .form-text {
@@ -66,7 +68,7 @@ header {
           line-height: initial;
           font-family: Lato, sans-serif;
           position: relative;
-          top: -1px; }
+          top: 3px; }
         #block-search-form #search-block-form .container-inline .form-type-textfield {
           margin-right: 6px; }
 

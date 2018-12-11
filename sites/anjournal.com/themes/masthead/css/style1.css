@@ -79,7 +79,8 @@ header {
     float: left;
 }
 
-.site-logo img {
+/*.site-logo img { */
+img {
     max-width: 100%;
 }
 

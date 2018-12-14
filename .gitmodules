@@ -1,15 +1,18 @@
 [submodule "sites/all/modules/etype"]
 	path = sites/all/modules/etype
-	url = git@github.com:etype-services/etype.git
+	url = https://github.com/etype-services/etype.git
 [submodule "sites/all/modules/etype_xml_importer"]
 	path = sites/all/modules/etype_xml_importer
-	url = git@github.com:etype-services/etype_xml_importer.git
+	url = https://github.com/etype-services/etype_xml_importer.git
 [submodule "sites/all/modules/etype_newsletters"]
 	path = sites/all/modules/etype_newsletters
-	url = git@github.com:etype-services/etype_newsletters.git
+	url = https://github.com/etype-services/etype_newsletters.git
 [submodule "sites/all/modules/premium_content"]
 	path = sites/all/modules/premium_content
 	url = git@github.com:etype-services/premium_content.git
 [submodule "sites/all/themes/cni"]
 	path = sites/all/themes/cni
 	url = https://github.com/etype-services/cnitheme.git
+[submodule "sites/all/modules/etype_premium_content"]
+	path = sites/all/modules/etype_premium_content
+	url = https://github.com/etype-services/premium_content.git

@@ -7,9 +7,6 @@
 [submodule "sites/all/modules/etype_newsletters"]
 	path = sites/all/modules/etype_newsletters
 	url = git@github.com:etype-services/etype_newsletters.git
-[submodule "sites/all/themes/cni"]
-	path = sites/all/themes/cni
-	url = git@github.com:etype-services/cnitheme.git
 [submodule "sites/all/modules/premium_content"]
 	path = sites/all/modules/premium_content
 	url = git@github.com:etype-services/premium_content.git

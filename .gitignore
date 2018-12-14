@@ -5,4 +5,8 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 sites/*/tmp
+
+# Config and system files
 .idea/
+.DS_Store
+Thumbs.db

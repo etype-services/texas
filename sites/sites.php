@@ -1,6 +1,6 @@
 <?php
 /* test.etypegoogle5.com */
-$sites['test.etypegoogle5.com'] = 'elliscountypress.etypegoogle5.com';
+$sites['test.etypegoogle5.com'] = 'test.etypegoogle5.com';
 
 /* cni-theme.etypegoogle5.com */
 $sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';

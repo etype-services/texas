@@ -1,4 +1,10 @@
 <?php
+/* test.etypegoogle5.com */
+$sites['test.etypegoogle5.com'] = 'elliscountypress.etypegoogle5.com';
+
+/* cni-theme.etypegoogle5.com */
+$sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';
+
 /* devilsrivernews.etypegoogle5.com */
 $sites['devilsrivernews.etypegoogle5.com'] = 'devilsrivernews.com';
 $sites['devilsrivernews.com'] = 'devilsrivernews.com';
@@ -144,9 +150,6 @@ $sites['seniorific-archives.etypegoogle5.com'] = 'seniorific-archives.etypegoogl
 $sites['ozonastockman.etypegoogle5.com'] = 'ozonastockman.com';
 $sites['ozonastockman.com'] =  'ozonastockman.com';
 $sites['www.ozonastockman.com'] = 'ozonastockman.com';
-
-/* cni-theme.etypegoogle5.com */
-$sites['cni-theme.etypegoogle5.com'] = 'cni-theme.etypegoogle5.com';
 
 /* quinlan-tawakoninews.etypegoogle5.com */
 $sites['quinlan-tawakoninews.etypegoogle5.com'] =  'archive.quinlan-tawakoninews.com';

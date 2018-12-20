@@ -821,15 +821,14 @@ class MailchimpEcommerce extends Mailchimp {
    *
    * @see http://developer.mailchimp.com/documentation/mailchimp/reference/ecommerce/stores/products/#create-post_ecommerce_stores_store_id_products
    */
-  public function addProduct($store_id, $product_id, $title, $url, $variants = [], $parameters = []) {
+  public function addProduct($store_id, $id, $title, $variants = [], $parameters = []) {
     $tokens = [
       'store_id' => $store_id,
     ];
 
     $parameters += [
-      'id' => $product_id,
+      'id' => $id,
       'title' => $title,
-      'url' => $url,
       'variants' => $variants,
     ];
 
@@ -857,10 +856,10 @@ class MailchimpEcommerce extends Mailchimp {
    *
    * @see http://developer.mailchimp.com/documentation/mailchimp/reference/ecommerce/stores/products/#edit-patch_ecommerce_stores_store_id_products_product_id
    */
-  public function updateProduct($store_id, $product_id, $variants = [], $parameters = []) {
+  public function updateProduct($store_id, $id, $variants = [], $parameters = []) {
     $tokens = [
       'store_id' => $store_id,
-      'product_id' => $product_id,
+      'product_id' => $id,
     ];
 
     $parameters += [

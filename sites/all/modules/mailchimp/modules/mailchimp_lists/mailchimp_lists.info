@@ -11,8 +11,8 @@ configure = admin/config/services/mailchimp/lists
 
 files[] = tests/mailchimp_lists.test
 
-; Information added by Drupal.org packaging script on 2018-12-15
-version = "7.x-5.2+8-dev"
+; Information added by Drupal.org packaging script on 2018-12-21
+version = "7.x-5.3"
 core = "7.x"
 project = "mailchimp"
-datestamp = "1544835185"
+datestamp = "1545431588"

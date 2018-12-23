@@ -218,6 +218,10 @@ function mailchimp_get_api_object($classname = 'Mailchimp', $api_key = NULL) {
  */
 function mailchimp_get_list($list_id, $use_interest_groups = TRUE, $reset = FALSE, $exclude_hidden_interest_groups = TRUE)
 {
+  if (empty($list_id)) {
+    return NULL;
+  }
+
   $cache = $reset ? NULL : cache_get('list-' . $list_id, 'cache_mailchimp');
   if (!empty($cache)) {
     // Use cached list only if interest group requirement is met.
@@ -699,8 +703,6 @@ function mailchimp_subscribe_process($list_id, $email, $merge_vars = NULL, $inte
 
     if (isset($result->id)) {
       module_invoke_all('mailchimp_subscribe_user', $list_id, $email, $merge_vars);
-      // Clear user cache, just in case there's some cruft leftover:
-      mailchimp_cache_clear_member($list_id, $email);
       watchdog('mailchimp', '@email was subscribed to list @list.',
         array('@email' => $email, '@list' => $list_id), WATCHDOG_NOTICE
       );
@@ -734,6 +736,9 @@ function mailchimp_subscribe_process($list_id, $email, $merge_vars = NULL, $inte
     $result->status = $e->getCode();
     $result->message = $e->getMessage();
   }
+
+  // Clear user cache, just in case there's some cruft leftover:
+  mailchimp_cache_clear_member($list_id, $email);
 
   if ($double_optin) {
       drupal_set_message(t('Please check your email to confirm your subscription'), 'status', FALSE);
@@ -816,10 +821,15 @@ function mailchimp_update_local_cache($function, $args) {
     // Update cached interests.
     $cache->interests = new stdClass();
     foreach ($args['interests'] as $interest_group => $interests) {
-      foreach ($interests as $interest_id => $value) {
-        if ($value !== 0) {
-          $cache->interests->$interest_id = TRUE;
+      if(is_array($interest_group)){
+        foreach ($interests as $interest_id => $value) {
+          if ($value !== 0) {
+            $cache->interests->$interest_id = TRUE;
+          }
         }
+      }
+      elseif ($interests) {
+        $cache->interests->$interest_group = TRUE;
       }
     }
   }
@@ -1996,19 +2006,34 @@ function mailchimp_page_build(&$page) {
       $connected_site_id = variable_get('mailchimp_connected_id', FALSE);
 
       if (!empty($connected_site_id)) {
-        /* @var \Mailchimp\MailchimpConnectedSites $mc_connected */
-        $mc_connected = mailchimp_get_api_object('MailchimpConnectedSites');
+        try {
+          /* @var \Mailchimp\MailchimpConnectedSites $mc_connected */
+          $mc_connected = mailchimp_get_api_object('MailchimpConnectedSites');
 
-        // Verify Connected Site exists on the MailChimp side and insert JS.
-        $connected_site = $mc_connected->getConnectedSite($connected_site_id);
-        if (!empty($connected_site)) {
+          // Verify Connected Site exists on the MailChimp side and insert JS.
+          try {
+            $connected_site = $mc_connected->getConnectedSite($connected_site_id);
+            if (!empty($connected_site)) {
 
-          $mcjs = array(
-            '#type' => 'markup',
-            '#markup' => $connected_site->site_script->fragment,
-          );
+              $mcjs = array(
+                '#type' => 'markup',
+                '#markup' => $connected_site->site_script->fragment,
+              );
 
-          drupal_add_html_head($mcjs, 'mcjs');
+              drupal_add_html_head($mcjs, 'mcjs');
+            }
+          }
+          catch (Exception $e) {
+            // Throw exception only for errors other than member not found.
+            if ($e->getCode() != 404) {
+              throw new Exception($e->getMessage(), $e->getCode(), $e);
+            }
+          }
+        }
+        catch (Exception $e) {
+          watchdog('mailchimp', 'An error occurred requesting connected site information. "%message"', array(
+            '%message' => $e->getMessage(),
+          ), WATCHDOG_ERROR);
         }
       }
     }

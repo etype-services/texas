@@ -16,3 +16,6 @@
 [submodule "sites/all/modules/etype_premium_content"]
 	path = sites/all/modules/etype_premium_content
 	url = git@github.com:etype-services/etype_premium_content.git
+[submodule "sites/all/modules/etype_paywall"]
+	path = sites/all/modules/etype_paywall
+	url = git@github.com:etype-services/etype_paywall.git

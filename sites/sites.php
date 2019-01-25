@@ -159,8 +159,6 @@ $sites['www.quinlan-tawakoninews.com'] =  'archive.quinlan-tawakoninews.com';
 
 /* thecantonherald.etypegoogle5.com */
 $sites['thecantonherald.etypegoogle5.com'] =  'archive.thecantonherald.com';
-$sites['thecantonherald.com'] =  'archive.thecantonherald.com';
-$sites['www.thecantonherald.com'] =  'archive.thecantonherald.com';
 $sites['archive.thecantonherald.com'] =  'archive.thecantonherald.com';
 
 /* vanbanner.etypegoogle5.com */
@@ -170,8 +168,7 @@ $sites['www.vanbanner.com'] =  'vanbanner.etypegoogle5.com';
 
 /* willspointchronicle.etypegoogle5.com */
 $sites['willspointchronicle.etypegoogle5.com'] =  'archive.willspointchronicle.etypegoogle5.com';
-$sites['willspointchronicle.com'] =  'archive.willspointchronicle.etypegoogle5.com';
-$sites['www.willspointchronicle.com'] =  'archive.willspointchronicle.etypegoogle5.com';
+$sites['archive.willspointchronicle.com'] =  'archive.willspointchronicle.etypegoogle5.com';
 
 /* sabinecountyreporter.etypegoogle5.com */
 $sites['sabinecountyreporter.etypegoogle5.com'] =  'sabinecountyreporter.etypegoogle5.com';

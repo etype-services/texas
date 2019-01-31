@@ -34,13 +34,13 @@ $sites['martincountymessenger.com'] = 'martincountymessenger.com';
 $sites['www.martincountymessenger.com'] = 'martincountymessenger.com';
 
 /* anjournal.etypegoogle5.com */
-$sites['anjournal.etypegoogle5.com'] = 'anjournal.com';
-$sites['anjournal.com'] = 'anjournal.com';
-$sites['www.anjournal.com'] = 'anjournal.com';
-$sites['advancepublishingcompany.com'] = 'anjournal.com';
-$sites['www.advancepublishingcompany.com'] = 'anjournal.com';
-$sites['theadvancenewsjournal.com'] = 'anjournal.com';
-$sites['www.theadvancenewsjournal.com'] = 'anjournal.com';
+$sites['anjournal.etypegoogle5.com'] = 'archive.anjournal.com';
+$sites['www.anjournal.com'] = 'archive.anjournal.com';
+$sites['archive.anjournal.com'] = 'archive.anjournal.com';
+$sites['advancepublishingcompany.com'] = 'archive.anjournal.com';
+$sites['www.advancepublishingcompany.com'] = 'archive.anjournal.com';
+$sites['theadvancenewsjournal.com'] = 'archive.anjournal.com';
+$sites['www.theadvancenewsjournal.com'] = 'archive.anjournal.com';
 
 /* silsbeebee.etypegoogle5.com */
 $sites['www.silsbeebee.com'] = 'silsbeebee.etypegoogle5.com';

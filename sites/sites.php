@@ -154,8 +154,7 @@ $sites['www.ozonastockman.com'] = 'ozonastockman.com';
 
 /* quinlan-tawakoninews.etypegoogle5.com */
 $sites['quinlan-tawakoninews.etypegoogle5.com'] =  'archive.quinlan-tawakoninews.com';
-$sites['www.quinlan-tawakoninews.com'] =  'archive.quinlan-tawakoninews.com';
-$sites['quinlan-tawakoninews.com'] =  'archive.quinlan-tawakoninews.com';
+$sites['archive.quinlan-tawakoninews.com'] =  'archive.quinlan-tawakoninews.com';
 
 /* thecantonherald.etypegoogle5.com */
 $sites['thecantonherald.etypegoogle5.com'] =  'archive.thecantonherald.com';

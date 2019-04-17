@@ -36,7 +36,6 @@
         fbq('init', '308322346502400');
         fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=308322346502400&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code —>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>

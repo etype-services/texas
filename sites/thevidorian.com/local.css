@@ -3,3 +3,19 @@
 #block-block-16 {
 	text-align:center;
 }
+
+
+/* decrease space between ad blocks */
+#block-simpleads-ad-groups-12 {
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+#block-simpleads-ad-groups-31 {
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+#block-simpleads-ad-groups-15 {
+	padding-top:0px;
+}

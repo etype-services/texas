@@ -20,7 +20,7 @@ function follow_install() {
     ))
     ->execute();
   // Save the initial CSS.
-  // follow_save_css();
+  follow_save_css();
 }
 
 /**
@@ -96,6 +96,8 @@ function follow_uninstall() {
   variable_del('follow_user_icon_style');
   variable_del('follow_site_alignment');
   variable_del('follow_user_alignment');
+  variable_del('follow_site_hide_text');
+  variable_del('follow_user_hide_text');
 }
 
 /**
@@ -121,7 +123,19 @@ function follow_update_7004() {
   }
 
   // Save the initial CSS.
-  // follow_save_css();
+  follow_save_css();
 
   return t("Renamed Follow module's alignment and icon style variables.");
+}
+
+/**
+ * &lt;none&gt; is no longer supported in titles, so remove it. If you would like to
+ * hide the titles of the follow links, configure the appropriate block
+ * instead.
+ */
+function follow_update_7005() {
+  $query = db_update('follow_links')
+    ->fields(array('title' => ''))
+    ->condition('title', '<none>');
+  $query->execute();
 }

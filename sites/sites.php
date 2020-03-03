@@ -135,6 +135,7 @@ $sites['www.ott.news'] = 'easttexaspress.com';
 $sites['snyderdailynews.etypegoogle5.com'] = 'snyderdailynews.com';
 $sites['snyderdailynews.com'] = 'snyderdailynews.com';
 $sites['www.snyderdailynews.com'] = 'snyderdailynews.com';
+$sites['www.thesnydernews.com'] = 'snyderdailynews.com';
 
 /* thevidorian.etypegoogle5.com */
 $sites['thevidorian.etypegoogle5.com'] = 'thevidorian.com';

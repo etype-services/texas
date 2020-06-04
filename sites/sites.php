@@ -27,7 +27,6 @@ $sites['www.snyderdailynews.com'] = 'snyderdailynews.com';
 $sites['www.thesnydernews.com'] = 'snyderdailynews.com';
 $sites['www.thevidorian.com'] = 'thevidorian.com';
 $sites['www.seniorific.com'] = 'seniorific.com';
-$sites['www.ozonastockman.com'] = 'ozonastockman.com';
 $sites['archive.thecantonherald.com'] =  'archive.thecantonherald.com';
 $sites['archive.willspointchronicle.com'] =  'archive.willspointchronicle.etypegoogle5.com';
 $sites['www.sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com';

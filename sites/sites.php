@@ -32,7 +32,6 @@ $sites['archive.willspointchronicle.com'] =  'archive.willspointchronicle.etypeg
 $sites['www.sabinecountyreporter.com'] =  'sabinecountyreporter.etypegoogle5.com';
 $sites['www.gatesvillemessenger.com'] = 'gatesvillemessenger.etypegoogle5.com';
 $sites['www.rockspringsrecord.com'] = 'rockspringsrecord.etypegoogle5.com';
-$sites['www.timestribune.com'] = 'timestribune.etypegoogle5.com';
 $sites['www.baycitysentinel.com'] = 'baycitysentinel.etypegoogle5.com';
 $sites['www.rockdalereporter.com'] = 'rockdalereporter.etypegoogle5.com';
 $sites['www.texaspolkanews.com'] = 'polkabeat.etypegoogle5.com';

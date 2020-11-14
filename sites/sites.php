@@ -31,7 +31,6 @@ $sites['www.rockdalereporter.com'] = 'rockdalereporter.etypegoogle5.com';
 $sites['www.texaspolkanews.com'] = 'polkabeat.etypegoogle5.com';
 $sites['www.wingspancorpuschristi.com'] = 'wingspannewspaper.etypegoogle5.com';
 $sites['www.thealbanynews.net'] = 'thealbanynews.etypegoogle5.com';
-$sites['www.thecastrocountynews.com'] = 'thecastrocountynews.etypegoogle5.com';
 $sites['www.hcnews.com'] = 'hcnews.etypegoogle5.com';
 $sites['www.pressreporter.com'] = 'pressreporter.etypegoogle5.com';
 $sites['www.elliscountypress.com'] = 'elliscountypress.etypegoogle5.com';

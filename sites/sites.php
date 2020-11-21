@@ -19,7 +19,6 @@ $sites['archive.eastlandcountytoday.com'] = 'eastlandcountytodayarchive.etypegoo
 $sites['archive.fayettecountyrecord.com'] = 'archive.fayettecountyrecord.com';
 $sites['www.easttexaspress.com'] = 'easttexaspress.com';
 $sites['www.inbetweenprint.com'] = 'easttexaspress.com';
-$sites['www.thevidorian.com'] = 'thevidorian.com';
 $sites['www.seniorific.com'] = 'seniorific.com';
 $sites['archive.thecantonherald.com'] =  'archive.thecantonherald.com';
 $sites['archive.willspointchronicle.com'] =  'archive.willspointchronicle.etypegoogle5.com';
